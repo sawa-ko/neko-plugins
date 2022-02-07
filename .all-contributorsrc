@@ -1,9 +1,9 @@
 {
-	"projectName": "template",
-	"projectOwner": "sapphiredev",
+	"projectName": "neko-plugins",
+	"projectOwner": "kaname-png",
 	"repoType": "github",
 	"repoHost": "https://github.com",
-	"files": ["README.md"],
+	"files": ["README.md", "packages/statcord/README.md"],
 	"imageSize": 100,
 	"commit": true,
 	"commitConvention": "angular",
