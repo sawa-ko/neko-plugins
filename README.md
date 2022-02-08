@@ -11,7 +11,7 @@
 
 ---
 
-[![npm](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm&style=flat-square&label=@sapphire/plugin-statcord)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
+[![npm](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm&style=flat-square&label=@kaname-png/plugin-statcord)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
 
 </div>
 
