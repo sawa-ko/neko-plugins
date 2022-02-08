@@ -34,7 +34,7 @@ More information about Statcord can be found on its [website](https://statcord.c
 You can use the following command to install this package, or replace `npm install` with your package manager of choice.
 
 ```sh
-npm install @kaname-png/plugin-statcord @sapphire/framework
+npm install @kaname-png/plugin-statcord @sapphire/framework discord.js
 ```
 
 ---
