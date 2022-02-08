@@ -13,7 +13,7 @@ on:
       repository:
         description: The {owner}/{repository} that is being deployed.
         required: false
-        default: sapphiredev/sapphire-template
+        default: kaname-png/neko-plugins
   push:
     branches:
       - main

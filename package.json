@@ -58,7 +58,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/sapphiredev/sapphire-template.git"
+		"url": "git+https://github.com/kaname-png/neko-plugins.git"
 	},
 	"engines": {
 		"node": ">=v14.0.0",
