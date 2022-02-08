@@ -1,6 +1,6 @@
 <div align="center">
 
-![Neko Plugins Logo](https://cdn.skyra.pw/gh-assets/sapphire-banner.png)
+![Neko Plugins Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
 
 # @kaname-png/plugins
 

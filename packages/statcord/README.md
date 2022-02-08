@@ -1,6 +1,6 @@
 <div align="center">
 
-![Sapphire Logo](https://cdn.skyra.pw/gh-assets/sapphire-banner.png)
+![Sapphire Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
 
 # @kaname-png/plugin-statcord
 
