@@ -7,7 +7,7 @@ export class PluginListener extends Listener<typeof Events.CommandAccepted> {
 
 	public run({ command, message }: CommandAcceptedPayload) {
 		if (this.container.client.options.statcord?.debug) {
-			this.container.logger.debug(`[Statcord-Plugin]: Logging use of the ${command.name} command.`);
+			this.container.logger.debug(`[Statcord-Plugin]: Logging use of the ${command.name} command`);
 		}
 
 		this.container.statcord.postCommand(command.name, message.author.id);
