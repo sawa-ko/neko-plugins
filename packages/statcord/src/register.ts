@@ -18,12 +18,12 @@ export class StatcordPlugin extends Plugin {
 
 	public static [postLogin](this: SapphireClient): void {
 		if ((this.options.statcord?.autopost ?? true) && this.options.statcord?.key) {
-			container.logger.info('[Statcord-Plugin]: Auto-posting of statistics has been activated.');
+			container.logger.info('[Statcord-Plugin]: Auto-posting of statistics has been enabled.');
 			setTimeout(async () => container.statcord.postStats(), 1_000);
 		}
 
 		if (this.shard && this.options?.statcord?.sharding && this.options.statcord?.key) {
-			container.logger.info('[Statcord-Plugin]: Sharding mode activated.');
+			container.logger.info('[Statcord-Plugin]: Sharding mode enabled.');
 		}
 	}
 }

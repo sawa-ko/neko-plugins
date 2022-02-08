@@ -1,52 +1,39 @@
 <div align="center">
 
-![Sapphire Logo](https://cdn.skyra.pw/gh-assets/sapphire-banner.png)
+![Neko Plugins Logo](https://cdn.skyra.pw/gh-assets/sapphire-banner.png)
 
-# @sapphire/template
+# @kaname-png/plugins
 
-**Template for Sapphire Repositories.**
+### Plugins for @sapphire/framework
 
-[![GitHub](https://img.shields.io/github/license/sapphiredev/sapphire-template)](https://github.com/sapphiredev/sapphire-template/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/sapphiredev/sapphire-template/branch/main/graph/badge.svg?token=0MSAyoZNxz)](https://codecov.io/gh/sapphiredev/sapphire-template)
-[![npm](https://img.shields.io/npm/v/@sapphire/template?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/@sapphire/template)
+[![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
+[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=0MSAyoZNxz)](https://codecov.io/gh/kaname-png/neko-plugins)
+
+---
+
+[![npm](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm&style=flat-square&label=@sapphire/plugin-statcord)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
 
 </div>
 
-# Steps after creating a repo with this template
+Plugins made to work with `@sapphire/framework`, a `framework` for `discord.js` with the utility to easily create bots with a multitude of tools already built in.
 
-1. Find and replace all instances of `template` with the proper word / ID / etc
-1. Ensure the primary branch is called `main`
-1. Ensure branch protection is on
-1. Disable `Packages` from being included in the repository homepage
-1. Enable Codecov for the repository
-1. Remove `--dry-run` from line 47 in [`continuous-delivery.yml`](.github/workflows/continuous-delivery.yml) to enable publishing to NPM
-1. Remove this section from the README
+Everyone can contribute their plugins here if they wish, all are welcome. if you have an idea of a plugin that you think will be useful to work with `@sapphire/framework`, this is your place, **welcome to the Sapphire Plugins Nekommunity!** 😾💕
 
-## Features
+# 📑 Plugins
 
--   This
--   Needs
--   Some
--   More
--   Filling
--   In
+1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for @sapphire/framework to send and manage bot stats with statcord.
 
-## Buy us some doughnuts
+## 🔥 Features
 
-Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
+-   Full TypeScript & JavaScript support
+-   Written in TypeScript
+-   Comumunity plugins
 
-We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub Sponsorships. You can use the buttons below to donate through your method of choice.
+## 😺 Thanks to everyone who contributes to the plugin community
 
-|   Donate With   |                       Address                       |
-| :-------------: | :-------------------------------------------------: |
-| Open Collective | [Click Here](https://sapphirejs.dev/opencollective) |
-|      Ko-fi      |      [Click Here](https://sapphirejs.dev/kofi)      |
-|     Patreon     |    [Click Here](https://sapphirejs.dev/patreon)     |
-|     PayPal      |     [Click Here](https://sapphirejs.dev/paypal)     |
+All plugins created by the community, for the community, are appreciated.
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+<img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif?w=336" width="400" heigth="400">
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
