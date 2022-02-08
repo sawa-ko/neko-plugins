@@ -66,7 +66,7 @@ export class Statcord extends EventEmitter {
 			this.bandwidthUsage = '0';
 
 			if (this.options?.debug) {
-				container.logger.debug('[Statcord-Plugin]: Resetting of temporary statistics for the new statistics collection.');
+				container.logger.debug('[Statcord-Plugin]: Resetting of temporary statistics for the new statistics collection');
 			}
 
 			this.emit(StatcordEvents.POST_STATS, request);
