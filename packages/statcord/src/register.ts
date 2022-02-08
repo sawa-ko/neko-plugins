@@ -28,8 +28,8 @@ export class StatcordPlugin extends Plugin {
 	}
 }
 
-SapphireClient.plugins.registerPostLoginHook(StatcordPlugin[preGenericsInitialization], 'Statcord-PreGenericsInitialization');
-SapphireClient.plugins.registerPostLoginHook(StatcordPlugin[postInitialization], 'Statcord-PostInitialization');
+SapphireClient.plugins.registerPreGenericsInitializationHook(StatcordPlugin[preGenericsInitialization], 'Statcord-PreGenericsInitialization');
+SapphireClient.plugins.registerPostInitializationHook(StatcordPlugin[postInitialization], 'Statcord-PostInitialization');
 SapphireClient.plugins.registerPostLoginHook(StatcordPlugin[postLogin], 'Statcord-PostLogin');
 
 declare module '@sapphire/pieces' {

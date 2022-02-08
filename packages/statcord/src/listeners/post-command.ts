@@ -2,7 +2,7 @@ import { CommandAcceptedPayload, Events, Listener } from '@sapphire/framework';
 
 export class PluginListener extends Listener<typeof Events.CommandAccepted> {
 	public constructor(context: Listener.Context) {
-		super(context, { event: Events.CommandAccepted });
+		super(context, { event: Events.CommandAccepted, name: 'StatcordPostCommand' });
 	}
 
 	public run({ command, message }: CommandAcceptedPayload) {
