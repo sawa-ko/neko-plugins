@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.1.4...@kaname-png/plugin-statcord@1.1.5) (2022-02-08)
+
+### Bug Fixes
+
+-   **statcord:** interval of autopost failed ([1b6c38f](https://github.com/kaname-png/neko-plugins/commit/1b6c38f0f641e9fe1ecdf98edd29f01ba70b88cd))
+
 ## [1.1.4](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.1.3...@kaname-png/plugin-statcord@1.1.4) (2022-02-08)
 
 ### Bug Fixes
