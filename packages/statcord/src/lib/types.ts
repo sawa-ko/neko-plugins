@@ -2,7 +2,7 @@ export interface StatcordOptions {
 	key: string;
 	autopost?: boolean;
 	baseUrl?: string;
-	debug?: string;
+	debug?: boolean;
 	sharding?: boolean;
 }
 
