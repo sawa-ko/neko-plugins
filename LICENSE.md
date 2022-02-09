@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright © `2020` `The Neko Sapphire Plugins Community and its contributors`
+Copyright © `2022` `The Neko Sapphire Plugins Community and its contributors`
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
