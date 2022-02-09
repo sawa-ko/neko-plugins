@@ -73,7 +73,7 @@ export class Statcord extends EventEmitter {
 			return request;
 		} catch (err: unknown) {
 			if (err instanceof QueryError) {
-				this.emit(StatcordEvents.POST_STATS_ERROR, (await err.response.clone().json()).message);
+				this.emit(StatcordEvents.POST_STATS_ERROR, await err.response.clone().json());
 			} else {
 				this.emit(StatcordEvents.POST_STATS_ERROR, err);
 			}
