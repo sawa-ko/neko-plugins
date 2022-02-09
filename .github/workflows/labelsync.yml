@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
         with:
-          repository: 'kaname-png/neko-plugins/readme'
+          repository: 'sapphiredev/readme'
       - name: Run Label Sync
         uses: crazy-max/ghaction-github-labeler@52525cb66833763f651fc34e244e4f73b6e07ff5 # renovate: tag=v3
         with:
