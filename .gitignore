@@ -10,17 +10,17 @@ docs/
 .yarn/install-state.gz
 .yarn/build-state.yml
 
-# Ignore tsc dist folder
+# Build Artifacts
 dist/
-
-# Ignore JavaScript files
-**/*.js
-**/*.mjs
-**/*.js.map
-**/*.d.ts
-!src/**/*.d.ts
-**/*.tsbuildinfo
-!jest.config.ts
+build/
+docs/
+test_out/
+*.tsbuildinfo
+*.zip
+*.tar
+*.tar.xz
+*.tar.gz
+*.7z
 
 # Ignore heapsnapshot and log files
 *.heapsnapshot
@@ -29,8 +29,5 @@ dist/
 # Ignore package locks
 package-lock.json
 
-# Ignore the GH cli downloaded by workflows
-gh
-
-# Ignore the "wiki" folder so we can checkout the wiki inside the same folder
-wiki/
+# Ignore Turbo caching
+.turbo
