@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.1.5...@kaname-png/plugin-statcord@1.2.0) (2022-02-09)
+
+### Bug Fixes
+
+-   gitignore ([39db746](https://github.com/kaname-png/neko-plugins/commit/39db7461d1a2695e203ea6f97bfb48d3d9aee7a7))
+-   **statcord:** post query body and register interval autopost ([a922201](https://github.com/kaname-png/neko-plugins/commit/a9222013c5de7571365fbb07777c6b8513fd471d))
+-   **statcord:** types ([d51d5a5](https://github.com/kaname-png/neko-plugins/commit/d51d5a573824a8ac254abbab68e774820afb346b))
+
+### Features
+
+-   **statcord:** better errors ([2dc2aab](https://github.com/kaname-png/neko-plugins/commit/2dc2aab734ad6cfaf69661c7b3ef3b43358a1f08))
+-   **statcord:** return json error and not only error message ([c2552d2](https://github.com/kaname-png/neko-plugins/commit/c2552d27922a70401f45d18509d5324ca68d5cc4))
+
 ## [1.1.5](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.1.4...@kaname-png/plugin-statcord@1.1.5) (2022-02-08)
 
 ### Bug Fixes
