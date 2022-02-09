@@ -40,7 +40,7 @@ export class Statcord extends EventEmitter {
 					body: JSON.stringify({
 						id: container.client.user?.id,
 						key: this.options?.key,
-						servers: this.computeTotalGuilds(),
+						servers: await this.computeTotalGuilds(),
 						users: await this.computeMembersGuilds(),
 						active: this.activeUsers,
 						commands: this.commandsRun.toString(),
