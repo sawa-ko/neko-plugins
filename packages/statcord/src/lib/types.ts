@@ -16,7 +16,7 @@ export interface ClientStats {
 	data: Array<{
 		time: number;
 		servers: number;
-		users: string;
+		users: number;
 		commands: string;
 		active: string[];
 		custom1: string;
