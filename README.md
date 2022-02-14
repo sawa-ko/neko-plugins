@@ -2,7 +2,7 @@
 
 ![Neko Plugins Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
 
-# @kaname-png/plugins
+# @kaname-png/neko-plugins
 
 ### Plugins for @sapphire/framework
 
