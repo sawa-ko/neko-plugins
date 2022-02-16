@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.2.0...@kaname-png/plugin-statcord@1.3.0) (2022-02-16)
+
+### Bug Fixes
+
+-   readme badges ([673340d](https://github.com/kaname-png/neko-plugins/commit/673340d028e79b31b9b6c7f4d55460ebde2baa6a))
+
+### Features
+
+-   **statcord:** added tests ([271a59d](https://github.com/kaname-png/neko-plugins/commit/271a59d26738ce363ea1c38c4a48699ec54a7bbe))
+
 # [1.2.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.1.5...@kaname-png/plugin-statcord@1.2.0) (2022-02-09)
 
 ### Bug Fixes
