@@ -17,6 +17,7 @@ export class Statcord extends EventEmitter {
 	private defaultHeader = { 'content-type': 'application/json', authorization: this.options?.key ?? '' };
 	private bandwidthUsage = '0';
 	private baseUrl = this.options?.baseUrl ?? 'https://api.statcord.com/v3';
+	private clientId = this.options?.client_id ?? container.client.user?.id;
 
 	public constructor(private readonly options?: StatcordOptions) {
 		super();
@@ -38,7 +39,7 @@ export class Statcord extends EventEmitter {
 					method: FetchMethods.Post,
 					headers: this.defaultHeader,
 					body: JSON.stringify({
-						id: container.client.user?.id,
+						id: this.clientId,
 						key: this.options?.key,
 						servers: await this.computeTotalGuilds(),
 						users: await this.computeMembersGuilds(),
@@ -89,7 +90,7 @@ export class Statcord extends EventEmitter {
 	public async clientStats() {
 		try {
 			return await fetch<ClientStats>(
-				`${this.baseUrl}/${container.client.user!.id}`,
+				`${this.baseUrl}/${this.clientId}`,
 				{ method: FetchMethods.Get, headers: this.defaultHeader },
 				FetchResultTypes.JSON
 			);
@@ -106,7 +107,7 @@ export class Statcord extends EventEmitter {
 	public async bucketStats(days = 'all') {
 		try {
 			return await fetch<BucketStats>(
-				`${this.baseUrl}/${container.client.user!.id}/aggregate?days=${days}`,
+				`${this.baseUrl}/${this.clientId}/aggregate?days=${days}`,
 				{ method: FetchMethods.Get, headers: this.defaultHeader },
 				FetchResultTypes.JSON
 			);
@@ -124,7 +125,7 @@ export class Statcord extends EventEmitter {
 	public async userVotesStats(userId: string, days = 1) {
 		try {
 			return await fetch<UserVotesStats>(
-				`${this.baseUrl}/${container.client.user!.id}/votes/${userId}?days=${days}`,
+				`${this.baseUrl}/${this.clientId}/votes/${userId}?days=${days}`,
 				{ method: FetchMethods.Get, headers: this.defaultHeader },
 				FetchResultTypes.JSON
 			);

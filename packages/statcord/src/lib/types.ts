@@ -1,4 +1,5 @@
 export interface StatcordOptions {
+	client_id?: string;
 	key: string;
 	autopost?: boolean;
 	baseUrl?: string;

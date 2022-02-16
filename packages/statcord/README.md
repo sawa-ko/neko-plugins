@@ -57,6 +57,7 @@ require('@kaname-png/plugin-statcord/register');
 const client = new SapphireClient({
 	/* your bot options */
 	statcord: {
+		client_id: 'YOUR_BOT_ID', // (Optional) By default it is the bot id.
 		key: 'YOUR_AWESOME_API_KEY', // (Required) Statcord API key.
 		autopost: false, // (Optional) Allows automatic posting of statistics.
 		baseUrl: 'https://api.statcord.com/v3', // (Optional) Change the base URL of the Statcord API.
@@ -88,6 +89,7 @@ import '@kaname-png/plugin-statcord/register';
 const client = new SapphireClient({
 	/* your bot options */
 	statcord: {
+		client_id: 'YOUR_BOT_ID', // (Optional) By default it is the bot id.
 		key: 'YOUR_AWESOME_API_KEY', // (Required) Statcord API key.
 		autopost: false, // (Optional) Allows automatic posting of statistics.
 		baseUrl: 'https://api.statcord.com/v3', // (Optional) Change the base URL of the Statcord API.
