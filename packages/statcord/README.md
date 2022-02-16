@@ -7,9 +7,9 @@
 **Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to post and manage bot stats with <a href="https://statcord.com/">Statcord</a>.**
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=QWL8FB16BR)](https://codecov.io/gh/kaname-png/neko-plugins)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/@kaname-png/plugin-statcord?logo=webpack&style=flat-square)](https://bundlephobia.com/result?p=@kaname-png/plugin-statcord)
-[![npm](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
+[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
+[![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-statcord?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
 
 </div>
 

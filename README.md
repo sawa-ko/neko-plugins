@@ -7,11 +7,13 @@
 ### Plugins for @sapphire/framework
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=0MSAyoZNxz)](https://codecov.io/gh/kaname-png/neko-plugins)
+[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
 
 ---
 
-[![npm](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm&style=flat-square&label=@kaname-png/plugin-statcord)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&label=%40kaname-png%2Fplugin-statcord&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
+
+---
 
 </div>
 
@@ -19,7 +21,7 @@ Plugins made to work with `@sapphire/framework`, a `framework` for `discord.js` 
 
 Everyone can contribute their plugins here if they wish, all are welcome. if you have an idea of a plugin that you think will be useful to work with `@sapphire/framework`, this is your place, **welcome to the Sapphire Plugins Nekommunity!** 😾💕
 
-# 📑 Plugins
+## 📑 Plugins
 
 1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for @sapphire/framework to send and manage bot stats with statcord.
 
