@@ -89,7 +89,7 @@ export class Statcord extends EventEmitter {
 	public async clientStats() {
 		try {
 			return await fetch<ClientStats>(
-				`${this.baseUrl}/${this.options?.client_id ?? container.client.user?.id}`,
+				`${this.baseUrl}/${this.getClientId()}`,
 				{ method: FetchMethods.Get, headers: this.defaultHeader },
 				FetchResultTypes.JSON
 			);
@@ -106,7 +106,7 @@ export class Statcord extends EventEmitter {
 	public async bucketStats(days = 'all') {
 		try {
 			return await fetch<BucketStats>(
-				`${this.baseUrl}/${this.options?.client_id ?? container.client.user?.id}/aggregate?days=${days}`,
+				`${this.baseUrl}/${this.getClientId()}/aggregate?days=${days}`,
 				{ method: FetchMethods.Get, headers: this.defaultHeader },
 				FetchResultTypes.JSON
 			);
@@ -124,7 +124,7 @@ export class Statcord extends EventEmitter {
 	public async userVotesStats(userId: string, days = 1) {
 		try {
 			return await fetch<UserVotesStats>(
-				`${this.baseUrl}/${this.options?.client_id ?? container.client.user?.id}/votes/${userId}?days=${days}`,
+				`${this.baseUrl}/${this.getClientId()}/votes/${userId}?days=${days}`,
 				{ method: FetchMethods.Get, headers: this.defaultHeader },
 				FetchResultTypes.JSON
 			);
@@ -172,5 +172,9 @@ export class Statcord extends EventEmitter {
 
 	private getPopularCommands() {
 		return this.popularCommands.sort((a, b) => b.count - a.count).slice(0, 5);
+	}
+
+	private getClientId() {
+		return this.options?.client_id ?? container.client.user?.id;
 	}
 }
