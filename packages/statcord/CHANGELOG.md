@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.3.0...@kaname-png/plugin-statcord@1.3.1) (2022-02-18)
+
+### Bug Fixes
+
+-   **statcord:** statcord client id is undefined ([c42788a](https://github.com/kaname-png/neko-plugins/commit/c42788a080c2c3276e04536ed546ce296ea00b82))
+
+### Performance Improvements
+
+-   **statcord:** best way to get client id ([33f9580](https://github.com/kaname-png/neko-plugins/commit/33f958027ce8e195237ac0382ac367fcd3939e4b))
+
 # [1.3.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.2.0...@kaname-png/plugin-statcord@1.3.0) (2022-02-16)
 
 ### Bug Fixes
