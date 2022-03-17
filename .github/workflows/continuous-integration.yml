@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
       - name: Add problem matcher
         run: echo "::add-matcher::.github/problemMatchers/eslint.json"
       - name: Use Node.js v16
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # renovate: tag=v2
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a # tag=v3
         with:
           node-version: 16
           cache: yarn
@@ -31,9 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
       - name: Use Node.js v16
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # renovate: tag=v2
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a # tag=v3
         with:
           node-version: 16
           cache: yarn
@@ -43,7 +43,7 @@ jobs:
       - name: Run tests
         run: yarn jest --coverage --passWithNoTests
       - name: Store code coverage report
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # renovate: tag=v2
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
         with:
           name: coverage
           path: coverage/
@@ -53,11 +53,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
       - name: Add problem matcher
         run: echo "::add-matcher::.github/problemMatchers/tsc.json"
       - name: Use Node.js v16
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # renovate: tag=v2
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a # tag=v3
         with:
           node-version: 16
           cache: yarn
@@ -73,11 +73,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
         with:
           fetch-depth: 2
       - name: Download Coverage report
-        uses: actions/download-artifact@f023be2c48cc18debc3bacd34cb396e0295e2869 # renovate: tag=v2
+        uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # tag=v3
         with:
           name: coverage
           path: coverage/
@@ -93,9 +93,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
       - name: Use Node.js v16
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # renovate: tag=v2
+        uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a # tag=v3
         with:
           node-version: 16
           cache: yarn
@@ -105,7 +105,7 @@ jobs:
       - name: Generate Docs
         run: yarn docs
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # tag=v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
