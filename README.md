@@ -13,6 +13,8 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&label=%40kaname-png%2Fplugin-statcord&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
 
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-env&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-env)
+
 ---
 
 </div>
@@ -24,6 +26,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 ## 📑 Plugins
 
 1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for @sapphire/framework to send and manage bot stats with statcord.
+2. [Env](ttps://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment variables with @sapphire/framework for the bot client.
 
 ## 🔥 Features
 

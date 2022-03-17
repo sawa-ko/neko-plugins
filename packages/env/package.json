@@ -1,7 +1,7 @@
 {
 	"name": "@kaname-png/plugin-env",
 	"version": "1.0.0",
-	"description": "Manage environment variables.",
+	"description": "Manage environment variables with @sapphire/framework for the bot client.",
 	"author": "@kaname-png",
 	"license": "MIT",
 	"main": "dist/index.js",
