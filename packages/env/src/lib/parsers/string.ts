@@ -8,6 +8,7 @@
 export const parseEnvString = (name: string, defaultValue = '') => {
 	const value = process.env[name];
 	if (!value || value.length === 0) return defaultValue;
+	if (defaultValue) return defaultValue;
 
 	return value;
 };

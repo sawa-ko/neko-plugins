@@ -11,10 +11,10 @@ import { parseObjectString } from './object';
 export const parseEnvArray = <T = []>(name: string, simple?: boolean, defaultValue: any[] = []) => {
 	const value = process.env[name];
 	if (!value) return defaultValue;
-	if (simple) return value.split(',');
+	if (simple) return value.split(',').map((i) => i.trim());
 
 	const data = parseObjectString(value);
-	if (Array.isArray(data)) return defaultValue;
+	if (!Array.isArray(data)) return defaultValue;
 
-	return data as T;
+	return data as unknown as T;
 };
