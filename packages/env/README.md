@@ -1,23 +1,23 @@
 <div align="center">
 
-![Sapphire Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
+![Neko Plugins Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
 
-# @kaname-png/plugin-statcord
+# @kaname-png/plugin-env
 
-**Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to post and manage bot stats with <a href="https://statcord.com/">Statcord</a>.**
+**Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to manage environment variables with value parser.**
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
 [![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
-[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
-[![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-statcord?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-statcord)
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-env)
+[![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-env?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-env)
 
 </div>
 
 ## Description
 
-This plugin allows the integration of Statcord with the Bot. Statcord is a web page that allows to manage statistics such as, how many commands were executed in a day, new guilds, etc.
+This plugin allows you to manage your environment variables via .env, .env.development, etc. files in a simple way and with the ease of getting the value converted into the type you need.
 
-More information about Statcord can be found on its [website](https://statcord.com).
+The plugin allows you to read the environment variables and parse it to the desired type and get for example, a boolean value from an environment variable.
 
 ## Features
 
@@ -27,46 +27,56 @@ More information about Statcord can be found on its [website](https://statcord.c
 
 ## Installation
 
-`@kaname-png/plugin-statcord` depends on the following packages. Be sure to install these along with this package!
+`@kaname-png/plugin-env` depends on the following packages. Be sure to install these along with this package!
 
 -   [`@sapphire/framework`](https://www.npmjs.com/package/@sapphire/framework)
 
 You can use the following command to install this package, or replace `npm install` with your package manager of choice.
 
 ```sh
-npm install @kaname-png/plugin-statcord @sapphire/framework discord.js
+npm install @kaname-png/plugin-env @sapphire/framework discord.js
 ```
 
 ---
 
 ## Usage
 
+It is very important to assign an environment variable manually, this to know what kind of environment variables you need.
+
+For example:
+
+```javascript
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+```
+
+And with NodeJs versions higher than v15 ([Logical Nullish Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_nullish_assignment)):
+
+```javascript
+process.env.NODE_ENV ??= 'development';
+```
+
 ### JavaScript
 
 In your main or setup file, register the plugin:
 
 ```javascript
-require('@kaname-png/plugin-statcord/register');
+require('@kaname-png/plugin-env/register');
 ```
 
-It is important to add an API key provided by Statcord.
+Once the plugin is registered, we will have to decide whether to enable the plugin or not with the `enabled` variable in the client options in the `env` option.
 
 ```javascript
-require('@kaname-png/plugin-statcord/register');
-
-const client = new SapphireClient({
-	/* your bot options */
-	statcord: {
-		client_id: 'YOUR_BOT_ID', // (Optional) By default it is the bot id.
-		key: 'YOUR_AWESOME_API_KEY', // (Required) Statcord API key.
-		autopost: false, // (Optional) Allows automatic posting of statistics.
-		baseUrl: 'https://api.statcord.com/v3', // (Optional) Change the base URL of the Statcord API.
-		debug: false, // (Optional) Show debug messages.
-		sharding: false // (Optional) Activate the sharding mode, it is important to read the notes below.
-	}
-});
+require('@kaname-png/plugin-env/register');
 
 async function main() {
+	const client = new SapphireClient({
+		/* your bot options */
+		env: {
+			enabled: true // You can decide when to enable the plugin or not.
+			/* ...More options available */
+		}
+	});
+
 	await client.login();
 }
 
@@ -78,151 +88,104 @@ void main();
 In your main or setup file, register the plugin:
 
 ```typescript
-import '@kaname-png/plugin-statcord/register';
+import '@kaname-png/plugin-env/register';
 ```
 
-It is important to add an API key provided by Statcord.
+Once the plugin is registered, we will have to decide whether to enable the plugin or not with the `enabled` variable in the client options in the `env` option.
 
 ```typescript
-import '@kaname-png/plugin-statcord/register';
-
-const client = new SapphireClient({
-	/* your bot options */
-	statcord: {
-		client_id: 'YOUR_BOT_ID', // (Optional) By default it is the bot id.
-		key: 'YOUR_AWESOME_API_KEY', // (Required) Statcord API key.
-		autopost: false, // (Optional) Allows automatic posting of statistics.
-		baseUrl: 'https://api.statcord.com/v3', // (Optional) Change the base URL of the Statcord API.
-		debug: false, // (Optional) Show debug messages.
-		sharding: false // (Optional) Activate the sharding mode, it is important to read the notes below.
-	}
-});
+import '@kaname-png/plugin-env/register';
 
 async function main() {
+	const client = new SapphireClient({
+		/* your bot options */
+		env: {
+			enabled: true // You can decide when to enable the plugin or not.
+			/* ...More options available */
+		}
+	});
+
 	await client.login();
 }
 
 void main();
 ```
 
-If you enable the `autopost` option, that's it, the plugin will collect and publish the statistics for you, you don't have to do anything else!
+## How to use
 
-## Bandwidth usage
-
-To set the bandwidth usage in each statistics post the `setBandwidthUsage()` method is available, the data sent by this method is reset in each statistics post. This is done so that the user can choose the best way to get this data.
-
-### Javascript
+### JavaScript
 
 ```javascript
-const { container } = require('@sapphire/framework');
-
-class MyAwesomeServicePostStats {
-	public postBandwidth() {
-		const bandwidthUsage = getBandwidthUsage(); // Use your method to get this data.
-		container.statcord.setBandwidthUsage(bandwidthUsage);
-	}
-}
-
-export default MyAwesomeServicePostStats;
-```
-
-### TypeScript
-
-```typescript
+// Services
 import { container } from '@sapphire/framework';
 
-export class MyAwesomeServicePostStats {
-	public postBandwidth() {
-		const bandwidthUsage = getBandwidthUsage(); // Use your method to get this data.
-		container.statcord.setBandwidthUsage(bandwidthUsage);
+export class MyAwesomeService {
+	get() {
+		return container.env.string('MY_AWESOME_ENV');
 	}
 }
-```
 
-## Posting statistics manually
+// Commands, Listeners, etc.
+import { Command } from '@sapphire/framework';
 
-To be able to post statistics manually, it is necessary to disable the `autopost` option in the statcord options, by default it is disabled.
-
-### Javascript
-
-```javascript
-const client = new SapphireClient({
-	/* your bot options */
-	statcord: {
-		key: 'YOUR_AWESOME_API_KEY',
-		autopost: false
+export class MyAwesomeCommand extends Command {
+	messageRun(message) {
+		return message.reply(this.container.env.string('MY_AWESOME_ENV'));
 	}
-});
-
-async function main() {
-	await client.login();
 }
-
-void main();
 ```
 
 ### TypeScript
 
-```typescript
-import '@kaname-png/plugin-statcord/register';
+In TypeScript the variable name typing is safe, this means that you can't just put any environment variable key name, for that we will have to augment the interface that contains all the available environment variable names.
 
-const client = new SapphireClient({
-	/* your bot options */
-	statcord: {
-		key: 'YOUR_AWESOME_API_KEY',
-		autopost: false
-	}
-});
+It is recommended to set it to type `never`, although its type has no effect on the result.
+
+```typescript
+import '@kaname-png/plugin-env/register';
 
 async function main() {
+	const client = new SapphireClient({
+		/* your bot options */
+		env: {
+			enabled: true // You can decide when to enable the plugin or not.
+			/* ...More options available */
+		}
+	});
+
 	await client.login();
 }
 
 void main();
-```
 
-In order to be able to post statistics there is the `postStats` method available, by default, the statistics of used commands, popular commands, total guilds and users are managed internally by the plugin.
-
-Remember that you can use these methods and all the Statcord plugin methods globally available anywhere in the Bot.
-
-### Javascript
-
-```javascript
-const { container } = require('@sapphire/framework');
-
-class MyAwesomeServicePostStats {
-	public postStats() {
-		container.statcord.postStats();
+// It is recommended to do it for example in the main file that starts the client (main.js for example).
+declare module '@kaname-png/plugin-env' {
+	interface EnvKeys {
+		MY_AWESOME_ENV: never;
 	}
 }
-
-export default MyAwesomeServicePostStats;
 ```
 
-### TypeScript
-
 ```typescript
+// Services
 import { container } from '@sapphire/framework';
 
-export class MyAwesomeServicePostStats {
-	public postStats() {
-		container.statcord.postStats();
+export class MyAwesomeService {
+	public get() {
+		return container.env.string('MY_AWESOME_ENV');
+	}
+}
+
+// Commands, Listeners, etc.
+import { Command } from '@sapphire/framework';
+import { Message } from '@discord.js';
+
+export class MyAwesomeCommand extends Command {
+	public messageRun(message: Message) {
+		return message.reply(this.container.env.string('MY_AWESOME_ENV'));
 	}
 }
 ```
-
-## Get statistics
-
-The plugin allows to get the statistics from Statcord, as it also has methods that wrapper with the Statcord API.
-
-1. `clientStats();`: Get current client statistics in Statcord.
-2. `bucketStats();`: Check everyone who has voted for the bot today.
-3. `userVotesStats();`: Check if someone has voted for the bot today.
-
-## Notes
-
-1. The `postCommand` and `postStats` methods are available globally so that they can be used in other ways according to the user's needs. For example, it is recommended to disable the `autopost` option when using the ShardingManager, as it is possible for Shards to go into Rate Limit in the Statcord API when they all perform the action of posting statistics at the same time and having these methods available allows you to devise a better way to post those statistics.
-2. If the `sharding` mode is used together with the `autopost` option it is important that the Shards have at least 1 minute of initialization between them, so that the shards have a difference of `1 minute` and thus be able to send the statistics without entering Rate Limit in the Statcord API.
 
 ## Contributors ✨
 
