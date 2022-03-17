@@ -982,6 +982,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kaname-png/plugin-env@workspace:packages/env":
+  version: 0.0.0-use.local
+  resolution: "@kaname-png/plugin-env@workspace:packages/env"
+  dependencies:
+    "@sapphire/fetch": ^2.1.0
+    systeminformation: ^5.11.3
+    tslib: 2.x
+  languageName: unknown
+  linkType: soft
+
 "@kaname-png/plugin-statcord@workspace:packages/statcord":
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-statcord@workspace:packages/statcord"
