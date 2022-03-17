@@ -1,6 +1,6 @@
 <div align="center">
 
-![Sapphire Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
+![Neko Plugins Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
 
 # @kaname-png/plugin-statcord
 
