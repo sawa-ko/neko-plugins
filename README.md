@@ -26,7 +26,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 ## 📑 Plugins
 
 1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for @sapphire/framework to send and manage bot stats with statcord.
-2. [Env](ttps://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment variables with @sapphire/framework for the bot client.
+2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment variables with @sapphire/framework for the bot client.
 
 ## 🔥 Features
 
