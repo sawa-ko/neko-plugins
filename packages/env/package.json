@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-env",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Manage environment variables (configurations) for bots created with @sapphire/framework.",
 	"author": "@kaname-png",
 	"license": "MIT",
