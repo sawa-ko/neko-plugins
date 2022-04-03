@@ -1,10 +1,11 @@
+<!-- markdownlint-disable -->
 <div align="center">
 
 ![Neko Plugins Logo](https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png)
 
 # @kaname-png/neko-plugins
 
-### Plugins for @sapphire/framework
+## Plugins for @sapphire/framework
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
 [![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
@@ -18,6 +19,7 @@
 ---
 
 </div>
+<!-- markdownlint-restore -->
 
 Plugins made to work with `@sapphire/framework`, a `framework` for `discord.js` with the utility to easily create bots with a multitude of tools already built in.
 
@@ -26,7 +28,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 ## 📑 Plugins
 
 1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for @sapphire/framework to send and manage bot stats with statcord.
-2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment variables with @sapphire/framework for the bot client.
+2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment variables (configurations) for bots created with @sapphire/framework.
 
 ## 🔥 Features
 
@@ -38,7 +40,9 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 
 All plugins created by the community, for the community, are appreciated.
 
+<!-- markdownlint-disable -->
 <img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif?w=336" width="400" heigth="400">
+<!-- markdownlint-restore -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
