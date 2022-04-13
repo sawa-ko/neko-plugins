@@ -1,0 +1,74 @@
+{
+	"name": "@kaname-png/plugin-api-jwt",
+	"version": "1.1.1",
+	"description": "Plugin that overwrites the authentication strategy of the @sapphire/plugin-api plugin to JWT.",
+	"author": "@kaname-png",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"typedocMain": "src/index.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./register": {
+			"import": "./register.mjs",
+			"require": "./register.js"
+		}
+	},
+	"sideEffects": [
+		"./dist/register.js",
+		"./register.js",
+		"./register.mjs"
+	],
+	"homepage": "https://github.com/kaname-png/neko-plugins/tree/main/packages/plugin-api-jwt",
+	"scripts": {
+		"lint": "eslint src --ext ts --fix",
+		"build": "tsc -b src && yarn esm:register && yarn esm:default",
+		"test": "jest",
+		"esm:register": "gen-esm-wrapper dist/register.js dist/register.mjs",
+		"esm:default": "gen-esm-wrapper dist/index.js dist/index.mjs",
+		"prepublishOnly": "yarn build"
+	},
+	"dependencies": {
+		"tslib": "^2.3.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kaname-png/neko-plugins.git",
+		"directory": "packages/plugin-api-jwt"
+	},
+	"files": [
+		"dist",
+		"!dist/*.tsbuildinfo",
+		"register.*"
+	],
+	"engines": {
+		"node": ">=16.6.0",
+		"npm": ">=7.0.0"
+	},
+	"keywords": [
+		"sapphiredev",
+		"plugin",
+		"bot",
+		"typescript",
+		"ts",
+		"yarn",
+		"discord",
+		"sapphire"
+	],
+	"bugs": {
+		"url": "https://github.com/kaname-png/neko-plugins/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@sapphire/plugin-api": "^3.2.1",
+		"@sapphire/utilities": "^3.6.2",
+		"discord-api-types": "^0.31.1",
+		"jwt-service": "^8.0.0"
+	}
+}
