@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@1.2.0...@kaname-png/plugin-api-jwt@1.2.1) (2022-04-13)
+
+### Bug Fixes
+
+-   **api-jwt:** typo on callback api route ([cd60161](https://github.com/kaname-png/neko-plugins/commit/cd6016167cbaabf9c9f2a81a8443b5db52d6e5bf))
+
 # [1.2.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@1.1.2...@kaname-png/plugin-api-jwt@1.2.0) (2022-04-13)
 
 ### Features
