@@ -16,6 +16,8 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-env&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-env)
 
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-api-jwt&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
+
 ---
 
 </div>
@@ -29,6 +31,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 
 1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for @sapphire/framework to send and manage bot stats with statcord.
 2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment variables (configurations) for bots created with @sapphire/framework.
+3. [API-JWT](https://github.com/kaname-png/neko-plugins/tree/main/packages/api-jwt): Plugin that overwrites the authentication strategy of the @sapphire/plugin-api plugin to JWT.
 
 ## 🔥 Features
 
