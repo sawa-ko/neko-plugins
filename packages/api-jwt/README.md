@@ -115,19 +115,17 @@ Remember that the authentication token must be in the `authorization` header wit
 
 ```json
 {
-	"data": {
-		"user": {
-			"id": "858367536240394259",
-			"username": "kaname-png",
-			"avatar": "28f2ec4eec159df460dc9b58f2a80318",
-			"discriminator": "1751",
-			"public_flags": 0,
-			"flags": 0,
-			"banner": null,
-			"banner_color": null,
-			"accent_color": null,
-			"verified": true
-		}
+	"user": {
+		"id": "858367536240394259",
+		"username": "kaname-png",
+		"avatar": "28f2ec4eec159df460dc9b58f2a80318",
+		"discriminator": "1751",
+		"public_flags": 0,
+		"flags": 0,
+		"banner": null,
+		"banner_color": null,
+		"accent_color": null,
+		"verified": true
 	},
 	"token": "eyJhbGciOiJIUzI1NiJ9.XXXXX"
 }

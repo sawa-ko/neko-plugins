@@ -43,7 +43,7 @@ export class PluginRoute extends Route {
 			expires: Date.now() + value.expires_in * 1000
 		});
 
-		return response.json({ data, token });
+		return response.json({ ...data, token });
 	}
 
 	private async fetchAuth(body: OAuth2BodyData) {
