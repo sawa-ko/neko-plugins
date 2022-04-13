@@ -48,8 +48,9 @@ npm install @kaname-png/plugin-api-jwt @sapphire/framework jwt-service @sapphire
 In your main or setup file, register the plugin:
 
 ```javascript
-require('@kaname-png/plugin-api-jwt/register');
+// Remember to register the API plugin first, then this plugin.
 require('@sapphire/plugin-api/register');
+require('@kaname-png/plugin-api-jwt/register');
 ```
 
 Once the plugin is registered, we have to configure some options.
@@ -79,8 +80,9 @@ void main();
 In your main or setup file, register the plugin:
 
 ```typescript
-import '@kaname-png/plugin-api-jwt/register';
+// Remember to register the API plugin first, then this plugin.
 import '@sapphire/plugin-api/register';
+import '@kaname-png/plugin-api-jwt/register';
 ```
 
 Once the plugin is registered, we have to configure some options.
