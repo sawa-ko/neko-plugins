@@ -10,8 +10,8 @@ import './index';
  */
 export class APIJWTPlugin extends Plugin {
 	public static [preGenericsInitialization](this: SapphireClient): void {
-		if (this.options.api?.auth?.strategy !== 'jwt' || !this.server) return;
-		container.jwt = new ClientAuthJWT(this.options.api.auth);
+		if (this.options.api?.auth?.strategy !== 'jwt') return;
+		container.jwt = new ClientAuthJWT(this.options.api.auth.jwt);
 	}
 
 	public static [postInitialization](this: SapphireClient): void {

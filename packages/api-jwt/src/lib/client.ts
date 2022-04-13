@@ -1,4 +1,4 @@
-import type { AuthData, LoginData, ServerOptionsAuth } from '@sapphire/plugin-api';
+import type { AuthData, LoginData } from '@sapphire/plugin-api';
 import { isThenable } from '@sapphire/utilities';
 import {
 	RESTGetAPICurrentUserConnectionsResult,
@@ -21,8 +21,8 @@ export class ClientAuthJWT {
 
 	public jwt!: JWTService<Record<string, unknown>>;
 
-	public constructor(options: ServerOptionsAuth) {
-		this.jwtOptions = options.jwt ?? {
+	public constructor(options?: Omit<JWT_CONFIG<'PLUGIN_API_JWT_SECRET'>, 'secretEnvName'>) {
+		this.jwtOptions = options ?? {
 			duration: '15d',
 			tolerance: '2h',
 			algorithms: ['HS256']
@@ -36,7 +36,7 @@ export class ClientAuthJWT {
 	 * @since 1.0.0
 	 */
 	public get secret() {
-		return container.server.auth?.secret;
+		return container.server?.auth?.secret;
 	}
 
 	/**
@@ -44,7 +44,7 @@ export class ClientAuthJWT {
 	 * @since 1.0.0
 	 * @param payload An object to encrypt
 	 */
-	public async encrypt(payload: Omit<AuthData, 'token_metadata'>): Promise<string> {
+	public async encrypt(payload: Omit<AuthData, 'jwt_token_metadata'>): Promise<string> {
 		const jwt = await this.jwt.sign({ data: payload });
 		return jwt.token;
 	}
@@ -58,8 +58,8 @@ export class ClientAuthJWT {
 		const payload = (await this.jwt.verify(token).catch(() => null)) as unknown as TokenPayload | null;
 		if (!payload) return null;
 		return {
-			...payload.payload,
-			token_metadata: {
+			...payload.data,
+			jwt_token_metadata: {
 				exp: payload.exp,
 				iat: payload.iat,
 				nbf: payload.nbf
@@ -82,7 +82,7 @@ export class ClientAuthJWT {
 
 		// Transform the information:
 		let data: LoginData = { user, guilds, connections };
-		for (const transformer of container.server.auth!.transformers) {
+		for (const transformer of container.server?.auth!.transformers) {
 			const result = transformer(data);
 			if (isThenable(result)) data = await result;
 			else data = result as LoginData;
@@ -92,7 +92,7 @@ export class ClientAuthJWT {
 	}
 
 	private async fetchInformation<T>(scope: string, token: string, url: string): Promise<T | null | undefined> {
-		if (!container.server.auth!.scopes.includes(scope)) return undefined;
+		if (!container.server?.auth!.scopes.includes(scope)) return undefined;
 
 		const result = await fetch(url, {
 			headers: {
@@ -105,7 +105,7 @@ export class ClientAuthJWT {
 
 	private async init() {
 		this.jwt = await initJWTService({
-			ENV: { PLUGIN_API_JWT_SECRET: container.server.auth?.secret ?? 'This is not good.' },
+			ENV: { PLUGIN_API_JWT_SECRET: container.server?.auth?.secret ?? 'This is not good.' },
 			JWT: { ...this.jwtOptions, secretEnvName: 'PLUGIN_API_JWT_SECRET' }
 		});
 	}
@@ -119,7 +119,7 @@ export interface TokenPayload {
 	/**
 	 * User ID and Discord OAuth token data.
 	 */
-	payload: AuthData;
+	data: Omit<AuthData, 'jwt_token_metadata'>;
 
 	/**
 	 * Identifies the time at which the JWT token was issued.

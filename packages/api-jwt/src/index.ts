@@ -25,7 +25,7 @@ declare module '@sapphire/plugin-api' {
 	}
 
 	interface AuthData {
-		token_metadata: Omit<TokenPayload, 'payload'>;
+		jwt_token_metadata: Omit<TokenPayload, 'data'>;
 	}
 }
 
