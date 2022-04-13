@@ -23,7 +23,7 @@
 		"./register.js",
 		"./register.mjs"
 	],
-	"homepage": "https://github.com/kaname-png/neko-plugins/tree/main/packages/env",
+	"homepage": "https://github.com/kaname-png/neko-plugins/tree/main/packages/plugin-api-jwt",
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",
 		"build": "tsc -b src && yarn esm:register && yarn esm:default",
@@ -38,7 +38,7 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/kaname-png/neko-plugins.git",
-		"directory": "packages/env"
+		"directory": "packages/plugin-api-jwt"
 	},
 	"files": [
 		"dist",

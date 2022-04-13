@@ -2,6 +2,8 @@ import type { JWT_CONFIG } from 'jwt-service';
 import type { ClientAuthJWT } from './lib/client';
 
 export { PluginMiddleware as AuthMiddleware } from './lib/middlewares/auth';
+export { ClientAuthJWT as AuthClient } from './lib/client';
+export { PluginRoute as AuthRoute } from './lib/routes/callback';
 
 declare module '@sapphire/plugin-api' {
 	interface ServerOptionsAuth {
