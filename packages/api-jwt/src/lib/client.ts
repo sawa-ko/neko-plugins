@@ -18,8 +18,8 @@ import { container } from '@sapphire/framework';
  */
 export class ClientAuthJWT {
 	public jwtOptions: Omit<JWT_CONFIG<'PLUGIN_API_JWT_SECRET'>, 'secretEnvName'>;
-
 	public jwt!: JWTService<Record<string, unknown>>;
+	#jwtSessions: string[] = [];
 
 	public constructor(options?: Omit<JWT_CONFIG<'PLUGIN_API_JWT_SECRET'>, 'secretEnvName'>) {
 		this.jwtOptions = options ?? {
@@ -29,6 +29,33 @@ export class ClientAuthJWT {
 		};
 
 		void this.init();
+	}
+
+	/**
+	 * Closes the current JWT session delivered to the user at login.
+	 * @param token Token that the user is using.
+	 * @since 1.2.1
+	 */
+	public closeSession(token: string) {
+		this.#jwtSessions = this.#jwtSessions.filter((t) => t !== token);
+	}
+
+	/**
+	 * Save the user's token as a session so that when the user logs off the token is invalidated.
+	 * @param token Token that the user is using.
+	 * @since 1.2.1
+	 */
+	public saveSession(token: string) {
+		this.#jwtSessions.push(token);
+	}
+
+	/**
+	 * Validate that the user's token still has an active session.
+	 * @param token Token that the user is using.
+	 * @since 1.2.1
+	 */
+	public verifySession(token: string) {
+		return this.#jwtSessions.some((t) => t === token);
 	}
 
 	/**
@@ -44,13 +71,14 @@ export class ClientAuthJWT {
 	 * @since 1.0.0
 	 * @param payload An object to encrypt
 	 */
-	public async encrypt(payload: Omit<AuthData, 'jwt_token_metadata'>): Promise<string> {
-		const jwt = await this.jwt.sign({ data: payload });
-		return jwt.token;
+	public async encrypt(payload: Omit<AuthData, 'jwt'>): Promise<string> {
+		const { token } = await this.jwt.sign({ data: payload });
+		this.#jwtSessions.push(token);
+		return token;
 	}
 
 	/**
-	 * Decrypts an object with [ Your configured algorithms of by default HS256 ] to use as a token.
+	 * Decrypts an object with [ Your configured algorithms or by default HS256 ] to use as a token.
 	 * @since 1.0.0
 	 * @param token An data to decrypt
 	 */
@@ -59,7 +87,7 @@ export class ClientAuthJWT {
 		if (!payload) return null;
 		return {
 			...payload.data,
-			jwt_token_metadata: {
+			jwt: {
 				exp: payload.exp,
 				iat: payload.iat,
 				nbf: payload.nbf

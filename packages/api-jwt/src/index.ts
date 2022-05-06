@@ -3,7 +3,7 @@ import type { ClientAuthJWT, TokenPayload } from './lib/client';
 
 export { PluginMiddleware as AuthMiddleware } from './lib/middlewares/auth';
 export { ClientAuthJWT as AuthClient } from './lib/client';
-export { PluginRoute as AuthRoute } from './lib/routes/callback';
+export { PluginRoute as AuthRoute } from './lib/routes/oauth/callback';
 
 declare module '@sapphire/plugin-api' {
 	interface ServerOptionsAuth {
@@ -25,7 +25,7 @@ declare module '@sapphire/plugin-api' {
 	}
 
 	interface AuthData {
-		jwt_token_metadata: Omit<TokenPayload, 'data'>;
+		jwt: Omit<TokenPayload, 'data'>;
 	}
 }
 

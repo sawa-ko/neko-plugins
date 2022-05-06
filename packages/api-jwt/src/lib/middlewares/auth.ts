@@ -13,7 +13,7 @@ export class PluginMiddleware extends Middleware {
 	}
 
 	public async run(request: ApiRequest) {
-		// If there are no cookies, set auth as null:
+		// If there are no jwt token, set auth as null:
 		const { authorization } = request.headers;
 		if (!authorization) {
 			request.auth = null;
@@ -25,7 +25,13 @@ export class PluginMiddleware extends Middleware {
 			return;
 		}
 
+		const token = authorization.slice('Bearer '.length);
+		if (!this.container.jwt.verifySession(token)) {
+			request.auth = null;
+			return;
+		}
+
 		// Decrypt the token
-		request.auth = await this.container.jwt.decrypt(authorization.slice('Bearer '.length));
+		request.auth = await this.container.jwt.decrypt(token);
 	}
 }
