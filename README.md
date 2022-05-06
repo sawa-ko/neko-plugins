@@ -29,9 +29,14 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 
 ## 📑 Plugins
 
-1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for @sapphire/framework to send and manage bot stats with statcord.
-2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment variables (configurations) for bots created with @sapphire/framework.
-3. [API-JWT](https://github.com/kaname-png/neko-plugins/tree/main/packages/api-jwt): Plugin that overwrites the authentication strategy of the @sapphire/plugin-api plugin to JWT.
+1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for
+   [`@sapphire/framework`](https://github.com/sapphiredev/framework) to send and manage bot statistics on
+   [statcord](https://statcord.com).
+2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment
+   variables for use with any [`@sapphire/framework`](https://github.com/sapphiredev/framework) bot project.
+3. [API-JWT](https://github.com/kaname-png/neko-plugins/tree/main/packages/api-jwt): Plugin for
+   [`@sapphire/framework`](https://github.com/sapphiredev/framework) to use [JSON Web Tokens](https://jwt.io) instead of
+   [HttpOnly Secure Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) in the plugin [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api).
 
 ## 🔥 Features
 

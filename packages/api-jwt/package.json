@@ -1,7 +1,7 @@
 {
 	"name": "@kaname-png/plugin-api-jwt",
 	"version": "1.2.1",
-	"description": "Plugin that overwrites the authentication strategy of the @sapphire/plugin-api plugin to JWT.",
+	"description": "Plugin for @sapphire/framework to use JSON Web Tokens instead of HttpOnly Secure Cookies in @sapphire/plugin-api plugin.",
 	"author": "@kaname-png",
 	"license": "MIT",
 	"main": "dist/index.js",
@@ -57,7 +57,8 @@
 		"ts",
 		"yarn",
 		"discord",
-		"sapphire"
+		"sapphire",
+		"jwt"
 	],
 	"bugs": {
 		"url": "https://github.com/kaname-png/neko-plugins/issues"

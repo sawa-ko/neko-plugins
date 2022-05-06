@@ -1,7 +1,7 @@
 {
 	"name": "@kaname-png/plugin-statcord",
 	"version": "1.3.3",
-	"description": "Plugin for @sapphire/framework to send and manage bot stats with statcord.",
+	"description": "Plugin @sapphire/framework to send and manage bot statistics on statcord.",
 	"author": "@kaname-png",
 	"license": "MIT",
 	"main": "dist/index.js",
@@ -59,7 +59,8 @@
 		"ts",
 		"yarn",
 		"discord",
-		"sapphire"
+		"sapphire",
+		"statcord"
 	],
 	"bugs": {
 		"url": "https://github.com/kaname-png/neko-plugins/issues"
