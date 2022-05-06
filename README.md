@@ -32,7 +32,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 1. [Statcord](https://github.com/kaname-png/neko-plugins/tree/main/packages/statcord): Plugin for
    [`@sapphire/framework`](https://github.com/sapphiredev/framework) to send and manage bot statistics on
    [statcord](https://statcord.com).
-2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Manage environment
+2. [Env](https://github.com/kaname-png/neko-plugins/tree/main/packages/env): Plugin for @sapphire/framework to manage environment
    variables for use with any [`@sapphire/framework`](https://github.com/sapphiredev/framework) bot project.
 3. [API-JWT](https://github.com/kaname-png/neko-plugins/tree/main/packages/api-jwt): Plugin for
    [`@sapphire/framework`](https://github.com/sapphiredev/framework) to use [JSON Web Tokens](https://jwt.io) instead of
