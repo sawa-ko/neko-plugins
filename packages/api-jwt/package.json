@@ -70,6 +70,6 @@
 		"@sapphire/plugin-api": "^3.2.1",
 		"@sapphire/utilities": "^3.6.2",
 		"discord-api-types": "^0.33.0",
-		"jwt-service": "^8.0.0"
+		"jwt-service": "^8.0.1"
 	}
 }
