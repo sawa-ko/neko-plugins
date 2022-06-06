@@ -37,7 +37,7 @@ export class Statcord extends EventEmitter {
 				{
 					method: FetchMethods.Post,
 					headers: this.defaultHeader,
-					body: JSON.stringify({
+					body: {
 						id: this.options?.client_id ?? container.client.user?.id,
 						key: this.options?.key,
 						servers: await this.computeTotalGuilds(),
@@ -49,7 +49,7 @@ export class Statcord extends EventEmitter {
 						memload: Math.round((process.memoryUsage().heapUsed / totalmem()) * 100).toString(),
 						cpuload: Math.round((await currentLoad()).currentLoad).toString(),
 						bandwidth: this.bandwidthUsage
-					})
+					}
 				},
 				FetchResultTypes.JSON
 			);
