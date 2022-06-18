@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.3.5...@kaname-png/plugin-statcord@2.0.0) (2022-06-18)
+
+### chore
+
+-   update deps ([78be113](https://github.com/kaname-png/neko-plugins/commit/78be1135152887ad62ec18a89b477ed81f093d78))
+
+### BREAKING CHANGES
+
+-   Enabled typescript strict mode
+
 ## [1.3.5](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@1.3.4...@kaname-png/plugin-statcord@1.3.5) (2022-06-06)
 
 **Note:** Version bump only for package @kaname-png/plugin-statcord
