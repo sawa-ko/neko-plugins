@@ -1240,7 +1240,7 @@ __metadata:
   dependencies:
     "@sapphire/plugin-api": ^3.2.1
     "@sapphire/utilities": ^3.6.2
-    discord-api-types: ^0.33.5
+    discord-api-types: ^0.34.0
     jwt-service: ^8.0.1
     tslib: ^2.4.0
   languageName: unknown
@@ -4502,10 +4502,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.33.5":
-  version: 0.33.5
-  resolution: "discord-api-types@npm:0.33.5"
-  checksum: 6dcaad640c5693a69c9a4f5e444e739dde11ba835164ae6fd3dd5a1ab7b4d7f96cd022ed653eeaff2c8051ead0d998a5d502a2915cfacdde596364b82d9e3b3f
+"discord-api-types@npm:^0.34.0":
+  version: 0.34.0
+  resolution: "discord-api-types@npm:0.34.0"
+  checksum: 16ef4a7e82c442808447d2062adb907c050f1c0b10b0dd7ffd459b5cbc2ae8e5ba46d17c645e401500a0263ee661c651d29ab5b41bd2af15a72281d03cba90dc
   languageName: node
   linkType: hard
 
