@@ -78,7 +78,7 @@ import { Subcommand } from '@kaname-png/plugin-subcommands-advanced';
 import { ApplicationCommandRegistry } from '@sapphire/framework';
 
 export class ParentCommand extends Subcommand {
- 	public constructor(context: Command.Context, options: Command.Options) {
+ 	public constructor(context: Submmand.Context, options: Subcommand.Options) {
  		super(context, {
  			...options,
  			name: 'utils',
