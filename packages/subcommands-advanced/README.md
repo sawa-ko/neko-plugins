@@ -327,7 +327,7 @@ That's it, the plugin will take care of configuring everything so that when the 
 
 ## Note
 
-This plugin is not official `@sapphire/framework`, so if you need additional help ping me in discord with my tag `@kaname-png` on the [@sapphire/framework discord server](https://discord.gg/sapphiredev).
+This plugin is not official from `@sapphire/framework`, so if you need additional help ping me in discord with my tag `@kaname-png` on the [@sapphire/framework discord server](https://discord.gg/sapphiredev).
 
 ## Contributors ✨
 

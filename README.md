@@ -18,6 +18,8 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-api-jwt&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
 
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-subcommands-advanced&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
+
 ---
 
 </div>
@@ -37,6 +39,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 3. [API-JWT](https://github.com/kaname-png/neko-plugins/tree/main/packages/api-jwt): Plugin for
    [`@sapphire/framework`](https://github.com/sapphiredev/framework) to use [JSON Web Tokens](https://jwt.io) instead of
    [HttpOnly Secure Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) in the plugin [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api).
+4. [Subcommands advanced](https://github.com/kaname-png/neko-plugins/tree/main/packages/subcommands-advanced): Plugin for [`@sapphire/framework`](https://github.com/sapphiredev/framework) to be able to create subcommands based on command classes.
 
 ## 🔥 Features
 
