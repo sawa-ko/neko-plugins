@@ -7,7 +7,7 @@ import { analizeSubcommandGroupParsed, analizeSubCommandParsed } from './functio
 
 export const RegisterSubCommand = (
 	parentCommandName: string,
-	subcommand:
+	slashSubcommand:
 		| SlashCommandSubcommandBuilder
 		| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder)
 ) => {
@@ -15,7 +15,7 @@ export const RegisterSubCommand = (
 		createProxy(target, {
 			construct: (ctor, [context, baseOptions]: [Piece.Context, Piece.Options]) => {
 				const ctr = new ctor(context, baseOptions) as unknown as Command;
-				return analizeSubCommandParsed(ctr, parentCommandName, subcommand);
+				return analizeSubCommandParsed(ctr, parentCommandName, slashSubcommand);
 			}
 		})
 	);
@@ -24,7 +24,7 @@ export const RegisterSubCommand = (
 export const RegisterSubCommandGroup = (
 	parentCommandName: string,
 	groupName: string,
-	subcommand:
+	slashSubcommand:
 		| SlashCommandSubcommandBuilder
 		| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder)
 ) => {
@@ -32,7 +32,7 @@ export const RegisterSubCommandGroup = (
 		createProxy(target, {
 			construct: (ctor, [context, baseOptions]: [Piece.Context, Piece.Options]) => {
 				const ctr = new ctor(context, baseOptions) as unknown as Command;
-				return analizeSubcommandGroupParsed(ctr, parentCommandName, groupName, subcommand);
+				return analizeSubcommandGroupParsed(ctr, parentCommandName, groupName, slashSubcommand);
 			}
 		})
 	);

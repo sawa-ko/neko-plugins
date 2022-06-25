@@ -102,7 +102,9 @@ export const analizeSubCommandParsed = (
 
 		if (subcommand) {
 			if (piece.chatInputRun) subcommand.chatInputRun = (i, c) => piece.chatInputRun!(i, c);
-			if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
+
+			// TODO: Coming soon full support for Message Commands.
+			// if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
 		}
 	}
 
@@ -198,7 +200,9 @@ export const analizeSubcommandGroupParsed = (
 
 		if (subcommand) {
 			if (piece.chatInputRun) subcommand.chatInputRun = (i, c) => piece.chatInputRun!(i, c);
-			if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
+
+			// TODO: Coming soon full support for Message Commands.
+			// if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
 		}
 	}
 

@@ -153,6 +153,7 @@ To register commands as subcommands of the parent command it is necessary to use
 
 ```typescript
 import { Command } from '@kaname-png/plugin-subcommands-advanced';
+import type { Message } from 'discord.js';
 
 export class PingCommand extends Command {
 	public constructor(context: Command.Context, options: Command.Options) {
@@ -161,13 +162,19 @@ export class PingCommand extends Command {
 			preconditions: [], // The preconditions set here affect only the subcommand where it was established.
 			registerSubCommand: {
 				parentCommandName: 'utils', // Name of the parent command (parent.js).
-				subcommand: (builder) => builder.setName('ping').setDescription('Hi!') // Builder that will be embedded in the registry of the parent command.
+				slashSubcommand: (builder) => builder.setName('ping').setDescription('Hi!') // Builder that will be embedded in the parent command registry to register the slash subcommand.
 			}
 		});
 	}
 
+	// It is only necessary if the `slashSubcommand` option of the `registerSubCommand` command options is used.
 	public override chatInputRun(interaction: Command.ChatInputInteraction) {
 		return interaction.reply('uwu');
+	}
+
+	// Optional if you want the subcommand to work for slash commands and message commands.
+	public override messageRun(message: Message) {
+		return message.reply('uwu');
 	}
 }
 ```
@@ -175,23 +182,29 @@ export class PingCommand extends Command {
 ### With JavaScript
 
 ```javascript
-import { Command } from '@kaname-png/plugin-subcommands-advanced'
+import { Command } from '@kaname-png/plugin-subcommands-advanced';
 
 export class PingCommand extends Command {
-		constructor(context, options) {
-			super(context, {
-				...options,
-				preconditions: [], // The preconditions set here affect only the subcommand where it was established.
-				registerSubCommand: {
-					parentCommandName: 'utils', // Name of the parent command (parent.js).
-					subcommand: (builder) => builder.setName('ping').setDescription('Hi!') // Builder that will be embedded in the registry of the parent command.
-				}
-			});
-		}
+	constructor(context, options) {
+		super(context, {
+			...options,
+			preconditions: [], // The preconditions set here affect only the subcommand where it was established.
+			registerSubCommand: {
+				parentCommandName: 'utils', // Name of the parent command (parent.js).
+				slashSubcommand: (builder) => builder.setName('ping').setDescription('Hi!') // Builder that will be embedded in the parent command registry to register the slash subcommand.
+			}
+		});
+	}
 
-		chatInputRun(interaction) {
-			return interaction.reply('uwu');
-		}
+	// It is only necessary if the `slashSubcommand` option of the `registerSubCommand` command options is used.
+	chatInputRun(interaction) {
+		return interaction.reply('uwu');
+	}
+
+	// Optional if you want the subcommand to work for slash commands and message commands.
+	messageRun(message) {
+		return message.reply('uwu');
+	}
 }
 ```
 
@@ -212,13 +225,19 @@ export class PollCreateCommand extends Command {
 			registerSubcommmandInGroup: {
 				parentCommandName: 'utils', // Name of the parent command (parent.js).
 				groupName: 'poll', // Name of the group that was registered in the builder context of the parent command.
-				subcommand: (builder) => builder.setName('create').setDescription('Create a poll!') // Builder that will be embedded in the registry of the parent command.
+				slashSubcommand: (builder) => builder.setName('create').setDescription('Create a poll!') // Builder that will be embedded in the parent command registry to register the slash subcommand.
 			}
 		});
 	}
 
+	// It is only necessary if the `slashSubcommand` option of the `registerSubcommmandInGroup` command options is used.
 	public override chatInputRun(interaction: Command.ChatInputInteraction) {
 		return interaction.reply('uwu');
+	}
+
+	// Optional if you want the subcommand to work for slash commands and message commands.
+	public override messageRun(message: Message) {
+		return message.reply('uwu');
 	}
 }
 ```
@@ -236,13 +255,19 @@ export class PollCreateCommand extends Command {
 			registerSubcommmandInGroup: {
 				parentCommandName: 'utils', // Name of the parent command (parent.js).
 				groupName: 'poll', // Name of the group that was registered in the builder context of the parent command.
-				subcommand: (builder) => builder.setName('create').setDescription('Create a poll!') // Builder that will be embedded in the registry of the parent command.
+				slashSubcommand: (builder) => builder.setName('create').setDescription('Create a poll!') // Builder that will be embedded in the parent command registry to register the slash subcommand.
 			}
 		});
 	}
 
+	// It is only necessary if the `slashSubcommand` option of the `registerSubcommmandInGroup` command options is used.
 	chatInputRun(interaction) {
 		return interaction.reply('uwu');
+	}
+
+	// Optional if you want the subcommand to work for slash commands and message commands.
+	messageRun(message) {
+		return message.reply('uwu');
 	}
 }
 ```
@@ -259,8 +284,14 @@ import { Command } from '@kaname-png/plugin-subcommands-advanced';
 
 @RegisterSubCommand('utils', (builder) => builder.setName('ping').setDescription('Hi!'))
 export class PingCommand extends Command {
+	// It is only necessary if the `slashSubcommand` option of the `registerSubCommand` command options is used.
 	public override chatInputRun(interaction: Command.ChatInputInteraction) {
 		return interaction.reply('uwu');
+	}
+
+	// Optional if you want the subcommand to work for slash commands and message commands.
+	public override messageRun(message: Message) {
+		return message.reply('uwu');
 	}
 }
 ```
@@ -273,8 +304,14 @@ import { Command } from '@kaname-png/plugin-subcommands-advanced';
 
 @RegisterSubCommandGroup('utils', 'poll', (builder) => builder.setName('create').setDescription('Create a poll'))
 export class PingCommand extends Command {
+	// It is only necessary if the `slashSubcommand` option of the `registerSubcommmandInGroup` command options is used.
 	public override chatInputRun(interaction: Command.ChatInputInteraction) {
 		return interaction.reply('uwu');
+	}
+
+	// Optional if you want the subcommand to work for slash commands and message commands.
+	public override messageRun(message: Message) {
+		return message.reply('uwu');
 	}
 }
 ```

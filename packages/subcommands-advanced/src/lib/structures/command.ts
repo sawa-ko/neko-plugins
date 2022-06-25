@@ -198,13 +198,13 @@ export class Command<PreParseReturn extends Args = Args, O extends CommandOption
 		super(context, options);
 
 		if (this.options.registerSubCommand) {
-			const { parentCommandName, subcommand } = this.options.registerSubCommand;
-			analizeSubCommandParsed(this, parentCommandName, subcommand);
+			const { parentCommandName, slashSubcommand } = this.options.registerSubCommand;
+			analizeSubCommandParsed(this, parentCommandName, slashSubcommand);
 		}
 
 		if (this.options.registerSubcommmandInGroup) {
-			const { parentCommandName, groupName, subcommand } = this.options.registerSubcommmandInGroup;
-			analizeSubcommandGroupParsed(this, parentCommandName, groupName, subcommand);
+			const { parentCommandName, groupName, slashSubcommand } = this.options.registerSubcommmandInGroup;
+			analizeSubcommandGroupParsed(this, parentCommandName, groupName, slashSubcommand);
 		}
 	}
 }

@@ -25,11 +25,11 @@ export const RegisterSubcommandsHooks = {
 			return;
 		}
 
-		for (const { slashCommand: command, commandPiece } of subcommands.values()) {
-			context.options.push(command);
+		for (const { slashCommand, commandPiece } of subcommands.values()) {
+			context.options.push(slashCommand);
 
 			const subcommand: SubcommandMapping = {
-				name: command.name,
+				name: slashCommand.name,
 				type: 'method',
 				chatInputRun: commandPiece.chatInputRun
 					? async (i, c) => {
@@ -127,7 +127,7 @@ export const RegisterSubcommandsHooks = {
 				const data = option.toJSON();
 				if (data.name === name && data.type === ApplicationCommandOptionType.SubcommandGroup) {
 					(option as unknown as { options: SlashCommandSubcommandBuilder[] }).options?.push(
-						...[...commands.values()].map(({ slashCommand: command }) => command)
+						...[...commands.values()].map(({ slashCommand }) => slashCommand)
 					);
 				}
 			}
