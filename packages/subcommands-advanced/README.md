@@ -86,7 +86,7 @@ export class ParentCommand extends Subcommand {
  		});
  	}
 
- 	public override registerApplicationCommands(interaction: ApplicationCommandRegistry) {
+ 	public override registerApplicationCommands(registry: ApplicationCommandRegistry) {
  		registry.registerChatInputCommand(
 			(ctx) => {
 				// If you want to link commands in groups of subcommands you first need to register them in the builder context of the parent command.
@@ -126,7 +126,7 @@ export class ParentCommand extends Subcommand {
  		});
  	}
 
- 	registerApplicationCommands(interaction) {
+ 	registerApplicationCommands(registry) {
  		registry.registerChatInputCommand(
 			(ctx) => {
 				// If you want to link commands in groups of subcommands you first need to register them in the builder context of the parent command.
