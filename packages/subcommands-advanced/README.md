@@ -17,7 +17,7 @@
 
 This plugin allows you to manage the subcommands of a parent command based on the classes of the commands in a simple way.
 
-Currently the problem with the original subcommand plugin is that you have to put all the methods of the subcommands in the same class as the parent command, which can be a problem if the parent command has many subcommands.
+Currently the problem with the original subcommand plugin is that you have to put all the methods of the subcommands in the same class of the parent command, which can be a problem if the parent command has many subcommands or subcommand groups.
 
 This plugin allows you to modularize the subcommands of a parent command into several command classes and also allows you to use different preconditions on each subcommand.
 
