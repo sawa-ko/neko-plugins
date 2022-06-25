@@ -44,8 +44,9 @@ export const RegisterSubcommandsHooks = {
 
 							return commandPiece.chatInputRun!(i, c);
 					  }
-					: undefined,
-				messageRun: commandPiece.chatInputRun
+					: undefined
+				// Support for message commands coming soon
+				/* 				messageRun: commandPiece.chatInputRun
 					? async (m, a, c) => {
 							const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
 							const result = await preconditions.messageRun(m, piece, c);
@@ -58,7 +59,7 @@ export const RegisterSubcommandsHooks = {
 
 							return commandPiece.messageRun!(m, a, c);
 					  }
-					: undefined
+					: undefined */
 			};
 
 			piece.parsedSubcommandMappings.push(subcommand);
@@ -96,8 +97,9 @@ export const RegisterSubcommandsHooks = {
 
 								return commandPiece.chatInputRun!(i, c);
 						  }
-						: undefined,
-					messageRun: commandPiece.chatInputRun
+						: undefined
+					// Support for message commands coming soon
+					/* 					messageRun: commandPiece.chatInputRun
 						? async (m, a, c) => {
 								const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
 								const result = await preconditions.messageRun(m, piece, c);
@@ -110,7 +112,7 @@ export const RegisterSubcommandsHooks = {
 
 								return commandPiece.messageRun!(m, a, c);
 						  }
-						: undefined
+						: undefined */
 				};
 
 				if (groupMapping) groupMapping.entries.push(subcommand);
