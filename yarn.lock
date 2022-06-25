@@ -1265,6 +1265,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced":
+  version: 0.0.0-use.local
+  resolution: "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced"
+  dependencies:
+    "@sapphire/decorators": ^4.3.6
+    "@sapphire/plugin-subcommands": pr-271
+    tslib: ^2.4.0
+  languageName: unknown
+  linkType: soft
+
 "@lerna/add@npm:5.1.4":
   version: 5.1.4
   resolution: "@lerna/add@npm:5.1.4"
@@ -2426,6 +2436,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/decorators@npm:^4.3.6":
+  version: 4.3.6
+  resolution: "@sapphire/decorators@npm:4.3.6"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: 4a9b273e1dc2a86895df07c7ef169db293b15f331ecda10a9c15f96c2f50be94adb2896564944eacb0a99128fbe30c2e126128518b788df2c49bcc8e95617388
+  languageName: node
+  linkType: hard
+
 "@sapphire/discord-utilities@npm:^2.11.2":
   version: 2.11.2
   resolution: "@sapphire/discord-utilities@npm:2.11.2"
@@ -2433,7 +2452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord.js-utilities@npm:^4.11.2":
+"@sapphire/discord.js-utilities@npm:^4.11.3":
   version: 4.11.3
   resolution: "@sapphire/discord.js-utilities@npm:4.11.3"
   dependencies:
@@ -2478,19 +2497,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "@sapphire/framework@npm:2.5.1"
+"@sapphire/framework@npm:next":
+  version: 3.0.0-next.e669f2b.0
+  resolution: "@sapphire/framework@npm:3.0.0-next.e669f2b.0"
   dependencies:
     "@discordjs/builders": ^0.15.0
     "@sapphire/discord-utilities": ^2.11.2
-    "@sapphire/discord.js-utilities": ^4.11.2
+    "@sapphire/discord.js-utilities": ^4.11.3
     "@sapphire/pieces": ^3.3.4
     "@sapphire/ratelimits": ^2.4.4
+    "@sapphire/result": ^1.1.1
+    "@sapphire/stopwatch": ^1.4.1
     "@sapphire/utilities": ^3.6.2
     lexure: ^0.17.0
     tslib: ^2.4.0
-  checksum: 3ee022433eaae8922093feee782d788ce9751836011b685881635090cf72770a9fc0b5b32e9750e1b1901bb987a54ee96c3e71734d91833c2bfcfcaa57416470
+  checksum: b78b00977f4e640a06f6578ba9db1add0d5969d73585729aab32c3f0803658cf26d56ebc034a43a33c0583a2b620a3a7c49f3d6a99cb3a3a69226e4a30e07122
   languageName: node
   linkType: hard
 
@@ -2519,6 +2540,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/plugin-subcommands@npm:pr-271":
+  version: 3.0.0-pr-271.8a04ac90.0
+  resolution: "@sapphire/plugin-subcommands@npm:3.0.0-pr-271.8a04ac90.0"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: 92d36a31c22a506f4951ecbc5c24173bcab2ead97fb9669f17b3e38bd62eb7aa724ca7830465f8e7e9b7e8183af6a6ce900ddfc5159acd1ee9bc2da65412fb0f
+  languageName: node
+  linkType: hard
+
 "@sapphire/prettier-config@npm:^1.4.3":
   version: 1.4.3
   resolution: "@sapphire/prettier-config@npm:1.4.3"
@@ -2537,10 +2567,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/result@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@sapphire/result@npm:1.1.1"
+  checksum: ccb3fcd051523f439c5f9871a251273e10ffeebcb5d6817c1c7efb24b60d8866fd5a781e0c77fe15a66a2dd5c5831b00258e70c76b6a82bb43bb150e10598767
+  languageName: node
+  linkType: hard
+
 "@sapphire/shapeshift@npm:^3.1.0":
   version: 3.1.0
   resolution: "@sapphire/shapeshift@npm:3.1.0"
   checksum: d28035fe9dd2b59feda24daad4ae5f3ae16bf98312e726df85c79cf071de3447a2a0e81f818471a7abb8d6678423e7e6ece57687d162269624e503e62cae26a4
+  languageName: node
+  linkType: hard
+
+"@sapphire/stopwatch@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "@sapphire/stopwatch@npm:1.4.1"
+  dependencies:
+    tslib: ^2.3.1
+  checksum: 084462d9ca7ace45fd06d61e346a7a3326362d6d598c8721c908acf35772634b68f0224db998f0c59448a17b32b0d163248c6bc76c7f6f2d1db8a4f2ffc9fa68
   languageName: node
   linkType: hard
 
@@ -7723,7 +7769,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.0.2
     "@favware/npm-deprecate": ^1.0.4
     "@sapphire/eslint-config": ^4.3.7
-    "@sapphire/framework": ^2.5.1
+    "@sapphire/framework": next
     "@sapphire/prettier-config": ^1.4.3
     "@sapphire/ts-config": ^3.3.4
     "@types/jest": ^28.1.2

@@ -1,0 +1,65 @@
+{
+	"name": "@kaname-png/plugin-subcommands-advanced",
+	"version": "1.0.0",
+	"description": "Plugin for @sapphire/framework to be able to create subcommands based on command classes.",
+	"author": "@kaname-png",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"typedocMain": "src/index.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"sideEffects": false,
+	"homepage": "https://github.com/kaname-png/neko-plugins/tree/main/packages/subcommands-advanced",
+	"scripts": {
+		"lint": "eslint src --ext ts --fix",
+		"build": "tsc -b src && yarn esm:default",
+		"test": "jest",
+		"esm:default": "gen-esm-wrapper dist/index.js dist/index.mjs",
+		"prepublishOnly": "yarn build"
+	},
+	"dependencies": {
+		"@sapphire/decorators": "^4.3.6",
+		"tslib": "^2.4.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kaname-png/neko-plugins.git",
+		"directory": "packages/subcommands-advanced"
+	},
+	"files": [
+		"dist",
+		"!dist/*.tsbuildinfo",
+		"register.*"
+	],
+	"engines": {
+		"node": ">=16.6.0",
+		"npm": ">=7.0.0"
+	},
+	"keywords": [
+		"sapphiredev",
+		"plugin",
+		"bot",
+		"typescript",
+		"ts",
+		"yarn",
+		"discord",
+		"sapphire",
+		"subcommands"
+	],
+	"bugs": {
+		"url": "https://github.com/kaname-png/neko-plugins/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@sapphire/plugin-subcommands": "pr-271"
+	}
+}
