@@ -16,9 +16,9 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-env&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-env)
 
-[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-api-jwt&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-api-jwt?color=crimson&label=%40kaname-png%2Fplugin-api-jwt&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
 
-[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&label=%40kaname-png%2Fplugin-subcommands-advanced&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-subcommands-advanced?color=crimson&label=%40kaname-png%2Fplugin-subcommands-advanced&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
 
 ---
 
