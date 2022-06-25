@@ -31,7 +31,7 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/kaname-png/neko-plugins.git",
-		"directory": "packages/statcord"
+		"directory": "packages/subcommands-advanced"
 	},
 	"files": [
 		"dist",
@@ -51,7 +51,6 @@
 		"yarn",
 		"discord",
 		"sapphire",
-		"statcord",
 		"subcommands"
 	],
 	"bugs": {

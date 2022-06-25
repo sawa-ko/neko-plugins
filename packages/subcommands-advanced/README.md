@@ -41,13 +41,13 @@ This plugin allows you to modularize the subcommands of a parent command into se
 
 `@kaname-png/plugin-subcommands-advanced` depends on the following packages. Be sure to install these along with this package!
 
--   [`@sapphire/framework@next`](https://www.npmjs.com/package/@sapphire/framework)
+-   [`@sapphire/framework@next`](https://www.npmjs.com/package/@sapphire/framework) (Temporarily)
 -   [`@sapphire/plugin-subcommands@pr-271`](https://github.com/sapphiredev/plugins/pull/271) (Temporarily)
 
 You can use the following command to install this package, or replace `npm install` with your package manager of choice.
 
 ```sh
-npm install @sapphire/framework@next @sapphire/plugin-subcommands@pr-271
+npm install @sapphire/framework@next @sapphire/plugin-subcommands@pr-271 @kaname-png/plugin-subcommands-advanced
 ```
 
 ---
