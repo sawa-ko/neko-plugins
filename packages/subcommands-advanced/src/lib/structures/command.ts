@@ -36,6 +36,7 @@ export namespace Command {
  * To register commands as subcommands of the parent command it is necessary to use the `registerSubCommand` option of the command options.
  *
  * *Parent command*
+ *
  * ```typescript
  * import { SubCommand } from '@kaname-png/plugin-subcommands-advanced';
  * import { ApplicationCommandRegistry } from '@sapphire/framework';
@@ -104,12 +105,14 @@ export namespace Command {
  * 			return interaction.reply('uwu');
  * 		}
  * }
+ * ```
  *
  * **Register a command as a subcommand of a group of subcommands of the parent command**
  *
  * To register commands as group subcommands it is important to first register the groups to be used in the main command.
  *
  * *Parent command*
+ *
  * ```typescript
  * import { SubCommand } from '@kaname-png/plugin-subcommands-advanced';
  * import { ApplicationCommandRegistry } from '@sapphire/framework';
@@ -145,6 +148,7 @@ export namespace Command {
  * ```
  *
  * *With Typescript*
+ *
  * ```typescript
  * import { Command } from '@kaname-png/plugin-subcommands-advanced'
  *
