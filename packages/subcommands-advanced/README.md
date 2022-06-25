@@ -281,7 +281,7 @@ export class PollCreateCommand extends Command {
 
 ## Decorators
 
-The plugin also includes subcommands so that TypeScript users can easily register subcommands.
+The plugin also includes subcommand decorators so that TypeScript users can easily register subcommands.
 
 ### Subcommands
 
