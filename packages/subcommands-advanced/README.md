@@ -89,7 +89,7 @@ export class ParentCommand extends Subcommand {
 						.setDescription('Make awesome polls!')
 				);
 
-				// It is necessary to call this hook and pass the constructor context to register the subcommands stored in the subcommand registry in the subcommand groups of the parent command.
+				// It is necessary to call this hook and pass the builder context to register the subcommands stored in the subcommand registry in the subcommand groups of the parent command.
 				this.hooks.groups(this, ctx);
 
 				// It is necessary to call this hook and pass the builder context to register the subcommands stored in the subcommand register in the parent command.
@@ -111,7 +111,7 @@ export class ParentCommand extends Subcommand {
 import { Subcommand } from '@kaname-png/plugin-subcommands-advanced';
 
 export class ParentCommand extends Subcommand {
- 	public constructor(context, options) {
+ 	constructor(context, options) {
  		super(context, {
  			...options,
  			name: 'utils',
@@ -119,7 +119,7 @@ export class ParentCommand extends Subcommand {
  		});
  	}
 
- 	public override registerApplicationCommands(interaction) {
+ 	registerApplicationCommands(interaction) {
  		registry.registerChatInputCommand(
 			(ctx) => {
 				// If you want to link commands in groups of subcommands you first need to register them in the builder context of the parent command.
@@ -129,7 +129,7 @@ export class ParentCommand extends Subcommand {
 						.setDescription('Make awesome polls!')
 				);
 
-				// It is necessary to call this hook and pass the constructor context to register the subcommands stored in the subcommand registry in the subcommand groups of the parent command.
+				// It is necessary to call this hook and pass the builder context to register the subcommands stored in the subcommand registry in the subcommand groups of the parent command.
 				this.hooks.groups(this, ctx);
 
 				// It is necessary to call this hook and pass the builder context to register the subcommands stored in the subcommand register in the parent command.
@@ -158,7 +158,7 @@ export class PingCommand extends Command {
 	public constructor(context: Command.Context, options: Command.Options) {
 		super(context, {
 			...options,
-			preconditions: [] // The preconditions set here affect only the subcommand where it was established.
+			preconditions: [], // The preconditions set here affect only the subcommand where it was established.
 			registerSubCommand: {
 				parentCommandName: 'utils', // Name of the parent command (parent.js).
 				subcommand: (builder) => builder.setName('ping').setDescription('Hi!') // Builder that will be embedded in the registry of the parent command.
@@ -181,7 +181,7 @@ export class PingCommand extends Command {
 		constructor(context, options) {
 			super(context, {
 				...options,
-				preconditions: [] // The preconditions set here affect only the subcommand where it was established.
+				preconditions: [], // The preconditions set here affect only the subcommand where it was established.
 				registerSubCommand: {
 					parentCommandName: 'utils', // Name of the parent command (parent.js).
 					subcommand: (builder) => builder.setName('ping').setDescription('Hi!') // Builder that will be embedded in the registry of the parent command.
@@ -199,7 +199,7 @@ export class PingCommand extends Command {
 
 To register commands as group subcommands it is important to first register the groups to be used in the main command.
 
-With Typescript
+### With Typescript
 
 ```typescript
 import { Command } from '@kaname-png/plugin-subcommands-advanced';
@@ -208,7 +208,8 @@ export class PollCreateCommand extends Command {
 	public constructor(context: Command.Context, options: Command.Options) {
 		super(context, {
 			...options,
-			registerSubCommand: {
+			preconditions: [], // The preconditions set here affect only the subcommand where it was established.
+			registerSubcommmandInGroup: {
 				parentCommandName: 'utils', // Name of the parent command (parent.js).
 				groupName: 'poll', // Name of the group that was registered in the builder context of the parent command.
 				subcommand: (builder) => builder.setName('create').setDescription('Create a poll!') // Builder that will be embedded in the registry of the parent command.
@@ -222,7 +223,7 @@ export class PollCreateCommand extends Command {
 }
 ```
 
-With JavaScript
+### With JavaScript
 
 ```javascript
 import { Command } from '@kaname-png/plugin-subcommands-advanced';
@@ -231,7 +232,8 @@ export class PollCreateCommand extends Command {
 	constructor(context, options) {
 		super(context, {
 			...options,
-			registerSubCommand: {
+			preconditions: [], // The preconditions set here affect only the subcommand where it was established.
+			registerSubcommmandInGroup: {
 				parentCommandName: 'utils', // Name of the parent command (parent.js).
 				groupName: 'poll', // Name of the group that was registered in the builder context of the parent command.
 				subcommand: (builder) => builder.setName('create').setDescription('Create a poll!') // Builder that will be embedded in the registry of the parent command.
