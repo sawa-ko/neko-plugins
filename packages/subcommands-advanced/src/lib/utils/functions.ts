@@ -68,7 +68,7 @@ export const analizeSubCommandParsed = (
 		);
 
 		container.logger.debug(
-			`[Subcommands] -> The parent command ${parentCommandName} has been registered and the subcommand ${subcommandParsed.name} has been registered.`
+			`[Subcommands] -> The parent command "${parentCommandName}" has been registered and the subcommand "${subcommandParsed.name}" has been registered.`
 		);
 
 		return piece;
@@ -78,7 +78,7 @@ export const analizeSubCommandParsed = (
 	if (!command) {
 		subcommandsRegistry.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 		container.logger.debug(
-			`[Subcommands] -> The subcommand ${subcommandParsed.name} has been registered in the parent command ${parentCommandName}.`
+			`[Subcommands] -> The subcommand "${subcommandParsed.name}" has been registered in the parent command "${parentCommandName}".`
 		);
 
 		return piece;
@@ -88,7 +88,7 @@ export const analizeSubCommandParsed = (
 	subcommandsRegistry.delete(subcommandParsed.name);
 	subcommandsRegistry.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 	container.logger.debug(
-		`[Subcommands] -> The subcommand ${subcommandParsed.name} has been updated in the parent command ${parentCommandName} ${
+		`[Subcommands] -> The subcommand "${subcommandParsed.name}" has been updated in the parent command ${parentCommandName} ${
 			commandsCompare ? 'with new options' : 'without new options'
 		}.`
 	);
@@ -147,7 +147,7 @@ export const analizeSubcommandGroupParsed = (
 		);
 
 		container.logger.debug(
-			`[Subcommands group] -> The parent command ${parentCommandName} has been registered and the group ${groupName} has been created with the registered ${subcommandParsed.name} command.`
+			`[Subcommands group] -> The parent command "${parentCommandName}" has been registered and the group "${groupName}" has been created with the registered "${subcommandParsed.name}" command.`
 		);
 
 		return piece;
@@ -163,7 +163,7 @@ export const analizeSubcommandGroupParsed = (
 			})
 		);
 		container.logger.debug(
-			`[Subcommands group] -> The group ${groupName} has been registered with the command ${subcommandParsed.name} registered in the parent command ${parentCommandName}.`
+			`[Subcommands group] -> The group "${groupName}" has been registered with the command ${subcommandParsed.name} registered in the parent command "${parentCommandName}".`
 		);
 
 		return piece;
@@ -173,7 +173,7 @@ export const analizeSubcommandGroupParsed = (
 	if (!commandGroup) {
 		group.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 		container.logger.debug(
-			`[Subcommands group] -> The command ${subcommandParsed.name} has been registered in the group ${groupName} of the parent command ${parentCommandName}.`
+			`[Subcommands group] -> The command "${subcommandParsed.name}" has been registered in the group "${groupName}" of the parent command "${parentCommandName}".`
 		);
 
 		return piece;
@@ -186,7 +186,7 @@ export const analizeSubcommandGroupParsed = (
 	container.logger.debug(
 		`[Subcommands group] -> The command ${
 			subcommandParsed.name
-		} has been updated in the group ${groupName} of the parent command ${parentCommandName} ${
+		} has been updated in the group "${groupName}" of the parent command "${parentCommandName}" ${
 			commandsGroupCompare ? 'with new options' : 'without new options'
 		}.`
 	);
