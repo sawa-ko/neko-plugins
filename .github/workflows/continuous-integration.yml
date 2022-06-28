@@ -103,7 +103,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Generate Docs
-        run: yarn docs
+        run: yarn docs --emit docs
       - name: Deploy
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # tag=v3
         with:
