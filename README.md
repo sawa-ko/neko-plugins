@@ -61,6 +61,7 @@ All plugins created by the community, for the community, are appreciated.
 <table>
   <tr>
     <td align="center"><a href="https://kaname.netlify.app"><img src="https://avatars.githubusercontent.com/u/56084970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kaname</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Code">💻</a> <a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3Akaname-png" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Documentation">📖</a> <a href="#infra-kaname-png" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-kaname-png" title="Maintenance">🚧</a> <a href="https://github.com/kaname-png/neko-plugins/pulls?q=is%3Apr+reviewed-by%3Akaname-png" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="http://nino.fun"><img src="https://avatars.githubusercontent.com/u/90474850?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sebazz</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3AuSebazz" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=uSebazz" title="Code">💻</a></td>
   </tr>
 </table>
 
