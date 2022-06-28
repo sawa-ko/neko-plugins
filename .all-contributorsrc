@@ -24,6 +24,16 @@
         "maintenance",
         "review"
       ]
+    },
+    {
+      "login": "uSebazz",
+      "name": "Sebazz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90474850?v=4",
+      "profile": "http://nino.fun",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
