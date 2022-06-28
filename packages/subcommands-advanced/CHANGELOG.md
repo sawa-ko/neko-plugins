@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@1.1.0...@kaname-png/plugin-subcommands-advanced@1.2.0) (2022-06-28)
+
+### Bug Fixes
+
+-   **subcommands-advanced:** prefix in logs ([d3f2185](https://github.com/kaname-png/neko-plugins/commit/d3f21854a47f9e959da1b311f30f3acb2b4c96bf))
+-   **subcommands:** readme typos ([00a6771](https://github.com/kaname-png/neko-plugins/commit/00a6771f53f2b8c3042f66267f390f01dae82c0c))
+-   **subcommands:** readme typos [skip ci] ([58243bf](https://github.com/kaname-png/neko-plugins/commit/58243bfdff88ab3da724b3c4289451e3752da237))
+
+### Features
+
+-   **subcommands-advanced:** better logs ([def4f50](https://github.com/kaname-png/neko-plugins/commit/def4f501aaee5fc8dbe7bb00a297ee332e029c86))
+
 # 1.1.0 (2022-06-25)
 
 ### Bug Fixes
