@@ -10,7 +10,7 @@
 		"clean": "rimraf \"packages/**/dist\" \"packages/**/.turbo\"",
 		"lint": "turbo run lint",
 		"format": "prettier --write \"packages/**/{src,tests,scripts}/**/*.{mjs,ts,js}\"",
-		"docs": "typedoc --emit docs",
+		"docs": "typedoc",
 		"test": "turbo run test",
 		"update": "yarn upgrade-interactive",
 		"build": "turbo run build",

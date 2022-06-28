@@ -1,6 +1,6 @@
 {
 	"cleanOutputDir": true,
-	"emit": true,
+	"emit": "docs",
 	"entryPointStrategy": "packages",
 	"entryPoints": ["."],
 	"exclude": ["**/*.js", "**/*.test.ts", "**/dist/**", "**/jest.config.ts", "**/node_modules/**", "packages/**/register*", "packages/**/tests/**"],
