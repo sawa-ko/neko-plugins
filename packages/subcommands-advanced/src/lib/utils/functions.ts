@@ -1,5 +1,5 @@
 import { Command, container } from '@sapphire/framework';
-import type { Subcommand, SubcommandMappingMethod } from '@sapphire/plugin-subcommands';
+import type { Subcommand, SubcommandMappingGroup, SubcommandMappingMethod } from '@sapphire/plugin-subcommands';
 
 import { Collection } from 'discord.js';
 import { SlashCommandSubcommandBuilder } from '@discordjs/builders';
@@ -194,15 +194,18 @@ export const analizeSubcommandGroupParsed = (
 	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand;
 	if (parentCommand && commandsGroupCompare) void parentCommand.reload();
 	else {
-		const subcommand = parentCommand.parsedSubcommandMappings.find(
-			(s) => s.name === subcommandParsed.name && s.type === 'method'
-		) as unknown as SubcommandMappingMethod;
+		const subcommandGroup = parentCommand.parsedSubcommandMappings.find(
+			(s) => s.name === groupName && s.type === 'group'
+		) as unknown as SubcommandMappingGroup;
 
-		if (subcommand) {
-			if (piece.chatInputRun) subcommand.chatInputRun = (i, c) => piece.chatInputRun!(i, c);
+		if (subcommandGroup) {
+			const subcommand = subcommandGroup.entries.find((s) => s.name === subcommandParsed.name && s.type === 'method');
+			if (subcommand) {
+				if (piece.chatInputRun) subcommand.chatInputRun = (i, c) => piece.chatInputRun!(i, c);
 
-			// TODO: Support for message commands coming soon
-			// if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
+				// TODO: Support for message commands coming soon
+				// if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
+			}
 		}
 	}
 
