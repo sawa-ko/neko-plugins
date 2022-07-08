@@ -68,7 +68,7 @@ export const analizeSubCommandParsed = (
 		);
 
 		container.logger.debug(
-			`[Subcommands-Plugin] -> The parent command "${parentCommandName}" has been registered and the subcommand "${subcommandParsed.name}" has been registered.`
+			`[Subcommands-Plugin]:  The parent command "${parentCommandName}" has been registered and the subcommand "${subcommandParsed.name}" has been registered.`
 		);
 
 		return piece;
@@ -78,7 +78,7 @@ export const analizeSubCommandParsed = (
 	if (!command) {
 		subcommandsRegistry.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 		container.logger.debug(
-			`[Subcommands-Plugin] -> The subcommand "${subcommandParsed.name}" has been registered in the parent command "${parentCommandName}".`
+			`[Subcommands-Plugin]:  The subcommand "${subcommandParsed.name}" has been registered in the parent command "${parentCommandName}".`
 		);
 
 		return piece;
@@ -88,14 +88,15 @@ export const analizeSubCommandParsed = (
 	subcommandsRegistry.delete(subcommandParsed.name);
 	subcommandsRegistry.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 	container.logger.debug(
-		`[Subcommands-Plugin] -> The subcommand "${subcommandParsed.name}" has been updated in the parent command ${parentCommandName} ${
+		`[Subcommands-Plugin]:  The subcommand "${subcommandParsed.name}" has been updated in the parent command ${parentCommandName} ${
 			commandsCompare ? 'with new options' : 'without new options'
 		}.`
 	);
 
-	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand;
-	if (parentCommand && commandsCompare) void parentCommand.reload();
-	else {
+	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand | undefined;
+	if (parentCommand) {
+		if (commandsCompare) void parentCommand.reload();
+
 		const subcommand = parentCommand.parsedSubcommandMappings.find(
 			(s) => s.name === subcommandParsed.name && s.type === 'method'
 		) as unknown as SubcommandMappingMethod;
@@ -106,6 +107,10 @@ export const analizeSubCommandParsed = (
 			// TODO: Support for message commands coming soon
 			// if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
 		}
+	} else {
+		container.logger.warn(
+			`[Subcommands-Plugin]: Could not get information from the parent command ${parentCommandName} for the subcommand ${subcommandParsed.name}.`
+		);
 	}
 
 	return piece;
@@ -147,7 +152,7 @@ export const analizeSubcommandGroupParsed = (
 		);
 
 		container.logger.debug(
-			`[Subcommands-Group-Plugin] -> The parent command "${parentCommandName}" has been registered and the group "${groupName}" has been created with the registered "${subcommandParsed.name}" command.`
+			`[Subcommands-Group-Plugin]: The parent command "${parentCommandName}" has been registered and the group "${groupName}" has been created with the registered "${subcommandParsed.name}" command.`
 		);
 
 		return piece;
@@ -163,7 +168,7 @@ export const analizeSubcommandGroupParsed = (
 			})
 		);
 		container.logger.debug(
-			`[Subcommands-Group-Plugin] -> The group "${groupName}" has been registered with the command ${subcommandParsed.name} registered in the parent command "${parentCommandName}".`
+			`[Subcommands-Group-Plugin]: The group "${groupName}" has been registered with the command ${subcommandParsed.name} registered in the parent command "${parentCommandName}".`
 		);
 
 		return piece;
@@ -173,7 +178,7 @@ export const analizeSubcommandGroupParsed = (
 	if (!commandGroup) {
 		group.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 		container.logger.debug(
-			`[Subcommands-Group-Plugin] -> The command "${subcommandParsed.name}" has been registered in the group "${groupName}" of the parent command "${parentCommandName}".`
+			`[Subcommands-Group-Plugin]: The command "${subcommandParsed.name}" has been registered in the group "${groupName}" of the parent command "${parentCommandName}".`
 		);
 
 		return piece;
@@ -184,16 +189,17 @@ export const analizeSubcommandGroupParsed = (
 	group.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 
 	container.logger.debug(
-		`[Subcommands-Group-Plugin] -> The command ${
+		`[Subcommands-Group-Plugin]: The command ${
 			subcommandParsed.name
 		} has been updated in the group "${groupName}" of the parent command "${parentCommandName}" ${
 			commandsGroupCompare ? 'with new options' : 'without new options'
 		}.`
 	);
 
-	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand;
-	if (parentCommand && commandsGroupCompare) void parentCommand.reload();
-	else {
+	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand | undefined;
+	if (parentCommand) {
+		if (commandsGroupCompare) void parentCommand.reload();
+
 		const subcommandGroup = parentCommand.parsedSubcommandMappings.find(
 			(s) => s.name === groupName && s.type === 'group'
 		) as unknown as SubcommandMappingGroup;
@@ -207,6 +213,10 @@ export const analizeSubcommandGroupParsed = (
 				// if (piece.messageRun) subcommand.messageRun = (m, a, c) => piece.messageRun!(m, a, c);
 			}
 		}
+	} else {
+		container.logger.warn(
+			`[Subcommands-Group-Plugin]: Could not get information from the parent command ${parentCommandName} for the subcommand ${subcommandParsed.name} of the subcommand group ${groupName}.`
+		);
 	}
 
 	return piece;
