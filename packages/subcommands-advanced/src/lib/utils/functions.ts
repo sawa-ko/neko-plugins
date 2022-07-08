@@ -95,6 +95,13 @@ export const analizeSubCommandParsed = (
 
 	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand | undefined;
 	if (parentCommand) {
+		if (!parentCommand?.parsedSubcommandMappings) {
+			container.logger.error(
+				`[Subcommands-Plugin]: The parent command ${parentCommandName} possibly does not extend the plugin Subcommand class because the "parsedSubcommandMappings" property was not found in the parent command required for the subcommand ${subcommandParsed.name}.`
+			);
+			return piece;
+		}
+
 		if (commandsCompare) void parentCommand.reload();
 
 		const subcommand = parentCommand.parsedSubcommandMappings.find(
@@ -198,6 +205,13 @@ export const analizeSubcommandGroupParsed = (
 
 	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand | undefined;
 	if (parentCommand) {
+		if (!parentCommand?.parsedSubcommandMappings) {
+			container.logger.error(
+				`[Subcommands-Group-Plugin]: The parent command ${parentCommandName} possibly does not extend the plugin Subcommand class because the "parsedSubcommandMappings" property was not found in the parent command required for the subcommand ${subcommandParsed.name} of the subcommand group ${groupName}.`
+			);
+			return piece;
+		}
+
 		if (commandsGroupCompare) void parentCommand.reload();
 
 		const subcommandGroup = parentCommand.parsedSubcommandMappings.find(
