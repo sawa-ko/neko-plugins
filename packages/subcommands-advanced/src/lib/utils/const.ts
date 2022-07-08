@@ -19,7 +19,7 @@ export const RegisterSubcommandsHooks = {
 		const subcommands = subCommandsRegistry.get(piece.name);
 		if (!subcommands) {
 			container.logger.error(
-				`[Subcommands-Plugin]:  An attempt was made to obtain the subcommands for the parent command ${piece.name} but none were registered with the decorators.`
+				`[Subcommands-Plugin]: An attempt was made to obtain the subcommands for the parent command ${piece.name} but none were registered with the decorators.`
 			);
 
 			return;

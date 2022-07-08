@@ -68,7 +68,7 @@ export const analizeSubCommandParsed = (
 		);
 
 		container.logger.debug(
-			`[Subcommands-Plugin]:  The parent command "${parentCommandName}" has been registered and the subcommand "${subcommandParsed.name}" has been registered.`
+			`[Subcommands-Plugin]: The parent command "${parentCommandName}" has been registered and the subcommand "${subcommandParsed.name}" has been registered.`
 		);
 
 		return piece;
@@ -78,7 +78,7 @@ export const analizeSubCommandParsed = (
 	if (!command) {
 		subcommandsRegistry.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 		container.logger.debug(
-			`[Subcommands-Plugin]:  The subcommand "${subcommandParsed.name}" has been registered in the parent command "${parentCommandName}".`
+			`[Subcommands-Plugin]: The subcommand "${subcommandParsed.name}" has been registered in the parent command "${parentCommandName}".`
 		);
 
 		return piece;
@@ -88,7 +88,7 @@ export const analizeSubCommandParsed = (
 	subcommandsRegistry.delete(subcommandParsed.name);
 	subcommandsRegistry.set(subcommandParsed.name, { slashCommand: subcommandParsed, commandPiece: piece });
 	container.logger.debug(
-		`[Subcommands-Plugin]:  The subcommand "${subcommandParsed.name}" has been updated in the parent command ${parentCommandName} ${
+		`[Subcommands-Plugin]: The subcommand "${subcommandParsed.name}" has been updated in the parent command ${parentCommandName} ${
 			commandsCompare ? 'with new options' : 'without new options'
 		}.`
 	);
