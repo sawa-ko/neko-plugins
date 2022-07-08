@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@1.2.2...@kaname-png/plugin-subcommands-advanced@2.0.0) (2022-07-08)
+
+### Features
+
+-   **subcommands:** added option to autogenerate names of commands pieces ([de6c40f](https://github.com/kaname-png/neko-plugins/commit/de6c40fcebdae7d776406e076ee9969211a428d6))
+
+### BREAKING CHANGES
+
+-   **subcommands:** Register the types of the plugin with /register import
+
 ## [1.2.2](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@1.2.1...@kaname-png/plugin-subcommands-advanced@1.2.2) (2022-07-08)
 
 ### Bug Fixes
