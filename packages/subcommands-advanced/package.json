@@ -26,8 +26,9 @@
 	"homepage": "https://github.com/kaname-png/neko-plugins/tree/main/packages/subcommands-advanced",
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",
-		"build": "tsc -b src && yarn esm:default",
+		"build": "tsc -b src && yarn esm:register && yarn esm:default",
 		"test": "jest",
+		"esm:register": "gen-esm-wrapper dist/register.js dist/register.mjs",
 		"esm:default": "gen-esm-wrapper dist/index.js dist/index.mjs",
 		"prepublishOnly": "yarn build"
 	},
