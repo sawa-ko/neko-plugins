@@ -5,7 +5,7 @@ import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import type { SlashCommandSubcommandBuilder, SlashCommandBuilder } from '@discordjs/builders';
 
 import { subCommandsRegistry, subCommandsGroupRegistry } from './functions';
-import { AdvancedSubcommandsEvents } from '../../index';
+import { SubcommandsAdvancedEvents } from '../../index';
 
 /**
  * **Hooks**
@@ -36,7 +36,7 @@ export const RegisterSubcommandsHooks = {
 							const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
 							const result = await preconditions.chatInputRun(i, piece);
 							if (!result.success)
-								return piece.container.client.emit(AdvancedSubcommandsEvents.ChatInputSubcommandDenied, result.error, {
+								return piece.container.client.emit(SubcommandsAdvancedEvents.ChatInputSubcommandDenied, result.error, {
 									command: piece,
 									interaction: i,
 									subcommand: subcommand as any
@@ -89,7 +89,7 @@ export const RegisterSubcommandsHooks = {
 								const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
 								const result = await preconditions.chatInputRun(i, piece);
 								if (!result.success)
-									return piece.container.client.emit(AdvancedSubcommandsEvents.ChatInputSubcommandDenied, result.error, {
+									return piece.container.client.emit(SubcommandsAdvancedEvents.ChatInputSubcommandDenied, result.error, {
 										command: piece,
 										interaction: i,
 										subcommand: subcommand as any
