@@ -18,7 +18,11 @@
 			"require": "./register.js"
 		}
 	},
-	"sideEffects": false,
+	"sideEffects": [
+		"./dist/register.js",
+		"./register.js",
+		"./register.mjs"
+	],
 	"homepage": "https://github.com/kaname-png/neko-plugins/tree/main/packages/subcommands-advanced",
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",

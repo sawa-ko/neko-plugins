@@ -36,6 +36,18 @@ export const subCommandsGroupRegistry: Collection<string, Collection<string, Col
  */
 export const isCommandOptionsUpdated = (c1: SlashCommandSubcommandBuilder, c2: SlashCommandSubcommandBuilder) =>
 	JSON.stringify(c1.toJSON()) !== JSON.stringify(c2.toJSON());
+/**
+ * Parse slash subcommand option
+ * @param subcommand subcommand json or subcommand builder class.
+ * @returns subcommand builder
+ *
+ * @since 2.0.0
+ */
+export const parseSlashSubcommand = (
+	subcommand:
+		| SlashCommandSubcommandBuilder
+		| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder)
+) => (typeof subcommand === 'function' ? subcommand(new SlashCommandSubcommandBuilder(), container) : subcommand);
 
 /**
  * **Register subcommands in subcommands registry**
@@ -55,7 +67,7 @@ export const analizeSubCommandParsed = (
 		| SlashCommandSubcommandBuilder
 		| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder)
 ) => {
-	const subcommandParsed = typeof subcommand === 'function' ? subcommand(new SlashCommandSubcommandBuilder(), container) : subcommand;
+	const subcommandParsed = parseSlashSubcommand(subcommand);
 	const subcommandsRegistry = subCommandsRegistry.get(parentCommandName);
 
 	if (!subcommandsRegistry) {
@@ -143,7 +155,7 @@ export const analizeSubcommandGroupParsed = (
 		| SlashCommandSubcommandBuilder
 		| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder)
 ) => {
-	const subcommandParsed = typeof subcommand === 'function' ? subcommand(new SlashCommandSubcommandBuilder(), container) : subcommand;
+	const subcommandParsed = parseSlashSubcommand(subcommand);
 	const subcommandsGroup = subCommandsGroupRegistry.get(parentCommandName);
 
 	if (!subcommandsGroup) {
