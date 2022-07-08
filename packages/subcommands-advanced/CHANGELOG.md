@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@1.2.1...@kaname-png/plugin-subcommands-advanced@1.2.2) (2022-07-08)
+
+### Bug Fixes
+
+-   **subcommands:** check if property parsedSubcommandMappings exist in the parent command class ([4bd5473](https://github.com/kaname-png/neko-plugins/commit/4bd5473f0e21b6b9197f0c06d31ca877fdacc38a))
+-   **subcommands:** message when cannot get parent command information ([8aceec6](https://github.com/kaname-png/neko-plugins/commit/8aceec6ff8187381784c9cca215d136a93368374))
+
 ## [1.2.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@1.2.0...@kaname-png/plugin-subcommands-advanced@1.2.1) (2022-06-30)
 
 ### Bug Fixes
