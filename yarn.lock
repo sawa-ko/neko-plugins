@@ -1270,7 +1270,7 @@ __metadata:
   resolution: "@kaname-png/plugin-statcord@workspace:packages/statcord"
   dependencies:
     "@sapphire/fetch": ^2.4.0
-    systeminformation: ^5.11.23
+    systeminformation: ^5.11.24
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
@@ -9835,12 +9835,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"systeminformation@npm:^5.11.23":
-  version: 5.11.23
-  resolution: "systeminformation@npm:5.11.23"
+"systeminformation@npm:^5.11.24":
+  version: 5.11.24
+  resolution: "systeminformation@npm:5.11.24"
   bin:
     systeminformation: lib/cli.js
-  checksum: 7ff3d022ed4c589f238e417b60844be1bcf961a3665187339569b8823902801ed9955654c082628ac42fc5f8eacdade891c723bf1b1e9962b89415b74e29798d
+  checksum: 197063bc8d51cdce8511e1c7f52e028ec97586bc5b1fd2fce907c08cc23487d03d5b45c4383ae998e586aa5d0278d09199099bed54baf3baf8a327a37a0f36b0
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
