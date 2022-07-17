@@ -33,7 +33,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"@sapphire/fetch": "^2.4.0",
+		"@sapphire/fetch": "^2.4.1",
 		"systeminformation": "^5.12.1",
 		"tslib": "^2.4.0"
 	},
