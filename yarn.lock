@@ -1257,7 +1257,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-api-jwt@workspace:packages/api-jwt"
   dependencies:
-    "@sapphire/plugin-api": ^3.2.1
+    "@sapphire/plugin-api": ^3.2.3
     "@sapphire/utilities": ^3.7.0
     discord-api-types: ^0.36.2
     jwt-service: ^8.0.1
@@ -1278,7 +1278,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-statcord@workspace:packages/statcord"
   dependencies:
-    "@sapphire/fetch": ^2.4.0
+    "@sapphire/fetch": ^2.4.1
     systeminformation: ^5.12.1
     tslib: ^2.4.0
   languageName: unknown
@@ -1288,7 +1288,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced"
   dependencies:
-    "@sapphire/decorators": ^4.3.6
+    "@sapphire/decorators": ^4.3.8
     "@sapphire/plugin-subcommands": pr-271
     tslib: ^2.4.0
   languageName: unknown
@@ -2455,12 +2455,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:^4.3.6":
-  version: 4.3.6
-  resolution: "@sapphire/decorators@npm:4.3.6"
+"@sapphire/decorators@npm:^4.3.8":
+  version: 4.3.8
+  resolution: "@sapphire/decorators@npm:4.3.8"
   dependencies:
     tslib: ^2.4.0
-  checksum: 4a9b273e1dc2a86895df07c7ef169db293b15f331ecda10a9c15f96c2f50be94adb2896564944eacb0a99128fbe30c2e126128518b788df2c49bcc8e95617388
+  checksum: 1642d102959fe81313c30a180d4bbbdc8ace51c6fb41710e03c5ec971b889aa0e845660c4bdaae4a2f16611bfefd09966c30e6d46fe39c59a0deaaa493f3a54d
   languageName: node
   linkType: hard
 
@@ -2507,12 +2507,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/fetch@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "@sapphire/fetch@npm:2.4.0"
+"@sapphire/fetch@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "@sapphire/fetch@npm:2.4.1"
   dependencies:
     cross-fetch: ^3.1.5
-  checksum: be03ec367ef1b49b38bfe06c3cf7fa507eefb4635bcccf3c5330857bddefd40c7a98c15e102deae8d78ebfbd816a94b5c9040d77b30a7742fd17506186f993b7
+  checksum: f8ab0baa59dfcb931729a46957073e4e26377b6b5e3bdbbed921ae793c0848a240545ed157efd5db13342d68eed84dc73c6fe83038a5e62af9daa3715326c4a9
   languageName: node
   linkType: hard
 
@@ -2545,17 +2545,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@sapphire/plugin-api@npm:3.2.1"
+"@sapphire/plugin-api@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "@sapphire/plugin-api@npm:3.2.3"
   dependencies:
-    "@types/node-fetch": 2.6.1
+    "@types/node-fetch": 2.6.2
     "@types/psl": ^1.1.0
     "@types/ws": ^8.5.3
     node-fetch: 2.6.7
-    psl: ^1.8.0
-    tslib: ^2.3.1
-  checksum: ed3997d1c488d317a1210766181cbf8aba1f60313cb51e17ec6943ce1175b9ce99c167081dd1224a47bd29364b1443f1a8b74f4698deab4dcc957e6ecfb4e8c8
+    psl: ^1.9.0
+    tslib: ^2.4.0
+  checksum: 084b1e25ce5e35ef227e674df754beb8d9e9928543bddb7b0437c110c3e7019d24ba7e14a40ceca97e2eaefd9d9f95d5079bb847ed1d0b71836cc9a682cd447c
   languageName: node
   linkType: hard
 
@@ -2880,7 +2880,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:2.6.1, @types/node-fetch@npm:^2.6.1":
+"@types/node-fetch@npm:2.6.2":
+  version: 2.6.2
+  resolution: "@types/node-fetch@npm:2.6.2"
+  dependencies:
+    "@types/node": "*"
+    form-data: ^3.0.0
+  checksum: 6f73b1470000d303d25a6fb92875ea837a216656cb7474f66cdd67bb014aa81a5a11e7ac9c21fe19bee9ecb2ef87c1962bceeaec31386119d1ac86e4c30ad7a6
+  languageName: node
+  linkType: hard
+
+"@types/node-fetch@npm:^2.6.1":
   version: 2.6.1
   resolution: "@types/node-fetch@npm:2.6.1"
   dependencies:
@@ -8915,10 +8925,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"psl@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "psl@npm:1.8.0"
-  checksum: 6150048ed2da3f919478bee8a82f3828303bc0fc730fb015a48f83c9977682c7b28c60ab01425a72d82a2891a1681627aa530a991d50c086b48a3be27744bde7
+"psl@npm:^1.9.0":
+  version: 1.9.0
+  resolution: "psl@npm:1.9.0"
+  checksum: 20c4277f640c93d393130673f392618e9a8044c6c7bf61c53917a0fddb4952790f5f362c6c730a9c32b124813e173733f9895add8d26f566ed0ea0654b2e711d
   languageName: node
   linkType: hard
 
