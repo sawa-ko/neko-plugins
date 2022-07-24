@@ -1256,7 +1256,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-api-jwt@workspace:packages/api-jwt"
   dependencies:
-    "@sapphire/plugin-api": ^3.2.3
+    "@sapphire/plugin-api": ^3.2.4
     "@sapphire/utilities": ^3.7.0
     discord-api-types: ^0.36.3
     jwt-service: ^8.0.1
@@ -2605,9 +2605,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "@sapphire/plugin-api@npm:3.2.3"
+"@sapphire/plugin-api@npm:^3.2.4":
+  version: 3.2.4
+  resolution: "@sapphire/plugin-api@npm:3.2.4"
   dependencies:
     "@types/node-fetch": 2.6.2
     "@types/psl": ^1.1.0
@@ -2615,7 +2615,7 @@ __metadata:
     node-fetch: 2.6.7
     psl: ^1.9.0
     tslib: ^2.4.0
-  checksum: 084b1e25ce5e35ef227e674df754beb8d9e9928543bddb7b0437c110c3e7019d24ba7e14a40ceca97e2eaefd9d9f95d5079bb847ed1d0b71836cc9a682cd447c
+  checksum: ef1589396fc82909cd356ac29cbb6e9b52db152bf22dc72c66d2a21a0b74d9b92cfcb27d42ad1c2487c00cd21af94a82a13f9b13bb51bd24cb651637168cf0cd
   languageName: node
   linkType: hard
 
