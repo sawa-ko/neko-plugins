@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.1.0...@kaname-png/plugin-statcord@2.1.1) (2022-08-05)
+
+### Bug Fixes
+
+-   **deps:** update dependency systeminformation to ^5.11.24 ([7f7f0b5](https://github.com/kaname-png/neko-plugins/commit/7f7f0b5b04a3e64579ab966b88b4ad08f048180e))
+-   **deps:** update sapphire dependencies ([72c8b21](https://github.com/kaname-png/neko-plugins/commit/72c8b21217ea0dcec4a56e428b28742c7851b4c8))
+-   **statcord:** check and parse response error messages when is not valid json ([f22867b](https://github.com/kaname-png/neko-plugins/commit/f22867b787111d5ba680a8102057524dc22228e5))
+
 # [2.1.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.0.0...@kaname-png/plugin-statcord@2.1.0) (2022-06-25)
 
 ### Bug Fixes

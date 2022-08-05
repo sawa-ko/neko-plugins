@@ -3,13 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@1.3.4...@kaname-png/plugin-api-jwt@1.3.5) (2022-08-05)
+
+### Bug Fixes
+
+-   **deps:** update sapphire dependencies ([72c8b21](https://github.com/kaname-png/neko-plugins/commit/72c8b21217ea0dcec4a56e428b28742c7851b4c8))
+
 ## [1.3.4](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@1.3.3...@kaname-png/plugin-api-jwt@1.3.4) (2022-07-03)
 
 **Note:** Version bump only for package @kaname-png/plugin-api-jwt
-
-
-
-
 
 ## [1.3.3](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@1.3.2...@kaname-png/plugin-api-jwt@1.3.3) (2022-06-25)
 
