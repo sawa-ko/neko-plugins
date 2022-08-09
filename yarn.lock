@@ -1299,7 +1299,7 @@ __metadata:
   resolution: "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced"
   dependencies:
     "@sapphire/decorators": ^4.3.8
-    "@sapphire/plugin-subcommands": ^3.0.0-pr-271.0258c7b7.0
+    "@sapphire/plugin-subcommands": ^3.0.0-pr-271.fde7e776.0
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
@@ -2633,7 +2633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:^3.0.0-pr-271.0258c7b7.0":
+"@sapphire/plugin-subcommands@npm:^3.0.0-pr-271.fde7e776.0":
   version: 3.0.0-pr-271.fde7e776.0
   resolution: "@sapphire/plugin-subcommands@npm:3.0.0-pr-271.fde7e776.0"
   dependencies:
