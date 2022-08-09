@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-api-jwt",
-	"version": "1.3.5",
+	"version": "1.3.6",
 	"description": "Plugin for @sapphire/framework to use JSON Web Tokens instead of HttpOnly Secure Cookies in @sapphire/plugin-api plugin.",
 	"author": "@kaname-png",
 	"license": "MIT",

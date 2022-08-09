@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.0.3...@kaname-png/plugin-subcommands-advanced@2.1.0) (2022-08-09)
+
+### Features
+
+-   **subcommands:** upgrade to @sapphire/framework@v3 ([051e1bf](https://github.com/kaname-png/neko-plugins/commit/051e1bf3d02a6bbdf434a08f21ef34f54f9b5fa9))
+
 ## [2.0.3](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.0.2...@kaname-png/plugin-subcommands-advanced@2.0.3) (2022-08-05)
 
 ### Bug Fixes
