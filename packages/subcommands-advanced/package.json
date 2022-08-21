@@ -33,7 +33,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"@sapphire/decorators": "^4.3.8",
+		"@sapphire/decorators": "^5.0.0",
 		"tslib": "^2.4.0"
 	},
 	"repository": {

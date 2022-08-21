@@ -67,7 +67,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@sapphire/plugin-api": "^3.2.4",
+		"@sapphire/plugin-api": "^4.0.0",
 		"@sapphire/utilities": "^3.9.0",
 		"discord-api-types": "^0.37.2",
 		"jwt-service": "^8.0.1"

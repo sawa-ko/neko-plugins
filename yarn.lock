@@ -1267,7 +1267,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-api-jwt@workspace:packages/api-jwt"
   dependencies:
-    "@sapphire/plugin-api": ^3.2.4
+    "@sapphire/plugin-api": ^4.0.0
     "@sapphire/utilities": ^3.9.0
     discord-api-types: ^0.37.2
     jwt-service: ^8.0.1
@@ -1298,7 +1298,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced"
   dependencies:
-    "@sapphire/decorators": ^4.3.8
+    "@sapphire/decorators": ^5.0.0
     "@sapphire/plugin-subcommands": ^3.0.0-pr-271.fde7e776.0
     tslib: ^2.4.0
   languageName: unknown
@@ -2520,12 +2520,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:^4.3.8":
-  version: 4.3.8
-  resolution: "@sapphire/decorators@npm:4.3.8"
+"@sapphire/decorators@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@sapphire/decorators@npm:5.0.0"
   dependencies:
     tslib: ^2.4.0
-  checksum: 1642d102959fe81313c30a180d4bbbdc8ace51c6fb41710e03c5ec971b889aa0e845660c4bdaae4a2f16611bfefd09966c30e6d46fe39c59a0deaaa493f3a54d
+  checksum: 18f33669e287df45e7805862c16a6e9c1813c7836985270c0c5867db6e9f724879a228fd19d82fd567f4108d671b9fa862d02ef0010e7f21bfcbc87af05d9ff4
   languageName: node
   linkType: hard
 
@@ -2619,9 +2619,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:^3.2.4":
-  version: 3.2.4
-  resolution: "@sapphire/plugin-api@npm:3.2.4"
+"@sapphire/plugin-api@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@sapphire/plugin-api@npm:4.0.0"
   dependencies:
     "@types/node-fetch": 2.6.2
     "@types/psl": ^1.1.0
@@ -2629,7 +2629,7 @@ __metadata:
     node-fetch: 2.6.7
     psl: ^1.9.0
     tslib: ^2.4.0
-  checksum: ef1589396fc82909cd356ac29cbb6e9b52db152bf22dc72c66d2a21a0b74d9b92cfcb27d42ad1c2487c00cd21af94a82a13f9b13bb51bd24cb651637168cf0cd
+  checksum: d90685812eaf4055d9c472effa7b4c9a2f05eb57a8f4c79f38887433f906e1874e643a28c4c1a3371a5d812c25d28e66cdbf2361927b41ad692ca290eddf8680
   languageName: node
   linkType: hard
 
