@@ -36,11 +36,15 @@ export const RegisterSubcommandsHooks = {
 							const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
 							const result = await preconditions.chatInputRun(i, piece);
 							if (result.isErr())
-								return piece.container.client.emit(SubcommandsAdvancedEvents.ChatInputSubcommandDenied, result.err().unwrap(), {
-									command: piece,
-									interaction: i,
-									subcommand: subcommand as any
-								});
+								return piece.container.client.emit(
+									SubcommandsAdvancedEvents.ChatInputSubcommandDenied,
+									result.err().unwrapOr('Unknown error'),
+									{
+										command: piece,
+										interaction: i,
+										subcommand: subcommand as any
+									}
+								);
 
 							return commandPiece.chatInputRun!(i, c);
 					  }
@@ -89,12 +93,16 @@ export const RegisterSubcommandsHooks = {
 						? async (i, c) => {
 								const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
 								const result = await preconditions.chatInputRun(i, piece);
-								if (!result.isErr())
-									return piece.container.client.emit(SubcommandsAdvancedEvents.ChatInputSubcommandDenied, result.err().unwrap(), {
-										command: piece,
-										interaction: i,
-										subcommand: subcommand as any
-									});
+								if (result.isErr())
+									return piece.container.client.emit(
+										SubcommandsAdvancedEvents.ChatInputSubcommandDenied,
+										result.err().unwrapOr('Unknown error'),
+										{
+											command: piece,
+											interaction: i,
+											subcommand: subcommand as any
+										}
+									);
 
 								return commandPiece.chatInputRun!(i, c);
 						  }
