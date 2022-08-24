@@ -30,7 +30,7 @@
 		"@sapphire/framework": "^3.0.0",
 		"@sapphire/prettier-config": "^1.4.4",
 		"@sapphire/ts-config": "^3.3.4",
-		"@types/jest": "^28.1.7",
+		"@types/jest": "^28.1.8",
 		"@types/node": "^18.7.9",
 		"@types/rimraf": "^3.0.2",
 		"@typescript-eslint/eslint-plugin": "^5.34.0",
