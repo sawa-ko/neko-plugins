@@ -1311,8 +1311,8 @@ __metadata:
   resolution: "@kaname-png/plugin-api-jwt@workspace:packages/api-jwt"
   dependencies:
     "@sapphire/plugin-api": ^4.0.0
-    "@sapphire/utilities": ^3.9.2
-    discord-api-types: ^0.37.5
+    "@sapphire/utilities": ^3.9.3
+    discord-api-types: ^0.37.4
     jwt-service: ^8.0.1
     tslib: ^2.4.0
   languageName: unknown
@@ -1342,7 +1342,7 @@ __metadata:
   resolution: "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced"
   dependencies:
     "@sapphire/decorators": ^5.0.0
-    "@sapphire/plugin-subcommands": ^3.2.0
+    "@sapphire/plugin-subcommands": ^3.2.1
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
@@ -2669,13 +2669,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@sapphire/plugin-subcommands@npm:3.2.0"
+"@sapphire/plugin-subcommands@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@sapphire/plugin-subcommands@npm:3.2.1"
   dependencies:
     "@sapphire/utilities": ^3.9.2
     tslib: ^2.4.0
-  checksum: 6a70c88989cfa739960727e04ffdf8cf4e97d94d3e4562a3a0e2ba5cd83a92c7382f5f574a396d7f372b81efc3d1f1b4c99b1dbcb821a36fc7aa201bb5ca96ba
+  checksum: 2d9a38fb351890bae6de92b2995d5e8db76d8b4d85175f0a1f404ab28b20f67733db6485027ecf3452ee6599c638564117db00d0df8f68a09a9d211c9905d56d
   languageName: node
   linkType: hard
 
@@ -2769,6 +2769,13 @@ __metadata:
   version: 3.9.2
   resolution: "@sapphire/utilities@npm:3.9.2"
   checksum: eeef33b03b802e931ada752b8c335cc8bde4017f8029b577b0247e3f3d2b57bf5f1936b2c8c29aef5e2c6975d9b162363e4c5c434c4fead0bba74253d067b4d9
+  languageName: node
+  linkType: hard
+
+"@sapphire/utilities@npm:^3.9.3":
+  version: 3.9.3
+  resolution: "@sapphire/utilities@npm:3.9.3"
+  checksum: 9f3f977fd5c0677d5f79136e9cb68ade3317cfba3e87bb58689f4af68233a807af34eb6092ad262c946d5eaf5c4a76cd534b0b395ebbaf0f0912dd80e174f912
   languageName: node
   linkType: hard
 
@@ -4914,7 +4921,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.5":
+"discord-api-types@npm:^0.37.4":
   version: 0.37.5
   resolution: "discord-api-types@npm:0.37.5"
   checksum: 10a23b813d9a30d836aa27169f768883eeed971ab67e58325ff272bfe6b63b169d727ae983d7c1b69c7e0b02ed9072e66e79319ce48174b36cd4a2a5fafe2e9f
