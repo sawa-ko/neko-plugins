@@ -2,6 +2,7 @@
 	"extends": "@sapphire/ts-config/extra-strict",
 	"compilerOptions": {
 		"importHelpers": true,
-		"noEmitHelpers": true
+		"noEmitHelpers": true,
+		"skipLibCheck": true
 	}
 }

@@ -17,6 +17,10 @@ export class StatcordPlugin extends Plugin {
 	}
 
 	public static [postLogin](this: SapphireClient): void {
+		if (this.options.statcord?.key) {
+			container.logger.info('[Statcord-Plugin]: Enabled. Synchronizing states with Statcord.');
+		}
+
 		if ((this.options.statcord?.autopost ?? true) && this.options.statcord?.key) {
 			container.logger.info('[Statcord-Plugin]: Auto-posting of statistics has been enabled');
 			setInterval(async () => container.statcord.postStats(), 60_000);
