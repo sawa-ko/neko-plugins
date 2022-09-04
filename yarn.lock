@@ -2638,9 +2638,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@sapphire/framework@npm:3.1.0"
+"@sapphire/framework@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@sapphire/framework@npm:3.1.1"
   dependencies:
     "@discordjs/builders": ^0.16.0
     "@sapphire/discord-utilities": ^2.11.6
@@ -2650,11 +2650,11 @@ __metadata:
     "@sapphire/ratelimits": ^2.4.4
     "@sapphire/result": ^2.4.1
     "@sapphire/stopwatch": ^1.4.1
-    "@sapphire/utilities": ^3.9.2
+    "@sapphire/utilities": ^3.9.3
     "@types/object-hash": ^2.2.1
     object-hash: ^3.0.0
     tslib: ^2.4.0
-  checksum: 359f4c1949eda1207611abcd739b1f6c6a5202299c7162877bef86fa6ead36292ccdfef6e85df53ea7470301fdb4143b5f8c11c69bba43a837b48dfe36c8884d
+  checksum: 4c0e167641fab7f1afa3689a4c7b6c69af74e19fc17c513d17b1e1b337d5711014fcf4e952e2af1270cc19c13aaf402accc1a1eb5869be399b3565e04e7f268e
   languageName: node
   linkType: hard
 
@@ -8437,7 +8437,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.1.0
     "@favware/npm-deprecate": ^1.0.5
     "@sapphire/eslint-config": ^4.3.8
-    "@sapphire/framework": ^3.1.0
+    "@sapphire/framework": ^3.1.1
     "@sapphire/prettier-config": ^1.4.4
     "@sapphire/ts-config": ^3.3.4
     "@types/jest": ^29.0.0
