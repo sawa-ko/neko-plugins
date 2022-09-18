@@ -1335,7 +1335,7 @@ __metadata:
   dependencies:
     "@sapphire/plugin-api": ^4.0.0
     "@sapphire/utilities": ^3.9.3
-    discord-api-types: ^0.37.9
+    discord-api-types: ^0.37.10
     jwt-service: ^8.0.1
     tslib: ^2.4.0
   languageName: unknown
@@ -2979,13 +2979,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.0.2":
-  version: 29.0.2
-  resolution: "@types/jest@npm:29.0.2"
+"@types/jest@npm:^29.0.3":
+  version: 29.0.3
+  resolution: "@types/jest@npm:29.0.3"
   dependencies:
     expect: ^29.0.0
     pretty-format: ^29.0.0
-  checksum: 27c46b58fad9791adf88167ba2c14ae3513cb1fe5df038faafe7fc4513ebb230dd8029a1dd0acd1abeb82aa014839ac10e0dcf1bfae9fcc0e69bc1eb1e5204f0
+  checksum: 14a8ec1954540ec59f4072c3c4dbc6b5d5ff616556c98671aca26606bdf9d49616a3f269f3e488c80cd481ee19880351575c1f6895827628818e193600c121e0
   languageName: node
   linkType: hard
 
@@ -4930,10 +4930,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.33.3":
-  version: 0.33.3
-  resolution: "discord-api-types@npm:0.33.3"
-  checksum: e86776d1d2c39b74d7265c43774bd6d46dd206d053674ed7243d11e2e975451b292065ece28286e31692a27c5408a24a73e811455af75a2fdbb519c95b7e040b
+"discord-api-types@npm:^0.33.5":
+  version: 0.33.5
+  resolution: "discord-api-types@npm:0.33.5"
+  checksum: 6dcaad640c5693a69c9a4f5e444e739dde11ba835164ae6fd3dd5a1ab7b4d7f96cd022ed653eeaff2c8051ead0d998a5d502a2915cfacdde596364b82d9e3b3f
   languageName: node
   linkType: hard
 
@@ -4944,27 +4944,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.9":
-  version: 0.37.9
-  resolution: "discord-api-types@npm:0.37.9"
-  checksum: e38562d3ac9a3e10eee38d4a444ff9e67bf664dcb716aa6b716c27009cef1f90fa312a3e148fec69ff440c6e3043121aa79f454621fa6095c5ca2714e14e648f
+"discord-api-types@npm:^0.37.10":
+  version: 0.37.10
+  resolution: "discord-api-types@npm:0.37.10"
+  checksum: a09460953a02adf3c40a486e3946c6ca0dd6c76d279444a4595abecfe8b5b88ad49d48b5eeb85e2cb95256a0824ee075cb7550d371c13e64e37ec703206c092b
   languageName: node
   linkType: hard
 
-"discord.js@npm:^13.10.3":
-  version: 13.10.3
-  resolution: "discord.js@npm:13.10.3"
+"discord.js@npm:^13.11.0":
+  version: 13.11.0
+  resolution: "discord.js@npm:13.11.0"
   dependencies:
     "@discordjs/builders": ^0.16.0
     "@discordjs/collection": ^0.7.0
     "@sapphire/async-queue": ^1.5.0
     "@types/node-fetch": ^2.6.2
     "@types/ws": ^8.5.3
-    discord-api-types: ^0.33.3
+    discord-api-types: ^0.33.5
     form-data: ^4.0.0
     node-fetch: ^2.6.7
     ws: ^8.8.1
-  checksum: e0656fb71f10d9fcb5567325152d7941d432c9db306802f287a53dae70b17f89b133c6242884656bef5b2749835b253bad011de4eacf6ec34a8b49a85fb8ce79
+  checksum: a5d51420e65169cb8fcacfedd4bed3bb5767dbee2cc4fe573578c7a8875797b0fdf3454c7c40c40e07db66c4b223a485a87594044f8ba099f02b226123d37af1
   languageName: node
   linkType: hard
 
@@ -8447,13 +8447,13 @@ __metadata:
     "@sapphire/framework": ^3.1.1
     "@sapphire/prettier-config": ^1.4.4
     "@sapphire/ts-config": ^3.3.4
-    "@types/jest": ^29.0.2
+    "@types/jest": ^29.0.3
     "@types/node": ^18.7.14
     "@types/rimraf": ^3.0.2
     "@typescript-eslint/eslint-plugin": ^5.37.0
     "@typescript-eslint/parser": ^5.37.0
     cz-conventional-changelog: ^3.3.0
-    discord.js: ^13.10.3
+    discord.js: ^13.11.0
     eslint: ~8.23.1
     eslint-config-prettier: ^8.5.0
     eslint-plugin-prettier: ^4.2.1
@@ -8469,7 +8469,7 @@ __metadata:
     ts-jest: ^28.0.8
     ts-node: ^10.9.1
     tslib: ^2.4.0
-    turbo: ^1.4.6
+    turbo: ^1.4.7
     typedoc: ^0.23.14
     typedoc-plugin-mdn-links: ^2.0.0
     typescript: ^4.8.3
@@ -10805,122 +10805,122 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-android-arm64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-android-arm64@npm:1.4.6"
+"turbo-android-arm64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-android-arm64@npm:1.4.7"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-darwin-64@npm:1.4.6"
+"turbo-darwin-64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-darwin-64@npm:1.4.7"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-darwin-arm64@npm:1.4.6"
+"turbo-darwin-arm64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-darwin-arm64@npm:1.4.7"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-freebsd-64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-freebsd-64@npm:1.4.6"
+"turbo-freebsd-64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-freebsd-64@npm:1.4.7"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-freebsd-arm64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-freebsd-arm64@npm:1.4.6"
+"turbo-freebsd-arm64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-freebsd-arm64@npm:1.4.7"
   conditions: os=freebsd & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-32@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-linux-32@npm:1.4.6"
+"turbo-linux-32@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-linux-32@npm:1.4.7"
   conditions: os=linux & cpu=ia32
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-linux-64@npm:1.4.6"
+"turbo-linux-64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-linux-64@npm:1.4.7"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-linux-arm64@npm:1.4.6"
+"turbo-linux-arm64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-linux-arm64@npm:1.4.7"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-linux-arm@npm:1.4.6"
+"turbo-linux-arm@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-linux-arm@npm:1.4.7"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"turbo-linux-mips64le@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-linux-mips64le@npm:1.4.6"
+"turbo-linux-mips64le@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-linux-mips64le@npm:1.4.7"
   conditions: os=linux & cpu=mipsel
   languageName: node
   linkType: hard
 
-"turbo-linux-ppc64le@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-linux-ppc64le@npm:1.4.6"
+"turbo-linux-ppc64le@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-linux-ppc64le@npm:1.4.7"
   conditions: os=linux & cpu=ppc64
   languageName: node
   linkType: hard
 
-"turbo-windows-32@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-windows-32@npm:1.4.6"
+"turbo-windows-32@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-windows-32@npm:1.4.7"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-windows-64@npm:1.4.6"
+"turbo-windows-64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-windows-64@npm:1.4.7"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.4.6":
-  version: 1.4.6
-  resolution: "turbo-windows-arm64@npm:1.4.6"
+"turbo-windows-arm64@npm:1.4.7":
+  version: 1.4.7
+  resolution: "turbo-windows-arm64@npm:1.4.7"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.4.6":
-  version: 1.4.6
-  resolution: "turbo@npm:1.4.6"
+"turbo@npm:^1.4.7":
+  version: 1.4.7
+  resolution: "turbo@npm:1.4.7"
   dependencies:
-    turbo-android-arm64: 1.4.6
-    turbo-darwin-64: 1.4.6
-    turbo-darwin-arm64: 1.4.6
-    turbo-freebsd-64: 1.4.6
-    turbo-freebsd-arm64: 1.4.6
-    turbo-linux-32: 1.4.6
-    turbo-linux-64: 1.4.6
-    turbo-linux-arm: 1.4.6
-    turbo-linux-arm64: 1.4.6
-    turbo-linux-mips64le: 1.4.6
-    turbo-linux-ppc64le: 1.4.6
-    turbo-windows-32: 1.4.6
-    turbo-windows-64: 1.4.6
-    turbo-windows-arm64: 1.4.6
+    turbo-android-arm64: 1.4.7
+    turbo-darwin-64: 1.4.7
+    turbo-darwin-arm64: 1.4.7
+    turbo-freebsd-64: 1.4.7
+    turbo-freebsd-arm64: 1.4.7
+    turbo-linux-32: 1.4.7
+    turbo-linux-64: 1.4.7
+    turbo-linux-arm: 1.4.7
+    turbo-linux-arm64: 1.4.7
+    turbo-linux-mips64le: 1.4.7
+    turbo-linux-ppc64le: 1.4.7
+    turbo-windows-32: 1.4.7
+    turbo-windows-64: 1.4.7
+    turbo-windows-arm64: 1.4.7
   dependenciesMeta:
     turbo-android-arm64:
       optional: true
@@ -10952,7 +10952,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: f7191f36e0abddf6dc88eb9a83a007a8616ebed1edd44c37f9b19e0451f3ce90c4406699f6166a99c0a6f8d39cc1f24d96513b7ef16b21747863827538b9c966
+  checksum: 62ab97bfa2ddf8b8b654f6c61c2fa0995bbbb9a374e613ec932edc45781796a1cf1755d8dd9b070304aae44a5391d3dcaa40e1592bc24ce07d515ed016913f5c
   languageName: node
   linkType: hard
 
