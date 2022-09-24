@@ -47,7 +47,7 @@ This plugin allows you to modularize the subcommands of a parent command into se
 You can use the following command to install this package, or replace `npm install` with your package manager of choice.
 
 ```sh
-npm install @sapphire/framework@next @sapphire/plugin-subcommands@pr-271 @kaname-png/plugin-subcommands-advanced
+npm install @sapphire/framework @sapphire/plugin-subcommands @kaname-png/plugin-subcommands-advanced
 ```
 
 ---
