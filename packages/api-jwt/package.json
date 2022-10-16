@@ -69,7 +69,7 @@
 	"devDependencies": {
 		"@sapphire/plugin-api": "^4.0.1",
 		"@sapphire/utilities": "^3.11.0",
-		"discord-api-types": "^0.37.12",
+		"discord-api-types": "^0.37.14",
 		"jwt-service": "^8.0.1"
 	}
 }
