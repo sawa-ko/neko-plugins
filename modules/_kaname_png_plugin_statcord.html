@@ -14,9 +14,163 @@
 <li><a href="_kaname_png_plugin_statcord.html">@kaname-png/plugin-statcord</a></li></ul>
 <h1>Module @kaname-png/plugin-statcord</h1></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/kaname-png/neko-plugins/blob/43db15d/packages/statcord/src/index.ts#L1">packages/statcord/src/index.ts:1</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/kaname-png/neko-plugins/blob/7bf4394/packages/statcord/src/index.ts#L1">packages/statcord/src/index.ts:1</a></li></ul></aside>
 <section class="tsd-panel-group">
-<section class="tsd-panel tsd-typography"></section></section>
+<section class="tsd-panel tsd-typography"><div align="center">
+
+<p><img src="https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png" alt="Neko Plugins Logo"></p>
+
+<a href="#kaname-pngplugin-statcord" id="kaname-pngplugin-statcord" style="color: inherit; text-decoration: none;">
+  <h1>@kaname-png/plugin-statcord</h1>
+</a>
+<p><strong>Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to post and manage bot stats with <a href="https://statcord.com/">Statcord</a>.</strong></p>
+<p><a href="https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/kaname-png/neko-plugins" alt="GitHub"></a>
+<a href="https://codecov.io/gh/kaname-png/neko-plugins"><img src="https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6" alt="codecov"></a>
+<a href="https://www.npmjs.com/package/@kaname-png/plugin-statcord"><img src="https://img.shields.io/npm/v/@kaname-png/plugin-statcord?color=crimson&logo=npm" alt="npm (scoped)"></a>
+<a href="https://www.npmjs.com/package/@kaname-png/plugin-statcord"><img src="https://img.shields.io/npm/dt/@kaname-png/plugin-statcord?color=crimson&logo=npm" alt="npm"></a></p>
+</div>
+
+
+<a href="#description" id="description" style="color: inherit; text-decoration: none;">
+  <h2>Description</h2>
+</a>
+<p>This plugin allows the integration of Statcord with the Bot. Statcord is a web page that allows to manage statistics such as, how many commands were executed in a day, new guilds, etc.</p>
+<p>More information about Statcord can be found on its <a href="https://statcord.com">website</a>.</p>
+
+<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+  <h2>Features</h2>
+</a>
+<ul>
+<li>Fully ready for TypeScript!</li>
+<li>Includes ESM ready entrypoint</li>
+<li>Easy to use</li>
+</ul>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<p><code>@kaname-png/plugin-statcord</code> depends on the following packages. Be sure to install these along with this package!</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/@sapphire/framework"><code>@sapphire/framework</code></a></li>
+</ul>
+<p>You can use the following command to install this package, or replace <code>npm install</code> with your package manager of choice.</p>
+<pre><code class="language-sh"><span class="hl-0">npm install @kaname-png/plugin-statcord @sapphire/framework discord.js</span>
+</code></pre>
+<hr>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+
+<a href="#javascript" id="javascript" style="color: inherit; text-decoration: none;">
+  <h3>JavaScript</h3>
+</a>
+<p>In your main or setup file, register the plugin:</p>
+<pre><code class="language-javascript"><span class="hl-2">require</span><span class="hl-0">(</span><span class="hl-3">&#39;@kaname-png/plugin-statcord/register&#39;</span><span class="hl-0">);</span>
+</code></pre>
+<p>It is important to add an API key provided by Statcord.</p>
+<pre><code class="language-javascript"><span class="hl-2">require</span><span class="hl-0">(</span><span class="hl-3">&#39;@kaname-png/plugin-statcord/register&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-2">SapphireClient</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-1">/* your bot options */</span><br/><span class="hl-0">    statcord: {</span><br/><span class="hl-0">        client_id: </span><span class="hl-3">&#39;YOUR_BOT_ID&#39;</span><span class="hl-0">, </span><span class="hl-1">// (Optional) By default it is the bot id.</span><br/><span class="hl-0">        key: </span><span class="hl-3">&#39;YOUR_AWESOME_API_KEY&#39;</span><span class="hl-0">, </span><span class="hl-1">// (Required) Statcord API key.</span><br/><span class="hl-0">        autopost: </span><span class="hl-5">false</span><span class="hl-0">, </span><span class="hl-1">// (Optional) Allows automatic posting of statistics.</span><br/><span class="hl-0">        baseUrl: </span><span class="hl-3">&#39;https://api.statcord.com/v3&#39;</span><span class="hl-0">, </span><span class="hl-1">// (Optional) Change the base URL of the Statcord API.</span><br/><span class="hl-0">        debug: </span><span class="hl-5">false</span><span class="hl-0">, </span><span class="hl-1">// (Optional) Show debug messages.</span><br/><span class="hl-0">        sharding: </span><span class="hl-5">false</span><span class="hl-0"> </span><span class="hl-1">// (Optional) Activate the sharding mode, it is important to read the notes below.</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-4">async</span><span class="hl-0"> </span><span class="hl-4">function</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">await</span><span class="hl-0"> client.</span><span class="hl-2">login</span><span class="hl-0">();</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">void</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">();</span>
+</code></pre>
+
+<a href="#typescript" id="typescript" style="color: inherit; text-decoration: none;">
+  <h3>TypeScript</h3>
+</a>
+<p>In your main or setup file, register the plugin:</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> </span><span class="hl-3">&#39;@kaname-png/plugin-statcord/register&#39;</span><span class="hl-0">;</span>
+</code></pre>
+<p>It is important to add an API key provided by Statcord.</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> </span><span class="hl-3">&#39;@kaname-png/plugin-statcord/register&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-2">SapphireClient</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-1">/* your bot options */</span><br/><span class="hl-0">    statcord: {</span><br/><span class="hl-0">        client_id: </span><span class="hl-3">&#39;YOUR_BOT_ID&#39;</span><span class="hl-0">, </span><span class="hl-1">// (Optional) By default it is the bot id.</span><br/><span class="hl-0">        key: </span><span class="hl-3">&#39;YOUR_AWESOME_API_KEY&#39;</span><span class="hl-0">, </span><span class="hl-1">// (Required) Statcord API key.</span><br/><span class="hl-0">        autopost: </span><span class="hl-5">false</span><span class="hl-0">, </span><span class="hl-1">// (Optional) Allows automatic posting of statistics.</span><br/><span class="hl-0">        baseUrl: </span><span class="hl-3">&#39;https://api.statcord.com/v3&#39;</span><span class="hl-0">, </span><span class="hl-1">// (Optional) Change the base URL of the Statcord API.</span><br/><span class="hl-0">        debug: </span><span class="hl-5">false</span><span class="hl-0">, </span><span class="hl-1">// (Optional) Show debug messages.</span><br/><span class="hl-0">        sharding: </span><span class="hl-5">false</span><span class="hl-0"> </span><span class="hl-1">// (Optional) Activate the sharding mode, it is important to read the notes below.</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-4">async</span><span class="hl-0"> </span><span class="hl-4">function</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">await</span><span class="hl-0"> client.</span><span class="hl-2">login</span><span class="hl-0">();</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">void</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">();</span>
+</code></pre>
+<p>If you enable the <code>autopost</code> option, that’s it, the plugin will collect and publish the statistics for you, you don’t have to do anything else!</p>
+
+<a href="#bandwidth-usage" id="bandwidth-usage" style="color: inherit; text-decoration: none;">
+  <h2>Bandwidth usage</h2>
+</a>
+<p>To set the bandwidth usage in each statistics post the <code>setBandwidthUsage()</code> method is available, the data sent by this method is reset in each statistics post. This is done so that the user can choose the best way to get this data.</p>
+
+<a href="#javascript-1" id="javascript-1" style="color: inherit; text-decoration: none;">
+  <h3>Javascript</h3>
+</a>
+<pre><code class="language-javascript"><span class="hl-4">const</span><span class="hl-0"> { </span><span class="hl-5">container</span><span class="hl-0"> } </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-2">require</span><span class="hl-0">(</span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeServicePostStats</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">public</span><span class="hl-0"> </span><span class="hl-2">postBandwidth</span><span class="hl-0">() {</span><br/><span class="hl-0">        </span><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">bandwidthUsage</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-2">getBandwidthUsage</span><span class="hl-0">(); </span><span class="hl-1">// Use your method to get this data.</span><br/><span class="hl-0">        container.statcord.</span><span class="hl-2">setBandwidthUsage</span><span class="hl-0">(bandwidthUsage);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">export</span><span class="hl-7"> </span><span class="hl-4">default</span><span class="hl-7"> </span><span class="hl-0">MyAwesomeServicePostStats;</span>
+</code></pre>
+
+<a href="#typescript-1" id="typescript-1" style="color: inherit; text-decoration: none;">
+  <h3>TypeScript</h3>
+</a>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> { container } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">export</span><span class="hl-0"> </span><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeServicePostStats</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">public</span><span class="hl-0"> </span><span class="hl-2">postBandwidth</span><span class="hl-0">() {</span><br/><span class="hl-0">        </span><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">bandwidthUsage</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-2">getBandwidthUsage</span><span class="hl-0">(); </span><span class="hl-1">// Use your method to get this data.</span><br/><span class="hl-0">        container.statcord.</span><span class="hl-2">setBandwidthUsage</span><span class="hl-0">(bandwidthUsage);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span>
+</code></pre>
+
+<a href="#posting-statistics-manually" id="posting-statistics-manually" style="color: inherit; text-decoration: none;">
+  <h2>Posting statistics manually</h2>
+</a>
+<p>To be able to post statistics manually, it is necessary to disable the <code>autopost</code> option in the statcord options, by default it is disabled.</p>
+
+<a href="#javascript-2" id="javascript-2" style="color: inherit; text-decoration: none;">
+  <h3>Javascript</h3>
+</a>
+<pre><code class="language-javascript"><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-2">SapphireClient</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-1">/* your bot options */</span><br/><span class="hl-0">    statcord: {</span><br/><span class="hl-0">        key: </span><span class="hl-3">&#39;YOUR_AWESOME_API_KEY&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">        autopost: </span><span class="hl-5">false</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-4">async</span><span class="hl-0"> </span><span class="hl-4">function</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">await</span><span class="hl-0"> client.</span><span class="hl-2">login</span><span class="hl-0">();</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">void</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">();</span>
+</code></pre>
+
+<a href="#typescript-2" id="typescript-2" style="color: inherit; text-decoration: none;">
+  <h3>TypeScript</h3>
+</a>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> </span><span class="hl-3">&#39;@kaname-png/plugin-statcord/register&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-2">SapphireClient</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-1">/* your bot options */</span><br/><span class="hl-0">    statcord: {</span><br/><span class="hl-0">        key: </span><span class="hl-3">&#39;YOUR_AWESOME_API_KEY&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">        autopost: </span><span class="hl-5">false</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-4">async</span><span class="hl-0"> </span><span class="hl-4">function</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">await</span><span class="hl-0"> client.</span><span class="hl-2">login</span><span class="hl-0">();</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">void</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">();</span>
+</code></pre>
+<p>In order to be able to post statistics there is the <code>postStats</code> method available, by default, the statistics of used commands, popular commands, total guilds and users are managed internally by the plugin.</p>
+<p>Remember that you can use these methods and all the Statcord plugin methods globally available anywhere in the Bot.</p>
+
+<a href="#javascript-3" id="javascript-3" style="color: inherit; text-decoration: none;">
+  <h3>Javascript</h3>
+</a>
+<pre><code class="language-javascript"><span class="hl-4">const</span><span class="hl-0"> { </span><span class="hl-5">container</span><span class="hl-0"> } </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-2">require</span><span class="hl-0">(</span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeServicePostStats</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">public</span><span class="hl-0"> </span><span class="hl-2">postStats</span><span class="hl-0">() {</span><br/><span class="hl-0">        container.statcord.</span><span class="hl-2">postStats</span><span class="hl-0">();</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">export</span><span class="hl-7"> </span><span class="hl-4">default</span><span class="hl-7"> </span><span class="hl-0">MyAwesomeServicePostStats;</span>
+</code></pre>
+
+<a href="#typescript-3" id="typescript-3" style="color: inherit; text-decoration: none;">
+  <h3>TypeScript</h3>
+</a>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> { container } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">export</span><span class="hl-0"> </span><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeServicePostStats</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">public</span><span class="hl-0"> </span><span class="hl-2">postStats</span><span class="hl-0">() {</span><br/><span class="hl-0">        container.statcord.</span><span class="hl-2">postStats</span><span class="hl-0">();</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span>
+</code></pre>
+
+<a href="#get-statistics" id="get-statistics" style="color: inherit; text-decoration: none;">
+  <h2>Get statistics</h2>
+</a>
+<p>The plugin allows to get the statistics from Statcord, as it also has methods that wrapper with the Statcord API.</p>
+<ol>
+<li><code>clientStats();</code>: Get current client statistics in Statcord.</li>
+<li><code>bucketStats();</code>: Check everyone who has voted for the bot today.</li>
+<li><code>userVotesStats();</code>: Check if someone has voted for the bot today.</li>
+</ol>
+
+<a href="#notes" id="notes" style="color: inherit; text-decoration: none;">
+  <h2>Notes</h2>
+</a>
+<ol>
+<li>The <code>postCommand</code> and <code>postStats</code> methods are available globally so that they can be used in other ways according to the user’s needs. For example, it is recommended to disable the <code>autopost</code> option when using the ShardingManager, as it is possible for Shards to go into Rate Limit in the Statcord API when they all perform the action of posting statistics at the same time and having these methods available allows you to devise a better way to post those statistics.</li>
+<li>If the <code>sharding</code> mode is used together with the <code>autopost</code> option it is important that the Shards have at least 1 minute of initialization between them, so that the shards have a difference of <code>1 minute</code> and thus be able to send the statistics without entering Rate Limit in the Statcord API.</li>
+</ol>
+
+<a href="#contributors-✨" id="contributors-✨" style="color: inherit; text-decoration: none;">
+  <h2>Contributors ✨</h2>
+</a>
+<p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a>):</p>
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://kaname.netlify.app"><img src="https://avatars.githubusercontent.com/u/56084970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kaname</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Code">💻</a> <a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3Akaname-png" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Documentation">📖</a> <a href="#infra-kaname-png" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-kaname-png" title="Maintenance">🚧</a> <a href="https://github.com/kaname-png/neko-plugins/pulls?q=is%3Apr+reviewed-by%3Akaname-png" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="http://nino.fun"><img src="https://avatars.githubusercontent.com/u/90474850?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sebazz</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3AuSebazz" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=uSebazz" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<p>This project follows the <a href="https://github.com/all-contributors/all-contributors">all-contributors</a> specification.
+Contributions of any kind welcome!</p>
+</section></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <h3 class="tsd-index-heading uppercase">Index</h3>

@@ -14,9 +14,122 @@
 <li><a href="_kaname_png_plugin_env.html">@kaname-png/plugin-env</a></li></ul>
 <h1>Module @kaname-png/plugin-env</h1></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/kaname-png/neko-plugins/blob/43db15d/packages/env/src/index.ts#L1">packages/env/src/index.ts:1</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/kaname-png/neko-plugins/blob/7bf4394/packages/env/src/index.ts#L1">packages/env/src/index.ts:1</a></li></ul></aside>
 <section class="tsd-panel-group">
-<section class="tsd-panel tsd-typography"></section></section>
+<section class="tsd-panel tsd-typography"><div align="center">
+
+<p><img src="https://raw.githubusercontent.com/kaname-png/neko-plugins/main/assets/logo.png" alt="Neko Plugins Logo"></p>
+
+<a href="#kaname-pngplugin-env" id="kaname-pngplugin-env" style="color: inherit; text-decoration: none;">
+  <h1>@kaname-png/plugin-env</h1>
+</a>
+<p><strong>Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to manage environment variables with value parser.</strong></p>
+<p><a href="https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/kaname-png/neko-plugins" alt="GitHub"></a>
+<a href="https://codecov.io/gh/kaname-png/neko-plugins"><img src="https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6" alt="codecov"></a>
+<a href="https://www.npmjs.com/package/@kaname-png/plugin-env"><img src="https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&logo=npm" alt="npm (scoped)"></a>
+<a href="https://www.npmjs.com/package/@kaname-png/plugin-env"><img src="https://img.shields.io/npm/dt/@kaname-png/plugin-env?color=crimson&logo=npm" alt="npm"></a></p>
+</div>
+
+
+<a href="#description" id="description" style="color: inherit; text-decoration: none;">
+  <h2>Description</h2>
+</a>
+<p>This plugin allows you to manage your environment variables via .env, .env.development, etc. files in a simple way and with the ease of getting the value converted into the type you need.</p>
+<p>The plugin allows you to read the environment variables and parse it to the desired type and get for example, a boolean value from an environment variable.</p>
+
+<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+  <h2>Features</h2>
+</a>
+<ul>
+<li>Fully ready for TypeScript!</li>
+<li>Includes ESM ready entrypoint</li>
+<li>Easy to use</li>
+</ul>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<p><code>@kaname-png/plugin-env</code> depends on the following packages. Be sure to install these along with this package!</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/@sapphire/framework"><code>@sapphire/framework</code></a></li>
+</ul>
+<p>You can use the following command to install this package, or replace <code>npm install</code> with your package manager of choice.</p>
+<pre><code class="language-sh"><span class="hl-0">npm install @kaname-png/plugin-env @sapphire/framework discord.js</span>
+</code></pre>
+<hr>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<p>It is very important to assign an environment variable manually, this to know what kind of environment variables you need.</p>
+<p>For example:</p>
+<pre><code class="language-javascript"><span class="hl-0">process.env.</span><span class="hl-5">NODE_ENV</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> process.env.</span><span class="hl-5">NODE_ENV</span><span class="hl-0"> </span><span class="hl-4">||</span><span class="hl-0"> </span><span class="hl-3">&#39;development&#39;</span><span class="hl-0">;</span>
+</code></pre>
+<p>And with NodeJs versions higher than v15 (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_nullish_assignment">Logical Nullish Assignment</a>):</p>
+<pre><code class="language-javascript"><span class="hl-0">process.env.</span><span class="hl-5">NODE_ENV</span><span class="hl-0"> </span><span class="hl-4">??=</span><span class="hl-0"> </span><span class="hl-3">&#39;development&#39;</span><span class="hl-0">;</span>
+</code></pre>
+
+<a href="#javascript" id="javascript" style="color: inherit; text-decoration: none;">
+  <h3>JavaScript</h3>
+</a>
+<p>In your main or setup file, register the plugin:</p>
+<pre><code class="language-javascript"><span class="hl-2">require</span><span class="hl-0">(</span><span class="hl-3">&#39;@kaname-png/plugin-env/register&#39;</span><span class="hl-0">);</span>
+</code></pre>
+<p>Once the plugin is registered, we will have to decide whether to enable the plugin or not with the <code>enabled</code> variable in the client options in the <code>env</code> option.</p>
+<pre><code class="language-javascript"><span class="hl-2">require</span><span class="hl-0">(</span><span class="hl-3">&#39;@kaname-png/plugin-env/register&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-4">async</span><span class="hl-0"> </span><span class="hl-4">function</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-2">SapphireClient</span><span class="hl-0">({</span><br/><span class="hl-0">        </span><span class="hl-1">/* your bot options */</span><br/><span class="hl-0">        env: {</span><br/><span class="hl-0">            enabled: </span><span class="hl-5">true</span><span class="hl-0"> </span><span class="hl-1">// You can decide when to enable the plugin or not.</span><br/><span class="hl-0">            </span><span class="hl-1">/* ...More options available */</span><br/><span class="hl-0">        }</span><br/><span class="hl-0">    });</span><br/><br/><span class="hl-0">    </span><span class="hl-4">await</span><span class="hl-0"> client.</span><span class="hl-2">login</span><span class="hl-0">();</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">void</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">();</span>
+</code></pre>
+
+<a href="#typescript" id="typescript" style="color: inherit; text-decoration: none;">
+  <h3>TypeScript</h3>
+</a>
+<p>In your main or setup file, register the plugin:</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> </span><span class="hl-3">&#39;@kaname-png/plugin-env/register&#39;</span><span class="hl-0">;</span>
+</code></pre>
+<p>Once the plugin is registered, we will have to decide whether to enable the plugin or not with the <code>enabled</code> variable in the client options in the <code>env</code> option.</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> </span><span class="hl-3">&#39;@kaname-png/plugin-env/register&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">async</span><span class="hl-0"> </span><span class="hl-4">function</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-2">SapphireClient</span><span class="hl-0">({</span><br/><span class="hl-0">        </span><span class="hl-1">/* your bot options */</span><br/><span class="hl-0">        env: {</span><br/><span class="hl-0">            enabled: </span><span class="hl-5">true</span><span class="hl-0"> </span><span class="hl-1">// You can decide when to enable the plugin or not.</span><br/><span class="hl-0">            </span><span class="hl-1">/* ...More options available */</span><br/><span class="hl-0">        }</span><br/><span class="hl-0">    });</span><br/><br/><span class="hl-0">    </span><span class="hl-4">await</span><span class="hl-0"> client.</span><span class="hl-2">login</span><span class="hl-0">();</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">void</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">();</span>
+</code></pre>
+
+<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
+  <h2>How to use</h2>
+</a>
+
+<a href="#javascript-1" id="javascript-1" style="color: inherit; text-decoration: none;">
+  <h3>JavaScript</h3>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">// Services</span><br/><span class="hl-4">import</span><span class="hl-0"> { container } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">export</span><span class="hl-0"> </span><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeService</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-2">get</span><span class="hl-0">() {</span><br/><span class="hl-0">        </span><span class="hl-4">return</span><span class="hl-0"> container.env.</span><span class="hl-2">string</span><span class="hl-0">(</span><span class="hl-3">&#39;MY_AWESOME_ENV&#39;</span><span class="hl-0">);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-1">// Commands, Listeners, etc.</span><br/><span class="hl-4">import</span><span class="hl-0"> { Command } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">export</span><span class="hl-0"> </span><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeCommand</span><span class="hl-0"> </span><span class="hl-4">extends</span><span class="hl-0"> </span><span class="hl-5">Command</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-2">messageRun</span><span class="hl-0">(</span><span class="hl-7">message</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">return</span><span class="hl-0"> message.</span><span class="hl-2">reply</span><span class="hl-0">(</span><span class="hl-5">this</span><span class="hl-0">.container.env.</span><span class="hl-2">string</span><span class="hl-0">(</span><span class="hl-3">&#39;MY_AWESOME_ENV&#39;</span><span class="hl-0">));</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span>
+</code></pre>
+
+<a href="#typescript-1" id="typescript-1" style="color: inherit; text-decoration: none;">
+  <h3>TypeScript</h3>
+</a>
+<p>In TypeScript the variable name typing is safe, this means that you can’t just put any environment variable key name, for that we will have to augment the interface that contains all the available environment variable names.</p>
+<p>It is recommended to set it to type <code>never</code>, although its type has no effect on the result.</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-0"> </span><span class="hl-3">&#39;@kaname-png/plugin-env/register&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">async</span><span class="hl-0"> </span><span class="hl-4">function</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">() {</span><br/><span class="hl-0">    </span><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">client</span><span class="hl-0"> </span><span class="hl-4">=</span><span class="hl-0"> </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-2">SapphireClient</span><span class="hl-0">({</span><br/><span class="hl-0">        </span><span class="hl-1">/* your bot options */</span><br/><span class="hl-0">        env: {</span><br/><span class="hl-0">            enabled: </span><span class="hl-5">true</span><span class="hl-0"> </span><span class="hl-1">// You can decide when to enable the plugin or not.</span><br/><span class="hl-0">            </span><span class="hl-1">/* ...More options available */</span><br/><span class="hl-0">        }</span><br/><span class="hl-0">    });</span><br/><br/><span class="hl-0">    </span><span class="hl-4">await</span><span class="hl-0"> client.</span><span class="hl-2">login</span><span class="hl-0">();</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-4">void</span><span class="hl-0"> </span><span class="hl-2">main</span><span class="hl-0">();</span><br/><br/><span class="hl-1">// It is recommended to do it for example in the main file that starts the client (main.js for example).</span><br/><span class="hl-4">declare</span><span class="hl-0"> </span><span class="hl-4">module</span><span class="hl-0"> </span><span class="hl-3">&#39;@kaname-png/plugin-env&#39;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">interface</span><span class="hl-0"> </span><span class="hl-7">EnvKeys</span><span class="hl-0"> {</span><br/><span class="hl-0">        </span><span class="hl-7">MY_AWESOME_ENV</span><span class="hl-4">:</span><span class="hl-0"> </span><span class="hl-5">never</span><span class="hl-0">;</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span>
+</code></pre>
+<pre><code class="language-typescript"><span class="hl-1">// Services</span><br/><span class="hl-4">import</span><span class="hl-0"> { container } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">export</span><span class="hl-0"> </span><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeService</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">public</span><span class="hl-0"> </span><span class="hl-2">get</span><span class="hl-0">() {</span><br/><span class="hl-0">        </span><span class="hl-4">return</span><span class="hl-0"> container.env.</span><span class="hl-2">string</span><span class="hl-0">(</span><span class="hl-3">&#39;MY_AWESOME_ENV&#39;</span><span class="hl-0">);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-1">// Commands, Listeners, etc.</span><br/><span class="hl-4">import</span><span class="hl-0"> { Command } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@sapphire/framework&#39;</span><span class="hl-0">;</span><br/><span class="hl-4">import</span><span class="hl-0"> { Message } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@discord.js&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">export</span><span class="hl-0"> </span><span class="hl-4">class</span><span class="hl-0"> </span><span class="hl-7">MyAwesomeCommand</span><span class="hl-0"> </span><span class="hl-4">extends</span><span class="hl-0"> </span><span class="hl-5">Command</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">public</span><span class="hl-0"> </span><span class="hl-2">messageRun</span><span class="hl-0">(</span><span class="hl-7">message</span><span class="hl-4">:</span><span class="hl-0"> </span><span class="hl-7">Message</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">return</span><span class="hl-0"> message.</span><span class="hl-2">reply</span><span class="hl-0">(</span><span class="hl-5">this</span><span class="hl-0">.container.env.</span><span class="hl-2">string</span><span class="hl-0">(</span><span class="hl-3">&#39;MY_AWESOME_ENV&#39;</span><span class="hl-0">));</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">}</span>
+</code></pre>
+
+<a href="#contributors-✨" id="contributors-✨" style="color: inherit; text-decoration: none;">
+  <h2>Contributors ✨</h2>
+</a>
+<p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a>):</p>
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://kaname.netlify.app"><img src="https://avatars.githubusercontent.com/u/56084970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kaname</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Code">💻</a> <a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3Akaname-png" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Documentation">📖</a> <a href="#infra-kaname-png" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-kaname-png" title="Maintenance">🚧</a> <a href="https://github.com/kaname-png/neko-plugins/pulls?q=is%3Apr+reviewed-by%3Akaname-png" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<p>This project follows the <a href="https://github.com/all-contributors/all-contributors">all-contributors</a> specification.
+Contributions of any kind welcome!</p>
+</section></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <h3 class="tsd-index-heading uppercase">Index</h3>
