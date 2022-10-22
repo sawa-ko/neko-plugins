@@ -71,10 +71,10 @@ export class ClientAuthJWT {
 	 * @since 1.0.0
 	 * @param payload An object to encrypt
 	 */
-	public async encrypt(payload: Omit<AuthData, 'jwt'>): Promise<string> {
-		const { token } = await this.jwt.sign({ data: payload });
+	public async encrypt(payload: Omit<AuthData, 'jwt'>) {
+		const { token, expiresAt, validAt,issuedAt } = await this.jwt.sign({ data: payload });
 		this.#jwtSessions.push(token);
-		return token;
+		return { access_token: token, expires_at: expiresAt, valid_at: validAt, issued_at: issuedAt };
 	}
 
 	/**
