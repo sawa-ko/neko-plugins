@@ -23,7 +23,7 @@ export class PluginRoute extends Route {
 	public async [methods.POST](request: ApiRequest, response: ApiResponse) {
 		if (!request.session) return response.status(HttpCodes.Unauthorized).json({ error: 'Unauthorized.' });
 
-		const result = await this.revoke(request.session.user.auth.access_token);
+		const result = await this.revoke(request.session.data.auth.access_token);
 		if (result.ok) return this.success(response);
 
 		// RFC 7009 2.2.1. If the server responds with HTTP status code 503, the client must assume the token still
@@ -40,7 +40,7 @@ export class PluginRoute extends Route {
 			if (retryAfter) {
 				await sleep(retryAfter);
 
-				const result = await this.revoke(request.session.user.auth.access_token);
+				const result = await this.revoke(request.session.data.auth.access_token);
 				if (result.ok) {
 					this.container.jwt.signOut(request.session.access_token);
 					return this.success(response);

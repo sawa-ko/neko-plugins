@@ -53,7 +53,7 @@ export interface SessionData {
 	/**
 	 * User information in Discord (OAuth2).
 	 */
-	user: SessionUserData;
+	data: SessionUserData;
 }
 
 /**
@@ -64,7 +64,7 @@ export interface SessionUserData {
 	/**
 	 * User data according to the Scopes chosen in the OAuth.
 	 */
-	data: LoginData;
+	user: LoginData;
 
 	/**
 	 * User's OAuth access token information in Discord.

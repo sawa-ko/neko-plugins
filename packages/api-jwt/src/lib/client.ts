@@ -32,13 +32,13 @@ export class Client {
 		const options: jwt.SignOptions = { algorithm: this.algorithm, expiresIn: '4d' };
 		if (this.issuer) options.issuer = this.issuer;
 
-		const accessToken = jwt.sign({ ...payload }, this.secret, options);
-		const refresToken = jwt.sign({ ...payload.auth }, this.secret, {
+		const accessToken = jwt.sign(payload, this.secret, options);
+		const refresToken = jwt.sign(payload.auth, this.secret, {
 			...options,
 			expiresIn: '7d'
 		});
 
-		this.sessions.push({ access_token: accessToken, refresh_token: refresToken, user: payload });
+		this.sessions.push({ access_token: accessToken, refresh_token: refresToken, data: payload });
 		return { access_token: accessToken, refresh_token: refresToken, expires_in: Date.now() + 345600000, token_type: 'Bearer' };
 	}
 
@@ -61,7 +61,7 @@ export class Client {
 		const userData = await container.server.auth?.fetchData(authData.access_token);
 		if (isNullish(userData)) return null;
 
-		return { data: userData, auth: authData };
+		return { auth: authData, user: userData };
 	}
 
 	private async authOrRefresh(tokenOrCode: string, grantType: 'code' | 'refresh', redirectUri?: string) {
