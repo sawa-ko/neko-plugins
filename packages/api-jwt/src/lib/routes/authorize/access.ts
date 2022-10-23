@@ -1,4 +1,4 @@
-import { ApiRequest, ApiResponse, methods, Route, MimeTypes } from '@sapphire/plugin-api';
+import { ApiRequest, ApiResponse, methods, Route } from '@sapphire/plugin-api';
 import { isNullish } from '@sapphire/utilities';
 
 /**
@@ -7,7 +7,7 @@ import { isNullish } from '@sapphire/utilities';
  */
 export class PluginRoute extends Route {
 	public constructor(context: Route.Context, options: Route.Options) {
-		super(context, { ...options, route: 'authorize/access', acceptedContentMimeTypes: [MimeTypes.ApplicationJson] });
+		super(context, { ...options, route: 'authorize/access' });
 
 		const { server } = this.container;
 		this.enabled = server.auth !== null;
@@ -15,6 +15,10 @@ export class PluginRoute extends Route {
 
 	public async [methods.POST](request: ApiRequest, response: ApiResponse) {
 		const body = request.body as OAuth2BodyData;
+		if (typeof body?.code !== 'string') {
+			return response.badRequest();
+		}
+
 		if (isNullish(body.code)) return response.badRequest('The Discord OAuth code is required.');
 
 		const authData = await this.container.jwt.auth(body.code, 'code', body.redirectUri);

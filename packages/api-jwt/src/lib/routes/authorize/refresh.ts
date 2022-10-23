@@ -1,4 +1,4 @@
-import { ApiRequest, ApiResponse, methods, Route, MimeTypes } from '@sapphire/plugin-api';
+import { ApiRequest, ApiResponse, methods, Route } from '@sapphire/plugin-api';
 import { isNullish } from '@sapphire/utilities';
 import type { RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
 
@@ -8,7 +8,7 @@ import type { RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
  */
 export class PluginRoute extends Route {
 	public constructor(context: Route.Context, options: Route.Options) {
-		super(context, { ...options, route: 'authorize/refresh', acceptedContentMimeTypes: [MimeTypes.ApplicationJson] });
+		super(context, { ...options, route: 'authorize/refresh' });
 
 		const { server } = this.container;
 		this.enabled = server.auth !== null;
@@ -16,6 +16,10 @@ export class PluginRoute extends Route {
 
 	public async [methods.POST](request: ApiRequest, response: ApiResponse) {
 		const { refresh_token } = request.body as { refresh_token: string };
+		if (typeof refresh_token !== 'string') {
+			return response.badRequest();
+		}
+
 		if (isNullish(refresh_token)) return response.badRequest('The refresh_token is required.');
 
 		const tokenData = this.container.jwt.decrypt<RESTPostOAuth2AccessTokenResult>(refresh_token, 'refresh_token');
