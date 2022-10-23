@@ -1,36 +1,25 @@
-import type { JWT_CONFIG } from 'jwt-service';
-import type { ClientAuthJWT, TokenPayload } from './lib/client';
+import type { Client } from './lib/client';
+import type { ClientOptions } from './lib/types';
 
-export { PluginMiddleware as AuthMiddleware } from './lib/middlewares/auth';
-export { ClientAuthJWT as AuthClient } from './lib/client';
-export { PluginRoute as AuthRoute } from './lib/routes/oauth/callback';
+export { Client as JWTClient } from './lib/client';
+export { PluginRoute as JWTAccessRoute } from './lib/routes/authorize/access';
+export { PluginRoute as JWTRefreshRoute } from './lib/routes/authorize/refresh';
+export { PluginRoute as JWTRevokeRoute } from './lib/routes/authorize/revoke';
+export { PluginMiddleware as JWTMiddleware } from './lib/middlewares/auth';
+export * from './lib/types';
+
+declare module '@sapphire/pieces' {
+	interface Container {
+		jwt: Client;
+	}
+}
 
 declare module '@sapphire/plugin-api' {
 	interface ServerOptionsAuth {
 		/**
-		 * Strategy used for the API authentication system.
-		 *
-		 * jwt = override oauth system to JWT.
-		 *
-		 * cookie = default oauth system.
-		 * @since 1.0.0
-		 */
-		strategy: 'jwt' | 'cookie';
-
-		/**
 		 * Options for the authentication system based on JWT.
-		 * @since 1.0.0
+		 * @since 3.0.0
 		 */
-		jwt?: Omit<JWT_CONFIG<'PLUGIN_API_JWT_SECRET'>, 'secretEnvName'>;
-	}
-
-	interface AuthData {
-		jwt: Omit<TokenPayload, 'data'>;
-	}
-}
-
-declare module '@sapphire/pieces' {
-	interface Container {
-		jwt: ClientAuthJWT;
+		jwt?: ClientOptions;
 	}
 }
