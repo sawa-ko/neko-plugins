@@ -61,7 +61,12 @@ async function main() {
 			auth: {
 				id: 'xxx' /** client oauth id **/,
 				secret: 'xxx' /** client oauth secret **/,
-				redirect: 'https://kanama.moment/oauth' /** client oauth redirect **/
+				redirect: 'https://kaname.netlify.app/oauth' /** client oauth redirect **/,
+				jwt: {
+					secret: 'uwu' /** JWT tokens are signed with this secret key. (required) **/,
+					issuer: 'kaname.netlify.app' /** See https://jwt.io/introduction  (optional and by default api.auth.redirect) **/,
+					algorithm: 'HS256' /**  (optional and by default HS512) **/
+				}
 			}
 		}
 	});
@@ -142,9 +147,9 @@ You can get the token information on a route, middleware, etc. in the following 
 > Javascript
 
 ```javascript
-import { methods, Route } from '@sapphire/plugin-api';
+const { methods, Route } = require('@sapphire/plugin-api');
 
-export class UserRoute extends Route {
+class UserRoute extends Route {
 	constructor(context, options) {
 		super(context, {
 			...options,
@@ -157,6 +162,8 @@ export class UserRoute extends Route {
 		response.json({ session });
 	}
 }
+
+exports.default = UserRoute;
 ```
 
 > Typescript
@@ -166,7 +173,7 @@ import { ApiResponse, methods, Route } from '@sapphire/plugin-api';
 import type { ApiRequest } from '@kaname-png/plugin-api-jwt';
 
 export class UserRoute extends Route {
-	constructor(context, options) {
+	constructor(context: Route.Context, options: Route.Options) {
 		super(context, {
 			...options,
 			route: 'user/route'
