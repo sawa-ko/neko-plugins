@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.0.0...@kaname-png/plugin-api-jwt@4.0.1) (2022-10-23)
+
+### Bug Fixes
+
+-   **plugin-api:** content types in authorize routes ([fab9a54](https://github.com/kaname-png/neko-plugins/commit/fab9a54ffde510f75c3408c974d6b8b14d4231af))
+
 # [4.0.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@1.3.7...@kaname-png/plugin-api-jwt@4.0.0) (2022-10-23)
 
 ### Bug Fixes
