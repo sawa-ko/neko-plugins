@@ -43,11 +43,12 @@ export class Client {
 	}
 
 	public decrypt<T = unknown>(token: string, type: 'access_token' | 'refresh_token') {
-		const data = Result.from<Partial<jwt.JwtPayload> & T>(() => jwt.verify(token, this.secret) as any);
+		const data = Result.from<Pick<jwt.JwtPayload, 'iat' | 'exp' | 'iss'> & T>(() => jwt.verify(token, this.secret) as any);
 		if (data.isErr()) return null;
 
-		if (!this.sessions.some((s) => s[type] === token)) return null;
-		return data.unwrapOr(null);
+		const session = this.sessions.find((s) => s[type] === token);
+		if (!session) return null;
+		return { data: data.unwrapOr(null), access_token: session.access_token, refresh_token: session.refresh_token };
 	}
 
 	public signOut(accessToken: string) {
