@@ -1,6 +1,6 @@
 import { Middleware } from '@sapphire/plugin-api';
 
-import type { ApiRequest } from '../types';
+import type { ApiRequest, SessionData } from '../types';
 
 /**
  * This is a rewrite of the @sapphire/plugin-api plugin authentication middleware.
@@ -30,7 +30,7 @@ export class PluginMiddleware extends Middleware {
 
 		// if token es invalid set auth as null
 		const token = authorization.slice('Bearer '.length);
-		const data = this.container.jwt.decrypt(token);
+		const data = this.container.jwt.decrypt<SessionData>(token, 'access_token');
 		if (!token || !data) {
 			request.session = null;
 			return;

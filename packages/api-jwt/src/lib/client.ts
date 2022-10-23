@@ -13,39 +13,40 @@ import type { ClientOptions, SessionData, SessionUserData } from './types';
  * @since 3.0.0
  */
 export class Client {
-	private issuer: string;
+	private issuer?: string;
 	private secret: string;
 	private algorithm: Algorithm;
 	private sessions: SessionData[] = [];
 
 	public constructor(options: ClientOptions) {
+		this.issuer = options.issuer;
+
 		// If no algorithm is specified, the HS512 algorithm will be used.
 		this.algorithm = options.algorithm ?? 'HS512';
 
-		// If no issuer is specified, the host of the redirect url will be used.
-		this.issuer = options.issuer ?? new URL(container.client.server.auth!.redirect!).host;
-
-		// Generate Random secret key if secret key is not set in options.
-		this.secret = container.client.server.auth?.secret ?? (Math.random() + 1).toString(36).substring(7);
+		// Set secret key if secret key is not set in options.
+		this.secret = container.client.server?.auth?.secret ?? 'NEKO-PLUGINS';
 	}
 
 	public encrypt(payload: SessionUserData) {
-		const accessToken = jwt.sign({ payload }, this.secret, { algorithm: this.algorithm, expiresIn: '4d', issuer: this.issuer });
-		const refresToken = jwt.sign({ access_token: accessToken, payload }, this.secret, {
-			algorithm: this.algorithm,
-			expiresIn: '7d',
-			issuer: this.issuer
+		const options: jwt.SignOptions = { algorithm: this.algorithm, expiresIn: '4d' };
+		if (this.issuer) options.issuer = this.issuer;
+
+		const accessToken = jwt.sign({ ...payload }, this.secret, options);
+		const refresToken = jwt.sign({ ...payload.auth }, this.secret, {
+			...options,
+			expiresIn: '7d'
 		});
 
 		this.sessions.push({ access_token: accessToken, refresh_token: refresToken, user: payload });
 		return { access_token: accessToken, refresh_token: refresToken, expires_in: Date.now() + 345600000, token_type: 'Bearer' };
 	}
 
-	public decrypt(token: string) {
-		const data = Result.from<jwt.JwtPayload & SessionData>(() => jwt.verify(token, this.secret, { complete: true }) as any);
+	public decrypt<T = unknown>(token: string, type: 'access_token' | 'refresh_token') {
+		const data = Result.from<Partial<jwt.JwtPayload> & T>(() => jwt.verify(token, this.secret) as any);
 		if (data.isErr()) return null;
 
-		if (!this.sessions.some((s) => s.access_token === token)) return null;
+		if (!this.sessions.some((s) => s[type] === token)) return null;
 		return data.unwrapOr(null);
 	}
 
@@ -53,8 +54,8 @@ export class Client {
 		this.sessions = this.sessions.filter((s) => s.access_token !== accessToken);
 	}
 
-	public async auth(token: string, grantType: 'code' | 'refresh', redirectUri?: string) {
-		const authData = await this.authOrRefresh(token, grantType, redirectUri);
+	public async auth(code: string, grantType: 'code' | 'refresh', redirectUri?: string) {
+		const authData = await this.authOrRefresh(code, grantType, redirectUri);
 		if (isNullish(authData)) return null;
 
 		const userData = await container.server.auth?.fetchData(authData.access_token);
@@ -68,13 +69,13 @@ export class Client {
 
 		const data: any = {
 			client_id: id,
-			client_secret: secret,
-			redirect_uri: container.server.auth?.redirect ?? redirectUri
+			client_secret: secret
 		};
 
 		if (grantType === 'code') {
 			data.code = tokenOrCode;
 			data.grant_type = 'authorization_code';
+			data.redirect_uri = container.server.auth?.redirect ?? redirectUri;
 		}
 
 		if (grantType === 'refresh') {
@@ -84,7 +85,7 @@ export class Client {
 
 		const result = await fetch(OAuth2Routes.tokenURL, {
 			method: 'POST',
-			body: stringify(data as any),
+			body: stringify(data),
 			headers: {
 				'content-type': 'application/x-www-form-urlencoded'
 			}

@@ -1,5 +1,6 @@
 import { ApiRequest, ApiResponse, methods, Route, MimeTypes } from '@sapphire/plugin-api';
 import { isNullish } from '@sapphire/utilities';
+import type { RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
 
 /**
  * Refresh internal and External (Discord) access token.
@@ -17,12 +18,12 @@ export class PluginRoute extends Route {
 		const { refresh_token } = request.body as { refresh_token: string };
 		if (isNullish(refresh_token)) return response.badRequest('The refresh_token is required.');
 
-		const tokenData = this.container.jwt.decrypt(refresh_token);
+		const tokenData = this.container.jwt.decrypt<RESTPostOAuth2AccessTokenResult>(refresh_token, 'refresh_token');
 		if (isNullish(tokenData)) return response.error('Could not get the user information in the token.');
 
-		const refreshData = await this.container.jwt.auth(tokenData.user.auth.refresh_token, 'refresh');
+		const refreshData = await this.container.jwt.auth(tokenData.refresh_token, 'refresh');
 		if (isNullish(refreshData)) return response.error('There was a problem refreshing data in Discord.');
 
-		return this.container.jwt.encrypt(refreshData);
+		return response.status(200).json(this.container.jwt.encrypt(refreshData));
 	}
 }

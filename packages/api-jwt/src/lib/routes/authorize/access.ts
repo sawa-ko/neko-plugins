@@ -20,7 +20,7 @@ export class PluginRoute extends Route {
 		const authData = await this.container.jwt.auth(body.code, 'code', body.redirectUri);
 		if (isNullish(authData)) return response.error('There was a problem getting user information in Discord.');
 
-		return this.container.jwt.encrypt(authData);
+		return response.status(200).json(this.container.jwt.encrypt(authData));
 	}
 }
 
