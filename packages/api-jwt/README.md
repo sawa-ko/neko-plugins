@@ -4,7 +4,7 @@
 
 # @kaname-png/plugin-api-jwt
 
-**Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to overwrites the authentication strategy of the [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api) plugin to JWT.**
+**Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to add JSON Web Tokens strategy in [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api) plugin to JWT.**
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
 [![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
@@ -15,7 +15,7 @@
 
 ## Description
 
-This plugin allows to override the authentication system of the [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api) plugin for [@sapphire/framework](https://www.npmjs.com/package/@sapphire/framework) allowing a Bearer JWT based system.
+This plugin add the authentication system JSON Web Tokens to [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api) plugin for [@sapphire/framework](https://www.npmjs.com/package/@sapphire/framework).
 
 This plugin does not change the behavior of the [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api) plugin, so after installing the plugin you can continue to use the [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api) plugin as you always have.
 
@@ -30,13 +30,12 @@ This plugin does not change the behavior of the [@sapphire/plugin-api](https://w
 `@kaname-png/plugin-api-jwt` depends on the following packages. Be sure to install these along with this package!
 
 -   [`@sapphire/framework`](https://www.npmjs.com/package/@sapphire/framework)
--   [`jwt-service`](https://github.com/nfroidure/jwt-service)
 -   [`@sapphire/plugin-api`](https://www.npmjs.com/package/@sapphire/plugin-api)
 
 You can use the following command to install this package, or replace `npm install` with your package manager of choice.
 
 ```sh
-npm install @kaname-png/plugin-api-jwt @sapphire/framework jwt-service @sapphire/plugin-api
+npm install @kaname-png/plugin-api-jwt @sapphire/framework @sapphire/plugin-api
 ```
 
 ---
@@ -62,9 +61,7 @@ async function main() {
 			auth: {
 				id: 'xxx' /** client oauth id **/,
 				secret: 'xxx' /** client oauth secret **/,
-				redirect: 'https://kanama.moment/oauth' /** client oauth redirect **/,
-				strategy:
-					'jwt' /** Set the strategy to jwt if you want to use the jwt strategy for authentication or cookie if you want to use the default strategy of the @sapphire/plugin-api plugin. **/
+				redirect: 'https://kanama.moment/oauth' /** client oauth redirect **/
 			}
 		}
 	});
@@ -94,9 +91,12 @@ async function main() {
 			auth: {
 				id: 'xxx' /** client oauth id **/,
 				secret: 'xxx' /** client oauth secret **/,
-				redirect: 'https://kanama.moment/oauth' /** client oauth redirect **/,
-				strategy:
-					'jwt' /** Set the strategy to jwt if you want to use the jwt strategy for authentication or cookie if you want to use the default strategy of the @sapphire/plugin-api plugin. **/
+				redirect: 'https://kaname.netlify.app/oauth' /** client oauth redirect **/,
+				jwt: {
+					secret: 'uwu' /** JWT tokens are signed with this secret key. (required) **/,
+					issuer: 'kaname.netlify.app' /** See https://jwt.io/introduction  (optional and by default api.auth.redirect) **/,
+					algorithm: 'HS256' /**  (optional and by default HS512) **/
+				}
 			}
 		}
 	});
@@ -116,37 +116,66 @@ Remember that the authentication token must be in the `authorization` header wit
 ```json
 {
 	"user": {
-		"id": "858367536240394259",
-		"username": "kaname-png",
-		"avatar": "28f2ec4eec159df460dc9b58f2a80318",
-		"discriminator": "1751",
-		"public_flags": 0,
-		"flags": 0,
-		"banner": null,
-		"banner_color": null,
-		"accent_color": null,
-		"verified": true
+		"auth": {
+			// See https://discord.com/developers/docs/topics/oauth2#authorization-code-grant-access-token-response
+		},
+		"data": {
+			"id": "858367536240394259",
+			"username": "kaname-png",
+			"avatar": "28f2ec4eec159df460dc9b58f2a80318",
+			"discriminator": "1751",
+			"public_flags": 0,
+			"flags": 0,
+			"banner": null,
+			"banner_color": null,
+			"accent_color": null,
+			"verified": true
+		}
 	},
-	"token": "eyJhbGciOiJIUzI1NiJ9.XXXXX"
+	"access_token": "eyJhbGciOiJIUzI1NiJ9.XXXXX",
+	"refresh_token": "eyJhbGciOiJIUzI1NiJ9.XXXXX"
 }
 ```
 
 You can get the token information on a route, middleware, etc. in the following way:
 
+> Javascript
+
 ```javascript
-import { ApiRequest, ApiResponse, methods, Route } from '@sapphire/plugin-api';
+import { methods, Route } from '@sapphire/plugin-api';
 
 export class UserRoute extends Route {
 	constructor(context, options) {
 		super(context, {
 			...options,
-			route: ''
+			route: 'user/route'
 		});
 	}
 
-	[methods.GET](_request: ApiRequest, response: ApiResponse) {
-		const tokenIfo = _request.auth;
-		response.json({ toke_info: tokenIfo });
+	[methods.GET](request, response) {
+		const session = request.session;
+		response.json({ session });
+	}
+}
+```
+
+> Typescript
+
+```typescript
+import { ApiResponse, methods, Route } from '@sapphire/plugin-api';
+import type { ApiRequest } from '@kaname-png/plugin-api-jwt';
+
+export class UserRoute extends Route {
+	constructor(context, options) {
+		super(context, {
+			...options,
+			route: 'user/route'
+		});
+	}
+
+	[methods.GET](request: ApiRequest, response: ApiResponse) {
+		const session = request.session;
+		response.json({ session });
 	}
 }
 ```

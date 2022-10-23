@@ -1,166 +1,99 @@
-import type { AuthData, LoginData } from '@sapphire/plugin-api';
-import { isThenable } from '@sapphire/utilities';
-import {
-	RESTGetAPICurrentUserConnectionsResult,
-	RESTGetAPICurrentUserGuildsResult,
-	RESTGetAPICurrentUserResult,
-	RouteBases,
-	Routes
-} from 'discord-api-types/v9';
-import type { JWTService, JWT_CONFIG } from 'jwt-service';
+import { container, Result } from '@sapphire/framework';
+import { isNullish } from '@sapphire/utilities';
+
+import { stringify } from 'querystring';
+import { OAuth2Routes, RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
+import jwt, { type Algorithm } from 'jsonwebtoken';
 import fetch from 'node-fetch';
-import initJWTService from 'jwt-service';
-import { container } from '@sapphire/framework';
+
+import type { ClientOptions, SessionData, SessionUserData } from './types';
 
 /**
- * This is a rewrite of the Auth service of the @sapphire/plugin-api plugin.
- * @since 1.0.0
+ * JWT token manager client in the API.
+ * @since 3.0.0
  */
-export class ClientAuthJWT {
-	public jwtOptions: Omit<JWT_CONFIG<'PLUGIN_API_JWT_SECRET'>, 'secretEnvName'>;
-	public jwt!: JWTService<Record<string, unknown>>;
-	#jwtSessions: string[] = [];
+export class Client {
+	private issuer: string;
+	private secret: string;
+	private algorithm: Algorithm;
+	private sessions: SessionData[] = [];
 
-	public constructor(options?: Omit<JWT_CONFIG<'PLUGIN_API_JWT_SECRET'>, 'secretEnvName'>) {
-		this.jwtOptions = options ?? {
-			duration: '15d',
-			tolerance: '2h',
-			algorithms: ['HS256']
+	public constructor(options: ClientOptions) {
+		// If no algorithm is specified, the HS512 algorithm will be used.
+		this.algorithm = options.algorithm ?? 'HS512';
+
+		// If no issuer is specified, the host of the redirect url will be used.
+		this.issuer = options.issuer ?? new URL(container.client.server.auth!.redirect!).host;
+
+		// Generate Random secret key if secret key is not set in options.
+		this.secret = container.client.server.auth?.secret ?? (Math.random() + 1).toString(36).substring(7);
+	}
+
+	public encrypt(payload: SessionUserData) {
+		const accessToken = jwt.sign({ payload }, this.secret, { algorithm: this.algorithm, expiresIn: '4d', issuer: this.issuer });
+		const refresToken = jwt.sign({ access_token: accessToken, payload }, this.secret, {
+			algorithm: this.algorithm,
+			expiresIn: '7d',
+			issuer: this.issuer
+		});
+
+		this.sessions.push({ access_token: accessToken, refresh_token: refresToken, user: payload });
+		return { access_token: accessToken, refresh_token: refresToken, expires_in: Date.now() + 345600000, token_type: 'Bearer' };
+	}
+
+	public decrypt(token: string) {
+		const data = Result.from<jwt.JwtPayload & SessionData>(() => jwt.verify(token, this.secret, { complete: true }) as any);
+		if (data.isErr()) return null;
+
+		if (!this.sessions.some((s) => s.access_token === token)) return null;
+		return data.unwrapOr(null);
+	}
+
+	public signOut(accessToken: string) {
+		this.sessions = this.sessions.filter((s) => s.access_token !== accessToken);
+	}
+
+	public async auth(token: string, grantType: 'code' | 'refresh', redirectUri?: string) {
+		const authData = await this.authOrRefresh(token, grantType, redirectUri);
+		if (isNullish(authData)) return null;
+
+		const userData = await container.server.auth?.fetchData(authData.access_token);
+		if (isNullish(userData)) return null;
+
+		return { data: userData, auth: authData };
+	}
+
+	private async authOrRefresh(tokenOrCode: string, grantType: 'code' | 'refresh', redirectUri?: string) {
+		const { id, secret } = container.server.auth!;
+
+		const data: any = {
+			client_id: id,
+			client_secret: secret,
+			redirect_uri: container.server.auth?.redirect ?? redirectUri
 		};
 
-		void this.init();
-	}
-
-	/**
-	 * Closes the current JWT session delivered to the user at login.
-	 * @param token Token that the user is using.
-	 * @since 1.2.1
-	 */
-	public closeSession(token: string) {
-		this.#jwtSessions = this.#jwtSessions.filter((t) => t !== token);
-	}
-
-	/**
-	 * Save the user's token as a session so that when the user logs off the token is invalidated.
-	 * @param token Token that the user is using.
-	 * @since 1.2.1
-	 */
-	public saveSession(token: string) {
-		this.#jwtSessions.push(token);
-	}
-
-	/**
-	 * Validate that the user's token still has an active session.
-	 * @param token Token that the user is using.
-	 * @since 1.2.1
-	 */
-	public verifySession(token: string) {
-		return this.#jwtSessions.some((t) => t === token);
-	}
-
-	/**
-	 * The client secret, this can be retrieved in Discord Developer Portal at https://discord.com/developers/applications.
-	 * @since 1.0.0
-	 */
-	public get secret() {
-		return container.server?.auth?.secret;
-	}
-
-	/**
-	 * Encrypts an object with [ Your configured algorithms of by default HS256 ] to use as a token.
-	 * @since 1.0.0
-	 * @param payload An object to encrypt
-	 */
-	public async encrypt(payload: Omit<AuthData, 'jwt'>) {
-		const { token, expiresAt, validAt,issuedAt } = await this.jwt.sign({ data: payload });
-		this.#jwtSessions.push(token);
-		return { access_token: token, expires_at: expiresAt, valid_at: validAt, issued_at: issuedAt };
-	}
-
-	/**
-	 * Decrypts an object with [ Your configured algorithms or by default HS256 ] to use as a token.
-	 * @since 1.0.0
-	 * @param token An data to decrypt
-	 */
-	public async decrypt(token: string): Promise<AuthData | null> {
-		const payload = (await this.jwt.verify(token).catch(() => null)) as unknown as TokenPayload | null;
-		if (!payload) return null;
-		return {
-			...payload.data,
-			jwt: {
-				exp: payload.exp,
-				iat: payload.iat,
-				nbf: payload.nbf
-			}
-		};
-	}
-
-	/**
-	 * Retrieves the data for a specific user.
-	 * @since 1.0.0
-	 * @param token The access token from the user.
-	 */
-	public async fetchData(token: string): Promise<LoginData> {
-		// Fetch the information:
-		const [user, guilds, connections] = await Promise.all([
-			this.fetchInformation<RESTGetAPICurrentUserResult>('identify', token, `${RouteBases.api}${Routes.user()}`),
-			this.fetchInformation<RESTGetAPICurrentUserGuildsResult>('guilds', token, `${RouteBases.api}${Routes.userGuilds()}`),
-			this.fetchInformation<RESTGetAPICurrentUserConnectionsResult>('connections', token, `${RouteBases.api}${Routes.userConnections()}`)
-		]);
-
-		// Transform the information:
-		let data: LoginData = { user, guilds, connections };
-		for (const transformer of container.server?.auth!.transformers) {
-			const result = transformer(data);
-			if (isThenable(result)) data = await result;
-			else data = result as LoginData;
+		if (grantType === 'code') {
+			data.code = tokenOrCode;
+			data.grant_type = 'authorization_code';
 		}
 
-		return data;
-	}
+		if (grantType === 'refresh') {
+			data.refresh_token = tokenOrCode;
+			data.grant_type = 'refresh_token';
+		}
 
-	private async fetchInformation<T>(scope: string, token: string, url: string): Promise<T | null | undefined> {
-		if (!container.server?.auth!.scopes.includes(scope)) return undefined;
-
-		const result = await fetch(url, {
+		const result = await fetch(OAuth2Routes.tokenURL, {
+			method: 'POST',
+			body: stringify(data as any),
 			headers: {
-				authorization: `Bearer ${token}`
+				'content-type': 'application/x-www-form-urlencoded'
 			}
 		});
 
-		return result.ok ? ((await result.json()) as T) : null;
+		const json = await result.json();
+		if (result.ok) return json as RESTPostOAuth2AccessTokenResult;
+
+		container.logger.error(json);
+		return null;
 	}
-
-	private async init() {
-		this.jwt = await initJWTService({
-			ENV: { PLUGIN_API_JWT_SECRET: container.server?.auth?.secret ?? 'This is not good.' },
-			JWT: { ...this.jwtOptions, secretEnvName: 'PLUGIN_API_JWT_SECRET' }
-		});
-	}
-}
-
-/**
- * Token data.
- * @since 1.0.0
- */
-export interface TokenPayload {
-	/**
-	 * User ID and Discord OAuth token data.
-	 */
-	data: Omit<AuthData, 'jwt_token_metadata'>;
-
-	/**
-	 * Identifies the time at which the JWT token was issued.
-	 */
-	iat: number;
-
-	/**
-	 * Identifies the expiration time on or after which the JWT MUST NOT be accepted for processing.
-	 */
-	exp: number;
-
-	/**
-	 * Identifies the time before which the JWT token MUST NOT be accepted for processing.
-	 */
-	nbf: number;
 }

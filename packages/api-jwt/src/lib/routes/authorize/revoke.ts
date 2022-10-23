@@ -1,26 +1,30 @@
-import { Route, methods, type ApiRequest, type ApiResponse, HttpCodes } from '@sapphire/plugin-api';
+import { Route, methods, type ApiResponse, HttpCodes } from '@sapphire/plugin-api';
+
 import { OAuth2Routes } from 'discord-api-types/v9';
-import fetch from 'node-fetch';
 import { stringify } from 'querystring';
 import { promisify } from 'util';
+import fetch from 'node-fetch';
+
+import type { ApiRequest } from '../../types';
 
 const sleep = promisify(setTimeout);
 
 /**
- * This is a rewrite of the @sapphire/plugin-api plugin authentication route.
- * @since 1.2.1
+ * Revoke internal and external (Discord) access token.
+ * @since 3.0.0
+ * @credits `@sapphire/plugin-api`
  */
 export class PluginRoute extends Route {
 	public constructor(context: Route.Context) {
-		super(context, { route: 'oauth/logout' });
+		super(context, { route: 'authorize/revoke' });
 		this.enabled = this.container.server.auth !== null;
 	}
 
 	public async [methods.POST](request: ApiRequest, response: ApiResponse) {
-		if (!request.auth) return response.status(HttpCodes.Unauthorized).json({ error: 'Unauthorized.' });
+		if (!request.session) return response.status(HttpCodes.Unauthorized).json({ error: 'Unauthorized.' });
 
-		const result = await this.revoke(request.auth.token);
-		if (result.ok) return this.success(response, request);
+		const result = await this.revoke(request.session.user.auth.access_token);
+		if (result.ok) return this.success(response);
 
 		// RFC 7009 2.2.1. If the server responds with HTTP status code 503, the client must assume the token still
 		// exists and may retry after a reasonable delay.
@@ -36,8 +40,11 @@ export class PluginRoute extends Route {
 			if (retryAfter) {
 				await sleep(retryAfter);
 
-				const result = await this.revoke(request.auth.token);
-				if (result.ok) return this.success(response, request);
+				const result = await this.revoke(request.session.user.auth.access_token);
+				if (result.ok) {
+					this.container.jwt.signOut(request.session.access_token);
+					return this.success(response);
+				}
 			}
 		}
 
@@ -50,11 +57,9 @@ export class PluginRoute extends Route {
 		return response.status(HttpCodes.InternalServerError).json({ error: 'Unexpected error from server.' });
 	}
 
-	private success(response: ApiResponse, request: ApiRequest) {
-		// Close JWT Session
-		const { authorization } = request.headers;
-
-		this.container.jwt.closeSession(authorization?.slice('Bearer '.length) ?? '');
+	private success(response: ApiResponse) {
+		// Sending an empty cookie with "expires" set to 1970-01-01 makes the browser instantly remove the cookie.
+		response.cookies.remove(this.container.server.auth!.cookie);
 		return response.json({ success: true });
 	}
 
