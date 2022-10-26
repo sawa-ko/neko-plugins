@@ -1,37 +1,42 @@
-import { Middleware, ApiRequest } from '@sapphire/plugin-api';
+import { Middleware } from '@sapphire/plugin-api';
+
+import type { ApiRequest, SessionUserData } from '../types';
 
 /**
  * This is a rewrite of the @sapphire/plugin-api plugin authentication middleware.
- * @since 1.0.0
+ * @since 4.0.0
  */
 export class PluginMiddleware extends Middleware {
 	public constructor(context: Middleware.Context) {
-		super(context, { position: 40 });
+		super(context, { position: 80, name: 'JWT/middleware' });
 
 		const { server } = this.container;
 		this.enabled = server.auth !== null;
 	}
 
-	public async run(request: ApiRequest) {
-		// If there are no jwt token, set auth as null:
+	public run(request: ApiRequest) {
+		// If there are no jwt token, set auth as null
 		const { authorization } = request.headers;
 		if (!authorization) {
-			request.auth = null;
+			request.session = null;
 			return;
 		}
 
+		// If jwt token no starts with Bearer set auth as null
 		if (!authorization.startsWith('Bearer ')) {
-			request.auth = null;
+			request.session = null;
 			return;
 		}
 
+		// if token es invalid set auth as null
 		const token = authorization.slice('Bearer '.length);
-		if (!this.container.jwt.verifySession(token)) {
-			request.auth = null;
+		const data = this.container.jwt.decrypt<SessionUserData>(token, 'access_token');
+		if (!token || !data?.data) {
+			request.session = null;
 			return;
 		}
 
 		// Decrypt the token
-		request.auth = await this.container.jwt.decrypt(token);
+		request.session = { data: data.data, access_token: data.access_token, refresh_token: data.refresh_token };
 	}
 }
