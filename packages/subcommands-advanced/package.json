@@ -34,7 +34,7 @@
 	},
 	"dependencies": {
 		"@sapphire/decorators": "^5.0.0",
-		"tslib": "^2.4.0"
+		"tslib": "^2.4.1"
 	},
 	"repository": {
 		"type": "git",
