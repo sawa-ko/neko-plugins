@@ -1343,7 +1343,7 @@ __metadata:
   resolution: "@kaname-png/plugin-statcord@workspace:packages/statcord"
   dependencies:
     "@sapphire/fetch": ^2.4.1
-    systeminformation: ^5.12.12
+    systeminformation: ^5.12.13
     tslib: ^2.4.1
   languageName: unknown
   linkType: soft
@@ -5286,9 +5286,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:~8.26.0":
-  version: 8.26.0
-  resolution: "eslint@npm:8.26.0"
+"eslint@npm:~8.27.0":
+  version: 8.27.0
+  resolution: "eslint@npm:8.27.0"
   dependencies:
     "@eslint/eslintrc": ^1.3.3
     "@humanwhocodes/config-array": ^0.11.6
@@ -5331,7 +5331,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: a2aced939ea060f77d10dcfced5cfeb940f63f383fd7ab1decadea64170ab552582e1c5909db1db641d4283178c9bc569f19b0f8900e00314a5f783e4b3f759d
+  checksum: 153b022d309e1b647a73b1bb0fa98912add699b06e279084155f23c6f2b5fc5abd05411fc1ba81608a24bbfaf044ca079544c16fffa6fc987b8f676c9960a2c4
   languageName: node
   linkType: hard
 
@@ -8461,7 +8461,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.42.0
     cz-conventional-changelog: ^3.3.0
     discord.js: ^13.12.0
-    eslint: ~8.26.0
+    eslint: ~8.27.0
     eslint-config-prettier: ^8.5.0
     eslint-plugin-prettier: ^4.2.1
     gen-esm-wrapper: ^1.1.3
@@ -10436,12 +10436,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"systeminformation@npm:^5.12.12":
-  version: 5.12.12
-  resolution: "systeminformation@npm:5.12.12"
+"systeminformation@npm:^5.12.13":
+  version: 5.12.13
+  resolution: "systeminformation@npm:5.12.13"
   bin:
     systeminformation: lib/cli.js
-  checksum: 726d220a76d9f9bf2f42867b44da0f4f2ba9b8b0a22503f775ae368a5da44dc1e1caae2fecd51a56b23818ae7b4f19600281949de43a5493460bde63c40ee672
+  checksum: 85bdc5461a82c6c7bfb3c300275ed604258b069b97ec658ef632cffe0e9fcb1261c881e7bd1dc5836a43c5c21eec410f75ad214503a180b959d0f6492094f1a8
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
