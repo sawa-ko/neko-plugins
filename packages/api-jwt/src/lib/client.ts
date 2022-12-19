@@ -60,9 +60,9 @@ export class Client {
 		return { data: data.unwrapOr(null), [type]: token };
 	}
 
-	public signOut(accessToken: string) {
+	public async signOut(accessToken: string) {
 		if (this.sessionsStrategies?.delete) {
-			this.sessionsStrategies.delete(accessToken);
+			await this.sessionsStrategies.delete(accessToken);
 		}
 
 		return true;

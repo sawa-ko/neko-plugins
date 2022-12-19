@@ -56,8 +56,8 @@ export class PluginRoute extends Route {
 		return response.status(HttpCodes.InternalServerError).json({ error: 'Unexpected error from server.' });
 	}
 
-	private success(response: ApiResponse, accessToken: string) {
-		this.container.jwt.signOut(accessToken);
+	private async success(response: ApiResponse, accessToken: string) {
+		await this.container.jwt.signOut(accessToken);
 		return response.json({ success: true });
 	}
 
