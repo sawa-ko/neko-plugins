@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.1.0...@kaname-png/plugin-api-jwt@4.1.1) (2022-12-19)
+
+**Note:** Version bump only for package @kaname-png/plugin-api-jwt
+
 # [4.1.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.0.4...@kaname-png/plugin-api-jwt@4.1.0) (2022-12-19)
 
 ### Features
