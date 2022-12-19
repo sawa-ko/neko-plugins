@@ -14,7 +14,7 @@ export class PluginMiddleware extends Middleware {
 		this.enabled = server.auth !== null;
 	}
 
-	public run(request: ApiRequest) {
+	public async run(request: ApiRequest) {
 		// If there are no jwt token, set auth as null
 		const { authorization } = request.headers;
 		if (!authorization) {
@@ -30,8 +30,8 @@ export class PluginMiddleware extends Middleware {
 
 		// if token es invalid set auth as null
 		const token = authorization.slice('Bearer '.length);
-		const data = this.container.jwt.decrypt<SessionUserData>(token, 'access_token');
-		if (!token || !data?.data) {
+		const data = await this.container.jwt.decrypt<SessionUserData>(token, 'access_token');
+		if (!token || !data?.data || !data.access_token) {
 			request.session = null;
 			return;
 		}
