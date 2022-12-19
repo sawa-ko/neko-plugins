@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.0.4...@kaname-png/plugin-api-jwt@4.1.0) (2022-12-19)
+
+### Features
+
+-   **plugin-api-jwt:** add methods for persistent sessions ([3f2ccbf](https://github.com/kaname-png/neko-plugins/commit/3f2ccbf81b2dbab38766cb35485c961d354bc72a))
+
 ## [4.0.4](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.0.3...@kaname-png/plugin-api-jwt@4.0.4) (2022-12-04)
 
 **Note:** Version bump only for package @kaname-png/plugin-api-jwt
