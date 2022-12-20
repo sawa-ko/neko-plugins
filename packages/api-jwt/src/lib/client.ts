@@ -6,7 +6,7 @@ import { OAuth2Routes, RESTPostOAuth2AccessTokenResult } from 'discord-api-types
 import jwt, { type Algorithm } from 'jsonwebtoken';
 import fetch from 'node-fetch';
 
-import type { ClientOptions, SessionData, SessionUserData } from './types';
+import type { ClientOptions, PersistSessionsStrategies, SessionUserData } from './types';
 
 /**
  * JWT token manager client in the API.
@@ -16,10 +16,11 @@ export class Client {
 	private issuer?: string;
 	private secret: string;
 	private algorithm: Algorithm;
-	private sessions: SessionData[] = [];
+	private sessionsStrategies?: PersistSessionsStrategies;
 
 	public constructor(options: ClientOptions) {
 		this.issuer = options.issuer;
+		this.sessionsStrategies = options.sessions;
 
 		// If no algorithm is specified, the HS512 algorithm will be used.
 		this.algorithm = options.algorithm ?? 'HS512';
@@ -28,7 +29,7 @@ export class Client {
 		this.secret = container.client.server?.auth?.secret ?? 'NEKO-PLUGINS';
 	}
 
-	public encrypt(payload: SessionUserData) {
+	public async encrypt(payload: SessionUserData) {
 		const options: jwt.SignOptions = { algorithm: this.algorithm, expiresIn: '4d' };
 		if (this.issuer) options.issuer = this.issuer;
 
@@ -38,21 +39,33 @@ export class Client {
 			expiresIn: '7d'
 		});
 
-		this.sessions.push({ access_token: accessToken, refresh_token: refresToken, data: payload });
+		if (this.sessionsStrategies?.create) {
+			await this.sessionsStrategies.create({ access_token: accessToken, refresh_token: refresToken, data: payload });
+		}
+
 		return { access_token: accessToken, refresh_token: refresToken, expires_in: Date.now() + 345600000, token_type: 'Bearer' };
 	}
 
-	public decrypt<T = unknown>(token: string, type: 'access_token' | 'refresh_token') {
+	public async decrypt<T = unknown>(token: string, type: 'access_token' | 'refresh_token') {
 		const data = Result.from<Pick<jwt.JwtPayload, 'iat' | 'exp' | 'iss'> & T>(() => jwt.verify(token, this.secret) as any);
 		if (data.isErr()) return null;
 
-		const session = this.sessions.find((s) => s[type] === token);
-		if (!session) return null;
-		return { data: data.unwrapOr(null), access_token: session.access_token, refresh_token: session.refresh_token };
+		if (this.sessionsStrategies?.get) {
+			const session = await this.sessionsStrategies.get(token, type);
+			if (!session) return null;
+
+			return { data: data.unwrapOr(null), access_token: session.access_token, refresh_token: session.refresh_token };
+		}
+
+		return { data: data.unwrapOr(null), [type]: token };
 	}
 
-	public signOut(accessToken: string) {
-		this.sessions = this.sessions.filter((s) => s.access_token !== accessToken);
+	public async signOut(accessToken: string) {
+		if (this.sessionsStrategies?.delete) {
+			await this.sessionsStrategies.delete(accessToken);
+		}
+
+		return true;
 	}
 
 	public async auth(code: string, grantType: 'code' | 'refresh', redirectUri?: string) {

@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-api-jwt",
-	"version": "4.0.3",
+	"version": "4.1.1",
 	"description": "Plugin for @sapphire/framework to add JSON Web Tokens strategy in @sapphire/plugin-api plugin.",
 	"author": "@kaname-png",
 	"license": "MIT",
@@ -71,6 +71,6 @@
 		"@sapphire/plugin-api": "^4.0.1",
 		"@sapphire/utilities": "^3.11.0",
 		"@types/jsonwebtoken": "^8.5.9",
-		"discord-api-types": "^0.37.17"
+		"discord-api-types": "^0.37.23"
 	}
 }

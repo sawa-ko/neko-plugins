@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-statcord",
-	"version": "2.1.5",
+	"version": "2.1.7",
 	"description": "Plugin for @sapphire/framework to send and manage bot statistics on statcord.",
 	"author": "@kaname-png",
 	"license": "MIT",
@@ -34,7 +34,7 @@
 	},
 	"dependencies": {
 		"@sapphire/fetch": "^2.4.1",
-		"systeminformation": "^5.12.14",
+		"systeminformation": "^5.16.6",
 		"tslib": "^2.4.1"
 	},
 	"repository": {

@@ -24,7 +24,7 @@ export class PluginRoute extends Route {
 		if (!request.session) return response.status(HttpCodes.Unauthorized).json({ error: 'Unauthorized.' });
 
 		const result = await this.revoke(request.session.data.auth.access_token);
-		if (result.ok) return this.success(response);
+		if (result.ok) return this.success(response, request.session.access_token);
 
 		// RFC 7009 2.2.1. If the server responds with HTTP status code 503, the client must assume the token still
 		// exists and may retry after a reasonable delay.
@@ -42,8 +42,7 @@ export class PluginRoute extends Route {
 
 				const result = await this.revoke(request.session.data.auth.access_token);
 				if (result.ok) {
-					this.container.jwt.signOut(request.session.access_token);
-					return this.success(response);
+					return this.success(response, request.session.access_token);
 				}
 			}
 		}
@@ -57,9 +56,8 @@ export class PluginRoute extends Route {
 		return response.status(HttpCodes.InternalServerError).json({ error: 'Unexpected error from server.' });
 	}
 
-	private success(response: ApiResponse) {
-		// Sending an empty cookie with "expires" set to 1970-01-01 makes the browser instantly remove the cookie.
-		response.cookies.remove(this.container.server.auth!.cookie);
+	private async success(response: ApiResponse, accessToken: string) {
+		await this.container.jwt.signOut(accessToken);
 		return response.json({ success: true });
 	}
 

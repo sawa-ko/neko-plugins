@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.6](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.5...@kaname-png/plugin-subcommands-advanced@2.1.6) (2022-12-19)
+
+**Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced
+
+## [2.1.5](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.4...@kaname-png/plugin-subcommands-advanced@2.1.5) (2022-12-04)
+
+**Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced
+
 ## [2.1.4](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.3...@kaname-png/plugin-subcommands-advanced@2.1.4) (2022-10-23)
 
 **Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced
