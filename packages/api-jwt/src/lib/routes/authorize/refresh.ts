@@ -22,7 +22,7 @@ export class PluginRoute extends Route {
 
 		if (isNullish(refresh_token)) return response.badRequest('The refresh_token is required.');
 
-		const tokenData = await this.container.jwt.decrypt<RESTPostOAuth2AccessTokenResult.>(refresh_token, 'refresh_token');
+		const tokenData = await this.container.jwt.decrypt<RESTPostOAuth2AccessTokenResult>(refresh_token, 'refresh_token');
 		if (isNullish(tokenData)) return response.error('Could not get the user information in the token.');
 		if (isNullish(tokenData.refresh_token)) {
 			this.container.logger.warn('The access token cannot be refreshed because the hook for get persistent sessions was not assigned.');
