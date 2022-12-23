@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.2](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.1.1...@kaname-png/plugin-api-jwt@4.1.2) (2022-12-23)
+
+### Bug Fixes
+
+-   **api:** The access and refresh token was not displayed correctly ([10674f0](https://github.com/kaname-png/neko-plugins/commit/10674f01bd7e11e03f9dbd381cb75968712281cb))
+
 ## [4.1.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.1.0...@kaname-png/plugin-api-jwt@4.1.1) (2022-12-19)
 
 **Note:** Version bump only for package @kaname-png/plugin-api-jwt
