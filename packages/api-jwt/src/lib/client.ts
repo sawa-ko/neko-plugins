@@ -34,10 +34,14 @@ export class Client {
 		if (this.issuer) options.issuer = this.issuer;
 
 		const accessToken = jwt.sign(payload, this.secret, options);
-		const refresToken = jwt.sign(payload.auth, this.secret, {
-			...options,
-			expiresIn: '7d'
-		});
+		const refresToken = jwt.sign(
+			{ data: { scope: payload.auth.scope, refresh_token: payload.auth.refresh_token, token_type: payload.auth.token_type } },
+			this.secret,
+			{
+				...options,
+				expiresIn: '7d'
+			}
+		);
 
 		if (this.sessionsHooks?.create) {
 			await this.sessionsHooks.create({ access_token: accessToken, refresh_token: refresToken, data: payload });

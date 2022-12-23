@@ -22,7 +22,7 @@ export class PluginRoute extends Route {
 
 		if (isNullish(refresh_token)) return response.badRequest('The refresh_token is required.');
 
-		const tokenData = await this.container.jwt.decrypt<RESTPostOAuth2AccessTokenResult>(refresh_token, 'refresh_token');
+		const tokenData = await this.container.jwt.decrypt<RESTPostOAuth2AccessTokenResult.>(refresh_token, 'refresh_token');
 		if (isNullish(tokenData)) return response.error('Could not get the user information in the token.');
 		if (isNullish(tokenData.refresh_token)) {
 			this.container.logger.warn('The access token cannot be refreshed because the hook for get persistent sessions was not assigned.');
@@ -30,7 +30,7 @@ export class PluginRoute extends Route {
 			return response.error('Persistent sessions not active.');
 		}
 
-		const refreshData = await this.container.jwt.auth(tokenData.refresh_token, 'refresh');
+		const refreshData = await this.container.jwt.auth(tokenData.data.refresh_token, 'refresh');
 		if (isNullish(refreshData)) return response.error('There was a problem refreshing data in Discord.');
 
 		return response.status(200).json(await this.container.jwt.encrypt(refreshData));
