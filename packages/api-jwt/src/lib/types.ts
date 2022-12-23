@@ -25,9 +25,9 @@ export interface ClientOptions {
 	algorithm?: Algorithm;
 
 	/**
-	 * Strategies to verify and manage active API sessions in a customized way.
+	 * Hooks to verify and manage active API sessions in a customized way.
 	 */
-	sessions?: PersistSessionsStrategies;
+	sessionsHooks?: PersistSessionsHooks;
 }
 
 /**
@@ -79,7 +79,7 @@ export interface SessionUserData {
 }
 
 /**
- * Payload that is sent to the strategy to create persistent sessions.
+ * Payload that is sent to the hook to create persistent sessions.
  */
 export interface PersistSessionsPayload {
 	access_token: string;
@@ -88,9 +88,9 @@ export interface PersistSessionsPayload {
 }
 
 /**
- * Methods used for persistent session strategies in the API.
+ * Methods used for persistent session hooks in the API.
  */
-export interface PersistSessionsStrategies {
+export interface PersistSessionsHooks {
 	/**
 	 * Method to be used to verify persistent user sessions.
 	 * @returns boolean | Promise<boolean>
