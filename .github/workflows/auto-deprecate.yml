@@ -20,6 +20,6 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Deprecate versions
-        run: yarn npm-deprecate
+        run: yarn npm-deprecate -v
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
