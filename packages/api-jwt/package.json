@@ -12,7 +12,7 @@
 		".": {
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js",
-			"types": "./register.d.ts"
+			"types": "./dist/index.d.ts"
 		},
 		"./register": {
 			"import": "./register.mjs",
