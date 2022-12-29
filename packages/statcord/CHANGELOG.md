@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.8](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.1.7...@kaname-png/plugin-statcord@2.1.8) (2022-12-29)
+
+### Bug Fixes
+
+-   import typing resolution ([41f47ff](https://github.com/kaname-png/neko-plugins/commit/41f47ffc58d8b8ebe4a06804ed736eda7f19f12a))
+
 ## [2.1.7](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.1.6...@kaname-png/plugin-statcord@2.1.7) (2022-12-19)
 
 **Note:** Version bump only for package @kaname-png/plugin-statcord
