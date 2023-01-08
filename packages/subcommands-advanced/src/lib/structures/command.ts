@@ -9,7 +9,12 @@ import {
 } from '@sapphire/framework';
 import { Subcommand as SapphirePluginSubcommand, SubcommandOptions } from '@sapphire/plugin-subcommands';
 
-import type { CacheType } from 'discord.js';
+import type {
+	CacheType,
+	ChatInputCommandInteraction,
+	ContextMenuCommandInteraction,
+	AutocompleteInteraction as _AutocompleteInteraction
+} from 'discord.js';
 
 import { RegisterSubcommandsHooks } from '../utils/const';
 import { analizeSubcommandGroupParsed, analizeSubCommandParsed, parseSlashSubcommand } from '../utils/functions';
@@ -21,12 +26,9 @@ export namespace Command {
 	export type JSON = CommandJSON;
 	export type Context = AliasPiece.Context;
 	export type RunInTypes = CommandOptionsRunType;
-	export type ChatInputInteraction<Cached extends import('discord.js').CacheType = import('discord.js').CacheType> =
-		import('discord.js').CommandInteraction<Cached>;
-	export type ContextMenuInteraction<Cached extends import('discord.js').CacheType = import('discord.js').CacheType> =
-		import('discord.js').ContextMenuInteraction<Cached>;
-	export type AutocompleteInteraction<Cached extends import('discord.js').CacheType = import('discord.js').CacheType> =
-		import('discord.js').AutocompleteInteraction<Cached>;
+	export type ChatInputInteraction<Cached extends CacheType = CacheType> = ChatInputCommandInteraction<Cached>;
+	export type ContextMenuInteraction<Cached extends CacheType = CacheType> = ContextMenuCommandInteraction<Cached>;
+	export type AutocompleteInteraction<Cached extends CacheType = CacheType> = _AutocompleteInteraction<Cached>;
 	export type Registry = ApplicationCommandRegistry;
 }
 
