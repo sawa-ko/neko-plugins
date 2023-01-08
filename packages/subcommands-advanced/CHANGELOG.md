@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.0...@kaname-png/plugin-subcommands-advanced@2.2.1) (2023-01-08)
+
+### Bug Fixes
+
+-   **advanced-subcommands:** improve error messages about registry subcommands ([4af5300](https://github.com/kaname-png/neko-plugins/commit/4af5300ee7dd73bc93e473b27ba38ec7a74d6ce3))
+
 # [2.2.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.8...@kaname-png/plugin-subcommands-advanced@2.2.0) (2023-01-08)
 
 ### Features
