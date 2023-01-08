@@ -4,7 +4,7 @@ import { isNullish } from '@sapphire/utilities';
 import { stringify } from 'querystring';
 import { OAuth2Routes, RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
 import jwt, { type Algorithm } from 'jsonwebtoken';
-import fetch from 'node-fetch';
+import { fetch } from 'undici';
 
 import type { ClientOptions, PersistSessionsHooks, SessionUserData } from './types';
 
