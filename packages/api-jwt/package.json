@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-api-jwt",
-	"version": "4.1.1",
+	"version": "4.1.6",
 	"description": "Plugin for @sapphire/framework to add JSON Web Tokens strategy in @sapphire/plugin-api plugin.",
 	"author": "@kaname-png",
 	"license": "MIT",
@@ -11,11 +11,13 @@
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
 		},
 		"./register": {
 			"import": "./register.mjs",
-			"require": "./register.js"
+			"require": "./register.js",
+			"types": "./register.d.ts"
 		}
 	},
 	"sideEffects": [
@@ -33,7 +35,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"jsonwebtoken": "^8.5.1",
+		"jsonwebtoken": "^9.0.0",
 		"tslib": "^2.4.1"
 	},
 	"repository": {
@@ -70,7 +72,7 @@
 	"devDependencies": {
 		"@sapphire/plugin-api": "^4.0.1",
 		"@sapphire/utilities": "^3.11.0",
-		"@types/jsonwebtoken": "^8.5.9",
-		"discord-api-types": "^0.37.23"
+		"@types/jsonwebtoken": "^9.0.0",
+		"discord-api-types": "^0.37.25"
 	}
 }

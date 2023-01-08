@@ -65,7 +65,24 @@ async function main() {
 				jwt: {
 					secret: 'uwu' /** JWT tokens are signed with this secret key. (required) **/,
 					issuer: 'kaname.netlify.app' /** See https://jwt.io/introduction  (optional and by default api.auth.redirect) **/,
-					algorithm: 'HS256' /**  (optional and by default HS512) **/
+					algorithm: 'HS256' /**  (optional and by default HS512) **/,
+					sessionsHooks: {
+						/** Optional hooks for persistent sessions (optional) **/,
+						get: (token, type) => {
+							// Do something with your database or something else.
+							// ...
+
+							return { access_token: '<access_token>', refresh_token: '<refresh_token>' };
+						},
+						create: (payload) => {
+							// Do something with your database or something else.
+							// ...
+						},
+						delete: (accessToken) => {
+							// Do something with your database or something else.
+							// ...
+						}
+					}
 				}
 			}
 		}
@@ -100,7 +117,24 @@ async function main() {
 				jwt: {
 					secret: 'uwu' /** JWT tokens are signed with this secret key. (required) **/,
 					issuer: 'kaname.netlify.app' /** See https://jwt.io/introduction  (optional and by default api.auth.redirect) **/,
-					algorithm: 'HS256' /**  (optional and by default HS512) **/
+					algorithm: 'HS256' /**  (optional and by default HS512) **/,
+					sessionsHooks: {
+						/** Optional hooks for persistent sessions (optional) **/,
+						get: (token, type) => {
+							// Do something with your database or something else.
+							// ...
+
+							return { access_token: '<access_token>', refresh_token: '<refresh_token>' };
+						},
+						create: (payload) => {
+							// Do something with your database or something else.
+							// ...
+						},
+						delete: (accessToken) => {
+							// Do something with your database or something else.
+							// ...
+						}
+					}
 				}
 			}
 		}

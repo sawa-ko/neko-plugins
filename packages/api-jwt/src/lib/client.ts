@@ -6,7 +6,7 @@ import { OAuth2Routes, RESTPostOAuth2AccessTokenResult } from 'discord-api-types
 import jwt, { type Algorithm } from 'jsonwebtoken';
 import fetch from 'node-fetch';
 
-import type { ClientOptions, PersistSessionsStrategies, SessionUserData } from './types';
+import type { ClientOptions, PersistSessionsHooks, SessionUserData } from './types';
 
 /**
  * JWT token manager client in the API.
@@ -16,11 +16,11 @@ export class Client {
 	private issuer?: string;
 	private secret: string;
 	private algorithm: Algorithm;
-	private sessionsStrategies?: PersistSessionsStrategies;
+	private sessionsHooks?: PersistSessionsHooks;
 
 	public constructor(options: ClientOptions) {
 		this.issuer = options.issuer;
-		this.sessionsStrategies = options.sessions;
+		this.sessionsHooks = options.sessionsHooks;
 
 		// If no algorithm is specified, the HS512 algorithm will be used.
 		this.algorithm = options.algorithm ?? 'HS512';
@@ -34,13 +34,17 @@ export class Client {
 		if (this.issuer) options.issuer = this.issuer;
 
 		const accessToken = jwt.sign(payload, this.secret, options);
-		const refresToken = jwt.sign(payload.auth, this.secret, {
-			...options,
-			expiresIn: '7d'
-		});
+		const refresToken = jwt.sign(
+			{ data: { scope: payload.auth.scope, refresh_token: payload.auth.refresh_token, token_type: payload.auth.token_type } },
+			this.secret,
+			{
+				...options,
+				expiresIn: '7d'
+			}
+		);
 
-		if (this.sessionsStrategies?.create) {
-			await this.sessionsStrategies.create({ access_token: accessToken, refresh_token: refresToken, data: payload });
+		if (this.sessionsHooks?.create) {
+			await this.sessionsHooks.create({ access_token: accessToken, refresh_token: refresToken, data: payload });
 		}
 
 		return { access_token: accessToken, refresh_token: refresToken, expires_in: Date.now() + 345600000, token_type: 'Bearer' };
@@ -50,8 +54,8 @@ export class Client {
 		const data = Result.from<Pick<jwt.JwtPayload, 'iat' | 'exp' | 'iss'> & T>(() => jwt.verify(token, this.secret) as any);
 		if (data.isErr()) return null;
 
-		if (this.sessionsStrategies?.get) {
-			const session = await this.sessionsStrategies.get(token, type);
+		if (this.sessionsHooks?.get) {
+			const session = await this.sessionsHooks.get(token, type);
 			if (!session) return null;
 
 			return { data: data.unwrapOr(null), access_token: session.access_token, refresh_token: session.refresh_token };
@@ -61,8 +65,8 @@ export class Client {
 	}
 
 	public async signOut(accessToken: string) {
-		if (this.sessionsStrategies?.delete) {
-			await this.sessionsStrategies.delete(accessToken);
+		if (this.sessionsHooks?.delete) {
+			await this.sessionsHooks.delete(accessToken);
 		}
 
 		return true;
