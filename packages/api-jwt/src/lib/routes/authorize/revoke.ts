@@ -3,7 +3,7 @@ import { Route, methods, type ApiResponse, HttpCodes } from '@sapphire/plugin-ap
 import { OAuth2Routes } from 'discord-api-types/v9';
 import { stringify } from 'querystring';
 import { promisify } from 'util';
-import fetch from 'node-fetch';
+import { fetch } from 'undici';
 
 import type { ApiRequest } from '../../types';
 
