@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.8...@kaname-png/plugin-subcommands-advanced@2.2.0) (2023-01-08)
+
+### Features
+
+-   **deps:** support for djs v14 ([42cf65a](https://github.com/kaname-png/neko-plugins/commit/42cf65a7a84994253dfba953bc0051f7749b21b9))
+
 ## [2.1.8](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.7...@kaname-png/plugin-subcommands-advanced@2.1.8) (2022-12-29)
 
 **Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced
