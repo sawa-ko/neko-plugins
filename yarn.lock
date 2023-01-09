@@ -402,13 +402,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^17.4.0":
-  version: 17.4.0
-  resolution: "@commitlint/cli@npm:17.4.0"
+"@commitlint/cli@npm:^17.4.1":
+  version: 17.4.1
+  resolution: "@commitlint/cli@npm:17.4.1"
   dependencies:
     "@commitlint/format": ^17.4.0
     "@commitlint/lint": ^17.4.0
-    "@commitlint/load": ^17.4.0
+    "@commitlint/load": ^17.4.1
     "@commitlint/read": ^17.4.0
     "@commitlint/types": ^17.4.0
     execa: ^5.0.0
@@ -418,7 +418,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: ca4eea3264f2c1481378e1c9a70c6d0f499b7a0e49e22668bb0b61f808cc0277bae15555bb73fa9f9600618da453c94e6feb29020af6488ff2571e474f999b72
+  checksum: a0f3d26f06fa751be6009f76b76fee83e2394f6b528b38f375b3119be41a39c851a053e9dd93385a5274feff471bd0984e626bb23624d72e231f66125e222fd5
   languageName: node
   linkType: hard
 
@@ -494,7 +494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:>6.1.1, @commitlint/load@npm:^17.4.0":
+"@commitlint/load@npm:>6.1.1":
   version: 17.4.0
   resolution: "@commitlint/load@npm:17.4.0"
   dependencies:
@@ -512,6 +512,28 @@ __metadata:
     ts-node: ^10.8.1
     typescript: ^4.6.4
   checksum: 2225030e2261c111bec1bd17a4e01e5466129bd4d12701019dd422f0b9ca8bab4d7c5b524aa13095115d3981acfc74ea5b9c7c2f7ddb8661ecefcb1406843ab6
+  languageName: node
+  linkType: hard
+
+"@commitlint/load@npm:^17.4.1":
+  version: 17.4.1
+  resolution: "@commitlint/load@npm:17.4.1"
+  dependencies:
+    "@commitlint/config-validator": ^17.4.0
+    "@commitlint/execute-rule": ^17.4.0
+    "@commitlint/resolve-extends": ^17.4.0
+    "@commitlint/types": ^17.4.0
+    "@types/node": "*"
+    chalk: ^4.1.0
+    cosmiconfig: ^8.0.0
+    cosmiconfig-typescript-loader: ^4.0.0
+    lodash.isplainobject: ^4.0.6
+    lodash.merge: ^4.6.2
+    lodash.uniq: ^4.5.0
+    resolve-from: ^5.0.0
+    ts-node: ^10.8.1
+    typescript: ^4.6.4
+  checksum: 17bc9f2e339da480740138bb1f56d6a5c36ec6d70844a605f09b5ffcbe0bb18fd3ab0ad09d40ba3cfd095f26b0b3cf78a02d7b73d5980d9e58dbdcdfaeb252a2
   languageName: node
   linkType: hard
 
@@ -1041,7 +1063,7 @@ __metadata:
     "@sapphire/plugin-api": ^5.0.0
     "@sapphire/utilities": ^3.11.0
     "@types/jsonwebtoken": ^9.0.0
-    discord-api-types: ^0.37.26
+    discord-api-types: ^0.37.27
     jsonwebtoken: ^9.0.0
     tslib: ^2.4.1
   languageName: unknown
@@ -4432,10 +4454,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.20, discord-api-types@npm:^0.37.23, discord-api-types@npm:^0.37.25, discord-api-types@npm:^0.37.26":
+"discord-api-types@npm:^0.37.20, discord-api-types@npm:^0.37.23, discord-api-types@npm:^0.37.25":
   version: 0.37.26
   resolution: "discord-api-types@npm:0.37.26"
   checksum: 66a1e43568af6d928aab253c81a192985c9025de72100881b8b206f1b8a746ef211670e1e88d152f59d7a186176a6afc3f81629ba7ccb91dab264b027f187004
+  languageName: node
+  linkType: hard
+
+"discord-api-types@npm:^0.37.27":
+  version: 0.37.27
+  resolution: "discord-api-types@npm:0.37.27"
+  checksum: f3c404db151862871686008a1e7902f22e2147b391840f9184568d5bc54593babac567fed90bd4831a6b793bd84c424172b081af36badbf950ea0e6fcd5d2e8a
   languageName: node
   linkType: hard
 
@@ -7724,7 +7753,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "neko-plugins@workspace:."
   dependencies:
-    "@commitlint/cli": ^17.4.0
+    "@commitlint/cli": ^17.4.1
     "@commitlint/config-conventional": ^17.4.0
     "@favware/npm-deprecate": ^1.0.7
     "@sapphire/eslint-config": ^4.3.8
