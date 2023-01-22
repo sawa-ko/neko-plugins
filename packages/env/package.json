@@ -35,7 +35,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"dotenv-cra": "^3.0.2",
+		"dotenv-cra": "^3.0.3",
 		"tslib": "^2.4.1"
 	},
 	"repository": {
