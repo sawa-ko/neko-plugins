@@ -2416,9 +2416,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "@sapphire/framework@npm:4.0.2"
+"@sapphire/framework@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@sapphire/framework@npm:4.1.0"
   dependencies:
     "@discordjs/builders": ^1.4.0
     "@sapphire/discord-utilities": ^3.0.0
@@ -2429,7 +2429,7 @@ __metadata:
     "@sapphire/result": ^2.6.0
     "@sapphire/stopwatch": ^1.5.0
     "@sapphire/utilities": ^3.11.0
-  checksum: 4af8a83ff072107e035b37fa3d80aad83b55c3fdeb61fc0d06ff7b2d27b60b1792b23105b9bf253f0f588040249e84c06c7a529f0de19eaa4b84624d8ab959c1
+  checksum: 3812018098c5a1fdba6468fecee5bbbd033c871214994e41dc8f241252933225e94479732eba7c8989a2a602cde88228cb5332175827a7fdd69f9b28c986afee
   languageName: node
   linkType: hard
 
@@ -8042,7 +8042,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.4.2
     "@favware/npm-deprecate": ^1.0.7
     "@sapphire/eslint-config": ^4.3.8
-    "@sapphire/framework": ^4.0.2
+    "@sapphire/framework": ^4.1.0
     "@sapphire/prettier-config": ^1.4.5
     "@sapphire/ts-config": ^3.3.4
     "@types/jest": ^29.4.0
