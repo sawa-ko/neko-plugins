@@ -36,7 +36,7 @@
 	},
 	"dependencies": {
 		"@sapphire/fetch": "^2.4.1",
-		"systeminformation": "^5.17.8",
+		"systeminformation": "^5.17.9",
 		"tslib": "^2.5.0"
 	},
 	"repository": {
