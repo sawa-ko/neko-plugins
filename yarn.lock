@@ -1092,7 +1092,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-api-jwt@workspace:packages/api-jwt"
   dependencies:
-    "@sapphire/plugin-api": ^5.0.0
+    "@sapphire/plugin-api": ^5.0.1
     "@sapphire/utilities": ^3.11.0
     "@types/jsonwebtoken": ^9.0.1
     discord-api-types: ^0.37.33
@@ -2373,15 +2373,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord.js-utilities@npm:6.0.1":
-  version: 6.0.1
-  resolution: "@sapphire/discord.js-utilities@npm:6.0.1"
+"@sapphire/discord.js-utilities@npm:6.0.2":
+  version: 6.0.2
+  resolution: "@sapphire/discord.js-utilities@npm:6.0.2"
   dependencies:
     "@sapphire/discord-utilities": ^3.0.0
     "@sapphire/duration": ^1.0.0
     "@sapphire/utilities": ^3.11.0
-    tslib: ^2.4.1
-  checksum: e5d95c97f10cf2b4ed249d2e553831522618cc18078a1dfbbf4d18d874b5b34a80930e172ab36fdd4b3099788f2a116fe44b2025d16ab14975a3201f6646e22e
+    tslib: ^2.5.0
+  checksum: 985b15b9d5f7bb2bed5e919ab7fc8a69dca9ef5baa3a44443b64558dce3303560027b0ed21a72ff849179e9181524316ffdfed6eb267020e3c10378b361c2f07
   languageName: node
   linkType: hard
 
@@ -2416,20 +2416,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@sapphire/framework@npm:4.1.0"
+"@sapphire/framework@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@sapphire/framework@npm:4.1.1"
   dependencies:
     "@discordjs/builders": ^1.4.0
     "@sapphire/discord-utilities": ^3.0.0
-    "@sapphire/discord.js-utilities": 6.0.1
+    "@sapphire/discord.js-utilities": 6.0.2
     "@sapphire/lexure": ^1.1.2
     "@sapphire/pieces": ^3.6.0
     "@sapphire/ratelimits": ^2.4.5
     "@sapphire/result": ^2.6.0
     "@sapphire/stopwatch": ^1.5.0
     "@sapphire/utilities": ^3.11.0
-  checksum: 3812018098c5a1fdba6468fecee5bbbd033c871214994e41dc8f241252933225e94479732eba7c8989a2a602cde88228cb5332175827a7fdd69f9b28c986afee
+  checksum: 40832cdd327bc5688535a647d3bda9c1ee9d1350c067805e9aa905c1d53a5916e66a29732cffb64ba17952385d3cd0342da239ebe20da9d2184623aa5c101178
   languageName: node
   linkType: hard
 
@@ -2453,16 +2453,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@sapphire/plugin-api@npm:5.0.0"
+"@sapphire/plugin-api@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@sapphire/plugin-api@npm:5.0.1"
   dependencies:
     "@types/psl": ^1.1.0
     "@types/ws": ^8.5.4
     psl: ^1.9.0
-    tslib: ^2.4.1
-    undici: ^5.14.0
-  checksum: 1ab3a140eb81df9c33423e7cb165d9ae68cbaa924d79c1bf6009205ddf6f9ad8b165368302591f004dcf89834711da0581e5d199f065cbe1eebb8e4af6522ceb
+    tslib: ^2.5.0
+    undici: ^5.20.0
+  checksum: 82c6fd9d48f07c7912e47992c5d46cf1b461fc1ac4348f6c5a3d08395274a74619c769fe5c244fbdb36d7def4a03bca71f9c066bd83d54d55e202bf11e5991a7
   languageName: node
   linkType: hard
 
@@ -8072,7 +8072,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.4.2
     "@favware/npm-deprecate": ^1.0.7
     "@sapphire/eslint-config": ^4.3.8
-    "@sapphire/framework": ^4.1.0
+    "@sapphire/framework": ^4.1.1
     "@sapphire/prettier-config": ^1.4.5
     "@sapphire/ts-config": ^3.3.4
     "@types/jest": ^29.4.0
@@ -10522,12 +10522,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.13.0, undici@npm:^5.14.0":
+"undici@npm:^5.13.0":
   version: 5.14.0
   resolution: "undici@npm:5.14.0"
   dependencies:
     busboy: ^1.6.0
   checksum: 7a076e44d84b25844b4eb657034437b8b9bb91f17d347de474fdea1d4263ce7ae9406db79cd30de5642519277b4893f43073258bcc8fed420b295da3fdd11b26
+  languageName: node
+  linkType: hard
+
+"undici@npm:^5.20.0":
+  version: 5.20.0
+  resolution: "undici@npm:5.20.0"
+  dependencies:
+    busboy: ^1.6.0
+  checksum: 25412a785b2bd0b12f0bb0ec47ef00aa7a611ca0e570cb7af97cffe6a42e0d78e4b15190363a43771e9002defc3c6647c1b2d52201b3f64e2196819db4d150d3
   languageName: node
   linkType: hard
 
