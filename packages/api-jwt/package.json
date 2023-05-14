@@ -73,6 +73,6 @@
 		"@sapphire/plugin-api": "^5.0.4",
 		"@sapphire/utilities": "^3.11.2",
 		"@types/jsonwebtoken": "^9.0.2",
-		"discord-api-types": "^0.37.41"
+		"discord-api-types": "^0.37.42"
 	}
 }
