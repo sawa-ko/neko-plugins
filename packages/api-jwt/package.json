@@ -36,7 +36,7 @@
 	},
 	"dependencies": {
 		"jsonwebtoken": "^9.0.0",
-		"tslib": "^2.5.2"
+		"tslib": "^2.5.3"
 	},
 	"repository": {
 		"type": "git",
@@ -73,6 +73,6 @@
 		"@sapphire/plugin-api": "^5.0.4",
 		"@sapphire/utilities": "^3.11.2",
 		"@types/jsonwebtoken": "^9.0.2",
-		"discord-api-types": "^0.37.42"
+		"discord-api-types": "^0.37.43"
 	}
 }
