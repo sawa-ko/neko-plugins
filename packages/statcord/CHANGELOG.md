@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.11](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.1.10...@kaname-png/plugin-statcord@2.1.11) (2023-06-05)
+
+### Bug Fixes
+
+-   tslib import ([ce34a4d](https://github.com/kaname-png/neko-plugins/commit/ce34a4da81c147528bb128e3681f1d5039c134ba))
+
 ## [2.1.10](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.1.9...@kaname-png/plugin-statcord@2.1.10) (2023-01-08)
 
 **Note:** Version bump only for package @kaname-png/plugin-statcord

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.8](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.1.7...@kaname-png/plugin-api-jwt@4.1.8) (2023-06-05)
+
+### Bug Fixes
+
+-   tslib import ([ce34a4d](https://github.com/kaname-png/neko-plugins/commit/ce34a4da81c147528bb128e3681f1d5039c134ba))
+
 ## [4.1.7](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-api-jwt@4.1.6...@kaname-png/plugin-api-jwt@4.1.7) (2023-01-08)
 
 **Note:** Version bump only for package @kaname-png/plugin-api-jwt

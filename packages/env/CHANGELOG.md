@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-env@1.1.5...@kaname-png/plugin-env@1.1.6) (2023-06-05)
+
+### Bug Fixes
+
+-   tslib import ([ce34a4d](https://github.com/kaname-png/neko-plugins/commit/ce34a4da81c147528bb128e3681f1d5039c134ba))
+
 ## [1.1.5](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-env@1.1.4...@kaname-png/plugin-env@1.1.5) (2022-12-29)
 
 **Note:** Version bump only for package @kaname-png/plugin-env
