@@ -5,7 +5,7 @@ import { currentLoad } from 'systeminformation';
 import EventEmitter from 'events';
 import type { Snowflake } from 'discord.js';
 
-import { PostStats, ClientStats, BucketStats, UserVotesStats, StatcordOptions, StatcordEvents } from './types';
+import { type PostStats, type ClientStats, type BucketStats, type UserVotesStats, type StatcordOptions, StatcordEvents } from './types';
 /**
  * The Statcord class.
  * @since 1.0.0

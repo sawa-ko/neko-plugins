@@ -3,11 +3,11 @@ import {
 	ApplicationCommandRegistry,
 	Args,
 	Command as SapphireCommand,
-	CommandJSON,
-	CommandOptionsRunType,
+	type CommandJSON,
+	type CommandOptionsRunType,
 	container
 } from '@sapphire/framework';
-import { Subcommand as SapphirePluginSubcommand, SubcommandOptions } from '@sapphire/plugin-subcommands';
+import { Subcommand as SapphirePluginSubcommand, type SubcommandOptions } from '@sapphire/plugin-subcommands';
 
 import type {
 	CacheType,

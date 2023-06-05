@@ -2,7 +2,7 @@ import { container, Result } from '@sapphire/framework';
 import { isNullish } from '@sapphire/utilities';
 
 import { stringify } from 'querystring';
-import { OAuth2Routes, RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
+import { OAuth2Routes, type RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
 import jwt, { type Algorithm } from 'jsonwebtoken';
 import { fetch } from 'undici';
 
