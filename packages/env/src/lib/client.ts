@@ -1,4 +1,4 @@
-import { config, DotenvCraOptions } from 'dotenv-cra';
+import { config, type DotenvCraOptions } from 'dotenv-cra';
 import { parseEnvBool, parseEnvNum, parseEnvString, parseEnvBigInt, parseEnvObject, parseEnvInteger, parseEnvArray } from './parsers';
 import type { EnvKeys } from '../index';
 
