@@ -1,3 +1,5 @@
+import 'tslib';
+
 import type { Client } from './lib/client';
 import type { ClientOptions } from './lib/types';
 
