@@ -4,3 +4,4 @@ package:
   - '@kaname-png/plugin-subcommands-advanced'
   - '@kaname-png/plugin-env'
   - '@kaname-png/plugin-api-jwt'
+  - '@kaname-png/plugin-sentry'
