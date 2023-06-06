@@ -55,7 +55,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 All plugins created by the community, for the community, are appreciated.
 
 <!-- markdownlint-disable -->
-<img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif?w=336" width="400" heigth="400">
+<img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif" alt="Display a thank-you animation">
 <!-- markdownlint-restore -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
