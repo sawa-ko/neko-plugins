@@ -9,6 +9,6 @@
 		"packages/**/register*.mjs",
 		"packages/**/types*.js",
 		"packages/**/types*.mjs",
-		"./jest.config.ts"
+		"./jest.config.js"
 	]
 }
