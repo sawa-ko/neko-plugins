@@ -783,6 +783,11 @@ __metadata:
   version: 1.2.0
   resolution: "@ioredis/commands@npm:1.2.0"
   checksum: 9b20225ba36ef3e5caf69b3c0720597c3016cc9b1e157f519ea388f621dd9037177f84cfe7e25c4c32dad7dd90c70ff9123cd411f747e053cf292193c9c461e2
+
+"@influxdata/influxdb-client@npm:^1.33.2":
+  version: 1.33.2
+  resolution: "@influxdata/influxdb-client@npm:1.33.2"
+  checksum: f3f054ddc180adfe114cbcc51ac1b9eb22daca4aecf678778fccf5241398fbda87e8d1a405ae5d73b293e2ef3d26e73789e245287bf29050d4bb9437b5a1990c
   languageName: node
   linkType: hard
 
@@ -1162,6 +1167,13 @@ __metadata:
     "@sentry/integrations": ^7.52.1
     "@sentry/node": ^7.52.1
     tslib: ^2.5.2
+"@kaname-png/plugin-influxdb@workspace:packages/influxdb":
+  version: 0.0.0-use.local
+  resolution: "@kaname-png/plugin-influxdb@workspace:packages/influxdb"
+  dependencies:
+    "@influxdata/influxdb-client": ^1.33.2
+    "@sapphire/framework": ^4.4.4
+    tslib: ^2.5.3
   languageName: unknown
   linkType: soft
 
