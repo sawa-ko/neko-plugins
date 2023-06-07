@@ -779,6 +779,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@influxdata/influxdb-client@npm:^1.33.2":
+  version: 1.33.2
+  resolution: "@influxdata/influxdb-client@npm:1.33.2"
+  checksum: f3f054ddc180adfe114cbcc51ac1b9eb22daca4aecf678778fccf5241398fbda87e8d1a405ae5d73b293e2ef3d26e73789e245287bf29050d4bb9437b5a1990c
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -1119,6 +1126,16 @@ __metadata:
   resolution: "@kaname-png/plugin-env@workspace:packages/env"
   dependencies:
     dotenv-cra: ^3.0.3
+    tslib: ^2.5.3
+  languageName: unknown
+  linkType: soft
+
+"@kaname-png/plugin-influxdb@workspace:packages/influxdb":
+  version: 0.0.0-use.local
+  resolution: "@kaname-png/plugin-influxdb@workspace:packages/influxdb"
+  dependencies:
+    "@influxdata/influxdb-client": ^1.33.2
+    "@sapphire/framework": ^4.4.4
     tslib: ^2.5.3
   languageName: unknown
   linkType: soft
