@@ -1,6 +1,6 @@
 {
   "projectName": "neko-plugins",
-  "projectOwner": "kaname-png",
+  "projectOwner": "sawa-ko",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -44,8 +44,20 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "Swiizyy",
+      "name": "Williams Bussat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52933626?v=4",
+      "profile": "https://github.com/Swiizyy",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs"
 }
