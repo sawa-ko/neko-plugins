@@ -20,7 +20,9 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-subcommands-advanced?color=crimson&label=%40kaname-png%2Fplugin-subcommands-advanced&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
 
-[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-sentry?color=crimson&label=%40kaname-png%2Fplugin-subcommands-advanced&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-sentry)
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-influxdb?color=crimson&label=%40kaname-png%2Fplugin-influxdb&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-influxdb)
+
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-sentry?color=crimson&label=%40kaname-png%2Fplugin-sentry&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-sentry)
 
 ---
 

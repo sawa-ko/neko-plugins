@@ -8,9 +8,9 @@
 on <a href="https://www.influxdata.com">InfluxDB</a>.**
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
-[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-sentry?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-sentry)
-[![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-sentry?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-sentry)
+[![codecov](https://codecov.io/gh/sawa-ko/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-influxdb?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-influxdb)
+[![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-influxdb?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-influxdb)
 
 </div>
 
