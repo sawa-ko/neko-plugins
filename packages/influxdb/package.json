@@ -1,6 +1,6 @@
 {
   "name": "@kaname-png/plugin-influxdb",
-  "version": "2.2.2",
+  "version": "1.0.0",
   "description": "Plugin for @sapphire/framework to track analytics on influxDB.",
   "author": "@kaname-png",
   "license": "MIT",
