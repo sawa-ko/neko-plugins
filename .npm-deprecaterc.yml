@@ -5,3 +5,4 @@ package:
   - '@kaname-png/plugin-env'
   - '@kaname-png/plugin-api-jwt'
   - '@kaname-png/plugin-influxdb'
+  - '@kaname-png/plugin-sentry'

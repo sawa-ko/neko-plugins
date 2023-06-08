@@ -8,7 +8,7 @@
 ## Plugins for @sapphire/framework
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
+[![codecov](https://codecov.io/gh/sawa-ko/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/sawa-ko/neko-plugins)
 
 ---
 
@@ -19,6 +19,10 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-api-jwt?color=crimson&label=%40kaname-png%2Fplugin-api-jwt&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-subcommands-advanced?color=crimson&label=%40kaname-png%2Fplugin-subcommands-advanced&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
+
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-influxdb?color=crimson&label=%40kaname-png%2Fplugin-influxdb&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-influxdb)
+
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-sentry?color=crimson&label=%40kaname-png%2Fplugin-sentry&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-sentry)
 
 ---
 
@@ -41,6 +45,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
    [HttpOnly Secure Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) in the plugin [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api).
 4. [Subcommands advanced](https://github.com/kaname-png/neko-plugins/tree/main/packages/subcommands-advanced): Plugin for [`@sapphire/framework`](https://github.com/sapphiredev/framework) to be able to create subcommands based on command classes.
 5. [InfluxDB](https://github.com/kaname-png/neko-plugins/tree/main/packages/influxdb): Plugin for [`@sapphire/framework`](https://github.com/sapphiredev/framework) to post stats on influxDB.
+6. [Sentry](https://github.com/kaname-png/neko-plugins/tree/main/packages/sentry): Plugin for [`@sapphire/framework`](https://github.com/sapphiredev/framework) to post error on [sentry](https://sentry.io).
 
 ## 🔥 Features
 
@@ -53,7 +58,7 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 All plugins created by the community, for the community, are appreciated.
 
 <!-- markdownlint-disable -->
-<img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif?w=336" width="400" heigth="400">
+<img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif" alt="Display a thank-you animation">
 <!-- markdownlint-restore -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
