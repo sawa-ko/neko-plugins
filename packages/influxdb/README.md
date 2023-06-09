@@ -38,7 +38,7 @@ More information about InfluxDB can be found on its [website](https://www.influx
 You can use the following command to install this package, or replace `npm install` with your package manager of choice.
 
 ```sh
-npm install @kaname-png/plugin-sentry @influxdata/influxdb-client  @sapphire/framework discord.js
+npm install @influxdata/influxdb-client  @sapphire/framework discord.js
 ```
 
 ---
