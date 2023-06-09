@@ -1,4 +1,4 @@
-export const enum Points {
+export enum Points {
 	Guilds = 'guilds',
 	Users = 'users',
 	Commands = 'commands',
@@ -6,26 +6,26 @@ export const enum Points {
 	MessageCount = 'message_count'
 }
 
-export const enum Tags {
+export enum Tags {
 	Shard = 'shard',
 	Client = 'client_id',
 	Action = 'action',
 	OriginEvent = 'origin_event'
 }
 
-export const enum CommandRunTypes {
+export enum CommandRunTypes {
 	Message = 'message',
 	ChatInput = 'chat-input',
 	ContextMenu = 'context-menu',
 	CommandAutocomplete = 'command-autocomplete'
 }
 
-export const enum CommandTypes {
+export enum CommandTypes {
 	Category = 'category',
 	RunType = 'run_type'
 }
 
-export const enum Actions {
+export enum Actions {
 	Addition = 'addition',
 	Subtraction = 'subtraction',
 	Sync = 'sync'
