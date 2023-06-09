@@ -59,7 +59,7 @@
 		"yarn",
 		"discord",
 		"sapphire",
-		"subcommands"
+		"influxdb"
 	],
 	"bugs": {
 		"url": "https://github.com/kaname-png/neko-plugins/issues"
