@@ -5,5 +5,13 @@
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"files.eol": "\n",
-	"deno.enable": false
+	"deno.enable": false,
+	"conventionalCommits.scopes": [
+		"api-jwt",
+		"env",
+		"influxdb",
+		"sentry",
+		"statcord",
+		"subcommands-advanced"
+	]
 }
