@@ -4,7 +4,9 @@ import { initializeSentry } from './lib';
 
 export class SentryPlugin extends Plugin {
 	public static [postInitialization](this: SapphireClient): void {
-		if (!this.options.sentry?.loadSentryErrorListeners) return;
+		if (!this.options.sentry) return;
+		const { loadSentryErrorListeners = true } = this.options.sentry;
+		if (!loadSentryErrorListeners) return;
 		this.stores.get('listeners').registerPath(join(__dirname, 'listeners'));
 	}
 
