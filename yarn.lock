@@ -1165,7 +1165,7 @@ __metadata:
   resolution: "@kaname-png/plugin-api-jwt@workspace:packages/api-jwt"
   dependencies:
     "@sapphire/plugin-api": ^5.0.4
-    "@sapphire/utilities": ^3.11.2
+    "@sapphire/utilities": ^3.12.0
     "@types/jsonwebtoken": ^9.0.2
     discord-api-types: ^0.37.43
     jsonwebtoken: ^9.0.0
@@ -1197,11 +1197,11 @@ __metadata:
   resolution: "@kaname-png/plugin-sentry@workspace:packages/sentry"
   dependencies:
     "@sapphire/plugin-api": ^5.0.4
-    "@sapphire/plugin-scheduled-tasks": ^7.0.0
+    "@sapphire/plugin-scheduled-tasks": ^7.1.0
     "@sapphire/plugin-subcommands": ^4.0.1
-    "@sentry/integrations": ^7.52.1
-    "@sentry/node": ^7.52.1
-    tslib: ^2.5.2
+    "@sentry/integrations": ^7.54.0
+    "@sentry/node": ^7.54.0
+    tslib: ^2.5.3
   languageName: unknown
   linkType: soft
 
@@ -1210,7 +1210,7 @@ __metadata:
   resolution: "@kaname-png/plugin-statcord@workspace:packages/statcord"
   dependencies:
     "@sapphire/fetch": ^2.4.1
-    systeminformation: ^5.18.1
+    systeminformation: ^5.18.3
     tslib: ^2.5.3
   languageName: unknown
   linkType: soft
@@ -2009,7 +2009,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-scheduled-tasks@npm:^7.0.0":
+"@sapphire/plugin-scheduled-tasks@npm:^7.1.0":
   version: 7.1.0
   resolution: "@sapphire/plugin-scheduled-tasks@npm:7.1.0"
   dependencies:
@@ -2090,10 +2090,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^3.11.0, @sapphire/utilities@npm:^3.11.1, @sapphire/utilities@npm:^3.11.2":
-  version: 3.11.2
-  resolution: "@sapphire/utilities@npm:3.11.2"
-  checksum: af06b3f52156af397a3be564f992bedefd728ea2d44fee8ffdc00242de0454075e722091cc213d4ad2fb4ef5c3b78740bf5e7f75242851d31a56206f51a8f403
+"@sapphire/utilities@npm:^3.11.0, @sapphire/utilities@npm:^3.11.1, @sapphire/utilities@npm:^3.11.2, @sapphire/utilities@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "@sapphire/utilities@npm:3.12.0"
+  checksum: 002f15263f157fdbb0603c233a43a5660cd3b45a4f3fddaa9d7066d187eec23f473ee42c8d071b0e3dec4e22b08bed337fb7eb336a02b59743a78ebc8922004e
   languageName: node
   linkType: hard
 
@@ -2120,7 +2120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/integrations@npm:^7.52.1":
+"@sentry/integrations@npm:^7.54.0":
   version: 7.54.0
   resolution: "@sentry/integrations@npm:7.54.0"
   dependencies:
@@ -2132,7 +2132,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/node@npm:^7.52.1":
+"@sentry/node@npm:^7.54.0":
   version: 7.54.0
   resolution: "@sentry/node@npm:7.54.0"
   dependencies:
@@ -7834,7 +7834,7 @@ __metadata:
     ts-jest: ^29.1.0
     ts-node: ^10.9.1
     tslib: ^2.5.3
-    turbo: ^1.10.2
+    turbo: ^1.10.3
     typedoc: ^0.24.8
     typedoc-plugin-mdn-links: ^3.0.3
     typescript: ^5.1.3
@@ -9923,12 +9923,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"systeminformation@npm:^5.18.1":
-  version: 5.18.2
-  resolution: "systeminformation@npm:5.18.2"
+"systeminformation@npm:^5.18.3":
+  version: 5.18.3
+  resolution: "systeminformation@npm:5.18.3"
   bin:
     systeminformation: lib/cli.js
-  checksum: 590d9a5d0bcd80c4a132563caa56864d7f23328c3f968b28091a658743f59cd58957286e354aa4cb88610ea33a3bf18693ac9a48c8f6068c2de9af845a542759
+  checksum: a58a4568c76e0479460d91d2eee009adeda2469876a3a99b122072bd6b6c5bd0965c8a6062f189ae667ae514ee5e858ea4b3c5c0af4a669e988b929bae767c05
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
@@ -10267,58 +10267,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-darwin-64@npm:1.10.2"
+"turbo-darwin-64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-darwin-64@npm:1.10.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-darwin-arm64@npm:1.10.2"
+"turbo-darwin-arm64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-darwin-arm64@npm:1.10.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-linux-64@npm:1.10.2"
+"turbo-linux-64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-linux-64@npm:1.10.3"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-linux-arm64@npm:1.10.2"
+"turbo-linux-arm64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-linux-arm64@npm:1.10.3"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-windows-64@npm:1.10.2"
+"turbo-windows-64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-windows-64@npm:1.10.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-windows-arm64@npm:1.10.2"
+"turbo-windows-arm64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-windows-arm64@npm:1.10.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.10.2":
-  version: 1.10.2
-  resolution: "turbo@npm:1.10.2"
+"turbo@npm:^1.10.3":
+  version: 1.10.3
+  resolution: "turbo@npm:1.10.3"
   dependencies:
-    turbo-darwin-64: 1.10.2
-    turbo-darwin-arm64: 1.10.2
-    turbo-linux-64: 1.10.2
-    turbo-linux-arm64: 1.10.2
-    turbo-windows-64: 1.10.2
-    turbo-windows-arm64: 1.10.2
+    turbo-darwin-64: 1.10.3
+    turbo-darwin-arm64: 1.10.3
+    turbo-linux-64: 1.10.3
+    turbo-linux-arm64: 1.10.3
+    turbo-windows-64: 1.10.3
+    turbo-windows-arm64: 1.10.3
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -10334,7 +10334,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: ec40ddbc6914aa04562a924df9e1a344d027c4bd32a2185b24df486c716726c90109fa22608c85eea05f2e9fec3145a0e893e16d2848e8f9eff5515ee54cd2a7
+  checksum: 38a11c8f1548408e6c8576d13ed78e2b0a232577e64a1cb6623faa39437cdc28012eb388f77d53af1b1853c521000aae0467cb5d91aa169b0883be976edfbdb1
   languageName: node
   linkType: hard
 
