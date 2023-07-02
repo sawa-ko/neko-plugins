@@ -34,7 +34,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"tslib": "^2.5.3"
+		"tslib": "^2.6.0"
 	},
 	"repository": {
 		"type": "git",
@@ -71,7 +71,7 @@
 		"@sapphire/plugin-api": "^5.1.0",
 		"@sapphire/plugin-scheduled-tasks": "^7.1.0",
 		"@sapphire/plugin-subcommands": "^4.0.1",
-		"@sentry/integrations": "^7.56.0",
-		"@sentry/node": "^7.56.0"
+		"@sentry/integrations": "^7.57.0",
+		"@sentry/node": "^7.57.0"
 	}
 }

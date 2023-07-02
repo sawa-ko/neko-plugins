@@ -34,7 +34,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"tslib": "^2.5.3"
+		"tslib": "^2.6.0"
 	},
 	"repository": {
 		"type": "git",
@@ -69,6 +69,6 @@
 	},
 	"devDependencies": {
 		"@influxdata/influxdb-client": "^1.33.2",
-		"@sapphire/framework": "^4.4.4"
+		"@sapphire/framework": "^4.5.0"
 	}
 }
