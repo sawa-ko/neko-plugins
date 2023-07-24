@@ -34,7 +34,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"@sapphire/decorators": "^6.0.1",
+		"@sapphire/decorators": "^6.0.2",
 		"tslib": "^2.6.0"
 	},
 	"repository": {
@@ -69,6 +69,6 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@sapphire/plugin-subcommands": "^4.0.1"
+		"@sapphire/plugin-subcommands": "^4.0.2"
 	}
 }
