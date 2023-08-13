@@ -71,7 +71,7 @@
 		"@sapphire/plugin-api": "^5.1.0",
 		"@sapphire/plugin-scheduled-tasks": "^7.1.1",
 		"@sapphire/plugin-subcommands": "^4.0.2",
-		"@sentry/integrations": "^7.61.1",
-		"@sentry/node": "^7.61.1"
+		"@sentry/integrations": "^7.63.0",
+		"@sentry/node": "^7.63.0"
 	}
 }
