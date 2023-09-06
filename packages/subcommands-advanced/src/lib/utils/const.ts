@@ -37,12 +37,14 @@ export const RegisterSubcommandsHooks = {
 							const result = await preconditions.chatInputRun(i, piece);
 							if (result.isErr())
 								return piece.container.client.emit(
-									SubcommandsAdvancedEvents.ChatInputSubcommandDenied,
+									SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
 									result.err().unwrapOr('Unknown error'),
 									{
 										command: piece,
 										interaction: i,
-										subcommand: subcommand as any
+										subcommand: subcommand as any,
+										matchedSubcommandMapping: commandPiece.name,
+										context
 									}
 								);
 
@@ -95,12 +97,14 @@ export const RegisterSubcommandsHooks = {
 								const result = await preconditions.chatInputRun(i, piece);
 								if (result.isErr())
 									return piece.container.client.emit(
-										SubcommandsAdvancedEvents.ChatInputSubcommandDenied,
+										SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
 										result.err().unwrapOr('Unknown error'),
 										{
 											command: piece,
 											interaction: i,
-											subcommand: subcommand as any
+											subcommand: subcommand as any,
+											matchedSubcommandMapping: commandPiece.name,
+											context
 										}
 									);
 

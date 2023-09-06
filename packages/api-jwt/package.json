@@ -35,7 +35,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"jsonwebtoken": "^9.0.1",
+		"jsonwebtoken": "^9.0.2",
 		"tslib": "^2.6.2"
 	},
 	"repository": {
@@ -70,9 +70,9 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@sapphire/plugin-api": "^5.1.0",
+		"@sapphire/plugin-api": "^5.1.1",
 		"@sapphire/utilities": "^3.13.0",
 		"@types/jsonwebtoken": "^9.0.2",
-		"discord-api-types": "^0.37.54"
+		"discord-api-types": "^0.37.56"
 	}
 }
