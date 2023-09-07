@@ -43,6 +43,7 @@
 <p>You can use the following command to install this package, or replace <code>npm install</code> with your package manager of choice.</p>
 <pre><code class="language-sh"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@influxdata/influxdb-client</span><span class="hl-1">  </span><span class="hl-2">@sapphire/framework</span><span class="hl-1"> </span><span class="hl-2">discord.js</span>
 </code><button>Copy</button></pre>
+<p>PS: You can view events by default <a href="#the-default-listeners">here</a>.</p>
 <hr>
 <a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><p>If your register the plugin:</p>
 <pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-2">&#39;@kaname-png/plugin-influxdb/register&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">client</span><span class="hl-1"> </span><span class="hl-4">=</span><span class="hl-1"> </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-0">SapphireClient</span><span class="hl-1">({</span><br/><span class="hl-1">    </span><span class="hl-3">/* your bot options */</span><br/><span class="hl-1">    analytics: {</span><br/><span class="hl-1">        loadDefaultListeners: </span><span class="hl-5">true</span><span class="hl-1">, </span><span class="hl-3">// (Optional) Load the default events .</span><br/><span class="hl-1">        </span><span class="hl-3">// option to passed influxdb deps</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-4">async</span><span class="hl-1"> </span><span class="hl-4">function</span><span class="hl-1"> </span><span class="hl-0">main</span><span class="hl-1">() {</span><br/><span class="hl-1">    </span><span class="hl-4">await</span><span class="hl-1"> client.</span><span class="hl-0">login</span><span class="hl-1">();</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-4">void</span><span class="hl-1"> </span><span class="hl-0">main</span><span class="hl-1">();</span>
@@ -73,6 +74,14 @@
 <p><strong>Note</strong>: If <code>Client.Options.org</code> is unset, none of the APIs will be created.
 <strong>Note</strong>: If <code>Client.Options.writeBucket</code> is unset, the Write API will not be created.</p>
 </blockquote>
+<hr>
+<a id="md:the-default-listeners" class="tsd-anchor"></a><h3><a href="#md:the-default-listeners">**The default listeners:</a></h3><ul>
+<li><a href="https://github.com/sapphiredev/plugins/tree/main/packages/api"><code>plugin-api</code></a>: “error”</li>
+<li><a href="https://github.com/sapphiredev/plugins/tree/main/packages/subcommands"><code>plugin-subcommands</code></a>: “MessageSubcommandError”, “chatInputSubcommandError”</li>
+<li><a href="https://github.com/sapphiredev/plugins/tree/main/packages/scheduled-tasks"><code>plugin-scheduled-tasks</code></a>: “scheduledTaskError”</li>
+<li><a href="https://github.com/sapphiredev/framework"><code>framework</code></a>: “messageCommandError”, “chatInputCommandError”, “contextMenuCommandError”, “commandAutocompleteInteractionError”, “error”, “listenerError” and “interactionHandlerError”</li>
+</ul>
+<hr>
 <a id="md:contributors-✨" class="tsd-anchor"></a><h2><a href="#md:contributors-✨">Contributors ✨</a></h2><p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a>):</p>
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -119,6 +128,9 @@ Contributions of any kind welcome!</p>
 <li><a href="#md:features"><span>Features</span></a></li>
 <li><a href="#md:installation"><span>Installation</span></a></li>
 <li><a href="#md:usage"><span>Usage</span></a></li>
+<li>
+<ul>
+<li><a href="#md:the-default-listeners"><span>**<wbr/>The default listeners:</span></a></li></ul></li>
 <li><a href="#md:contributors-✨"><span>Contributors ✨</span></a></li></ul></li></ul></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>Neko Plugins</span></a>
