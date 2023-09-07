@@ -13,7 +13,7 @@ export function isSentryInitialized() {
 }
 
 export function sharedListenerOptions(options: Listener.Options) {
-	return { ...options, enabled: isSentryInitialized() };
+	return { enabled: isSentryInitialized(), ...options };
 }
 
 export function initializeSentry(options: SentryOptions = {}) {

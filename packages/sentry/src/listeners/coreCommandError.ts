@@ -11,42 +11,42 @@ import * as Sentry from '@sentry/node';
 import { SentryListener } from '../lib/structures/listener';
 
 export class MessageCommandErrorListener extends SentryListener<typeof Events.MessageCommandError> {
-	public constructor(context: Listener.Context, options: SentryListener.Options) {
+	public constructor(context: Listener.Context, options: Listener.Options) {
 		super(context, { ...options, event: Events.MessageCommandError });
 	}
 
-	public run(error: unknown, context: MessageCommandErrorPayload) {
-		return sharedRun(error, this.name, context.command.name);
+	public run(error: unknown, payload: MessageCommandErrorPayload) {
+		return sharedRun(error, this.name, payload.command.name);
 	}
 }
 
 export class ChatInputCommandErrorListener extends SentryListener<typeof Events.ChatInputCommandError> {
-	public constructor(context: Listener.Context, options: SentryListener.Options) {
+	public constructor(context: Listener.Context, options: Listener.Options) {
 		super(context, { ...options, event: Events.ChatInputCommandError });
 	}
 
-	public run(error: unknown, context: ChatInputCommandErrorPayload) {
-		return sharedRun(error, this.name, context.command.name);
+	public run(error: unknown, payload: ChatInputCommandErrorPayload) {
+		return sharedRun(error, this.name, payload.command.name);
 	}
 }
 
 export class ContextMenuCommandErrorListener extends SentryListener<typeof Events.ContextMenuCommandError> {
-	public constructor(context: Listener.Context, options: SentryListener.Options) {
+	public constructor(context: Listener.Context, options: Listener.Options) {
 		super(context, { ...options, event: Events.ContextMenuCommandError });
 	}
 
-	public run(error: unknown, context: ContextMenuCommandErrorPayload) {
-		return sharedRun(error, this.name, context.command.name);
+	public run(error: unknown, payload: ContextMenuCommandErrorPayload) {
+		return sharedRun(error, this.name, payload.command.name);
 	}
 }
 
 export class AutocompleteCommandErrorListener extends SentryListener<typeof Events.CommandAutocompleteInteractionError> {
-	public constructor(context: Listener.Context, options: SentryListener.Options) {
+	public constructor(context: Listener.Context, options: Listener.Options) {
 		super(context, { ...options, event: Events.CommandAutocompleteInteractionError });
 	}
 
-	public run(error: unknown, context: AutocompleteInteractionPayload) {
-		return sharedRun(error, this.name, context.command.name);
+	public run(error: unknown, payload: AutocompleteInteractionPayload) {
+		return sharedRun(error, this.name, payload.command.name);
 	}
 }
 
@@ -58,8 +58,8 @@ export class MessageSubcommandErrorListener extends Listener<typeof SubcommandPl
 		});
 	}
 
-	public run(error: unknown, context: MessageSubcommandErrorPayload) {
-		return sharedRun(error, this.name, context.command.name);
+	public run(error: unknown, payload: MessageSubcommandErrorPayload) {
+		return sharedRun(error, this.name, `${payload.command.name}-${payload.matchedSubcommandMapping.name}`);
 	}
 }
 
@@ -71,8 +71,8 @@ export class ChatInputSubcommandErrorListener extends Listener<typeof Subcommand
 		});
 	}
 
-	public run(error: unknown, context: ChatInputSubcommandErrorPayload) {
-		return sharedRun(error, this.name, context.command.name);
+	public run(error: unknown, payload: ChatInputSubcommandErrorPayload) {
+		return sharedRun(error, this.name, `${payload.command.name}-${payload.matchedSubcommandMapping.name}`);
 	}
 }
 
