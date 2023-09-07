@@ -40,6 +40,7 @@ You can use the following command to install this package, or replace `npm insta
 ```sh
 npm install @influxdata/influxdb-client  @sapphire/framework discord.js
 ```
+PS: You can view events by default [here](#the-default-listeners).
 
 ---
 
@@ -95,6 +96,15 @@ Or defining the options via environment variables, they are:
 
 > **Note**: If `Client.Options.org` is unset, none of the APIs will be created.
 > **Note**: If `Client.Options.writeBucket` is unset, the Write API will not be created.
+
+
+----
+### **The default listeners: 
+- [`plugin-api`](https://github.com/sapphiredev/plugins/tree/main/packages/api): "error"
+- [`plugin-subcommands`](https://github.com/sapphiredev/plugins/tree/main/packages/subcommands): "MessageSubcommandError", "chatInputSubcommandError"
+- [`plugin-scheduled-tasks`](https://github.com/sapphiredev/plugins/tree/main/packages/scheduled-tasks): "scheduledTaskError"
+- [`framework`](https://github.com/sapphiredev/framework): "messageCommandError", "chatInputCommandError", "contextMenuCommandError", "commandAutocompleteInteractionError", "error", "listenerError" and "interactionHandlerError"
+----
 
 ## Contributors ✨
 
