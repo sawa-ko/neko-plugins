@@ -1,5 +1,7 @@
 import { container, Plugin, postInitialization, postLogin, SapphireClient } from '@sapphire/framework';
 import { join } from 'path';
+
+import './index';
 import { initializeSentry } from './lib';
 
 export class SentryPlugin extends Plugin {
