@@ -5,14 +5,6 @@
 		"rootDir": "src",
 		"composite": true,
 		"tsBuildInfoFile": "./dist/.tsbuildinfo",
-		"paths": {
-			"@": [
-				"./src"
-			],
-			"@lib": [
-				"./src/lib"
-			]
-		}
 	},
 	"include": [
 		"src"

@@ -4,7 +4,7 @@ import { captureException } from '@sentry/node';
 import { SentryListener } from '../../lib/structures/listener';
 
 export class SharedListener extends SentryListener<typeof ScheduledTaskEvents.ScheduledTaskError> {
-	public constructor(context: Listener.Context, options: SentryListener.Options) {
+	public constructor(context: Listener.Context, options: Listener.Options) {
 		super(context, {
 			...options,
 			event: ScheduledTaskEvents.ScheduledTaskError

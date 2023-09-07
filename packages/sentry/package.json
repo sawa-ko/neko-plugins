@@ -3,6 +3,9 @@
 	"version": "1.2.0",
 	"description": "Plugin for @sapphire/framework to post error on sentry.",
 	"author": "@kaname-png",
+	"maintainers": [
+		"@swiizyy"
+	],
 	"license": "MIT",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
@@ -10,20 +13,19 @@
 	"typedocMain": "src/index.ts",
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
-			"require": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"require": "./dist/index.js"
 		},
 		"./register": {
-			"import": "./register.mjs",
-			"require": "./register.js",
-			"types": "./register.d.ts"
+			"types": "./dist/register.d.ts",
+			"import": "./dist/register.mjs",
+			"require": "./dist/register.js"
 		}
 	},
 	"sideEffects": [
 		"./dist/register.js",
-		"./register.js",
-		"./register.mjs"
+		"./dist/register.mjs"
 	],
 	"homepage": "https://github.com/kaname-png/neko-plugins/tree/main/packages/sentry",
 	"scripts": {

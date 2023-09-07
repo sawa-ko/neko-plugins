@@ -1,19 +1,18 @@
-import { container, Plugin, postInitialization, postLogin, SapphireClient } from '@sapphire/framework';
+import { Plugin, postInitialization, postLogin, SapphireClient } from '@sapphire/framework';
 import { join } from 'path';
+
+import './index';
 import { initializeSentry } from './lib';
 
 export class SentryPlugin extends Plugin {
 	public static [postInitialization](this: SapphireClient): void {
-		if (!this.options.sentry) return;
-		const { loadSentryErrorListeners = true } = this.options.sentry;
-		if (!loadSentryErrorListeners) return;
-		this.stores.get('listeners').registerPath(join(__dirname, 'listeners'));
+		if (this.options.sentry?.loadSentryErrorListeners) {
+			this.stores.get('listeners').registerPath(join(__dirname, 'listeners'));
+		}
 	}
 
 	public static [postLogin](this: SapphireClient): void {
-		if (this.options.sentry?.options?.enabled === false) return;
-
-		container.logger.info('[Sentry-Plugin]: Enabled. Initialization of Sentry...');
+		if (!this.options.sentry?.options?.enabled) return;
 		return initializeSentry(this.options.sentry);
 	}
 }

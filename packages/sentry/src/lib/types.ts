@@ -1,4 +1,3 @@
-import type { Listener } from '@sapphire/framework';
 import type { NodeOptions } from '@sentry/node';
 
 export interface SentryOptions {
@@ -33,12 +32,4 @@ export interface SentryOptions {
 	 * @default process.cwd()
 	 */
 	root?: string | URL;
-}
-
-export interface SentryListenerOptions extends Listener.Options {
-	/**
-	 * Whether the piece should be enabled. If set to false, the piece will be unloaded.
-	 * @default isSentryInitialized()
-	 */
-	enabled?: boolean;
 }
