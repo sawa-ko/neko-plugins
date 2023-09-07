@@ -8,18 +8,18 @@ import type { Guild } from 'discord.js';
 @ApplyOptions<AnalyticsListener.Options>({ event: Events.GuildCreate })
 export class GuildCreateAnalyticsEvent extends AnalyticsListener {
 	public run(guild: Guild) {
-		sharedRun.bind(this)(guild, Actions.Addition);
+		sharedRun(this, guild, Actions.Addition);
 	}
 }
 
 @ApplyOptions<AnalyticsListener.Options>({ event: Events.GuildDelete })
 export class GuildDeleteAnalyticsEvent extends AnalyticsListener {
 	public run(guild: Guild) {
-		sharedRun.bind(this)(guild, Actions.Subtraction);
+		sharedRun(this, guild, Actions.Subtraction);
 	}
 }
 
-function sharedRun(this: AnalyticsListener, guild: Guild, action: Actions.Addition | Actions.Subtraction) {
+function sharedRun(listener: AnalyticsListener, guild: Guild, action: Actions.Addition | Actions.Subtraction) {
 	const guilds = new Point(Points.Guilds)
 		.tag(Tags.Shard, guild.shardId.toString())
 		.tag(Tags.Action, action)
@@ -32,5 +32,5 @@ function sharedRun(this: AnalyticsListener, guild: Guild, action: Actions.Additi
 			'value',
 			guild.client.guilds.cache.reduce((acc, val) => acc + (val.memberCount ?? 0), 0)
 		);
-	return this.writePoints([guilds, users]);
+	return listener.writePoints([guilds, users]);
 }
