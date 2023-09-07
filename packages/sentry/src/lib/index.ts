@@ -1,4 +1,4 @@
-import type { Listener } from '@sapphire/framework';
+import { container, type Listener } from '@sapphire/framework';
 import { RewriteFrames } from '@sentry/integrations';
 import { init, Integrations, setContext } from '@sentry/node';
 import { readFileSync } from 'node:fs';
@@ -30,15 +30,15 @@ export function initializeSentry(options: SentryOptions = {}) {
 				new Integrations.FunctionToString(),
 				new Integrations.LinkedErrors(),
 				new Integrations.Modules(),
-				new Integrations.Modules(),
 				new Integrations.OnUncaughtException(),
 				new Integrations.OnUnhandledRejection(),
 				new RewriteFrames({ root }),
 				...(typeof extractedIntegrations === 'function' ? extractedIntegrations(integrations) : extractedIntegrations)
 			]
 		});
+		container.logger.info('[Sentry-Plugin]: Enabled. Initialization of Sentry...');
 	} catch (error) {
-		return;
+		throw new Error(`[Sentry-Plugin]: Failed to initialize Sentry: ${error}`);
 	}
 
 	const context = getAppContext(options);

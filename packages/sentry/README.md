@@ -41,6 +41,7 @@ You can use the following command to install this package, or replace `npm insta
 ```sh
 npm install @kaname-png/plugin-sentry @sentry/node @sentry/integrations @sapphire/framework discord.js
 ```
+PS: You can view events by default [here](#the-default-listeners).
 
 ---
 
@@ -135,6 +136,14 @@ module.exports = class ErrorListener extends SentryListener {
   }
 }
 ```
+
+----
+### **The default listeners: 
+- [`plugin-api`](https://github.com/sapphiredev/plugins/tree/main/packages/api): "error"
+- [`plugin-subcommands`](https://github.com/sapphiredev/plugins/tree/main/packages/subcommands): "MessageSubcommandError", "chatInputSubcommandError"
+- [`plugin-scheduled-tasks`](https://github.com/sapphiredev/plugins/tree/main/packages/scheduled-tasks): "scheduledTaskError"
+- [`framework`](https://github.com/sapphiredev/framework): "messageCommandError", "chatInputCommandError", "contextMenuCommandError", "commandAutocompleteInteractionError", "error", "listenerError" and "interactionHandlerError"
+----
 
 ## Contributors ✨
 
