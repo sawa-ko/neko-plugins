@@ -5,6 +5,6 @@ import { Events } from '@sapphire/framework';
 @ApplyOptions<AnalyticsListener.Options>({ event: Events.MessageCreate })
 export class UserAnalyticsEvent extends AnalyticsListener {
 	public run(): void {
-		this.container.analytics!.messageCount++;
+		this.container.client.analytics!.messageCount++;
 	}
 }
