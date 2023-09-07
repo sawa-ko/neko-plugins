@@ -1,13 +1,12 @@
 import { Tags } from '../types';
 import type { Point } from '@influxdata/influxdb-client';
-import { container, Listener, type ListenerOptions, type PieceContext, Result } from '@sapphire/framework';
-import { isNullOrUndefined } from '../utils';
+import { container, Listener, type PieceContext, Result } from '@sapphire/framework';
 
 export abstract class AnalyticsListener extends Listener {
 	public tags: [Tags, string][] = [];
 
 	public constructor(context: PieceContext, options?: AnalyticsListener.Options) {
-		super(context, { ...options, enabled: !isNullOrUndefined(container.analytics?.writeApi) });
+		super(context, { enabled: Boolean(container.client.analytics?.writeApi), ...options });
 	}
 
 	public override onLoad() {
@@ -21,14 +20,8 @@ export abstract class AnalyticsListener extends Listener {
 
 	public writePoints(points: Point[]): void {
 		points = points.map((point) => this.injectTags(point));
-		const result = Result.from(this.container.analytics?.writeApi?.writePoints(points));
-		return result.match({
-			ok: () => void 0,
-			err: (error: Error) => {
-				this.container.client.logger.debug(`[InfluxDB] Failed to write point: [${error.message}]`);
-				return void 0;
-			}
-		});
+		const result = Result.from(this.container.client.analytics?.writeApi?.writePoints(points));
+		result.inspectErr((err) => this.container.logger.error(err));
 	}
 
 	protected injectTags(point: Point) {
@@ -39,13 +32,12 @@ export abstract class AnalyticsListener extends Listener {
 	}
 
 	protected initTags() {
-		const clientID = process.env.CLIENT_ID ?? this.container.client?.id;
+		const clientID = process.env.CLIENT_ID ?? this.container.client.id;
 		const eventName = typeof this.event === 'string' ? this.event : this.event.toString();
-		if (isNullOrUndefined(clientID)) return;
-		this.tags.push([Tags.Client, clientID], [Tags.OriginEvent, eventName]);
+		if (clientID) this.tags.push([Tags.Client, clientID], [Tags.OriginEvent, eventName]);
 	}
 }
 
 export namespace AnalyticsListener {
-	export type Options = Omit<ListenerOptions, 'enabled'>;
+	export type Options = Listener.Options;
 }

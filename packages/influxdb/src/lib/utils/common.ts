@@ -11,10 +11,6 @@ export function tryNumberParse(value: string | undefined) {
 	return value;
 }
 
-export function isNullOrUndefined(value: unknown): value is null | undefined {
-	return value === null || value === undefined;
-}
-
 export function isInfluxInitialized(): boolean {
-	return Reflect.has(container, 'analytics') && container.analytics instanceof Client;
+	return Reflect.has(container, 'analytics') && container.client.analytics instanceof Client;
 }

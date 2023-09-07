@@ -1,3 +1,4 @@
+import './index';
 import { container, Plugin, postInitialization, postLogin, preGenericsInitialization, SapphireClient } from '@sapphire/framework';
 import { join } from 'path';
 import { Client } from './lib/structures';
@@ -9,7 +10,7 @@ import { AnalyticsSync } from './lib/types';
  */
 export class EnvPlugin extends Plugin {
 	public static [preGenericsInitialization](this: SapphireClient): void {
-		container.analytics = this.options.analytics ? new Client(this.options.analytics) : undefined;
+		this.analytics = this.options.analytics ? new Client(this.options.analytics) : null;
 	}
 
 	public static [postInitialization](this: SapphireClient): void {
@@ -18,23 +19,18 @@ export class EnvPlugin extends Plugin {
 	}
 
 	public static [postLogin](this: SapphireClient): void {
-		container.logger.info('[InfluxDB-Plugin]: Enabled. Synchronizing stats with InfluxDB');
 		if (this.options.analytics?.loadDefaultListeners !== true) return;
-
+		container.logger.info('[InfluxDB-Plugin]: Enabled. Synchronizing stats with InfluxDB');
 		container.logger.info('[InfluxDB-Plugin]: Auto-posting of statistics has been enabled');
 
 		const rawGuilds = container.client.guilds.cache.size;
 		const rawUsers = container.client.guilds.cache.reduce((acc, val) => acc + (val.memberCount ?? 0), 0);
-		setInterval(() => container.client.emit(AnalyticsSync, rawGuilds, rawUsers), 60_000);
+		setInterval(() => {
+			container.client.emit(AnalyticsSync, rawGuilds, rawUsers);
+		}, 60_000);
 	}
 }
 
 SapphireClient.plugins.registerPreGenericsInitializationHook(EnvPlugin[preGenericsInitialization], 'InfluxDB-PreGenericsInitialization');
 SapphireClient.plugins.registerPostInitializationHook(EnvPlugin[postInitialization], 'InfluxDB-postInitialization');
 SapphireClient.plugins.registerPostLoginHook(EnvPlugin[postLogin], 'InfluxDB-postLogin');
-
-declare module '@sapphire/pieces' {
-	interface Container {
-		analytics?: Client;
-	}
-}
