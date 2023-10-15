@@ -71,6 +71,6 @@
 	},
 	"devDependencies": {
 		"@influxdata/influxdb-client": "^1.33.2",
-		"@sapphire/framework": "^4.6.1"
+		"@sapphire/framework": "^4.7.0"
 	}
 }
