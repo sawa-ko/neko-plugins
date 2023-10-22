@@ -1,11 +1,11 @@
-import { container, PreconditionContainerArray } from '@sapphire/framework';
+import { container } from '@sapphire/framework';
 import type { Subcommand, SubcommandMapping, SubcommandMappingGroup } from '@sapphire/plugin-subcommands';
 
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import type { SlashCommandSubcommandBuilder, SlashCommandBuilder } from '@discordjs/builders';
 
 import { subCommandsRegistry, subCommandsGroupRegistry } from './functions';
-import { SubcommandsAdvancedEvents } from '../../index';
+import { SubcommandsAdvancedEvents } from './types';
 
 /**
  * **Hooks**
@@ -33,9 +33,8 @@ export const RegisterSubcommandsHooks = {
 				type: 'method',
 				chatInputRun: commandPiece.chatInputRun
 					? async (i, c) => {
-							const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
-							const result = await preconditions.chatInputRun(i, piece);
-							if (result.isErr())
+							const result = await piece.preconditions.chatInputRun(i, piece);
+							if (result.isErr()) {
 								return piece.container.client.emit(
 									SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
 									result.err().unwrapOr('Unknown error'),
@@ -47,6 +46,7 @@ export const RegisterSubcommandsHooks = {
 										context
 									}
 								);
+							}
 
 							return commandPiece.chatInputRun!(i, c);
 					  }
@@ -93,9 +93,8 @@ export const RegisterSubcommandsHooks = {
 					type: 'method',
 					chatInputRun: commandPiece.chatInputRun
 						? async (i, c) => {
-								const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
-								const result = await preconditions.chatInputRun(i, piece);
-								if (result.isErr())
+								const result = await piece.preconditions.chatInputRun(i, piece);
+								if (result.isErr()) {
 									return piece.container.client.emit(
 										SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
 										result.err().unwrapOr('Unknown error'),
@@ -107,6 +106,7 @@ export const RegisterSubcommandsHooks = {
 											context
 										}
 									);
+								}
 
 								return commandPiece.chatInputRun!(i, c);
 						  }
