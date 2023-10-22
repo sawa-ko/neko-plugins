@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.3...@kaname-png/plugin-subcommands-advanced@2.4.0) (2023-10-22)
+
+### Bug Fixes
+
+-   **influxdb:** :coffin: remove bad deps ([6735c68](https://github.com/kaname-png/neko-plugins/commit/6735c68048dc0bd9195f63289d85cc8c1bba0fdd))
+-   **subcommands-advanced:** use preconditions built-in instead of create a new preconditions with command options ([692d415](https://github.com/kaname-png/neko-plugins/commit/692d415eada9333ac564459443105e77a17178d2))
+-   **subcommands-advanced:** use UserError when has unknown errors too ([bba9611](https://github.com/kaname-png/neko-plugins/commit/bba9611a18157be8607db91bc6f0c85d0eaa9bce))
+
+### Features
+
+-   update deps and fix conflicts ([d9602ba](https://github.com/kaname-png/neko-plugins/commit/d9602ba4d5a691107f6524c5b58a917a4c286693))
+
 # [2.3.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.3...@kaname-png/plugin-subcommands-advanced@2.3.0) (2023-09-06)
 
 ### Bug Fixes

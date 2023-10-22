@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.9](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-env@1.1.7...@kaname-png/plugin-env@1.1.9) (2023-10-22)
+
+**Note:** Version bump only for package @kaname-png/plugin-env
+
 ## [1.1.8](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-env@1.1.7...@kaname-png/plugin-env@1.1.8) (2023-09-06)
 
 **Note:** Version bump only for package @kaname-png/plugin-env
