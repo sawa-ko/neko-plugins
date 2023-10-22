@@ -1,4 +1,4 @@
-import { container } from '@sapphire/framework';
+import { container, UserError } from '@sapphire/framework';
 import type { Subcommand, SubcommandMapping, SubcommandMappingGroup } from '@sapphire/plugin-subcommands';
 
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
@@ -37,7 +37,7 @@ export const RegisterSubcommandsHooks = {
 							if (result.isErr()) {
 								return piece.container.client.emit(
 									SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
-									result.err().unwrapOr('Unknown error'),
+									result.err().unwrapOr(new UserError({ context, identifier: 'SubcommandDenied', message: 'Unknown error' })),
 									{
 										command: piece,
 										interaction: i,
@@ -97,7 +97,7 @@ export const RegisterSubcommandsHooks = {
 								if (result.isErr()) {
 									return piece.container.client.emit(
 										SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
-										result.err().unwrapOr('Unknown error'),
+										result.err().unwrapOr(new UserError({ context, identifier: 'SubcommandDenied', message: 'Unknown error' })),
 										{
 											command: piece,
 											interaction: i,
