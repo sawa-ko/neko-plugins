@@ -1204,7 +1204,7 @@ __metadata:
   dependencies:
     "@sapphire/plugin-api": ^5.1.2
     "@sapphire/plugin-scheduled-tasks": ^8.0.0
-    "@sapphire/plugin-subcommands": ^4.3.0
+    "@sapphire/plugin-subcommands": ^5.0.0
     "@sentry/integrations": ^7.76.0
     "@sentry/node": ^7.76.0
     tslib: ^2.6.2
@@ -1226,7 +1226,7 @@ __metadata:
   resolution: "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced"
   dependencies:
     "@sapphire/decorators": ^6.0.2
-    "@sapphire/plugin-subcommands": ^4.3.0
+    "@sapphire/plugin-subcommands": ^5.0.0
     tslib: ^2.6.2
   languageName: unknown
   linkType: soft
@@ -1880,13 +1880,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "@sapphire/plugin-subcommands@npm:4.3.0"
+"@sapphire/plugin-subcommands@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@sapphire/plugin-subcommands@npm:5.0.0"
   dependencies:
     "@sapphire/utilities": ^3.13.0
     tslib: ^2.6.2
-  checksum: dd93ad0b7da7723969edc99a17e407f7f5cc895e16deb7cd33d61e6ce04b284615a427711a4411a2a332d450a523ca16f94f8ea538fdd1a9622878dba442077b
+  checksum: 2c1455a44ce0f71ace38d12e987ee375a403e58de3862e9c0a1064b219bdfa3794d797fc1f0e07a31fdb84a2d6febec6b08788ba82019462cb7f13b24e68f9e0
   languageName: node
   linkType: hard
 

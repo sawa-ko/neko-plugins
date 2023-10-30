@@ -69,6 +69,6 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@sapphire/plugin-subcommands": "^4.3.0"
+		"@sapphire/plugin-subcommands": "^5.0.0"
 	}
 }
