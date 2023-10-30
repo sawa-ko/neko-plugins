@@ -1203,7 +1203,7 @@ __metadata:
   resolution: "@kaname-png/plugin-sentry@workspace:packages/sentry"
   dependencies:
     "@sapphire/plugin-api": ^5.1.2
-    "@sapphire/plugin-scheduled-tasks": ^7.1.2
+    "@sapphire/plugin-scheduled-tasks": ^8.0.0
     "@sapphire/plugin-subcommands": ^4.3.0
     "@sentry/integrations": ^7.76.0
     "@sentry/node": ^7.76.0
@@ -1868,15 +1868,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-scheduled-tasks@npm:^7.1.2":
-  version: 7.1.2
-  resolution: "@sapphire/plugin-scheduled-tasks@npm:7.1.2"
+"@sapphire/plugin-scheduled-tasks@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@sapphire/plugin-scheduled-tasks@npm:8.0.0"
   dependencies:
     "@sapphire/stopwatch": ^1.5.0
     "@sapphire/utilities": ^3.13.0
     bullmq: 3.15.8
     tslib: ^2.6.2
-  checksum: c1423bf7583cbdc95d042415cfe438d294131f37cac2081bfbc7cfe03c4aff7de18e2d894013c164b114601f8b730794d32f5d3c85a9d542425f6666a824d510
+  checksum: d0703ce80444f978726fbd37f6ef614ba179496d391104d8e29f6e9db25c220d00986b2b25dfe8a7170333e41dcc20b58194046c4720aa3f68fdcf5a25baf1d1
   languageName: node
   linkType: hard
 
