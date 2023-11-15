@@ -39,5 +39,6 @@ export abstract class AnalyticsListener extends Listener {
 }
 
 export namespace AnalyticsListener {
+	export type Context = Listener.Context;
 	export type Options = Listener.Options;
 }
