@@ -1,6 +1,6 @@
 import { Middleware } from '@sapphire/plugin-api';
 
-import type { ApiRequest, SessionUserData } from '../types';
+import type { ApiRequest, SessionUserData } from '../lib/types';
 
 /**
  * This is a rewrite of the @sapphire/plugin-api plugin authentication middleware.
