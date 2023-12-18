@@ -1194,7 +1194,7 @@ __metadata:
   resolution: "@kaname-png/plugin-sentry@workspace:packages/sentry"
   dependencies:
     "@sapphire/plugin-api": "npm:^5.1.2"
-    "@sapphire/plugin-scheduled-tasks": "npm:^8.0.0"
+    "@sapphire/plugin-scheduled-tasks": "npm:^9.1.0"
     "@sapphire/plugin-subcommands": "npm:^5.0.0"
     "@sentry/integrations": "npm:^7.80.1"
     "@sentry/node": "npm:^7.80.1"
@@ -1860,15 +1860,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-scheduled-tasks@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@sapphire/plugin-scheduled-tasks@npm:8.0.0"
+"@sapphire/plugin-scheduled-tasks@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "@sapphire/plugin-scheduled-tasks@npm:9.1.0"
   dependencies:
-    "@sapphire/stopwatch": "npm:^1.5.0"
-    "@sapphire/utilities": "npm:^3.13.0"
+    "@sapphire/stopwatch": "npm:^1.5.1"
+    "@sapphire/utilities": "npm:^3.14.0"
     bullmq: "npm:3.15.8"
     tslib: "npm:^2.6.2"
-  checksum: 6f567605f2701fce44a79874ed0f737874b7f6409fd275f8ed8f5915d37a1a5bb73a919edcff03667ed2e05822126f9147fa6838628074ded0d6933dcb04af4f
+  checksum: 137af25450bed3af25e48daaf535365d4450db7586bcb86bb14d6067f5487abe26a5bbc8814866e62b71aa3c500fb47018d7d25c16ff9c810589e76ca37e1385
   languageName: node
   linkType: hard
 
@@ -1922,12 +1922,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/stopwatch@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@sapphire/stopwatch@npm:1.5.0"
+"@sapphire/stopwatch@npm:^1.5.0, @sapphire/stopwatch@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "@sapphire/stopwatch@npm:1.5.1"
   dependencies:
-    tslib: "npm:^2.4.0"
-  checksum: 666ad41221330fc4a349fb7dcff8774558531fc066950ca39f0940778dba536792a02dcdde021b34f732d4ba240720921e59ddf78b828a56be4104ad5dd671c5
+    tslib: "npm:^2.6.2"
+  checksum: 24d95b389ad7afdb71995c3ce2b3154f63385f92f5df84de81e2481f57745edd640c5961cd55a41c5b4d57751033e4f2da4b83ccf9ec9f707d0b0a09f5cf348a
   languageName: node
   linkType: hard
 
@@ -1941,10 +1941,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^3.11.0, @sapphire/utilities@npm:^3.13.0":
-  version: 3.13.0
-  resolution: "@sapphire/utilities@npm:3.13.0"
-  checksum: cf34a7294ff31ff9049527880cf273d61c07131d41a8d8c211a99baae213a1aaab9c2774a2e934173582243f79f755afd17542996159d1b99309c91524d30b9d
+"@sapphire/utilities@npm:^3.11.0, @sapphire/utilities@npm:^3.13.0, @sapphire/utilities@npm:^3.14.0":
+  version: 3.14.0
+  resolution: "@sapphire/utilities@npm:3.14.0"
+  checksum: 5740c05b130ee7e8d34fa53a96370cac87c36ad272760c0f5029fc4578279bf7850e4517e56f8ea66d9eb21978076a9e1d0808e1e16feac451e79541c97083e1
   languageName: node
   linkType: hard
 

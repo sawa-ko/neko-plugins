@@ -71,7 +71,7 @@
 	},
 	"devDependencies": {
 		"@sapphire/plugin-api": "^5.1.2",
-		"@sapphire/plugin-scheduled-tasks": "^8.0.0",
+		"@sapphire/plugin-scheduled-tasks": "^9.1.0",
 		"@sapphire/plugin-subcommands": "^5.0.0",
 		"@sentry/integrations": "^7.80.1",
 		"@sentry/node": "^7.80.1"
