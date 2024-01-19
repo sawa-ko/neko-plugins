@@ -27,7 +27,7 @@
 		"@commitlint/config-conventional": "^18.4.0",
 		"@favware/npm-deprecate": "^1.0.7",
 		"@sapphire/eslint-config": "^5.0.2",
-		"@sapphire/framework": "^4.7.2",
+		"@sapphire/framework": "^5.0.7",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.0",
 		"@swc/core": "^1.3.96",
