@@ -1161,7 +1161,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-api-jwt@workspace:packages/api-jwt"
   dependencies:
-    "@sapphire/plugin-api": "npm:^5.1.2"
+    "@sapphire/plugin-api": "npm:^6.1.1"
     "@sapphire/utilities": "npm:^3.13.0"
     "@types/jsonwebtoken": "npm:^9.0.5"
     discord-api-types: "npm:^0.37.63"
@@ -1193,7 +1193,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-sentry@workspace:packages/sentry"
   dependencies:
-    "@sapphire/plugin-api": "npm:^5.1.2"
+    "@sapphire/plugin-api": "npm:^6.1.1"
     "@sapphire/plugin-scheduled-tasks": "npm:^8.0.0"
     "@sapphire/plugin-subcommands": "npm:^5.0.0"
     "@sentry/integrations": "npm:^7.80.1"
@@ -1848,15 +1848,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:^5.1.2":
-  version: 5.1.2
-  resolution: "@sapphire/plugin-api@npm:5.1.2"
+"@sapphire/plugin-api@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "@sapphire/plugin-api@npm:6.1.1"
   dependencies:
-    "@types/ws": "npm:^8.5.8"
-    tldts: "npm:^6.0.17"
+    "@types/ws": "npm:^8.5.10"
+    tldts: "npm:^6.1.2"
     tslib: "npm:^2.6.2"
-    undici: "npm:^5.26.5"
-  checksum: 13eccb320a509389e581f520aa25fb043acb6415e14af2e5ceddda065d6ce80e4fe61fb8adbb1bc1c3ab93322c804a51ae4db631f102260c0e0eef1b6d02ad14
+    undici: "npm:^6.4.0"
+  checksum: 7df4c3ebf2804c2ee687670a3b940fa8bdf978e08d955afb683876e8482f1d8fc9982174a369e23c39230b34b82e9e0aa7264791c7df4b6f11269def15e9a28a
   languageName: node
   linkType: hard
 
@@ -2429,12 +2429,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:8.5.9, @types/ws@npm:^8.5.8, @types/ws@npm:^8.5.9":
+"@types/ws@npm:8.5.9":
   version: 8.5.9
   resolution: "@types/ws@npm:8.5.9"
   dependencies:
     "@types/node": "npm:*"
   checksum: 678bdd6461c4653f2975c537fb673cb1918c331558e2d2422b69761c9ced67200bb07c664e2593f3864077a891cb7c13ef2a40d303b4aacb06173d095d8aa3ce
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.5.10, @types/ws@npm:^8.5.9":
+  version: 8.5.10
+  resolution: "@types/ws@npm:8.5.10"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: e9af279b984c4a04ab53295a40aa95c3e9685f04888df5c6920860d1dd073fcc57c7bd33578a04b285b2c655a0b52258d34bee0a20569dca8defb8393e1e5d29
   languageName: node
   linkType: hard
 
@@ -9832,21 +9841,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tldts-core@npm:^6.0.18":
-  version: 6.0.18
-  resolution: "tldts-core@npm:6.0.18"
-  checksum: 009b691de309922b345cede50f38177c13ee35f995af4b124dececc03c3ceefded5fd207730eb649f7f850322aaa2817c777cdc26cbf92d2a17eeeda49fc12ad
+"tldts-core@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "tldts-core@npm:6.1.2"
+  checksum: 181fdeab1176b631bcdb25e39c8aa9392041b065035c95c7c9efd73359cecb55bc7adfce80a1b042b117f07e557d90b60ab52dbbec02eb94f27a182bb925e81e
   languageName: node
   linkType: hard
 
-"tldts@npm:^6.0.17":
-  version: 6.0.18
-  resolution: "tldts@npm:6.0.18"
+"tldts@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "tldts@npm:6.1.2"
   dependencies:
-    tldts-core: "npm:^6.0.18"
+    tldts-core: "npm:^6.1.2"
   bin:
     tldts: bin/cli.js
-  checksum: 7009af93370f87669f507d3bde4e745fa21ab664cf53384401564a22897566cefc5a0330c40a3cc29f9f4a676b6525576f8c5762a9961399f9a64110a2783c23
+  checksum: db8ac845814c8d2f00eb8720b9fee8d41b7afca74ada26bac29c8529868685d0a9b31f3d038f80ec442c965df18118d9296323385c2e27dae72bc120d2ed1380
   languageName: node
   linkType: hard
 
@@ -10225,12 +10234,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:5.27.2, undici@npm:^5.26.5":
+"undici@npm:5.27.2":
   version: 5.27.2
   resolution: "undici@npm:5.27.2"
   dependencies:
     "@fastify/busboy": "npm:^2.0.0"
   checksum: 0cb62c57edc938f242c116e41fb2a74f81ed20e7e2e554cf1ceae548520df0592385b53d444f8cf59e1e10e6b27acd153198d8a2353b3040d0a778a099aac92c
+  languageName: node
+  linkType: hard
+
+"undici@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "undici@npm:6.4.0"
+  dependencies:
+    "@fastify/busboy": "npm:^2.0.0"
+  checksum: d6b19daaa05ffa1ef9af0cd6c22867386f9caab16a807898ca8a321916ddab0c1a027c1346638b1a917abff1f7624967eb7e93111c45a8feafa0df36d9ca5b2b
   languageName: node
   linkType: hard
 
