@@ -232,10 +232,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://kaname.netlify.app"><img src="https://avatars.githubusercontent.com/u/56084970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kaname</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Code">💻</a> <a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3Akaname-png" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Documentation">📖</a> <a href="#infra-kaname-png" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-kaname-png" title="Maintenance">🚧</a> <a href="https://github.com/kaname-png/neko-plugins/pulls?q=is%3Apr+reviewed-by%3Akaname-png" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="http://nino.fun"><img src="https://avatars.githubusercontent.com/u/90474850?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sebazz</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3AuSebazz" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=uSebazz" title="Code">💻</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://kaname.netlify.app"><img src="https://avatars.githubusercontent.com/u/56084970?v=4?s=100" width="100px;" alt="Kaname"/><br /><sub><b>Kaname</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/commits?author=kaname-png" title="Code">💻</a> <a href="https://github.com/sawa-ko/neko-plugins/issues?q=author%3Akaname-png" title="Bug reports">🐛</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=kaname-png" title="Documentation">📖</a> <a href="#infra-kaname-png" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-kaname-png" title="Maintenance">🚧</a> <a href="https://github.com/sawa-ko/neko-plugins/pulls?q=is%3Apr+reviewed-by%3Akaname-png" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://nino.fun"><img src="https://avatars.githubusercontent.com/u/90474850?v=4?s=100" width="100px;" alt="Sebazz"/><br /><sub><b>Sebazz</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/issues?q=author%3AuSebazz" title="Bug reports">🐛</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=uSebazz" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://chikoshidori.github.io"><img src="https://avatars.githubusercontent.com/u/53100578?v=4?s=100" width="100px;" alt="Chiko"/><br /><sub><b>Chiko</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/issues?q=author%3AChikoShidori" title="Bug reports">🐛</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=ChikoShidori" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Swiizyy"><img src="https://avatars.githubusercontent.com/u/52933626?v=4?s=100" width="100px;" alt="Williams Bussat"/><br /><sub><b>Williams Bussat</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/commits?author=Swiizyy" title="Code">💻</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=Swiizyy" title="Documentation">📖</a> <a href="#ideas-Swiizyy" title="Ideas, Planning, & Feedback">🤔</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->

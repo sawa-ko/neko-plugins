@@ -1,11 +1,11 @@
-import { container, PreconditionContainerArray } from '@sapphire/framework';
+import { container, UserError } from '@sapphire/framework';
 import type { Subcommand, SubcommandMapping, SubcommandMappingGroup } from '@sapphire/plugin-subcommands';
 
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import type { SlashCommandSubcommandBuilder, SlashCommandBuilder } from '@discordjs/builders';
 
 import { subCommandsRegistry, subCommandsGroupRegistry } from './functions';
-import { SubcommandsAdvancedEvents } from '../../index';
+import { SubcommandsAdvancedEvents } from './types';
 
 /**
  * **Hooks**
@@ -19,7 +19,7 @@ export const RegisterSubcommandsHooks = {
 		const subcommands = subCommandsRegistry.get(piece.name);
 		if (!subcommands) {
 			container.logger.error(
-				`[Subcommands-Plugin]: An attempt was made to obtain the subcommands for the parent command ${piece.name} but none were registered with the decorators.`
+				`[Subcommands-Plugin]: An attempt was made to obtain the subcommands for the parent command ${piece.name} but no command was registered for it.`
 			);
 
 			return;
@@ -33,18 +33,20 @@ export const RegisterSubcommandsHooks = {
 				type: 'method',
 				chatInputRun: commandPiece.chatInputRun
 					? async (i, c) => {
-							const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
-							const result = await preconditions.chatInputRun(i, piece);
-							if (result.isErr())
+							const result = await piece.preconditions.chatInputRun(i, piece);
+							if (result.isErr()) {
 								return piece.container.client.emit(
-									SubcommandsAdvancedEvents.ChatInputSubcommandDenied,
-									result.err().unwrapOr('Unknown error'),
+									SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
+									result.err().unwrapOr(new UserError({ context, identifier: 'SubcommandDenied', message: 'Unknown error' })),
 									{
 										command: piece,
 										interaction: i,
-										subcommand: subcommand as any
+										subcommand: subcommand as any,
+										matchedSubcommandMapping: commandPiece.name,
+										context
 									}
 								);
+							}
 
 							return commandPiece.chatInputRun!(i, c);
 					  }
@@ -74,7 +76,7 @@ export const RegisterSubcommandsHooks = {
 		const subcommandsGroups = subCommandsGroupRegistry.get(piece.name);
 		if (!subcommandsGroups) {
 			container.logger.error(
-				`[Subcommands-Group-Plugin]: An attempt was made to obtain the subcommand groups for the parent command ${piece.name} but none were registered with the decorators.`
+				`[Subcommands-Group-Plugin]: An attempt was made to obtain the subcommand groups for the parent command ${piece.name} but no command was registered for it.`
 			);
 
 			return;
@@ -91,18 +93,20 @@ export const RegisterSubcommandsHooks = {
 					type: 'method',
 					chatInputRun: commandPiece.chatInputRun
 						? async (i, c) => {
-								const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
-								const result = await preconditions.chatInputRun(i, piece);
-								if (result.isErr())
+								const result = await piece.preconditions.chatInputRun(i, piece);
+								if (result.isErr()) {
 									return piece.container.client.emit(
-										SubcommandsAdvancedEvents.ChatInputSubcommandDenied,
-										result.err().unwrapOr('Unknown error'),
+										SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
+										result.err().unwrapOr(new UserError({ context, identifier: 'SubcommandDenied', message: 'Unknown error' })),
 										{
 											command: piece,
 											interaction: i,
-											subcommand: subcommand as any
+											subcommand: subcommand as any,
+											matchedSubcommandMapping: commandPiece.name,
+											context
 										}
 									);
+								}
 
 								return commandPiece.chatInputRun!(i, c);
 						  }

@@ -1,7 +1,8 @@
+import 'tslib';
+
 import type { Client } from './lib/client';
 import type { ClientOptions } from './lib/types';
 
-export { Client as JWTClient } from './lib/client';
 export { PluginRoute as JWTAccessRoute } from './lib/routes/authorize/access';
 export { PluginRoute as JWTRefreshRoute } from './lib/routes/authorize/refresh';
 export { PluginRoute as JWTRevokeRoute } from './lib/routes/authorize/revoke';

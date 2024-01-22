@@ -7,7 +7,7 @@
 **Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to manage environment variables with value parser.**
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
+[![codecov](https://codecov.io/gh/sawa-ko/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-env?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-env)
 [![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-env?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-env)
 

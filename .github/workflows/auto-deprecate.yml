@@ -11,15 +11,15 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
-      - name: Use Node.js v16
+      - name: Use Node.js v20
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
-          node-version: 16
+          node-version: 20
           cache: yarn
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
         run: yarn --immutable
       - name: Deprecate versions
-        run: yarn npm-deprecate
+        run: yarn npm-deprecate -v
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

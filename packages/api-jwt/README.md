@@ -7,7 +7,7 @@
 **Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to add JSON Web Tokens strategy in [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api) plugin to JWT.**
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
+[![codecov](https://codecov.io/gh/sawa-ko/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-api-jwt?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
 [![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-api-jwt?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
 
@@ -65,7 +65,24 @@ async function main() {
 				jwt: {
 					secret: 'uwu' /** JWT tokens are signed with this secret key. (required) **/,
 					issuer: 'kaname.netlify.app' /** See https://jwt.io/introduction  (optional and by default api.auth.redirect) **/,
-					algorithm: 'HS256' /**  (optional and by default HS512) **/
+					algorithm: 'HS256' /**  (optional and by default HS512) **/,
+					sessionsHooks: {
+						/** Optional hooks for persistent sessions (optional) **/,
+						get: (token, type) => {
+							// Do something with your database or something else.
+							// ...
+
+							return { access_token: '<access_token>', refresh_token: '<refresh_token>' };
+						},
+						create: (payload) => {
+							// Do something with your database or something else.
+							// ...
+						},
+						delete: (accessToken) => {
+							// Do something with your database or something else.
+							// ...
+						}
+					}
 				}
 			}
 		}
@@ -100,7 +117,24 @@ async function main() {
 				jwt: {
 					secret: 'uwu' /** JWT tokens are signed with this secret key. (required) **/,
 					issuer: 'kaname.netlify.app' /** See https://jwt.io/introduction  (optional and by default api.auth.redirect) **/,
-					algorithm: 'HS256' /**  (optional and by default HS512) **/
+					algorithm: 'HS256' /**  (optional and by default HS512) **/,
+					sessionsHooks: {
+						/** Optional hooks for persistent sessions (optional) **/,
+						get: (token, type) => {
+							// Do something with your database or something else.
+							// ...
+
+							return { access_token: '<access_token>', refresh_token: '<refresh_token>' };
+						},
+						create: (payload) => {
+							// Do something with your database or something else.
+							// ...
+						},
+						delete: (accessToken) => {
+							// Do something with your database or something else.
+							// ...
+						}
+					}
 				}
 			}
 		}

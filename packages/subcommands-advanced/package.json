@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-subcommands-advanced",
-	"version": "2.1.4",
+	"version": "2.4.0",
 	"description": "Plugin for @sapphire/framework to be able to create subcommands based on command classes.",
 	"author": "@kaname-png",
 	"license": "MIT",
@@ -11,11 +11,13 @@
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
 		},
 		"./register": {
 			"import": "./register.mjs",
-			"require": "./register.js"
+			"require": "./register.js",
+			"types": "./register.d.ts"
 		}
 	},
 	"sideEffects": [
@@ -27,14 +29,13 @@
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",
 		"build": "tsc -b src && yarn esm:register && yarn esm:default",
-		"test": "jest",
 		"esm:register": "gen-esm-wrapper dist/register.js dist/register.mjs",
 		"esm:default": "gen-esm-wrapper dist/index.js dist/index.mjs",
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"@sapphire/decorators": "^5.0.0",
-		"tslib": "^2.4.0"
+		"@sapphire/decorators": "^6.0.2",
+		"tslib": "^2.6.2"
 	},
 	"repository": {
 		"type": "git",
@@ -68,6 +69,6 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@sapphire/plugin-subcommands": "^3.2.3"
+		"@sapphire/plugin-subcommands": "^5.0.0"
 	}
 }

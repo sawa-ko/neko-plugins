@@ -3,10 +3,6 @@ import * as API from '../src';
 import '../src/register';
 
 describe('Lib classes', () => {
-	test('Auth client', () => {
-		expect(isClass(API.JWTClient)).toBe(true);
-	});
-
 	test('Auth middleware', () => {
 		expect(isClass(API.JWTMiddleware)).toBe(true);
 	});

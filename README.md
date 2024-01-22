@@ -8,7 +8,7 @@
 ## Plugins for @sapphire/framework
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
+[![codecov](https://codecov.io/gh/sawa-ko/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/sawa-ko/neko-plugins)
 
 ---
 
@@ -19,6 +19,10 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-api-jwt?color=crimson&label=%40kaname-png%2Fplugin-api-jwt&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-api-jwt)
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-subcommands-advanced?color=crimson&label=%40kaname-png%2Fplugin-subcommands-advanced&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
+
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-influxdb?color=crimson&label=%40kaname-png%2Fplugin-influxdb&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-influxdb)
+
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-sentry?color=crimson&label=%40kaname-png%2Fplugin-sentry&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-sentry)
 
 ---
 
@@ -40,6 +44,10 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
    [`@sapphire/framework`](https://github.com/sapphiredev/framework) to use [JSON Web Tokens](https://jwt.io) instead of
    [HttpOnly Secure Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) in the plugin [@sapphire/plugin-api](https://www.npmjs.com/package/@sapphire/plugin-api).
 4. [Subcommands advanced](https://github.com/kaname-png/neko-plugins/tree/main/packages/subcommands-advanced): Plugin for [`@sapphire/framework`](https://github.com/sapphiredev/framework) to be able to create subcommands based on command classes.
+5. [InfluxDB](https://github.com/kaname-png/neko-plugins/tree/main/packages/influxdb): Plugin for
+   [`@sapphire/framework`](https://github.com/sapphiredev/framework) to publish stats to an
+   [`InfluxDB`](https://www.influxdata.com) instance.
+6. [Sentry](https://github.com/kaname-png/neko-plugins/tree/main/packages/sentry): Plugin for [`@sapphire/framework`](https://github.com/sapphiredev/framework) to publish errors to [sentry](https://sentry.io).
 
 ## 🔥 Features
 
@@ -52,17 +60,21 @@ Everyone can contribute their plugins here if they wish, all are welcome. if you
 All plugins created by the community, for the community, are appreciated.
 
 <!-- markdownlint-disable -->
-<img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif?w=336" width="400" heigth="400">
+<img src="https://imoutosite.files.wordpress.com/2019/06/67bc8-aw379865_03.gif" alt="Display a thank-you animation">
 <!-- markdownlint-restore -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://kaname.netlify.app"><img src="https://avatars.githubusercontent.com/u/56084970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kaname</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Code">💻</a> <a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3Akaname-png" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=kaname-png" title="Documentation">📖</a> <a href="#infra-kaname-png" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-kaname-png" title="Maintenance">🚧</a> <a href="https://github.com/kaname-png/neko-plugins/pulls?q=is%3Apr+reviewed-by%3Akaname-png" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="http://nino.fun"><img src="https://avatars.githubusercontent.com/u/90474850?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sebazz</b></sub></a><br /><a href="https://github.com/kaname-png/neko-plugins/issues?q=author%3AuSebazz" title="Bug reports">🐛</a> <a href="https://github.com/kaname-png/neko-plugins/commits?author=uSebazz" title="Code">💻</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://kaname.netlify.app"><img src="https://avatars.githubusercontent.com/u/56084970?v=4?s=100" width="100px;" alt="Kaname"/><br /><sub><b>Kaname</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/commits?author=kaname-png" title="Code">💻</a> <a href="https://github.com/sawa-ko/neko-plugins/issues?q=author%3Akaname-png" title="Bug reports">🐛</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=kaname-png" title="Documentation">📖</a> <a href="#infra-kaname-png" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-kaname-png" title="Maintenance">🚧</a> <a href="https://github.com/sawa-ko/neko-plugins/pulls?q=is%3Apr+reviewed-by%3Akaname-png" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://nino.fun"><img src="https://avatars.githubusercontent.com/u/90474850?v=4?s=100" width="100px;" alt="Sebazz"/><br /><sub><b>Sebazz</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/issues?q=author%3AuSebazz" title="Bug reports">🐛</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=uSebazz" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://chikoshidori.github.io"><img src="https://avatars.githubusercontent.com/u/53100578?v=4?s=100" width="100px;" alt="Chiko"/><br /><sub><b>Chiko</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/issues?q=author%3AChikoShidori" title="Bug reports">🐛</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=ChikoShidori" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Swiizyy"><img src="https://avatars.githubusercontent.com/u/52933626?v=4?s=100" width="100px;" alt="Williams Bussat"/><br /><sub><b>Williams Bussat</b></sub></a><br /><a href="https://github.com/sawa-ko/neko-plugins/commits?author=Swiizyy" title="Code">💻</a> <a href="https://github.com/sawa-ko/neko-plugins/commits?author=Swiizyy" title="Documentation">📖</a> <a href="#ideas-Swiizyy" title="Ideas, Planning, & Feedback">🤔</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->

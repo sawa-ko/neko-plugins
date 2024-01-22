@@ -1,5 +1,6 @@
 import type { ApiRequest as SapphireApiRequest, LoginData } from '@sapphire/plugin-api';
 import type { RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
+import type { Awaitable } from 'discord.js';
 
 import type { Algorithm } from 'jsonwebtoken';
 
@@ -22,6 +23,11 @@ export interface ClientOptions {
 	 * Algorithm used to sign JWT tokens.
 	 */
 	algorithm?: Algorithm;
+
+	/**
+	 * Hooks to verify and manage active API sessions in a customized way.
+	 */
+	sessionsHooks?: PersistSessionsHooks;
 }
 
 /**
@@ -70,4 +76,36 @@ export interface SessionUserData {
 	 * User's OAuth access token information in Discord.
 	 */
 	auth: RESTPostOAuth2AccessTokenResult;
+}
+
+/**
+ * Payload that is sent to the hook to create persistent sessions.
+ */
+export interface PersistSessionsPayload {
+	access_token: string;
+	refresh_token: string;
+	data: SessionUserData;
+}
+
+/**
+ * Methods used for persistent session hooks in the API.
+ */
+export interface PersistSessionsHooks {
+	/**
+	 * Method to be used to verify persistent user sessions.
+	 * @returns boolean | Promise<boolean>
+	 */
+	get?: <T>(token: string, type: 'access_token' | 'refresh_token') => Awaitable<{ access_token: string; refresh_token: string } & T>;
+
+	/**
+	 * Method to be used to create persistent user sessions.
+	 * @returns unknow
+	 */
+	create?: (payload: PersistSessionsPayload) => Awaitable<unknown>;
+
+	/**
+	 * Method to be used to delete persistent user sessions.
+	 * @returns unknow
+	 */
+	delete?: (accessToken: string) => Awaitable<unknown>;
 }

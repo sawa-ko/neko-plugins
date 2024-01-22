@@ -3,6 +3,70 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.3...@kaname-png/plugin-subcommands-advanced@2.4.0) (2023-10-22)
+
+### Bug Fixes
+
+-   **influxdb:** :coffin: remove bad deps ([6735c68](https://github.com/kaname-png/neko-plugins/commit/6735c68048dc0bd9195f63289d85cc8c1bba0fdd))
+-   **subcommands-advanced:** use preconditions built-in instead of create a new preconditions with command options ([692d415](https://github.com/kaname-png/neko-plugins/commit/692d415eada9333ac564459443105e77a17178d2))
+-   **subcommands-advanced:** use UserError when has unknown errors too ([bba9611](https://github.com/kaname-png/neko-plugins/commit/bba9611a18157be8607db91bc6f0c85d0eaa9bce))
+
+### Features
+
+-   update deps and fix conflicts ([d9602ba](https://github.com/kaname-png/neko-plugins/commit/d9602ba4d5a691107f6524c5b58a917a4c286693))
+
+# [2.3.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.3...@kaname-png/plugin-subcommands-advanced@2.3.0) (2023-09-06)
+
+### Bug Fixes
+
+-   **influxdb:** :coffin: remove bad deps ([6735c68](https://github.com/kaname-png/neko-plugins/commit/6735c68048dc0bd9195f63289d85cc8c1bba0fdd))
+
+### Features
+
+-   update deps and fix conflicts ([d9602ba](https://github.com/kaname-png/neko-plugins/commit/d9602ba4d5a691107f6524c5b58a917a4c286693))
+
+## [2.2.3](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.2...@kaname-png/plugin-subcommands-advanced@2.2.3) (2023-06-08)
+
+### Bug Fixes
+
+-   tests ([589179f](https://github.com/kaname-png/neko-plugins/commit/589179f2021a4cd6054a7ee064e4e40a26a7ba94))
+
+## [2.2.2](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.1...@kaname-png/plugin-subcommands-advanced@2.2.2) (2023-06-05)
+
+### Bug Fixes
+
+-   tslib import ([ce34a4d](https://github.com/kaname-png/neko-plugins/commit/ce34a4da81c147528bb128e3681f1d5039c134ba))
+
+## [2.2.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.2.0...@kaname-png/plugin-subcommands-advanced@2.2.1) (2023-01-08)
+
+### Bug Fixes
+
+-   **advanced-subcommands:** improve error messages about registry subcommands ([4af5300](https://github.com/kaname-png/neko-plugins/commit/4af5300ee7dd73bc93e473b27ba38ec7a74d6ce3))
+
+# [2.2.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.8...@kaname-png/plugin-subcommands-advanced@2.2.0) (2023-01-08)
+
+### Features
+
+-   **deps:** support for djs v14 ([42cf65a](https://github.com/kaname-png/neko-plugins/commit/42cf65a7a84994253dfba953bc0051f7749b21b9))
+
+## [2.1.8](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.7...@kaname-png/plugin-subcommands-advanced@2.1.8) (2022-12-29)
+
+**Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced
+
+## [2.1.7](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.6...@kaname-png/plugin-subcommands-advanced@2.1.7) (2022-12-29)
+
+### Bug Fixes
+
+-   import typing resolution ([41f47ff](https://github.com/kaname-png/neko-plugins/commit/41f47ffc58d8b8ebe4a06804ed736eda7f19f12a))
+
+## [2.1.6](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.5...@kaname-png/plugin-subcommands-advanced@2.1.6) (2022-12-19)
+
+**Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced
+
+## [2.1.5](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.4...@kaname-png/plugin-subcommands-advanced@2.1.5) (2022-12-04)
+
+**Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced
+
 ## [2.1.4](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-subcommands-advanced@2.1.3...@kaname-png/plugin-subcommands-advanced@2.1.4) (2022-10-23)
 
 **Note:** Version bump only for package @kaname-png/plugin-subcommands-advanced

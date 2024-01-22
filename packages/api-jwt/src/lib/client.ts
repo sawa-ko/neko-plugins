@@ -2,11 +2,11 @@ import { container, Result } from '@sapphire/framework';
 import { isNullish } from '@sapphire/utilities';
 
 import { stringify } from 'querystring';
-import { OAuth2Routes, RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
+import { OAuth2Routes, type RESTPostOAuth2AccessTokenResult } from 'discord-api-types/v10';
 import jwt, { type Algorithm } from 'jsonwebtoken';
-import fetch from 'node-fetch';
+import { fetch } from 'undici';
 
-import type { ClientOptions, SessionData, SessionUserData } from './types';
+import type { ClientOptions, PersistSessionsHooks, SessionUserData } from './types';
 
 /**
  * JWT token manager client in the API.
@@ -16,10 +16,11 @@ export class Client {
 	private issuer?: string;
 	private secret: string;
 	private algorithm: Algorithm;
-	private sessions: SessionData[] = [];
+	private sessionsHooks?: PersistSessionsHooks;
 
 	public constructor(options: ClientOptions) {
 		this.issuer = options.issuer;
+		this.sessionsHooks = options.sessionsHooks;
 
 		// If no algorithm is specified, the HS512 algorithm will be used.
 		this.algorithm = options.algorithm ?? 'HS512';
@@ -28,31 +29,47 @@ export class Client {
 		this.secret = container.client.server?.auth?.secret ?? 'NEKO-PLUGINS';
 	}
 
-	public encrypt(payload: SessionUserData) {
+	public async encrypt(payload: SessionUserData) {
 		const options: jwt.SignOptions = { algorithm: this.algorithm, expiresIn: '4d' };
 		if (this.issuer) options.issuer = this.issuer;
 
 		const accessToken = jwt.sign(payload, this.secret, options);
-		const refresToken = jwt.sign(payload.auth, this.secret, {
-			...options,
-			expiresIn: '7d'
-		});
+		const refresToken = jwt.sign(
+			{ data: { scope: payload.auth.scope, refresh_token: payload.auth.refresh_token, token_type: payload.auth.token_type } },
+			this.secret,
+			{
+				...options,
+				expiresIn: '7d'
+			}
+		);
 
-		this.sessions.push({ access_token: accessToken, refresh_token: refresToken, data: payload });
+		if (this.sessionsHooks?.create) {
+			await this.sessionsHooks.create({ access_token: accessToken, refresh_token: refresToken, data: payload });
+		}
+
 		return { access_token: accessToken, refresh_token: refresToken, expires_in: Date.now() + 345600000, token_type: 'Bearer' };
 	}
 
-	public decrypt<T = unknown>(token: string, type: 'access_token' | 'refresh_token') {
+	public async decrypt<T = unknown>(token: string, type: 'access_token' | 'refresh_token') {
 		const data = Result.from<Pick<jwt.JwtPayload, 'iat' | 'exp' | 'iss'> & T>(() => jwt.verify(token, this.secret) as any);
 		if (data.isErr()) return null;
 
-		const session = this.sessions.find((s) => s[type] === token);
-		if (!session) return null;
-		return { data: data.unwrapOr(null), access_token: session.access_token, refresh_token: session.refresh_token };
+		if (this.sessionsHooks?.get) {
+			const session = await this.sessionsHooks.get(token, type);
+			if (!session) return null;
+
+			return { data: data.unwrapOr(null), access_token: session.access_token, refresh_token: session.refresh_token };
+		}
+
+		return { data: data.unwrapOr(null), [type]: token };
 	}
 
-	public signOut(accessToken: string) {
-		this.sessions = this.sessions.filter((s) => s.access_token !== accessToken);
+	public async signOut(accessToken: string) {
+		if (this.sessionsHooks?.delete) {
+			await this.sessionsHooks.delete(accessToken);
+		}
+
+		return true;
 	}
 
 	public async auth(code: string, grantType: 'code' | 'refresh', redirectUri?: string) {

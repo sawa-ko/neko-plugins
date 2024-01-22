@@ -7,7 +7,6 @@
 **Plugin for <a href="https://github.com/sapphiredev/framework">@sapphire/framework</a> to be able to create subcommands based on command classes.**
 
 [![GitHub](https://img.shields.io/github/license/kaname-png/neko-plugins)](https://github.com/kaname-png/neko-plugins/blob/main/LICENSE.md)
-[![codecov](https://codecov.io/gh/kaname-png/neko-plugins/branch/main/graph/badge.svg?token=7B0AVB4YG6)](https://codecov.io/gh/kaname-png/neko-plugins)
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-subcommands-advanced?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
 [![npm](https://img.shields.io/npm/dt/@kaname-png/plugin-subcommands-advanced?color=crimson&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-subcommands-advanced)
 

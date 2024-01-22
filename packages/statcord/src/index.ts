@@ -1,3 +1,5 @@
+import 'tslib';
+
 export * from './lib/statcord';
 export * from './lib/types';
 

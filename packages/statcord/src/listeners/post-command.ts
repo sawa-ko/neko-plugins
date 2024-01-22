@@ -1,4 +1,4 @@
-import { MessageCommandAcceptedPayload, ChatInputCommandAcceptedPayload, Events, Listener } from '@sapphire/framework';
+import { type MessageCommandAcceptedPayload, type ChatInputCommandAcceptedPayload, Events, Listener } from '@sapphire/framework';
 
 export class MessagePluginListener extends Listener<typeof Events.MessageCommandAccepted> {
 	public constructor(context: Listener.Context, options: Listener.Options) {

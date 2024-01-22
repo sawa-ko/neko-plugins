@@ -1,3 +1,5 @@
+import 'tslib';
+
 import type { DotenvCraOptions } from 'dotenv-cra';
 
 export * from './lib/client';
