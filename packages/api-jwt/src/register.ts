@@ -1,16 +1,17 @@
-import { Plugin, container, SapphireClient, postInitialization, preLogin } from '@sapphire/framework';
-import { join } from 'path';
-
-import { Client } from './lib/client';
 import './index';
+
+import { Plugin, SapphireClient, container, postInitialization, preLogin } from '@sapphire/framework';
+import { Client } from './lib/client';
+import { loadMiddlewares } from './middlewares/_load';
+import { loadRoutes } from './routes/_load';
 
 export class APIJWTPlugin extends Plugin {
 	public static [postInitialization](this: SapphireClient): void {
 		if (!this.server) return;
 		if (!this.options.api?.auth?.jwt?.secret) return;
 
-		this.server.middlewares.registerPath(join(__dirname, 'lib', 'middlewares'));
-		this.server.routes.registerPath(join(__dirname, 'lib', 'routes'));
+		loadMiddlewares();
+		loadRoutes();
 	}
 
 	public static [preLogin](this: SapphireClient): void {

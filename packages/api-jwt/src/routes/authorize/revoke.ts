@@ -5,7 +5,7 @@ import { stringify } from 'querystring';
 import { promisify } from 'util';
 import { fetch } from 'undici';
 
-import type { ApiRequest } from '../../types';
+import type { ApiRequest } from '../../lib/types';
 
 const sleep = promisify(setTimeout);
 

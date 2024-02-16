@@ -10,3 +10,8 @@ export abstract class SentryListener<E extends keyof ClientEvents | symbol = ''>
 		super(context, { enabled: isSentryInitialized(), ...options });
 	}
 }
+
+export namespace SentryListener {
+	export type Options = Listener.Options;
+	export type Context = Listener.Context;
+}

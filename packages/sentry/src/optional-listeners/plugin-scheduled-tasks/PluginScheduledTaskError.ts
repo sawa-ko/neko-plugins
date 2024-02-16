@@ -1,12 +1,13 @@
-import { container, Listener } from '@sapphire/framework';
+import { container } from '@sapphire/framework';
 import { ScheduledTaskEvents } from '@sapphire/plugin-scheduled-tasks';
 import { captureException } from '@sentry/node';
-import { SentryListener } from '../../lib/structures/listener';
+import { SentryListener } from '../../lib/structures/SentryListener';
 
-export class SharedListener extends SentryListener<typeof ScheduledTaskEvents.ScheduledTaskError> {
-	public constructor(context: Listener.Context, options: Listener.Options) {
+export class PluginSentryListener extends SentryListener<typeof ScheduledTaskEvents.ScheduledTaskError> {
+	public constructor(context: SentryListener.Context, options: SentryListener.Options) {
 		super(context, {
 			...options,
+			name: 'PluginSentryScheduledTaskError',
 			event: ScheduledTaskEvents.ScheduledTaskError
 		});
 	}
