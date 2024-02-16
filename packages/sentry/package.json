@@ -70,10 +70,10 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@sapphire/plugin-api": "^5.1.2",
-		"@sapphire/plugin-scheduled-tasks": "^8.0.0",
-		"@sapphire/plugin-subcommands": "^5.0.0",
-		"@sentry/integrations": "^7.80.1",
-		"@sentry/node": "^7.80.1"
+		"@sapphire/plugin-api": "^6.1.1",
+		"@sapphire/plugin-scheduled-tasks": "^10.0.1",
+		"@sapphire/plugin-subcommands": "^6.0.3",
+		"@sentry/integrations": "^7.101.1",
+		"@sentry/node": "^7.101.1"
 	}
 }
