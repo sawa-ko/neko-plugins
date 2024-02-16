@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.3.0...@kaname-png/plugin-statcord@2.3.1) (2024-02-16)
+
+**Note:** Version bump only for package @kaname-png/plugin-statcord
+
 # [2.3.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-statcord@2.1.12...@kaname-png/plugin-statcord@2.3.0) (2023-10-22)
 
 ### Features

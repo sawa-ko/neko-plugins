@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-sentry@1.3.0...@kaname-png/plugin-sentry@1.3.1) (2024-02-16)
+
+### Bug Fixes
+
+-   fixed typing errors for deps update. ([5bcdfd9](https://github.com/kaname-png/neko-plugins/commit/5bcdfd9155a57c481a97f73a79797e15df085e1f))
+
 # [1.3.0](https://github.com/kaname-png/neko-plugins/compare/@kaname-png/plugin-sentry@1.1.0...@kaname-png/plugin-sentry@1.3.0) (2023-10-22)
 
 ### Bug Fixes
