@@ -38,6 +38,9 @@ SapphireClient.plugins.registerPostLoginHook(StatcordPlugin[postLogin], 'Statcor
 
 declare module '@sapphire/pieces' {
 	interface Container {
+		/**
+		 * @deprecated Statcord and all related discordlabs have been discontinued. This plugin will be discontinued soon.
+		 */
 		statcord: Statcord;
 	}
 }
