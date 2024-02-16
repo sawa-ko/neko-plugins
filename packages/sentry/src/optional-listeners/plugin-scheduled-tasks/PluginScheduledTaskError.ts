@@ -1,5 +1,5 @@
 import { container } from '@sapphire/framework';
-import { ScheduledTaskEvents } from '@sapphire/plugin-scheduled-tasks';
+import { ScheduledTask, ScheduledTaskEvents, ScheduledTaskOptions } from '@sapphire/plugin-scheduled-tasks';
 import { captureException } from '@sentry/node';
 import { SentryListener } from '../../lib/structures/SentryListener';
 
@@ -12,7 +12,7 @@ export class PluginSentryListener extends SentryListener<typeof ScheduledTaskEve
 		});
 	}
 
-	public run(error: unknown, task: string, _payload: unknown) {
+	public run(error: unknown, task: ScheduledTask<never, ScheduledTaskOptions>, _payload: unknown) {
 		if (!Reflect.has(container, 'tasks')) return;
 		return captureException(error, { level: 'error', tags: { event: this.name }, extra: { task } });
 	}
