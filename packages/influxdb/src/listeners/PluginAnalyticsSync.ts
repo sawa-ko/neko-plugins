@@ -1,10 +1,12 @@
-import { AnalyticsListener } from '../lib/structures';
-import { AnalyticsSync, Actions, Points, Tags } from '../lib/types';
 import { Point } from '@influxdata/influxdb-client';
-import { ApplyOptions } from '@sapphire/decorators';
+import { AnalyticsListener } from '../lib/structures';
+import { Actions, AnalyticsSync, Points, Tags } from '../lib/types';
 
-@ApplyOptions<AnalyticsListener.Options>({ event: AnalyticsSync })
-export class UserAnalyticsEvent extends AnalyticsListener {
+export class PluginAnalyticsListener extends AnalyticsListener {
+	public constructor(context: AnalyticsListener.Context) {
+		super(context, { name: 'PluginAnalyticsSync', event: AnalyticsSync });
+	}
+
 	public run(guilds: number, users: number) {
 		this.writePoints([this.syncGuilds(guilds), this.syncUsers(users), this.syncMessageCount()]);
 

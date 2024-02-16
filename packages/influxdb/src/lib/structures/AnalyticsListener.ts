@@ -1,11 +1,11 @@
 import { Tags } from '../types';
 import type { Point } from '@influxdata/influxdb-client';
-import { container, Listener, type PieceContext, Result } from '@sapphire/framework';
+import { container, Listener, Result } from '@sapphire/framework';
 
 export abstract class AnalyticsListener extends Listener {
 	public tags: [Tags, string][] = [];
 
-	public constructor(context: PieceContext, options?: AnalyticsListener.Options) {
+	public constructor(context: Listener.LoaderContext, options?: AnalyticsListener.Options) {
 		super(context, { enabled: Boolean(container.client.analytics?.writeApi), ...options });
 	}
 
@@ -39,5 +39,6 @@ export abstract class AnalyticsListener extends Listener {
 }
 
 export namespace AnalyticsListener {
+	export type Context = Listener.Context;
 	export type Options = Listener.Options;
 }

@@ -1,7 +1,7 @@
-import { Plugin, container, postInitialization, postLogin, preGenericsInitialization, SapphireClient } from '@sapphire/framework';
-import { join } from 'path';
+import { Plugin, SapphireClient, container, postInitialization, postLogin, preGenericsInitialization } from '@sapphire/framework';
 
 import { Statcord } from './index';
+import { loadListeners } from './listeners/_load';
 
 /**
  * Plugin allowing Out of the box Statcord integration with @sapphire/framework.
@@ -13,7 +13,7 @@ export class StatcordPlugin extends Plugin {
 	}
 
 	public static [postInitialization](this: SapphireClient): void {
-		this.stores.get('listeners').registerPath(join(__dirname, 'listeners'));
+		loadListeners();
 	}
 
 	public static [postLogin](this: SapphireClient): void {
@@ -38,6 +38,9 @@ SapphireClient.plugins.registerPostLoginHook(StatcordPlugin[postLogin], 'Statcor
 
 declare module '@sapphire/pieces' {
 	interface Container {
+		/**
+		 * @deprecated Statcord and all related discordlabs have been discontinued. This plugin will be discontinued soon.
+		 */
 		statcord: Statcord;
 	}
 }

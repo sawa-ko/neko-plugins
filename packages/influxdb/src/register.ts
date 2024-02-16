@@ -1,8 +1,9 @@
 import './index';
+
 import { container, Plugin, postInitialization, postLogin, preGenericsInitialization, SapphireClient } from '@sapphire/framework';
-import { join } from 'path';
 import { Client } from './lib/structures';
 import { AnalyticsSync } from './lib/types';
+import { loadListeners } from './listeners/_load';
 
 /**
  * Plugin that allows to manage nodejs application environment variables.
@@ -15,7 +16,7 @@ export class EnvPlugin extends Plugin {
 
 	public static [postInitialization](this: SapphireClient): void {
 		if (this.options.analytics?.loadDefaultListeners !== true) return;
-		this.stores.get('listeners').registerPath(join(__dirname, 'listeners'));
+		loadListeners();
 	}
 
 	public static [postLogin](this: SapphireClient): void {

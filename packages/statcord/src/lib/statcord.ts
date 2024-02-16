@@ -9,6 +9,7 @@ import { type PostStats, type ClientStats, type BucketStats, type UserVotesStats
 /**
  * The Statcord class.
  * @since 1.0.0
+ * @deprecated Statcord and all related discordlabs have been discontinued. This plugin will be discontinued soon.
  */
 export class Statcord extends EventEmitter {
 	private activeUsers: Snowflake[] = [];
