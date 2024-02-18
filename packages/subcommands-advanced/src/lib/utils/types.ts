@@ -1,4 +1,4 @@
-import type { container, CommandOptions as SapphireCommandOptions, Command } from '@sapphire/framework';
+import type { container, Command } from '@sapphire/framework';
 
 import type { SlashCommandSubcommandBuilder } from '@discordjs/builders';
 
@@ -25,7 +25,7 @@ export interface SubcommandOptions {
 	};
 }
 
-export type CommandOptions = SubcommandOptions & SapphireCommandOptions;
+export type CommandOptions = SubcommandOptions;
 
 export interface SubcommandMappingCollection {
 	slashCommand: SlashCommandSubcommandBuilder;
