@@ -1,21 +1,24 @@
-name: Automatic Label Sync
+name: Sync labels
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * *'
+
+permissions:
+  issues: write
+  contents: read
 
 jobs:
-  label_sync:
-    name: Automatic Label Synchronization
+  labels:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Project
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Refactor labels
+        uses: EndBug/label-sync@v2
         with:
-          repository: 'sapphiredev/readme'
-      - name: Run Label Sync
-        uses: crazy-max/ghaction-github-labeler@de749cf181958193cb7debf1a9c5bb28922f3e1b # v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          yaml-file: .github/labels.yml
+          config-file: ${{ github.workspace }}/.github/labels.yml
+          delete-other-labels: true
