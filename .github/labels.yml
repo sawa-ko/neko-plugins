@@ -1,0 +1,131 @@
+- name: blocked
+  color: 'fc1423'
+  description: 'Indicates that the issue or PR cannot proceed due to an external factor or dependency.'
+
+- name: bug:confirmed
+  color: 'd73a4a'
+  description: 'The bug has been verified and confirmed by the team.'
+
+- name: bug:unverified
+  color: 'f9d0c4'
+  description: 'A reported bug that has not yet been verified by the team.'
+
+- name: chore
+  color: 'ffffff'
+  description: 'Routine tasks or maintenance work that doesn''t directly affect functionality.'
+
+- name: ci
+  color: '0075ca'
+  description: 'Related to Continuous Integration processes and configurations.'
+
+- name: dependencies
+  color: '276bd1'
+  description: 'Concerns external dependencies or libraries used in the project.'
+
+- name: discussion
+  color: 'b6b1f9'
+  description: 'Topics or issues opened for general discussion or decision-making.'
+
+- name: documentation
+  color: '0075ca'
+  description: 'Related to project documentation, including READMEs, wikis, and inline comments.'
+
+- name: duplicate
+  color: 'cfd3d7'
+  description: 'Indicates that the issue or PR is a duplicate of an existing one.'
+
+- name: error handling
+  color: 'ffff00'
+  description: 'Concerns the handling, reporting, or mitigation of errors in the application.'
+
+- name: feature
+  color: 'ffff00'
+  description: 'A new functionality or capability being proposed or added to the project.'
+
+- name: has PR
+  color: '4b1f8e'
+  description: 'Indicates that there''s an active Pull Request associated with the issue.'
+
+- name: help wanted
+  color: '008672'
+  description: 'The team is actively seeking assistance or contributions on this issue or PR.'
+
+- name: in progress
+  color: 'ffccd7'
+  description: 'Work is currently underway on this issue or PR.'
+
+- name: in review
+  color: 'aed5fc'
+  description: 'The issue or PR is currently under review by team members.'
+
+- name: invalid
+  color: 'e4e669'
+  description: 'Indicates that the issue or PR is not relevant or applicable.'
+
+- name: need repro
+  color: 'c66037'
+  description: 'The team requires a reproducible example to verify and address the issue.'
+
+- name: needs rebase & merge
+  color: '24853c'
+  description: 'The PR needs to be rebased and merged due to conflicts or outdated branches.'
+
+- name: performance
+  color: '80c042'
+  description: 'Related to the optimization and performance improvements of the application.'
+
+- name: priority:critical
+  color: 'b60205'
+  description: 'A high-priority issue that requires immediate attention and resolution.'
+
+- name: priority:high
+  color: 'fc1423'
+  description: 'An important issue that should be addressed in the near future.'
+
+- name: question
+  color: 'd876e3'
+  description: 'General inquiries or clarifications related to the project.'
+
+- name: refactor
+  color: '1d637f'
+  description: 'Code changes that improve readability and maintainability without altering functionality.'
+
+- name: regression
+  color: 'ea8785'
+  description: 'A previously working feature or functionality that is now broken or degraded.'
+
+- name: semver:major
+  color: 'c10f47'
+  description: 'Introduces breaking changes that require a major version bump.'
+
+- name: semver:minor
+  color: 'e4f486'
+  description: 'Introduces new features without breaking existing ones, requiring a minor version bump.'
+
+- name: semver:patch
+  color: 'e8be8b'
+  description: 'Bug fixes and minor changes that require a patch version bump.'
+
+- name: tests
+  color: 'f06dff'
+  description: 'Related to unit tests, integration tests, or any testing methodology.'
+
+- name: typings
+  color: '80c042'
+  description: 'Concerns type definitions or type-related issues in the project.'
+
+- name: wontfix
+  color: 'ffffff'
+  description: 'Indicates that the team has decided not to address or fix the issue or PR.'
+
+- name: 'ready to merge'
+  color: 'ffff00'
+  description: 'PR is ready to be merged.'
+
+- name: 'tested'
+  color: '77DD77'
+  description: 'PR is already tested.'
+
+- name: 'test-failed'
+  color: 'd73a4a'
+  description: 'The tests in PR is failed.'   
