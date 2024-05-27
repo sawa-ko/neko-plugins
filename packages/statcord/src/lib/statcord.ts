@@ -27,7 +27,7 @@ export class Statcord extends EventEmitter {
 		}
 
 		if (this.options.baseUrl) {
-			this.baseUrl = this.options.baseUrl
+			this.baseUrl = this.options.baseUrl;
 		}
 
 		if (this.options.key) {

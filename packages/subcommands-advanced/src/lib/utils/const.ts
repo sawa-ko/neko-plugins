@@ -49,7 +49,7 @@ export const RegisterSubcommandsHooks = {
 							}
 
 							return commandPiece.chatInputRun!(i, c);
-					  }
+						}
 					: undefined
 
 				// Support for message commands coming soon
@@ -109,7 +109,7 @@ export const RegisterSubcommandsHooks = {
 								}
 
 								return commandPiece.chatInputRun!(i, c);
-						  }
+							}
 						: undefined
 
 					// Support for message commands coming soon
