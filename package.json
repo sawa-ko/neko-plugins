@@ -21,8 +21,8 @@
 		"tslib": "^2.6.2"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^18.6.1",
-		"@commitlint/config-conventional": "^18.6.3",
+		"@commitlint/cli": "^19.3.0",
+		"@commitlint/config-conventional": "^19.2.2",
 		"@favware/npm-deprecate": "^1.0.7",
 		"@sapphire/eslint-config": "^5.0.4",
 		"@sapphire/framework": "^5.1.0",
