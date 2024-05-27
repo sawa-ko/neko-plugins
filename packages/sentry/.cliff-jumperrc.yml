@@ -1,3 +1,3 @@
-name: plugin-api-jwt
+name: plugin-sentry
 org: kaname-png
-packagePath: packages/api-jwt
+packagePath: packages/sentry
