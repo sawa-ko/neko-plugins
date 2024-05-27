@@ -181,7 +181,7 @@ import type { CommandOptions } from '../utils/types';
  *
  * @since 1.0.0
  */
-export class Command extends SapphireCommand<Args, SapphireCommand.Options & CommandOptions> {
+export class Command<PreParseReturn extends Args = Args> extends SapphireCommand<PreParseReturn, SapphireCommand.Options & CommandOptions> {
 	public constructor(context: SapphireCommand.LoaderContext, options: SapphireCommand.Options & CommandOptions) {
 		let nameCommand = options.name;
 
