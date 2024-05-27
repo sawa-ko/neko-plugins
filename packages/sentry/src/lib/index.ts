@@ -1,6 +1,5 @@
 import { container, type Listener } from '@sapphire/framework';
-import { RewriteFrames } from '@sentry/integrations';
-import { init, Integrations, setContext } from '@sentry/node';
+import { init, consoleIntegration, setContext, functionToStringIntegration, linkedErrorsIntegration, modulesIntegration, onUncaughtExceptionIntegration, onUnhandledRejectionIntegration, rewriteFramesIntegration } from '@sentry/node';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,13 +25,13 @@ export function initializeSentry(options: SentryOptions = {}) {
 			dsn: process.env.SENTRY_DSN,
 			...options,
 			integrations: (integrations) => [
-				new Integrations.Console(),
-				new Integrations.FunctionToString(),
-				new Integrations.LinkedErrors(),
-				new Integrations.Modules(),
-				new Integrations.OnUncaughtException(),
-				new Integrations.OnUnhandledRejection(),
-				new RewriteFrames({ root }),
+				consoleIntegration(),
+				functionToStringIntegration(),
+				linkedErrorsIntegration(),
+				modulesIntegration(),
+				onUncaughtExceptionIntegration(),
+				onUnhandledRejectionIntegration(),
+				rewriteFramesIntegration({ root }),
 				...(typeof extractedIntegrations === 'function' ? extractedIntegrations(integrations) : extractedIntegrations)
 			]
 		});
