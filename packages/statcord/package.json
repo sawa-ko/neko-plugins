@@ -57,7 +57,7 @@
 		"@favware/cliff-jumper": "^3.0.3",
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"concurrently": "^8.2.2",
-		"eslint": "~8.57.0",
+		"eslint": "~9.3.0",
 		"tsup": "^8.0.2",
 		"tsx": "^4.11.0"
 	},
