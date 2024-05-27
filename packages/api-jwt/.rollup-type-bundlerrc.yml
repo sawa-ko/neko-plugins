@@ -1,0 +1,7 @@
+onlyBundle: true
+external:
+  - events
+  - url
+excludeFromClean:
+  - dist/esm/register.d.mts
+  - dist/cjs/register.d.ts

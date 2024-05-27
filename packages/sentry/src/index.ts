@@ -1,5 +1,5 @@
 import 'tslib';
-import { SentryOptions } from './lib/types';
+import type { SentryOptions } from './lib/types';
 
 export { captureException } from '@sentry/node';
 export * from './lib';

@@ -1,5 +1,5 @@
 import { container } from '@sapphire/framework';
-import { ScheduledTask, ScheduledTaskEvents, ScheduledTaskOptions } from '@sapphire/plugin-scheduled-tasks';
+import { ScheduledTask, ScheduledTaskEvents, type ScheduledTaskOptions } from '@sapphire/plugin-scheduled-tasks';
 import { captureException } from '@sentry/node';
 import { SentryListener } from '../../lib/structures/SentryListener';
 

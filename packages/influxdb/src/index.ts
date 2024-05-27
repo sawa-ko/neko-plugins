@@ -1,6 +1,6 @@
 import 'tslib';
 import { Client } from './lib/structures';
-import { Env } from './lib/types';
+import type { Env } from './lib/types';
 
 export type { InfluxDB, Point, QueryApi, WriteApi, WritePrecisionType } from '@influxdata/influxdb-client';
 export { Client, type InfluxOptions };

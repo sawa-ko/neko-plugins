@@ -15,15 +15,23 @@ export class Statcord extends EventEmitter {
 	private activeUsers: Snowflake[] = [];
 	private popularCommands: Array<{ name: string; count: number }> = [];
 	private commandsRun = 0;
-	private defaultHeader = { 'content-type': 'application/json', authorization: this.options?.key ?? '' };
+	private defaultHeader = { 'content-type': 'application/json', authorization: '' };
 	private bandwidthUsage = '0';
-	private baseUrl = this.options?.baseUrl ?? 'https://api.statcord.com/v3';
+	private baseUrl = 'https://api.statcord.com/v3';
 
 	public constructor(private readonly options?: StatcordOptions) {
 		super();
 
 		if (!this.options?.key) {
 			throw new Error('[Statcord-Plugin]: Statistics will not be sent because no API key has been provided in the Statcord options.');
+		}
+
+		if (this.options.baseUrl) {
+			this.baseUrl = this.options.baseUrl
+		}
+
+		if (this.options.key) {
+			this.defaultHeader.authorization = this.options.key;
 		}
 	}
 

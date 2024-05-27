@@ -4,11 +4,19 @@
 			"dependsOn": ["^build"],
 			"outputs": ["dist/**"]
 		},
+		"typecheck": {
+			"dependsOn": [],
+			"outputs": []
+		},
 		"lint": {
 			"dependsOn": [],
 			"outputs": []
 		},
-		"test": {
+		"bump": {
+			"dependsOn": [],
+			"outputs": ["CHANGELOG.md"]
+		},
+		"check-update": {
 			"dependsOn": [],
 			"outputs": []
 		}

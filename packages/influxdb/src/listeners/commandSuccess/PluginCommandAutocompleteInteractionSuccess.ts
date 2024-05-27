@@ -1,4 +1,4 @@
-import { AutocompleteInteractionPayload, Events } from '@sapphire/framework';
+import { type AutocompleteInteractionPayload, Events } from '@sapphire/framework';
 import { AnalyticsListener } from '../../lib/structures/AnalyticsListener';
 import { CommandRunTypes } from '../../lib/types';
 import { sharedCommandSuccessRun } from './_shared';

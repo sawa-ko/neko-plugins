@@ -1,4 +1,4 @@
-import { WritePrecisionType } from '@influxdata/influxdb-client';
+import type { WritePrecisionType } from '@influxdata/influxdb-client';
 
 export * from './AnalyticsSchema';
 
