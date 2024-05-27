@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@kaname-png/plugin-sentry@1.3.3](https://github.com/sawa-ko/neko-plugins/tree/@kaname-png/plugin-sentry@1.3.3) - (2024-05-27)
+
+## 🏠 Refactor
+
+- Use new format build packages ([1e370e4](https://github.com/sawa-ko/neko-plugins/commit/1e370e457a2f058db7ec54ab8e4d0537d34ec8cd))
+- Make all pieces virtual ([49c2e4c](https://github.com/sawa-ko/neko-plugins/commit/49c2e4cc5b2dcd2604d0dde71fea72f9434c25aa))
+
+## 🐛 Bug Fixes
+
+- Git cliff config wrong ([4680873](https://github.com/sawa-ko/neko-plugins/commit/46808731486c786b38d4238be6fe5fcee9f1728f))
+- Fixed typing errors for deps update. ([5bcdfd9](https://github.com/sawa-ko/neko-plugins/commit/5bcdfd9155a57c481a97f73a79797e15df085e1f))
+- **subcommands-advanced:** Use preconditions built-in instead of create a new preconditions with command options ([692d415](https://github.com/sawa-ko/neko-plugins/commit/692d415eada9333ac564459443105e77a17178d2))
+- **sentry:** :bug: fixes type error ([7f8cac9](https://github.com/sawa-ko/neko-plugins/commit/7f8cac93376cffca94a240b84e59eea8822a7328))
+- **sentry:** 🐛 move log and some fixes ([9522747](https://github.com/sawa-ko/neko-plugins/commit/95227478c58c24c75c759504cb0392ad1f9f9aa1))
+- **sentry:** :bug: fix listener option type and fix subcommands name ([a35883f](https://github.com/sawa-ko/neko-plugins/commit/a35883fd45d1c2c71991fae53aebff6f07f876ef))
+- **sentry:** :bug: fix register options type ([c2f9642](https://github.com/sawa-ko/neko-plugins/commit/c2f9642b600d7947b3cf1a8f865f126b53293c28))
+- **sentry:** :bug: fix correct loadSentryErrorListeners ([5b49d85](https://github.com/sawa-ko/neko-plugins/commit/5b49d8540cf9dce12192cc36dea5c462d9e78d27))
+- :pencil2: fix typos ([bec7888](https://github.com/sawa-ko/neko-plugins/commit/bec7888498258192b134eb4f817ac42710ba57e7))
+
+## 📝 Documentation
+
+- :bug: add last badge and fix url ([ca8dbe3](https://github.com/sawa-ko/neko-plugins/commit/ca8dbe3feb639fc59671a925a0f552d6fa8f8a84))
+
+## 🚀 Features
+
+- Update deps and fix conflicts ([d9602ba](https://github.com/sawa-ko/neko-plugins/commit/d9602ba4d5a691107f6524c5b58a917a4c286693))
+- :sparkles: add sentry package ([942b497](https://github.com/sawa-ko/neko-plugins/commit/942b49709bfbbd172b5ec5d629a36ed12d755e65))
+
 # [@kaname-png/plugin-api-jwt@1.3.2](https://github.com/sawa-ko/neko-plugins/tree/@kaname-png/plugin-api-jwt@1.3.2) - (2024-05-27)
 
 ## 🏠 Refactor
