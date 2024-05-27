@@ -4,9 +4,9 @@
 	"description": "Plugin for @sapphire/framework to manage environment variables for use with any bot project.",
 	"author": "@kaname-png",
 	"license": "MIT",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
+	"main": "dist/cjs/index.cjs",
+	"module": "dist/esm/index.mjs",
+	"types": "dist/cjs/index.d.cts",
 	"typedocMain": "src/index.ts",
 	"exports": {
 		".": {

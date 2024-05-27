@@ -4,9 +4,9 @@
 	"description": "Plugin for @sapphire/framework to add JSON Web Tokens strategy in @sapphire/plugin-api plugin.",
 	"author": "@kaname-png",
 	"license": "MIT",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
+	"main": "dist/cjs/index.cjs",
+	"module": "dist/esm/index.mjs",
+	"types": "dist/cjs/index.d.cts",
 	"typedocMain": "src/index.ts",
 	"exports": {
 		".": {
