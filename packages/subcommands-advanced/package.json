@@ -88,6 +88,7 @@
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"@sapphire/plugin-subcommands": "^6.0.3",
 		"concurrently": "^8.2.2",
+		"eslint": "~8.57.0",
 		"tsup": "^8.0.2",
 		"tsx": "^4.11.0"
 	}

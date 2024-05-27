@@ -94,6 +94,7 @@
 		"@sentry/integrations": "^7.112.2",
 		"@sentry/node": "^7.112.2",
 		"concurrently": "^8.2.2",
+		"eslint": "~8.57.0",
 		"tsup": "^8.0.2",
 		"tsx": "^4.11.0"
 	}
