@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
       - name: Add problem matcher
         run: echo "::add-matcher::.github/problemMatchers/eslint.json"
       - name: Use Node.js v20
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
@@ -24,66 +24,53 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Run ESLint
-        run: yarn lint --
+        run: yarn lint --fix=false
 
-  Testing:
-    name: Unit Tests
+  docs:
+    name: Generate Documentation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
       - name: Use Node.js v20
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Run tests
-        run: yarn jest --coverage --passWithNoTests
-      - name: Store code coverage report
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4
-        with:
-          name: coverage
-          path: coverage/
+      - name: Generate Documentation
+        run: yarn docs
 
-  Building:
-    name: Compile source code
+  BuildingAndTesting:
+    name: Building and Testing with node v${{ matrix.node }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 19, 20, 21]
     steps:
       - name: Checkout Project
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
       - name: Add problem matcher
         run: echo "::add-matcher::.github/problemMatchers/tsc.json"
-      - name: Use Node.js v20
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node }}
           cache: yarn
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Build Code
-        run: yarn build
-
-  Upload_Coverage_Report:
-    name: Upload coverage report to codecov
-    needs: [Testing]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-        with:
-          fetch-depth: 2
-      - name: Download Coverage report
-        uses: actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe # v4
-        with:
-          name: coverage
-          path: coverage/
-      - name: Codecov Upload
-        uses: codecov/codecov-action@e0b68c6749509c5f83f984dd99a76a1c1a231044 # v4
+      - name: Typecheck And Build Code
+        run: yarn typecheck && yarn build
+      - name: Run tests
+        run: yarn test
+      - name: Codecov Upload ${{ matrix.node }}
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: coverage/
+          files: coverage/cobertura-coverage.xml
+          flags: ${{ matrix.node }}
           fail_ci_if_error: true

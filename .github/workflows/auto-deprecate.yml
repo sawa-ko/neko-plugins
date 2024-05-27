@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
       - name: Use Node.js v20
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
@@ -20,6 +20,6 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Deprecate versions
-        run: yarn npm-deprecate -v
+        run: yarn npm-deprecate
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
