@@ -50,7 +50,7 @@
 	},
 	"dependencies": {
 		"jsonwebtoken": "^9.0.2",
-		"tslib": "^2.6.2"
+		"tslib": "^2.6.3"
 	},
 	"repository": {
 		"type": "git",
@@ -90,9 +90,9 @@
 		"@sapphire/utilities": "^3.16.2",
 		"@types/jsonwebtoken": "^9.0.6",
 		"concurrently": "^8.2.2",
-		"discord-api-types": "^0.37.86",
+		"discord-api-types": "^0.37.87",
 		"eslint": "~8.57.0",
-		"tsup": "^8.0.2",
-		"tsx": "^4.11.0"
+		"tsup": "^8.1.0",
+		"tsx": "^4.15.0"
 	}
 }
