@@ -50,7 +50,7 @@
 	},
 	"dependencies": {
 		"@sapphire/fetch": "^3.0.2",
-		"systeminformation": "^5.22.10",
+		"systeminformation": "^5.22.11",
 		"tslib": "^2.6.3"
 	},
 	"devDependencies": {
@@ -59,7 +59,7 @@
 		"concurrently": "^8.2.2",
 		"eslint": "~8.57.0",
 		"tsup": "^8.1.0",
-		"tsx": "^4.15.0"
+		"tsx": "^4.15.4"
 	},
 	"repository": {
 		"type": "git",
