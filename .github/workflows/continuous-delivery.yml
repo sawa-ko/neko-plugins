@@ -46,6 +46,9 @@ jobs:
           # Resolve the tag to be used. "next" for push events, "pr-{prNumber}" for dispatch events.
           TAG=$([[ ${{ github.event_name }} == 'push' ]] && echo 'next' || echo 'pr-${{ github.event.inputs.prNumber }}')
 
+          git config --global user.email "${GITHUB_ACTOR}"
+          git config --global user.name ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
+
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
           yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
 
