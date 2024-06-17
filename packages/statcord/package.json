@@ -59,7 +59,7 @@
 		"concurrently": "^8.2.2",
 		"eslint": "~8.57.0",
 		"tsup": "^8.1.0",
-		"tsx": "^4.15.5"
+		"tsx": "^4.15.6"
 	},
 	"repository": {
 		"type": "git",
