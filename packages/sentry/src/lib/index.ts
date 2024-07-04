@@ -1,5 +1,15 @@
 import { container, type Listener } from '@sapphire/framework';
-import { init, consoleIntegration, setContext, functionToStringIntegration, linkedErrorsIntegration, modulesIntegration, onUncaughtExceptionIntegration, onUnhandledRejectionIntegration, rewriteFramesIntegration } from '@sentry/node';
+import {
+	init,
+	consoleIntegration,
+	setContext,
+	functionToStringIntegration,
+	linkedErrorsIntegration,
+	modulesIntegration,
+	onUncaughtExceptionIntegration,
+	onUnhandledRejectionIntegration,
+	rewriteFramesIntegration
+} from '@sentry/node';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';

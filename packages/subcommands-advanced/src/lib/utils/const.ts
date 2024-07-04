@@ -1,4 +1,4 @@
-import { container, UserError } from '@sapphire/framework';
+import { container, UserError, type ChatInputCommand, type MessageCommand } from '@sapphire/framework';
 import type { Subcommand, SubcommandMapping, SubcommandMappingGroup } from '@sapphire/plugin-subcommands';
 
 import { ApplicationCommandOptionType } from 'discord-api-types/v10';
@@ -25,15 +25,17 @@ export const RegisterSubcommandsHooks = {
 			return;
 		}
 
-		for (const { slashCommand, commandPiece } of subcommands.values()) {
-			context.options.push(slashCommand);
+		for (const { slashCommand, messageSubCommand, commandPiece } of subcommands.values()) {
+			if (slashCommand) {
+				context.options.push(slashCommand);
+			}
 
 			const subcommand: SubcommandMapping = {
-				name: slashCommand.name,
+				name: slashCommand?.name ?? messageSubCommand ?? '',
 				type: 'method',
 				chatInputRun: commandPiece.chatInputRun
 					? async (i, c) => {
-							const result = await piece.preconditions.chatInputRun(i, piece);
+							const result = await piece.preconditions.chatInputRun(i, piece as unknown as ChatInputCommand);
 							if (result.isErr()) {
 								return piece.container.client.emit(
 									SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
@@ -50,23 +52,28 @@ export const RegisterSubcommandsHooks = {
 
 							return commandPiece.chatInputRun!(i, c);
 						}
-					: undefined
+					: undefined,
 
-				// Support for message commands coming soon
-				/* 				messageRun: commandPiece.chatInputRun
+				messageRun: commandPiece.messageRun
 					? async (m, a, c) => {
-							const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
-							const result = await preconditions.messageRun(m, piece, c);
-							if (!result.success)
-								return piece.container.client.emit(AdvancedSubcommandsEvents.MessageSubcommandDenied, result.error, {
-									command: piece,
-									message: m,
-									subcommand: subcommand as any
-								});
+							const result = await piece.preconditions.messageRun(m, piece as unknown as MessageCommand);
+							if (result.isErr()) {
+								return piece.container.client.emit(
+									SubcommandsAdvancedEvents.MessageSubcommandDenied as any,
+									result.err().unwrapOr(new UserError({ context, identifier: 'SubcommandDenied', message: 'Unknown error' })),
+									{
+										command: piece,
+										message: m,
+										subcommand: subcommand as any,
+										matchedSubcommandMapping: commandPiece.name,
+										context
+									}
+								);
+							}
 
 							return commandPiece.messageRun!(m, a, c);
-					  }
-					: undefined */
+						}
+					: undefined
 			};
 
 			piece.parsedSubcommandMappings.push(subcommand);
@@ -83,17 +90,17 @@ export const RegisterSubcommandsHooks = {
 		}
 
 		for (const [name, commands] of subcommandsGroups) {
-			for (const { slashCommand, commandPiece } of [...commands.values()]) {
+			for (const { slashCommand, messageSubCommand, commandPiece } of [...commands.values()]) {
 				const groupMapping = piece.parsedSubcommandMappings.find(
 					({ name: x, type }) => x === name && type === 'group'
 				) as SubcommandMappingGroup;
 
 				const subcommand: SubcommandMapping = {
-					name: slashCommand.name,
+					name: slashCommand?.name ?? messageSubCommand ?? '',
 					type: 'method',
 					chatInputRun: commandPiece.chatInputRun
 						? async (i, c) => {
-								const result = await piece.preconditions.chatInputRun(i, piece);
+								const result = await piece.preconditions.chatInputRun(i, piece as unknown as ChatInputCommand);
 								if (result.isErr()) {
 									return piece.container.client.emit(
 										SubcommandsAdvancedEvents.ChatInputSubcommandDenied as any,
@@ -110,23 +117,28 @@ export const RegisterSubcommandsHooks = {
 
 								return commandPiece.chatInputRun!(i, c);
 							}
-						: undefined
+						: undefined,
 
-					// Support for message commands coming soon
-					/* 					messageRun: commandPiece.chatInputRun
+					messageRun: commandPiece.messageRun
 						? async (m, a, c) => {
-								const preconditions = new PreconditionContainerArray(commandPiece.options.preconditions);
-								const result = await preconditions.messageRun(m, piece, c);
-								if (!result.success)
-									return piece.container.client.emit(AdvancedSubcommandsEvents.MessageSubcommandDenied, result.error, {
-										command: piece,
-										message: m,
-										subcommand: subcommand as any
-									});
+								const result = await piece.preconditions.messageRun(m, piece as unknown as MessageCommand);
+								if (result.isErr()) {
+									return piece.container.client.emit(
+										SubcommandsAdvancedEvents.MessageSubcommandDenied as any,
+										result.err().unwrapOr(new UserError({ context, identifier: 'SubcommandDenied', message: 'Unknown error' })),
+										{
+											command: piece,
+											message: m,
+											subcommand: subcommand as any,
+											matchedSubcommandMapping: commandPiece.name,
+											context
+										}
+									);
+								}
 
 								return commandPiece.messageRun!(m, a, c);
-						  }
-						: undefined */
+							}
+						: undefined
 				};
 
 				if (groupMapping) groupMapping.entries.push(subcommand);
@@ -143,7 +155,7 @@ export const RegisterSubcommandsHooks = {
 				const data = option.toJSON();
 				if (data.name === name && data.type === ApplicationCommandOptionType.SubcommandGroup) {
 					(option as unknown as { options: SlashCommandSubcommandBuilder[] }).options?.push(
-						...[...commands.values()].map(({ slashCommand }) => slashCommand)
+						...[...commands.values()].filter(({ slashCommand }) => slashCommand).map(({ slashCommand }) => slashCommand!)
 					);
 				}
 			}
