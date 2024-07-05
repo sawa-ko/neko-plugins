@@ -67,44 +67,32 @@ export const analizeSubCommandParsed = (
 	subcommand?:
 		| SlashCommandSubcommandBuilder
 		| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder)
-		| string
 ) => {
-	let subcommandParsed = undefined;
-	let messageSubcommandParsed = undefined;
-	if (typeof subcommand === 'string') {
-		messageSubcommandParsed = subcommand;
-	}
-	if (typeof subcommand === 'object') {
-		subcommandParsed = parseSlashSubcommand(subcommand);
-	}
-
-	if (!subcommandParsed && !messageSubcommandParsed) return piece;
+	const subcommandParsed = parseSlashSubcommand(subcommand);
 
 	const subcommandsRegistry = subCommandsRegistry.get(parentCommandName);
 
 	if (!subcommandsRegistry) {
 		subCommandsRegistry.set(
 			parentCommandName,
-			new Collection<string, SubcommandMappingCollection>().set(subcommandParsed?.name ?? messageSubcommandParsed!, {
+			new Collection<string, SubcommandMappingCollection>().set(subcommandParsed?.name ?? piece.name, {
 				slashCommand: subcommandParsed,
-				messageSubCommand: messageSubcommandParsed,
 				commandPiece: piece
 			})
 		);
 
 		container.logger.debug(
-			`[Subcommands-Plugin]: The parent command "${parentCommandName}" has been registered and the subcommand "${subcommandParsed?.name ?? messageSubcommandParsed}" has been registered.`
+			`[Subcommands-Plugin]: The parent command "${parentCommandName}" has been registered and the subcommand "${subcommandParsed?.name ?? piece.name}" has been registered.`
 		);
 
 		return piece;
 	}
 
-	const subcommandName = subcommandParsed?.name ?? messageSubcommandParsed!;
+	const subcommandName = subcommandParsed?.name ?? piece.name;
 	const command = subcommandsRegistry.get(subcommandName);
 	if (!command) {
 		subcommandsRegistry.set(subcommandName, {
 			slashCommand: subcommandParsed,
-			messageSubCommand: messageSubcommandParsed,
 			commandPiece: piece
 		});
 		container.logger.debug(
@@ -113,19 +101,19 @@ export const analizeSubCommandParsed = (
 
 		return piece;
 	}
-
 	const commandsCompare = subcommandParsed && command.slashCommand && isCommandOptionsUpdated(command.slashCommand, subcommandParsed);
-	subcommandsRegistry.delete(subcommandName);
-	subcommandsRegistry.set(subcommandName, {
-		slashCommand: subcommandParsed,
-		messageSubCommand: messageSubcommandParsed,
-		commandPiece: piece
-	});
-	container.logger.debug(
-		`[Subcommands-Plugin]: The subcommand "${subcommandName}" has been updated in the parent command ${parentCommandName} ${
-			commandsCompare ? 'with new options' : 'without new options'
-		}.`
-	);
+	if (commandsCompare) {
+		subcommandsRegistry.delete(subcommandName);
+		subcommandsRegistry.set(subcommandName, {
+			slashCommand: subcommandParsed,
+			commandPiece: piece
+		});
+		container.logger.debug(
+			`[Subcommands-Plugin]: The subcommand "${subcommandName}" has been updated in the parent command ${parentCommandName} ${
+				commandsCompare ? 'with new options' : 'without new options'
+			}.`
+		);
+	}
 
 	const parentCommand = container.stores.get('commands').get(parentCommandName) as Subcommand | undefined;
 	if (parentCommand) {
@@ -174,19 +162,8 @@ export const analizeSubcommandGroupParsed = (
 	subcommand?:
 		| SlashCommandSubcommandBuilder
 		| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder)
-		| string
 ) => {
-	let subcommandParsed = undefined;
-	let messageSubcommandParsed = undefined;
-	if (typeof subcommand === 'string') {
-		messageSubcommandParsed = subcommand;
-	}
-	if (typeof subcommand === 'object') {
-		subcommandParsed = parseSlashSubcommand(subcommand);
-	}
-
-	if (!subcommandParsed && !messageSubcommandParsed) return piece;
-	if (!subcommandParsed && !messageSubcommandParsed) return piece;
+	const subcommandParsed = parseSlashSubcommand(subcommand);
 
 	const subcommandsGroup = subCommandsGroupRegistry.get(parentCommandName);
 
@@ -195,16 +172,16 @@ export const analizeSubcommandGroupParsed = (
 			parentCommandName,
 			new Collection<string, Collection<string, SubcommandMappingCollection>>().set(
 				groupName,
-				new Collection<string, SubcommandMappingCollection>().set(subcommandParsed?.name ?? messageSubcommandParsed!, {
+				new Collection<string, SubcommandMappingCollection>().set(subcommandParsed?.name ?? piece.name, {
 					slashCommand: subcommandParsed,
-					messageSubCommand: messageSubcommandParsed,
+
 					commandPiece: piece
 				})
 			)
 		);
 
 		container.logger.debug(
-			`[Subcommands-Group-Plugin]: The parent command "${parentCommandName}" has been registered and the group "${groupName}" has been created with the registered "${subcommandParsed?.name ?? messageSubcommandParsed}" command.`
+			`[Subcommands-Group-Plugin]: The parent command "${parentCommandName}" has been registered and the group "${groupName}" has been created with the registered "${subcommandParsed?.name ?? piece.name}" command.`
 		);
 
 		return piece;
@@ -214,25 +191,24 @@ export const analizeSubcommandGroupParsed = (
 	if (!group) {
 		subcommandsGroup.set(
 			groupName,
-			new Collection<string, SubcommandMappingCollection>().set(subcommandParsed?.name ?? messageSubcommandParsed!, {
+			new Collection<string, SubcommandMappingCollection>().set(subcommandParsed?.name ?? piece.name, {
 				slashCommand: subcommandParsed,
-				messageSubCommand: messageSubcommandParsed,
+
 				commandPiece: piece
 			})
 		);
 		container.logger.debug(
-			`[Subcommands-Group-Plugin]: The group "${groupName}" has been registered with the command ${subcommandParsed?.name ?? messageSubcommandParsed} registered in the parent command "${parentCommandName}".`
+			`[Subcommands-Group-Plugin]: The group "${groupName}" has been registered with the command ${subcommandParsed?.name ?? piece.name} registered in the parent command "${parentCommandName}".`
 		);
 
 		return piece;
 	}
 
-	const subcommandName = subcommandParsed?.name ?? messageSubcommandParsed!;
+	const subcommandName = subcommandParsed?.name ?? piece.name;
 	const commandGroup = group.get(subcommandName);
 	if (!commandGroup) {
 		group.set(subcommandName, {
 			slashCommand: subcommandParsed,
-			messageSubCommand: messageSubcommandParsed,
 			commandPiece: piece
 		});
 		container.logger.debug(
@@ -247,7 +223,6 @@ export const analizeSubcommandGroupParsed = (
 	group.delete(subcommandName);
 	group.set(subcommandName, {
 		slashCommand: subcommandParsed,
-		messageSubCommand: messageSubcommandParsed,
 		commandPiece: piece
 	});
 
