@@ -12,14 +12,14 @@ import type { SlashCommandSubcommandBuilder } from '@discordjs/builders';
 export interface SubcommandOptions {
 	registerSubCommand?: {
 		parentCommandName: string;
-		slashSubcommand:
+		slashSubcommand?:
 			| SlashCommandSubcommandBuilder
 			| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder);
 	};
-	registerSubcommmandInGroup?: {
+	registerSubcommandInGroup?: {
 		parentCommandName: string;
 		groupName: string;
-		slashSubcommand:
+		slashSubcommand?:
 			| SlashCommandSubcommandBuilder
 			| ((subcommandGroup: SlashCommandSubcommandBuilder, Container: typeof container) => SlashCommandSubcommandBuilder);
 	};
@@ -28,7 +28,7 @@ export interface SubcommandOptions {
 export type CommandOptions = SubcommandOptions;
 
 export interface SubcommandMappingCollection {
-	slashCommand: SlashCommandSubcommandBuilder;
+	slashCommand?: SlashCommandSubcommandBuilder;
 	commandPiece: Command;
 }
 
