@@ -20,13 +20,6 @@ Currently the problem with the original subcommand plugin is that you have to pu
 
 This plugin allows you to modularize the subcommands of a parent command into several command classes and also allows you to use different preconditions on each subcommand.
 
-<div align="center">
-
-| Support for message commands coming soon |
-| ---------------------------------------- |
-
-</div>
-
 ## Features
 
 -   Fully ready for TypeScript!
@@ -35,6 +28,7 @@ This plugin allows you to modularize the subcommands of a parent command into se
 -   Support for preconditions.
 -   Based on command class.
 -   Everything included in the original subcommand plugin.
+-   Slash and message commands support!
 
 ## Installation
 
