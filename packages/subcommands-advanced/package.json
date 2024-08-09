@@ -89,7 +89,7 @@
 		"@sapphire/plugin-subcommands": "^6.0.3",
 		"concurrently": "^8.2.2",
 		"eslint": "~8.57.0",
-		"tsup": "^8.2.3",
-		"tsx": "^4.16.2"
+		"tsup": "^8.2.4",
+		"tsx": "^4.17.0"
 	}
 }
