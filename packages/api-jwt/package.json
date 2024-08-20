@@ -90,9 +90,9 @@
 		"@sapphire/utilities": "^3.17.0",
 		"@types/jsonwebtoken": "^9.0.6",
 		"concurrently": "^8.2.2",
-		"discord-api-types": "^0.37.93",
+		"discord-api-types": "^0.37.96",
 		"eslint": "~8.57.0",
-		"tsup": "^8.2.3",
-		"tsx": "^4.16.2"
+		"tsup": "^8.2.4",
+		"tsx": "^4.17.0"
 	}
 }
