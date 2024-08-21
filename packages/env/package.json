@@ -87,7 +87,7 @@
 		"@favware/cliff-jumper": "^4.0.3",
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"concurrently": "^8.2.2",
-		"tsup": "^8.2.3",
-		"tsx": "^4.16.2"
+		"tsup": "^8.2.4",
+		"tsx": "^4.17.0"
 	}
 }

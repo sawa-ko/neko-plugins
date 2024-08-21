@@ -49,8 +49,8 @@
 		"check-update": "cliff-jumper --dry-run"
 	},
 	"dependencies": {
-		"@sapphire/fetch": "^3.0.2",
-		"systeminformation": "^5.22.11",
+		"@sapphire/fetch": "^3.0.3",
+		"systeminformation": "^5.23.4",
 		"tslib": "^2.6.3"
 	},
 	"devDependencies": {
@@ -58,8 +58,8 @@
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"concurrently": "^8.2.2",
 		"eslint": "~8.57.0",
-		"tsup": "^8.2.3",
-		"tsx": "^4.16.2"
+		"tsup": "^8.2.4",
+		"tsx": "^4.17.0"
 	},
 	"repository": {
 		"type": "git",
