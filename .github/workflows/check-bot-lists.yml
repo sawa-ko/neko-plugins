@@ -24,4 +24,4 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Check botlists
-        run: yarn workspace @kaname-png/plugin-bot-list check-bot-lis
+        run: yarn workspace @kaname-png/plugin-bot-list check-bot-list
