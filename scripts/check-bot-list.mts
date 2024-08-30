@@ -64,13 +64,18 @@ const responses: Responses = sites.map(([url, expectedStatusCode, method]) => {
 	return [fetch(url, { method }), url, expectedStatusCode];
 });
 
+let hasFailure = false;
+
 for (const [response, url, expectedStatusCode] of responses) {
 	const result = await response;
 	if (result.status !== expectedStatusCode) {
+		hasFailure = true;
 		console.error(`${bold(url)} ${bold(green('failed.'))} Expected status code ${expectedStatusCode}, got ${result.status}.`);
 		continue;
 	}
+
 	console.log(`${bold(url)} ${bold(green('passed.'))}`);
 }
 
-process.exit(0);
+if (hasFailure) process.exit(1);
+else process.exit(0);
