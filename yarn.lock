@@ -1380,6 +1380,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@kaname-png/plugin-bot-list@workspace:packages/bot-list":
+  version: 0.0.0-use.local
+  resolution: "@kaname-png/plugin-bot-list@workspace:packages/bot-list"
+  dependencies:
+    "@favware/cliff-jumper": "npm:^4.0.3"
+    "@favware/rollup-type-bundler": "npm:^3.3.0"
+    concurrently: "npm:^8.2.2"
+    tiny-typed-emitter: "npm:^2.1.0"
+    tslib: "npm:^2.6.2"
+    tsup: "npm:^8.2.4"
+    tsx: "npm:^4.17.0"
+    undici: "npm:^6.18.2"
+  languageName: unknown
+  linkType: soft
+
 "@kaname-png/plugin-env@workspace:packages/env":
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-env@workspace:packages/env"
@@ -7492,6 +7507,7 @@ __metadata:
     typedoc: "npm:^0.25.13"
     typedoc-plugin-mdn-links: "npm:^3.1.30"
     typescript: "npm:^5.4.5"
+    undici: "npm:^6.18.2"
   languageName: unknown
   linkType: soft
 
@@ -9053,6 +9069,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-typed-emitter@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "tiny-typed-emitter@npm:2.1.0"
+  checksum: 10c0/522bed4c579ee7ee16548540cb693a3d098b137496110f5a74bff970b54187e6b7343a359b703e33f77c5b4b90ec6cebc0d0ec3dbdf1bd418723c5c3ce36d8a2
+  languageName: node
+  linkType: hard
+
 "tldts-core@npm:^6.1.22":
   version: 6.1.22
   resolution: "tldts-core@npm:6.1.22"
@@ -9454,6 +9477,13 @@ __metadata:
   version: 6.13.0
   resolution: "undici@npm:6.13.0"
   checksum: 10c0/b1b0456e7d4e87fd4f71a2a0716d8ea826f024fbcf16b7c6185194ca138cb822c20db509ed18c837fffcd9ffc3d74004ad6f950ebc895ff81ebb5ca6bf001cb2
+  languageName: node
+  linkType: hard
+
+"undici@npm:^6.18.2":
+  version: 6.19.8
+  resolution: "undici@npm:6.19.8"
+  checksum: 10c0/07fd8520bce7e34ea29c07ef0de27b734183042cdb4e2f1262cd1fb9b755a6b04ff2471040395dfb1770fb7786069a97c5178bcf706b80a34075994f46feb37c
   languageName: node
   linkType: hard
 
