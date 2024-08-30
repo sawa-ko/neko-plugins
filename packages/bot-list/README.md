@@ -32,7 +32,7 @@ This plugin allows you to post stats to several discord bot lists.
 You can use the following command to install this package, or replace `npm install` with your package manager of choice.
 
 ```sh
-npm install @kaname-png/plugin-bot-listramework @sapphire/plugin-api
+npm install @kaname-png/plugin-bot-list @sapphire/framework
 ```
 
 ---
