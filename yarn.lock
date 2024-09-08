@@ -1418,7 +1418,7 @@ __metadata:
     "@favware/rollup-type-bundler": "npm:^3.3.0"
     "@sapphire/plugin-api": "npm:^6.1.1"
     "@sapphire/plugin-scheduled-tasks": "npm:^10.0.1"
-    "@sapphire/plugin-subcommands": "npm:^6.0.3"
+    "@sapphire/plugin-subcommands": "npm:^7.0.0"
     "@sentry/node": "npm:^8.28.0"
     concurrently: "npm:^8.2.2"
     eslint: "npm:~8.57.0"
@@ -1451,7 +1451,7 @@ __metadata:
     "@favware/cliff-jumper": "npm:^4.1.0"
     "@favware/rollup-type-bundler": "npm:^3.3.0"
     "@sapphire/decorators": "npm:^6.1.0"
-    "@sapphire/plugin-subcommands": "npm:^6.0.3"
+    "@sapphire/plugin-subcommands": "npm:^7.0.0"
     concurrently: "npm:^8.2.2"
     eslint: "npm:~8.57.0"
     tslib: "npm:^2.7.0"
@@ -2292,13 +2292,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "@sapphire/plugin-subcommands@npm:6.0.3"
+"@sapphire/plugin-subcommands@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "@sapphire/plugin-subcommands@npm:7.0.0"
   dependencies:
-    "@sapphire/utilities": "npm:^3.15.3"
-    tslib: "npm:^2.6.2"
-  checksum: 10c0/fbff559ff9374ffe6a60f1fff156b2365661549420b24b44176cadc11ccef6f2648adc50d396b1fc66094a23c0af2f15c42b41d9035a8a196985b1804934b1b3
+    "@sapphire/utilities": "npm:^3.17.0"
+  checksum: 10c0/5b5db8ac0bd6ba4106290388626a3a0556a5972c7ce4ff6c75c74b01c78bac79ae67ea24504e6ac627c7694fa82178392473045ad251a07afea0e95ff0a92c93
   languageName: node
   linkType: hard
 
