@@ -25,8 +25,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@sapphire/plugin-subcommands':
-        specifier: ^6.0.3
-        version: 6.0.3
+        specifier: ^7.0.0
+        version: 7.0.0
       '@sentry/node':
         specifier: ^8.28.0
         version: 8.28.0
@@ -720,8 +720,8 @@ packages:
     resolution: {integrity: sha512-/wS4mlyh5oRo3ADmkDEywNyb0hdUUJuudc5Nz9kuYWSpYZMWhecI24N6m8i4ktMdclLriV+ppW3jxZzGyD22LQ==}
     engines: {node: '>=v18', npm: '>=7'}
 
-  '@sapphire/plugin-subcommands@6.0.3':
-    resolution: {integrity: sha512-SLDlTjMrMpb3s89ZjrBvVbMWsXfNNciO6SnNQdKLKTUQwktaYxIdj+k3MmEWpN19i8W9ogRvIrLl0Hw20pPUng==}
+  '@sapphire/plugin-subcommands@7.0.0':
+    resolution: {integrity: sha512-oBJ5o99hjq1sdBGcL4ksChyg73pZ1zhGVNBLnRHP4K5iegCA60GE4WRZqskrA94owy0hHNeCjj0etUpOCaihbQ==}
     engines: {node: '>=v18', npm: '>=7'}
 
   '@sapphire/result@2.6.6':
@@ -2563,10 +2563,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sapphire/plugin-subcommands@6.0.3':
+  '@sapphire/plugin-subcommands@7.0.0':
     dependencies:
-      '@sapphire/utilities': 3.16.2
-      tslib: 2.7.0
+      '@sapphire/utilities': 3.17.0
 
   '@sapphire/result@2.6.6': {}
 
