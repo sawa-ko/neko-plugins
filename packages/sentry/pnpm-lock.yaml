@@ -9,12 +9,12 @@ importers:
   .:
     dependencies:
       tslib:
-        specifier: ^2.6.3
-        version: 2.6.3
+        specifier: ^2.7.0
+        version: 2.7.0
     devDependencies:
       '@favware/cliff-jumper':
-        specifier: ^4.0.3
-        version: 4.0.3
+        specifier: ^4.1.0
+        version: 4.1.0
       '@favware/rollup-type-bundler':
         specifier: ^3.3.0
         version: 3.3.0
@@ -28,8 +28,8 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
       '@sentry/node':
-        specifier: ^8.26.0
-        version: 8.26.0
+        specifier: ^8.28.0
+        version: 8.28.0
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -38,10 +38,10 @@ importers:
         version: 8.57.0
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(tsx@4.17.0)(typescript@5.4.5)(yaml@2.4.2)
+        version: 8.2.4(tsx@4.19.0)(typescript@5.4.5)(yaml@2.4.2)
       tsx:
-        specifier: ^4.17.0
-        version: 4.17.0
+        specifier: ^4.19.0
+        version: 4.19.0
 
 packages:
 
@@ -235,8 +235,8 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@favware/cliff-jumper@4.0.3':
-    resolution: {integrity: sha512-vRFP87hW/UM4ryVxKFlknV7ZeYwFCzMizjBBpIJ51WSLsmxehOKV365n79IY2r6lVmxMgDbOZ0AZkB8AfBzHPw==}
+  '@favware/cliff-jumper@4.1.0':
+    resolution: {integrity: sha512-z8U6XecZr3F7nkq2d+dg+QXaHcBh+DugUuVQGwIEo2vpAPOFkZ0Xnz3YbnTu0zPlr9lDEWL/rbnGEr0lwCaGOA==}
     engines: {node: '>=v18'}
     hasBin: true
 
@@ -545,8 +545,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@prisma/instrumentation@5.17.0':
-    resolution: {integrity: sha512-c1Sle4ji8aasMcYfBBHFM56We4ljfenVtRmS8aY06BllS7SoU6SmJBwG7vil+GHiR0Yrh+t9iBwt4AY0Jr4KNQ==}
+  '@prisma/instrumentation@5.18.0':
+    resolution: {integrity: sha512-r074avGkpPXItk+josQPhufZEmGhUCb16PQx4ITPS40vWTpTPET4VsgCBZB2alIN6SS7pRFod2vz2M2HHEEylQ==}
 
   '@rollup/rollup-android-arm-eabi@4.18.0':
     resolution: {integrity: sha512-Tya6xypR10giZV1XzxmH5wr25VcZSncG0pZIjfePT0OVBvqNEurzValetGNarVrGiq66EBVAFn15iYX4w6FKgQ==}
@@ -736,19 +736,23 @@ packages:
     resolution: {integrity: sha512-0gRyXPH0hbmfZXwgvCH1z9H/kQwOlLeui86zKafZENpdjmuZznSkDFHRSUksr8Y5W/BxkqnR2WbNEfululh20Q==}
     engines: {node: '>=v14.0.0'}
 
+  '@sapphire/utilities@3.17.0':
+    resolution: {integrity: sha512-bbqjnKKrCgyT0C3+KOjIBzE6z6/v764EFuV7Uxw9WeIdkqGhwepl6tuNEzgiek/JdtEcODaPeX0K1aCt53yCcA==}
+    engines: {node: '>=v14.0.0'}
+
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
 
-  '@sentry/core@8.26.0':
-    resolution: {integrity: sha512-g/tVmTZD4GNbLFf++hKJfBpcCAtduFEMLnbfa9iT/QEZjlmP+EzY+GsH9bafM5VsNe8DiOUp+kJKWtShzlVdBA==}
+  '@sentry/core@8.28.0':
+    resolution: {integrity: sha512-+If9uubvpZpvaQQw4HLiKPhrSS9/KcoA/AcdQkNm+5CVwAoOmDPtyYfkPBgfo2hLZnZQqR1bwkz/PrNoOm+gqA==}
     engines: {node: '>=14.18'}
 
-  '@sentry/node@8.26.0':
-    resolution: {integrity: sha512-N9mNLzicnfGgsq6P10ckPdTzEFusjTC7gpqPopwq5eEMF7g798hH8CcE5o6FZ4iAAR3vWliAR/jgccdoMmJMpQ==}
+  '@sentry/node@8.28.0':
+    resolution: {integrity: sha512-444hx0S7EAYDdq3g2U37qHFC/WFErgf8ZvXqhWfoCI4RweHHntdFbz3azexYnO61iUsmSAnFAX6htJtAG2zNdA==}
     engines: {node: '>=14.18'}
 
-  '@sentry/opentelemetry@8.26.0':
-    resolution: {integrity: sha512-HBDheM/+ysfIz8R1OH4bBIxdgD7ZbQkKLJAUXkdAbBcfbpK/CTtwcplbauF5wY7Q+GYvwL/ShuDwvXRfW+gFyQ==}
+  '@sentry/opentelemetry@8.28.0':
+    resolution: {integrity: sha512-xClK/fa2Y9AMoaV6f7sWfoHAz56actn2RN3UuYAfxlgmNEfZEa0tc78x4XygCT+2b83QbUb+qf1q4+1ft+HEsQ==}
     engines: {node: '>=14.18'}
     peerDependencies:
       '@opentelemetry/api': ^1.9.0
@@ -757,12 +761,12 @@ packages:
       '@opentelemetry/sdk-trace-base': ^1.25.1
       '@opentelemetry/semantic-conventions': ^1.25.1
 
-  '@sentry/types@8.26.0':
-    resolution: {integrity: sha512-zKmh6SWsJh630rpt7a9vP4Cm4m1C2gDTUqUiH565CajCL/4cePpNWYrNwalSqsOSL7B9OrczA1+n6a6XvND+ng==}
+  '@sentry/types@8.28.0':
+    resolution: {integrity: sha512-hOfqfd92/AzBrEdMgmmV1VfOXJbIfleFTnerRl0mg/+CcNgP/6+Fdonp354TD56ouWNF2WkOM6sEKSXMWp6SEQ==}
     engines: {node: '>=14.18'}
 
-  '@sentry/utils@8.26.0':
-    resolution: {integrity: sha512-xvlPU9Hd2BlyT+FhWHGNwnxWqdVRk2AHnDtVcW4Ma0Ri5EwS+uy4Jeik5UkSv8C5RVb9VlxFmS8LN3I1MPJsLw==}
+  '@sentry/utils@8.28.0':
+    resolution: {integrity: sha512-smhk7PJpvDMQ2DB5p2qn9UeoUHdU41IgjMmS2xklZpa8tjzBTxDeWpGvrX2fuH67D9bAJuLC/XyZjJCHLoEW5g==}
     engines: {node: '>=14.18'}
 
   '@sindresorhus/merge-streams@4.0.0':
@@ -1089,8 +1093,8 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
-  execa@9.3.0:
-    resolution: {integrity: sha512-l6JFbqnHEadBoVAVpN5dl2yCyfX28WoBAGaoQcNmLLSedOxTxcn2Qa83s8I/PA5i56vWru2OHOtrwF7Om2vqlg==}
+  execa@9.3.1:
+    resolution: {integrity: sha512-gdhefCCNy/8tpH/2+ajP9IQc14vXchNdd0weyzSJEFURhRMGncQ+zKFxwjAufIewPEJm9BPOaJnvg2UtlH2gPQ==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
   fast-deep-equal@3.1.3:
@@ -1166,38 +1170,38 @@ packages:
   get-tsconfig@4.7.5:
     resolution: {integrity: sha512-ZCuZCnlqNzjb4QprAzXKdpp/gh6KTxSJuw3IBsPnV/7fV4NxC9ckB+vPTt8w7fJA0TaSD7c55BR47JD6MEDyDw==}
 
-  git-cliff-darwin-arm64@2.4.0:
-    resolution: {integrity: sha512-KImSJhO8pTkKCauYlKmx7vNz3caIIBs0QW3JIS0uwUXGGJas4uuvGXlGTbLqVxdCur2yBwRDD6xobtuLC0yQ4w==}
+  git-cliff-darwin-arm64@2.5.0:
+    resolution: {integrity: sha512-mIw8CZRRRVFB7HWLYESAlvLjXSoqMThyhbdCbVJYEZw2Qxx2UhldEkGv62+qLAhjYwG7GfoeByDqwXGS9rWe7Q==}
     cpu: [arm64]
     os: [darwin]
 
-  git-cliff-darwin-x64@2.4.0:
-    resolution: {integrity: sha512-KtJ/V0i9xxs5iXl+hh1J4wyhMOrMRNylfSQC0lMJ+ScIIr1sZdF9qz4Mk06ZdJD7HnvPWawBhLcpCKVXkaeufQ==}
+  git-cliff-darwin-x64@2.5.0:
+    resolution: {integrity: sha512-YPoE+rAgdRea4apauK25yDqNDJYvZtoqE8FBKuKRo9AY+btqZMVgxN6UNf9Ea4jQtDQOTqhpYUpM0czk9z4GgQ==}
     cpu: [x64]
     os: [darwin]
 
-  git-cliff-linux-arm64@2.4.0:
-    resolution: {integrity: sha512-ZSL5Jw06pgJ0F2e4Dv7j7l69qmq718NA8IKIUscjayc+71iuzyOw0T2tnbkV6H1h1rDjP9LMXGyPtLIvGz62BA==}
+  git-cliff-linux-arm64@2.5.0:
+    resolution: {integrity: sha512-KJCD7tpH+LJw7XrKhi+jPWFxEGqsxUDUmNLeSjGGptkbXx+LXNFTqTdvQHCeFWSybKMuBnEcou8qEfYTDIcrIg==}
     cpu: [arm64]
     os: [linux]
 
-  git-cliff-linux-x64@2.4.0:
-    resolution: {integrity: sha512-1ckJ+2io52HuBnEeS87PeFanEPt3BuZoHKcXfkQPYFj9C91ckHgY7OCqze38ejy1V/cfKhlVJsbjbVMxixRaog==}
+  git-cliff-linux-x64@2.5.0:
+    resolution: {integrity: sha512-jvyfCRy758iHRvbsM6VmGWqOm0OczQLDI/r6w/OdAoRIt5vQiZJbJFJaMLqzEJRtN8g4hTrEZ+5EYbFY1BMVDQ==}
     cpu: [x64]
     os: [linux]
 
-  git-cliff-windows-arm64@2.4.0:
-    resolution: {integrity: sha512-DZf+C7lTmCvvBjgtOHMcXJC5KaIL+QDE/C6cYxzLMgRcn9wGNTm2ot0jkAN2I1PmSmg4I1/89iiahSWHfG1m4A==}
+  git-cliff-windows-arm64@2.5.0:
+    resolution: {integrity: sha512-t+5ikWPEJuVbDfVWU/Ckbno9qKA6FOQuM9gnRi7tjnXXDoEwdgwZVvCHB3p3dmcgzzmRA1RRAhS27CNJMTB42Q==}
     cpu: [arm64]
     os: [win32]
 
-  git-cliff-windows-x64@2.4.0:
-    resolution: {integrity: sha512-bYUQIyG975KdPza/bNDxwBFpqTZEvF1zPKlhThgPgdCKdzbdezsgaFuaDbnM+vsmBD751ZJGWLQ7aJCSBG2s/Q==}
+  git-cliff-windows-x64@2.5.0:
+    resolution: {integrity: sha512-rKCowa6k79bdujEa9/s+PSk3M5ViNZISFp4NK+0Ac6yoCDN0ylgvhHRUhSoxLjJ73an40Rg+I83Q92HPKklVGw==}
     cpu: [x64]
     os: [win32]
 
-  git-cliff@2.4.0:
-    resolution: {integrity: sha512-e+4mMArblL4mrD/auUTa3bf3U1ahAuhIRb1bxTIWCBxnR6UqVctGaLf3pJJufaKi3nqTT7JvrSYu9Q+L6yiAaw==}
+  git-cliff@2.5.0:
+    resolution: {integrity: sha512-HOWY+f5YyK3fYylYY7N8tdd+qPPK7cuInkyY1PVMRsU4c2JT8TM2rvxpVDa6p5uD5MlZ/4mZ7E8RLux99TapQQ==}
     engines: {node: '>=18.19 || >=20.6 || >=21'}
     hasBin: true
 
@@ -1254,8 +1258,8 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  human-signals@7.0.0:
-    resolution: {integrity: sha512-74kytxOUSvNbjrT9KisAbaTZ/eJwD/LrbM/kh5j0IhPuJzwuA19dWvniFGwBzN9rVjg+O/e+F310PjObDXS+9Q==}
+  human-signals@8.0.0:
+    resolution: {integrity: sha512-/1/GPCpDUCCYwlERiYjxoczfP0zfvZMU/OWgQPMya9AbAE24vseigFdhAMObpc8Q4lc/kjutPfUddDYyAmejnA==}
     engines: {node: '>=18.18.0'}
 
   ignore@5.3.1:
@@ -1694,11 +1698,6 @@ packages:
   rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
 
-  semver@7.6.2:
-    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
@@ -1827,8 +1826,8 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  tslib@2.6.3:
-    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+  tslib@2.7.0:
+    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
 
   tsup@8.2.4:
     resolution: {integrity: sha512-akpCPePnBnC/CXgRrcy72ZSntgIEUa1jN0oJbbvpALWKNOz1B7aM+UVDWGRGIO/T/PZugAESWDJUAb5FD48o8Q==}
@@ -1849,8 +1848,8 @@ packages:
       typescript:
         optional: true
 
-  tsx@4.17.0:
-    resolution: {integrity: sha512-eN4mnDA5UMKDt4YZixo9tBioibaMBpoxBkD+rIPAjVmYERSG0/dWEY1CEFuV89CgASlKL499q8AhmkMnnjtOJg==}
+  tsx@4.19.0:
+    resolution: {integrity: sha512-bV30kM7bsLZKZIOCHeMNVMJ32/LuJzLVajkQI/qf92J2Qr08ueLQvW00PUZGiuLPP760UINwupgUj8qrSCPUKg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2065,19 +2064,19 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@favware/cliff-jumper@4.0.3':
+  '@favware/cliff-jumper@4.1.0':
     dependencies:
       '@favware/colorette-spinner': 1.0.1
       '@octokit/auth-token': 5.1.1
       '@octokit/core': 6.1.2
       '@octokit/plugin-retry': 7.1.1(@octokit/core@6.1.2)
       '@sapphire/result': 2.6.6
-      '@sapphire/utilities': 3.16.2
+      '@sapphire/utilities': 3.17.0
       colorette: 2.0.20
       commander: 12.1.0
       conventional-recommended-bump: 10.0.0
-      execa: 9.3.0
-      git-cliff: 2.4.0
+      execa: 9.3.1
+      git-cliff: 2.5.0
       js-yaml: 4.1.0
       semver: 7.6.3
       smol-toml: 1.3.0
@@ -2442,7 +2441,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@prisma/instrumentation@5.17.0':
+  '@prisma/instrumentation@5.18.0':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.0)
@@ -2552,7 +2551,7 @@ snapshots:
     dependencies:
       '@types/ws': 8.5.10
       tldts: 6.1.22
-      tslib: 2.6.3
+      tslib: 2.7.0
       undici: 6.18.1
 
   '@sapphire/plugin-scheduled-tasks@10.0.1':
@@ -2560,31 +2559,33 @@ snapshots:
       '@sapphire/stopwatch': 1.5.2
       '@sapphire/utilities': 3.16.2
       bullmq: 5.1.3
-      tslib: 2.6.3
+      tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
 
   '@sapphire/plugin-subcommands@6.0.3':
     dependencies:
       '@sapphire/utilities': 3.16.2
-      tslib: 2.6.3
+      tslib: 2.7.0
 
   '@sapphire/result@2.6.6': {}
 
   '@sapphire/stopwatch@1.5.2':
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.7.0
 
   '@sapphire/utilities@3.16.2': {}
 
+  '@sapphire/utilities@3.17.0': {}
+
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@sentry/core@8.26.0':
+  '@sentry/core@8.28.0':
     dependencies:
-      '@sentry/types': 8.26.0
-      '@sentry/utils': 8.26.0
+      '@sentry/types': 8.28.0
+      '@sentry/utils': 8.28.0
 
-  '@sentry/node@8.26.0':
+  '@sentry/node@8.28.0':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/context-async-hooks': 1.25.1(@opentelemetry/api@1.9.0)
@@ -2609,33 +2610,33 @@ snapshots:
       '@opentelemetry/resources': 1.25.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-base': 1.25.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/semantic-conventions': 1.25.1
-      '@prisma/instrumentation': 5.17.0
-      '@sentry/core': 8.26.0
-      '@sentry/opentelemetry': 8.26.0(@opentelemetry/api@1.9.0)(@opentelemetry/core@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.52.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.25.1)
-      '@sentry/types': 8.26.0
-      '@sentry/utils': 8.26.0
+      '@prisma/instrumentation': 5.18.0
+      '@sentry/core': 8.28.0
+      '@sentry/opentelemetry': 8.28.0(@opentelemetry/api@1.9.0)(@opentelemetry/core@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.52.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.25.1)
+      '@sentry/types': 8.28.0
+      '@sentry/utils': 8.28.0
       import-in-the-middle: 1.11.0
     optionalDependencies:
       opentelemetry-instrumentation-fetch-node: 1.2.3(@opentelemetry/api@1.9.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sentry/opentelemetry@8.26.0(@opentelemetry/api@1.9.0)(@opentelemetry/core@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.52.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.25.1)':
+  '@sentry/opentelemetry@8.28.0(@opentelemetry/api@1.9.0)(@opentelemetry/core@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.52.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.25.1)':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-base': 1.25.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/semantic-conventions': 1.25.1
-      '@sentry/core': 8.26.0
-      '@sentry/types': 8.26.0
-      '@sentry/utils': 8.26.0
+      '@sentry/core': 8.28.0
+      '@sentry/types': 8.28.0
+      '@sentry/utils': 8.28.0
 
-  '@sentry/types@8.26.0': {}
+  '@sentry/types@8.28.0': {}
 
-  '@sentry/utils@8.26.0':
+  '@sentry/utils@8.28.0':
     dependencies:
-      '@sentry/types': 8.26.0
+      '@sentry/types': 8.28.0
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
@@ -2750,8 +2751,8 @@ snapshots:
       lodash: 4.17.21
       msgpackr: 1.10.2
       node-abort-controller: 3.1.1
-      semver: 7.6.2
-      tslib: 2.6.3
+      semver: 7.6.3
+      tslib: 2.7.0
       uuid: 9.0.1
     transitivePeerDependencies:
       - supports-color
@@ -3019,13 +3020,13 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  execa@9.3.0:
+  execa@9.3.1:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       cross-spawn: 7.0.3
       figures: 6.1.0
       get-stream: 9.0.1
-      human-signals: 7.0.0
+      human-signals: 8.0.0
       is-plain-obj: 4.1.0
       is-stream: 4.0.1
       npm-run-path: 5.3.0
@@ -3104,34 +3105,34 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  git-cliff-darwin-arm64@2.4.0:
+  git-cliff-darwin-arm64@2.5.0:
     optional: true
 
-  git-cliff-darwin-x64@2.4.0:
+  git-cliff-darwin-x64@2.5.0:
     optional: true
 
-  git-cliff-linux-arm64@2.4.0:
+  git-cliff-linux-arm64@2.5.0:
     optional: true
 
-  git-cliff-linux-x64@2.4.0:
+  git-cliff-linux-x64@2.5.0:
     optional: true
 
-  git-cliff-windows-arm64@2.4.0:
+  git-cliff-windows-arm64@2.5.0:
     optional: true
 
-  git-cliff-windows-x64@2.4.0:
+  git-cliff-windows-x64@2.5.0:
     optional: true
 
-  git-cliff@2.4.0:
+  git-cliff@2.5.0:
     dependencies:
       execa: 8.0.1
     optionalDependencies:
-      git-cliff-darwin-arm64: 2.4.0
-      git-cliff-darwin-x64: 2.4.0
-      git-cliff-linux-arm64: 2.4.0
-      git-cliff-linux-x64: 2.4.0
-      git-cliff-windows-arm64: 2.4.0
-      git-cliff-windows-x64: 2.4.0
+      git-cliff-darwin-arm64: 2.5.0
+      git-cliff-darwin-x64: 2.5.0
+      git-cliff-linux-arm64: 2.5.0
+      git-cliff-linux-x64: 2.5.0
+      git-cliff-windows-arm64: 2.5.0
+      git-cliff-windows-x64: 2.5.0
 
   glob-parent@5.1.2:
     dependencies:
@@ -3194,7 +3195,7 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  human-signals@7.0.0: {}
+  human-signals@8.0.0: {}
 
   ignore@5.3.1: {}
 
@@ -3484,11 +3485,11 @@ snapshots:
 
   pirates@4.0.6: {}
 
-  postcss-load-config@6.0.1(tsx@4.17.0)(yaml@2.4.2):
+  postcss-load-config@6.0.1(tsx@4.19.0)(yaml@2.4.2):
     dependencies:
       lilconfig: 3.1.1
     optionalDependencies:
-      tsx: 4.17.0
+      tsx: 4.19.0
       yaml: 2.4.2
 
   postgres-array@2.0.0: {}
@@ -3609,9 +3610,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.6.3
-
-  semver@7.6.2: {}
+      tslib: 2.7.0
 
   semver@7.6.3: {}
 
@@ -3722,9 +3721,9 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tslib@2.6.3: {}
+  tslib@2.7.0: {}
 
-  tsup@8.2.4(tsx@4.17.0)(typescript@5.4.5)(yaml@2.4.2):
+  tsup@8.2.4(tsx@4.19.0)(typescript@5.4.5)(yaml@2.4.2):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -3736,7 +3735,7 @@ snapshots:
       globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      postcss-load-config: 6.0.1(tsx@4.17.0)(yaml@2.4.2)
+      postcss-load-config: 6.0.1(tsx@4.19.0)(yaml@2.4.2)
       resolve-from: 5.0.0
       rollup: 4.19.1
       source-map: 0.8.0-beta.0
@@ -3750,7 +3749,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsx@4.17.0:
+  tsx@4.19.0:
     dependencies:
       esbuild: 0.23.0
       get-tsconfig: 4.7.5
