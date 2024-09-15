@@ -87,7 +87,7 @@
 		"@favware/cliff-jumper": "^4.1.0",
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"@sapphire/plugin-subcommands": "^6.0.3",
-		"concurrently": "^8.2.2",
+		"concurrently": "^9.0.1",
 		"eslint": "~8.57.0",
 		"tsup": "^8.2.4",
 		"tsx": "^4.19.0"
