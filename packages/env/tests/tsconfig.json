@@ -1,10 +1,9 @@
 {
 	"extends": "../../../tsconfig.base.json",
 	"compilerOptions": {
-		"rootDir": "./",
+		"types": ["vitest/globals"],
 		"noEmit": true,
 		"incremental": false
 	},
 	"include": ["."],
-	"references": [{ "path": "../src" }]
 }

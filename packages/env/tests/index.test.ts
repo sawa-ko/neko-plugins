@@ -30,7 +30,7 @@ describe('Test values without default value', () => {
 });
 
 describe('Test values with default value', () => {
-	const client = new EnvClient({ path: join(__dirname, 'utils', '.env'), env: 'production' });
+	const client = new EnvClient({ path: join(__dirname, 'utils', '.env.local'), env: 'production' });
 
 	// @ts-expect-error yet, augment stuff
 	test('Array', () => expect(client.array('U', false, [])).toStrictEqual([]));
