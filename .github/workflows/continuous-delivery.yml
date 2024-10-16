@@ -36,10 +36,14 @@ jobs:
         with:
           node-version: 20
           cache: yarn
+          registry-url: 'https://registry.npmjs.org/'
       - name: Install Dependencies
         run: yarn --immutable
       - name: Build all packages
         run: yarn build
+      - name: Set npm token
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" >> ~/.npmrc
       - name: Bump Versions & Publish
         run: |
           # Resolve the tag to be used. "next" for push events, "pr-{prNumber}" for dispatch events.
