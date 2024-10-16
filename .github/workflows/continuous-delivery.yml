@@ -52,17 +52,12 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
-
-          yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
-
           for d in packages/*; do
             pushd $d
 
-            yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)"
+            yarn bump
 
-            yarn npm publish --tag ${TAG}
+            npm publish --tag ${TAG}
 
             popd
           done
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
