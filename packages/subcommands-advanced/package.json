@@ -50,7 +50,7 @@
 	},
 	"dependencies": {
 		"@sapphire/decorators": "^6.1.0",
-		"tslib": "^2.7.0"
+		"tslib": "^2.8.0"
 	},
 	"repository": {
 		"type": "git",
@@ -88,8 +88,8 @@
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"@sapphire/plugin-subcommands": "^7.0.0",
 		"concurrently": "^8.2.2",
-		"eslint": "~8.57.0",
-		"tsup": "^8.2.4",
-		"tsx": "^4.19.0"
+		"eslint": "~8.57.1",
+		"tsup": "^8.3.0",
+		"tsx": "^4.19.1"
 	}
 }
