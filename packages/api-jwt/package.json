@@ -89,7 +89,7 @@
 		"@sapphire/plugin-api": "^6.1.1",
 		"@sapphire/utilities": "^3.17.0",
 		"@types/jsonwebtoken": "^9.0.7",
-		"concurrently": "^8.2.2",
+		"concurrently": "^9.0.1",
 		"discord-api-types": "^0.37.100",
 		"eslint": "~8.57.1",
 		"tsup": "^8.3.0",

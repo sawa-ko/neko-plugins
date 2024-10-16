@@ -92,7 +92,7 @@
 		"@sapphire/plugin-scheduled-tasks": "^10.0.1",
 		"@sapphire/plugin-subcommands": "^7.0.0",
 		"@sentry/node": "^8.34.0",
-		"concurrently": "^8.2.2",
+		"concurrently": "^9.0.1",
 		"eslint": "~8.57.1",
 		"tsup": "^8.3.0",
 		"tsx": "^4.19.1"
