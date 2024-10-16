@@ -1,3 +1,9 @@
 name: plugin-sentry
 org: kaname-png
+install: true
 packagePath: packages/sentry
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+githubRepo: sawa-ko/neko-plugins
