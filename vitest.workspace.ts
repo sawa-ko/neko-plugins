@@ -1,8 +1,8 @@
 import { defineWorkspace } from 'vitest/config';
 
 export default defineWorkspace([
-	'./vitest.config.ts',
-	'./packages/api-jwt/vitest.config.ts',
-	'./packages/env/vitest.config.ts',
-	'./packages/statcord/vitest.config.ts'
+	'./vitest.config.mts',
+	'./packages/api-jwt/vitest.config.mts',
+	'./packages/env/vitest.config.mts',
+	'./packages/statcord/vitest.config.mts'
 ]);
