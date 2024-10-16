@@ -36,10 +36,7 @@ jobs:
         with:
           node-version: 20
           cache: yarn
-          always-auth: true
-      - name: Set npm token
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" >> ~/.npmrc
+          registry-url: https://registry.yarnpkg.com/
       - name: Install Dependencies
         run: yarn --immutable
       - name: Build all packages
@@ -52,13 +49,17 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
+          yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
+          yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
+
           for d in packages/*; do
             pushd $d
 
-            yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)" --github-token ${{ github.token }}
+            yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)"
 
-
-            npm publish --tag ${TAG}
+            yarn npm publish --tag ${TAG}
 
             popd
           done
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
