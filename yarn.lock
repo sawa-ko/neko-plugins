@@ -1433,6 +1433,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@kaname-png/plugin-statcord@workspace:packages/statcord":
+  version: 0.0.0-use.local
+  resolution: "@kaname-png/plugin-statcord@workspace:packages/statcord"
+  dependencies:
+    "@favware/cliff-jumper": "npm:^4.1.0"
+    "@favware/rollup-type-bundler": "npm:^3.3.0"
+    "@sapphire/fetch": "npm:^3.0.3"
+    concurrently: "npm:^9.0.1"
+    eslint: "npm:~8.57.1"
+    systeminformation: "npm:^5.23.5"
+    tslib: "npm:^2.8.0"
+    tsup: "npm:^8.3.0"
+    tsx: "npm:^4.19.1"
+  languageName: unknown
+  linkType: soft
+
 "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced":
   version: 0.0.0-use.local
   resolution: "@kaname-png/plugin-subcommands-advanced@workspace:packages/subcommands-advanced"
@@ -2283,6 +2299,13 @@ __metadata:
   dependencies:
     cross-fetch: "npm:^4.0.0"
   checksum: 10c0/090484a0c8fb3e6d09b3c8e4efb55dfef7540dc6432ed04048937a4fb672ae6d872c0cc4f508fa78a26b45dfbe4bf20cf13ee04663a8c10247f2a6e6743c104b
+  languageName: node
+  linkType: hard
+
+"@sapphire/fetch@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@sapphire/fetch@npm:3.0.3"
+  checksum: 10c0/b015de8e112889429cbd855efbd90aab0d51006462f6f48513995c5d095ca1dbc0f3a330a8937978d728a63a6b3511a40478184cdd8810f49f7d2d6bae1e6870
   languageName: node
   linkType: hard
 
@@ -9001,6 +9024,16 @@ __metadata:
     "@pkgr/core": "npm:^0.1.0"
     tslib: "npm:^2.6.2"
   checksum: 10c0/d8b89e1bf30ba3ffb469d8418c836ad9c0c062bf47028406b4d06548bc66af97155ea2303b96c93bf5c7c0f0d66153a6fbd6924c76521b434e6a9898982abc2e
+  languageName: node
+  linkType: hard
+
+"systeminformation@npm:^5.23.5":
+  version: 5.23.5
+  resolution: "systeminformation@npm:5.23.5"
+  bin:
+    systeminformation: lib/cli.js
+  checksum: 10c0/849283b2886c46ff5e79594e939c87202b5283b8aa16cd0d665c595781dba51913060728bae95b94837b78c3a515a0f00ab0a0471604990c5c778f555bd075ea
+  conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
 
