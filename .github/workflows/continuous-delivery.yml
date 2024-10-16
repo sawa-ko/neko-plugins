@@ -55,7 +55,7 @@ jobs:
           for d in packages/*; do
             pushd $d
 
-            yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)" --github-token ${{ secrets.GITHUB_TOKEN }}
+            yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)" --github-token ${{ github.token }}
 
 
             npm publish --tag ${TAG}
