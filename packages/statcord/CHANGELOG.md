@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@kaname-png/plugin-statcord@2.3.4-next.c75a20c](https://github.com/sawa-ko/neko-plugins/compare/@kaname-png/plugin-statcord@2.3.3...@kaname-png/plugin-statcord@2.3.4-next.c75a20c) - (2024-10-16)
+
+## 📝 Documentation
+
+- Update packages/statcord/README.md [skip ci] ([a3ab421](https://github.com/sawa-ko/neko-plugins/commit/a3ab42148dfaa302e4eb2bf567bbb7909348875c))
+
 # [@kaname-png/plugin-statcord@2.3.3](https://github.com/sawa-ko/neko-plugins/tree/@kaname-png/plugin-statcord@2.3.3) - (2024-05-27)
 
 ## 🏃 Performance
