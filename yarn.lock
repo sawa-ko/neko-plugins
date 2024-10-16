@@ -925,7 +925,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@favware/cliff-jumper@npm:^4.1.0":
+"@favware/cliff-jumper@npm:^4.0.3, @favware/cliff-jumper@npm:^4.1.0":
   version: 4.1.0
   resolution: "@favware/cliff-jumper@npm:4.1.0"
   dependencies:
@@ -1377,6 +1377,21 @@ __metadata:
     tslib: "npm:^2.7.0"
     tsup: "npm:^8.2.4"
     tsx: "npm:^4.19.0"
+  languageName: unknown
+  linkType: soft
+
+"@kaname-png/plugin-bot-list@workspace:packages/bot-list":
+  version: 0.0.0-use.local
+  resolution: "@kaname-png/plugin-bot-list@workspace:packages/bot-list"
+  dependencies:
+    "@favware/cliff-jumper": "npm:^4.0.3"
+    "@favware/rollup-type-bundler": "npm:^3.3.0"
+    concurrently: "npm:^8.2.2"
+    tiny-typed-emitter: "npm:^2.1.0"
+    tslib: "npm:^2.6.2"
+    tsup: "npm:^8.2.4"
+    tsx: "npm:^4.17.0"
+    undici: "npm:^6.18.2"
   languageName: unknown
   linkType: soft
 
@@ -7492,6 +7507,7 @@ __metadata:
     typedoc: "npm:^0.25.13"
     typedoc-plugin-mdn-links: "npm:^3.1.30"
     typescript: "npm:^5.4.5"
+    undici: "npm:^6.18.2"
   languageName: unknown
   linkType: soft
 
@@ -9053,6 +9069,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-typed-emitter@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "tiny-typed-emitter@npm:2.1.0"
+  checksum: 10c0/522bed4c579ee7ee16548540cb693a3d098b137496110f5a74bff970b54187e6b7343a359b703e33f77c5b4b90ec6cebc0d0ec3dbdf1bd418723c5c3ce36d8a2
+  languageName: node
+  linkType: hard
+
 "tldts-core@npm:^6.1.22":
   version: 6.1.22
   resolution: "tldts-core@npm:6.1.22"
@@ -9274,6 +9297,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tsx@npm:^4.17.0":
+  version: 4.19.1
+  resolution: "tsx@npm:4.19.1"
+  dependencies:
+    esbuild: "npm:~0.23.0"
+    fsevents: "npm:~2.3.3"
+    get-tsconfig: "npm:^4.7.5"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    tsx: dist/cli.mjs
+  checksum: 10c0/cbea9baf57e7406fa0ecc2c03b9bb2501ee740dc28c938f949180a646a28e5d65e7cccbfba340508923bfd45e90320ef9eef7f815cae4515b6ef2ee429edc7ee
+  languageName: node
+  linkType: hard
+
 "tsx@npm:^4.19.0":
   version: 4.19.0
   resolution: "tsx@npm:4.19.0"
@@ -9447,6 +9486,13 @@ __metadata:
   version: 6.19.8
   resolution: "undici@npm:6.19.8"
   checksum: 10c0/07fd8520bce7e34ea29c07ef0de27b734183042cdb4e2f1262cd1fb9b755a6b04ff2471040395dfb1770fb7786069a97c5178bcf706b80a34075994f46feb37c
+  languageName: node
+  linkType: hard
+
+"undici@npm:^6.18.2":
+  version: 6.20.1
+  resolution: "undici@npm:6.20.1"
+  checksum: 10c0/b2c8d5adcd226c53d02f9270e4cac277256a7147cf310af319369ec6f87651ca46b2960366cb1339a6dac84d937e01e8cdbec5cb468f1f1ce5e9490e438d7222
   languageName: node
   linkType: hard
 
