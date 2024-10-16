@@ -52,8 +52,6 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
-          yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
-
           for d in packages/*; do
             pushd $d
 
