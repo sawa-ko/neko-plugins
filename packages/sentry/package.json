@@ -90,7 +90,7 @@
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"@sapphire/plugin-api": "^6.1.1",
 		"@sapphire/plugin-scheduled-tasks": "^10.0.1",
-		"@sapphire/plugin-subcommands": "^6.0.3",
+		"@sapphire/plugin-subcommands": "^7.0.0",
 		"@sentry/node": "^8.28.0",
 		"concurrently": "^8.2.2",
 		"eslint": "~8.57.0",
