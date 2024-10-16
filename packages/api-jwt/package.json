@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-api-jwt",
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"description": "Plugin for @sapphire/framework to add JSON Web Tokens strategy in @sapphire/plugin-api plugin.",
 	"author": "@kaname-png",
 	"license": "MIT",
