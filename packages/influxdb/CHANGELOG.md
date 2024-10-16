@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@kaname-png/plugin-influxdb@1.4.1](https://github.com/sawa-ko/neko-plugins/compare/@kaname-png/plugin-influxdb@1.3.1...@kaname-png/plugin-influxdb@1.4.1) - (2024-10-16)
+
+## 🏠 Refactor
+
+- Use new format build packages ([1e370e4](https://github.com/sawa-ko/neko-plugins/commit/1e370e457a2f058db7ec54ab8e4d0537d34ec8cd))
+
+## 🐛 Bug Fixes
+
+- Git cliff config wrong ([4680873](https://github.com/sawa-ko/neko-plugins/commit/46808731486c786b38d4238be6fe5fcee9f1728f))
+- Main module dir package.json ([712c96c](https://github.com/sawa-ko/neko-plugins/commit/712c96c4fc960a1246cebe8dec579726e1338b27))
+
 # [@kaname-png/plugin-api-jwt@1.4.0](https://github.com/sawa-ko/neko-plugins/tree/@kaname-png/plugin-api-jwt@1.4.0) - (2024-05-27)
 
 ## 🏠 Refactor
