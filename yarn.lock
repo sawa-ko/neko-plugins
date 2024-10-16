@@ -361,15 +361,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.21.0":
-  version: 7.24.6
-  resolution: "@babel/runtime@npm:7.24.6"
-  dependencies:
-    regenerator-runtime: "npm:^0.14.0"
-  checksum: 10c0/224ad205de33ea28979baaec89eea4c4d4e9482000dd87d15b97859365511cdd4d06517712504024f5d33a5fb9412f9b91c96f1d923974adf9359e1575cde049
-  languageName: node
-  linkType: hard
-
 "@babel/template@npm:^7.24.6, @babel/template@npm:^7.3.3":
   version: 7.24.6
   resolution: "@babel/template@npm:7.24.6"
@@ -1369,7 +1360,7 @@ __metadata:
     "@sapphire/plugin-api": "npm:^6.1.1"
     "@sapphire/utilities": "npm:^3.17.0"
     "@types/jsonwebtoken": "npm:^9.0.7"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.0.1"
     discord-api-types: "npm:^0.37.100"
     eslint: "npm:~8.57.1"
     jsonwebtoken: "npm:^9.0.2"
@@ -1385,7 +1376,7 @@ __metadata:
   dependencies:
     "@favware/cliff-jumper": "npm:^4.1.0"
     "@favware/rollup-type-bundler": "npm:^3.3.0"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.0.1"
     tiny-typed-emitter: "npm:^2.1.0"
     tslib: "npm:^2.8.0"
     tsup: "npm:^8.3.0"
@@ -1400,7 +1391,7 @@ __metadata:
   dependencies:
     "@favware/cliff-jumper": "npm:^4.1.0"
     "@favware/rollup-type-bundler": "npm:^3.3.0"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.0.1"
     dotenv-cra: "npm:^3.0.3"
     tslib: "npm:^2.8.0"
     tsup: "npm:^8.3.0"
@@ -1416,7 +1407,7 @@ __metadata:
     "@favware/rollup-type-bundler": "npm:^3.3.0"
     "@influxdata/influxdb-client": "npm:^1.35.0"
     "@sapphire/framework": "npm:^5.2.1"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.0.1"
     eslint: "npm:~8.57.1"
     tslib: "npm:^2.8.0"
     tsup: "npm:^8.3.0"
@@ -1434,7 +1425,7 @@ __metadata:
     "@sapphire/plugin-scheduled-tasks": "npm:^10.0.1"
     "@sapphire/plugin-subcommands": "npm:^7.0.0"
     "@sentry/node": "npm:^8.34.0"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.0.1"
     eslint: "npm:~8.57.1"
     tslib: "npm:^2.8.0"
     tsup: "npm:^8.3.0"
@@ -1449,7 +1440,7 @@ __metadata:
     "@favware/cliff-jumper": "npm:^4.1.0"
     "@favware/rollup-type-bundler": "npm:^3.3.0"
     "@sapphire/fetch": "npm:^3.0.3"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.0.1"
     eslint: "npm:~8.57.1"
     systeminformation: "npm:^5.23.5"
     tslib: "npm:^2.8.0"
@@ -1466,7 +1457,7 @@ __metadata:
     "@favware/rollup-type-bundler": "npm:^3.3.0"
     "@sapphire/decorators": "npm:^6.1.0"
     "@sapphire/plugin-subcommands": "npm:^7.0.0"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.0.1"
     eslint: "npm:~8.57.1"
     tslib: "npm:^2.8.0"
     tsup: "npm:^8.3.0"
@@ -3993,23 +3984,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:^8.2.2":
-  version: 8.2.2
-  resolution: "concurrently@npm:8.2.2"
+"concurrently@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "concurrently@npm:9.0.1"
   dependencies:
     chalk: "npm:^4.1.2"
-    date-fns: "npm:^2.30.0"
     lodash: "npm:^4.17.21"
     rxjs: "npm:^7.8.1"
     shell-quote: "npm:^1.8.1"
-    spawn-command: "npm:0.0.2"
     supports-color: "npm:^8.1.1"
     tree-kill: "npm:^1.2.2"
     yargs: "npm:^17.7.2"
   bin:
     conc: dist/bin/concurrently.js
     concurrently: dist/bin/concurrently.js
-  checksum: 10c0/0e9683196fe9c071d944345d21d8f34aa6c0cc50c0dd897e95619f2f1c9eb4871dca851b2569da17888235b7335b4c821ca19deed35bebcd9a131ee5d247f34c
+  checksum: 10c0/e2c3d3f3d1b1457ccd27e69f0d840ba4915d571fae4e1088498234ec1174fd547c127de0df6dbe5eb71b2df973b26a6fdc931a9e7e3658f25287ef2106bdb413
   languageName: node
   linkType: hard
 
@@ -4211,15 +4200,6 @@ __metadata:
   version: 8.1.0
   resolution: "dargs@npm:8.1.0"
   checksum: 10c0/08cbd1ee4ac1a16fb7700e761af2e3e22d1bdc04ac4f851926f552dde8f9e57714c0d04013c2cca1cda0cba8fb637e0f93ad15d5285547a939dd1989ee06a82d
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^2.30.0":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.21.0"
-  checksum: 10c0/e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
   languageName: node
   linkType: hard
 
@@ -8353,13 +8333,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.14.0":
-  version: 0.14.1
-  resolution: "regenerator-runtime@npm:0.14.1"
-  checksum: 10c0/1b16eb2c4bceb1665c89de70dcb64126a22bc8eb958feef3cd68fe11ac6d2a4899b5cd1b80b0774c7c03591dc57d16631a7f69d2daa2ec98100e2f29f7ec4cc4
-  languageName: node
-  linkType: hard
-
 "require-directory@npm:^2.1.1":
   version: 2.1.1
   resolution: "require-directory@npm:2.1.1"
@@ -8831,13 +8804,6 @@ __metadata:
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: 10c0/ab55398007c5e5532957cb0beee2368529618ac0ab372d789806f5718123cc4367d57de3904b4e6a4170eb5a0b0f41373066d02ca0735a0c4d75c7d328d3e011
-  languageName: node
-  linkType: hard
-
-"spawn-command@npm:0.0.2":
-  version: 0.0.2
-  resolution: "spawn-command@npm:0.0.2"
-  checksum: 10c0/b22f2d71239e6e628a400831861ba747750bbb40c0a53323754cf7b84330b73d81e40ff1f9055e6d1971818679510208a9302e13d9ff3b32feb67e74d7a1b3ef
   languageName: node
   linkType: hard
 
