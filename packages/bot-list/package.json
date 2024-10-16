@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-bot-list",
-	"version": "1.2.1-next.746b8e1.0",
+	"version": "1.2.2-next.d47a1df.0",
 	"description": "Plugin for @sapphire/framework to post stats to several discord bot lists.",
 	"author": "@kaname-png",
 	"license": "MIT",
