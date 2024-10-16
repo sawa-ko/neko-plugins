@@ -1,3 +1,9 @@
 name: plugin-subcommands-advanced
 org: kaname-png
+install: true
 packagePath: packages/subcommands-advanced
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+githubRepo: sawa-ko/neko-plugins
