@@ -55,7 +55,7 @@ jobs:
 
             yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)"
 
-            yarn npm publish --tag ${TAG}
+            npm publish --tag ${TAG}
 
             popd
           done
