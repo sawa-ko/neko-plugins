@@ -24,6 +24,8 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-sentry?color=crimson&label=%40kaname-png%2Fplugin-sentry&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-sentry)
 
+[![npm (scoped)](https://img.shields.io/npm/v/@kaname-png/plugin-bot-list?color=crimson&label=%40kaname-png%2Fplugin-bot-list&logo=npm)](https://www.npmjs.com/package/@kaname-png/plugin-bot-list)
+
 ---
 
 </div>
