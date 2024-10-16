@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@kaname-png/plugin-sentry@1.4.0](https://github.com/sawa-ko/neko-plugins/compare/@kaname-png/plugin-sentry@1.3.3...@kaname-png/plugin-sentry@1.4.0) - (2024-10-16)
+
+## 🚀 Features
+
+- Added support message commands ([b1035cc](https://github.com/sawa-ko/neko-plugins/commit/b1035cc10258f39f5ea3f931f6a9719f01956699))
+
 # [@kaname-png/plugin-sentry@1.3.3](https://github.com/sawa-ko/neko-plugins/tree/@kaname-png/plugin-sentry@1.3.3) - (2024-05-27)
 
 ## 🏠 Refactor
