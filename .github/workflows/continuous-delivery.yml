@@ -36,7 +36,6 @@ jobs:
         with:
           node-version: 20
           cache: yarn
-          registry-url: https://registry.yarnpkg.com/
       - name: Install Dependencies
         run: yarn --immutable
       - name: Build all packages
@@ -50,7 +49,6 @@ jobs:
           git config --global user.name ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
-          yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
 
           for d in packages/*; do
             pushd $d
@@ -63,4 +61,5 @@ jobs:
           done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
