@@ -8,6 +8,10 @@
 			"dependsOn": [],
 			"outputs": []
 		},
+		"test": {
+			"dependsOn": [],
+			"outputs": []
+		},
 		"lint": {
 			"dependsOn": [],
 			"outputs": []
