@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-influxdb",
-	"version": "1.4.3-next.373d27b",
+	"version": "1.4.4-next.5fd14b2",
 	"description": "Plugin for @sapphire/framework to track analytics on influxDB.",
 	"author": "@kaname-png",
 	"maintainers": [
