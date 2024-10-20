@@ -86,7 +86,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@favware/cliff-jumper": "^4.1.0",
+		"@favware/cliff-jumper": "^5.0.0",
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"@influxdata/influxdb-client": "^1.35.0",
 		"@sapphire/framework": "^5.2.1",

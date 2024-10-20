@@ -13,8 +13,8 @@ importers:
         version: 2.8.0
     devDependencies:
       '@favware/cliff-jumper':
-        specifier: ^4.1.0
-        version: 4.1.0
+        specifier: ^5.0.0
+        version: 5.0.0
       '@favware/rollup-type-bundler':
         specifier: ^3.3.0
         version: 3.3.0
@@ -231,8 +231,8 @@ packages:
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@favware/cliff-jumper@4.1.0':
-    resolution: {integrity: sha512-z8U6XecZr3F7nkq2d+dg+QXaHcBh+DugUuVQGwIEo2vpAPOFkZ0Xnz3YbnTu0zPlr9lDEWL/rbnGEr0lwCaGOA==}
+  '@favware/cliff-jumper@5.0.0':
+    resolution: {integrity: sha512-Igh9v/3VE0MRVrOBnLvVXgWN1F5uxo2h9unDkImeJwx13Yhw/aeaObcXnCiL1hmAZwr71IRVOpBqXkaJ6nFsIA==}
     engines: {node: '>=v18'}
     hasBin: true
 
@@ -344,8 +344,8 @@ packages:
   '@octokit/openapi-types@22.2.0':
     resolution: {integrity: sha512-QBhVjcUa9W7Wwhm6DBFu6ZZ+1/t/oYxqc2tp81Pi41YNuJinbFRx8B133qVOrAaBbF7D/m0Et6f9/pZt9Rc+tg==}
 
-  '@octokit/plugin-retry@7.1.1':
-    resolution: {integrity: sha512-G9Ue+x2odcb8E1XIPhaFBnTTIrrUDfXN05iFXiqhR+SeeeDMMILcAnysOsxUpEWcQp2e5Ft397FCXTcPkiPkLw==}
+  '@octokit/plugin-retry@7.1.2':
+    resolution: {integrity: sha512-XOWnPpH2kJ5VTwozsxGurw+svB2e61aWlmk5EVIYZPwFK5F9h4cyPyj9CIKRyMXMHSwpIsI3mPOdpMmrRhe7UQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       '@octokit/core': '>=6'
@@ -1117,8 +1117,8 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
-  execa@9.3.1:
-    resolution: {integrity: sha512-gdhefCCNy/8tpH/2+ajP9IQc14vXchNdd0weyzSJEFURhRMGncQ+zKFxwjAufIewPEJm9BPOaJnvg2UtlH2gPQ==}
+  execa@9.4.1:
+    resolution: {integrity: sha512-5eo/BRqZm3GYce+1jqX/tJ7duA2AnE39i88fuedNFUV8XxGxUpF3aWkBRfbUcjV49gCkvS/pzc0YrCPhaIewdg==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
   fast-deep-equal@3.1.3:
@@ -1198,38 +1198,38 @@ packages:
   get-tsconfig@4.7.5:
     resolution: {integrity: sha512-ZCuZCnlqNzjb4QprAzXKdpp/gh6KTxSJuw3IBsPnV/7fV4NxC9ckB+vPTt8w7fJA0TaSD7c55BR47JD6MEDyDw==}
 
-  git-cliff-darwin-arm64@2.5.0:
-    resolution: {integrity: sha512-mIw8CZRRRVFB7HWLYESAlvLjXSoqMThyhbdCbVJYEZw2Qxx2UhldEkGv62+qLAhjYwG7GfoeByDqwXGS9rWe7Q==}
+  git-cliff-darwin-arm64@2.6.1:
+    resolution: {integrity: sha512-uzLlHGXgOf6gzBaloWdfBCfqQFKTcitT65IgtdH1mEX03SLgRFJUhlw4tYbTXVwdPgfWSoP1LGO+b+D4/s8X9g==}
     cpu: [arm64]
     os: [darwin]
 
-  git-cliff-darwin-x64@2.5.0:
-    resolution: {integrity: sha512-YPoE+rAgdRea4apauK25yDqNDJYvZtoqE8FBKuKRo9AY+btqZMVgxN6UNf9Ea4jQtDQOTqhpYUpM0czk9z4GgQ==}
+  git-cliff-darwin-x64@2.6.1:
+    resolution: {integrity: sha512-sx8ppi6Lb0rd96gT6GBKtZlssCm1GbpNsI+vUO1quMyRMSpfI/6TtIQNiLO59M2LNqzGXemC7ULyX0ENAh9QWA==}
     cpu: [x64]
     os: [darwin]
 
-  git-cliff-linux-arm64@2.5.0:
-    resolution: {integrity: sha512-KJCD7tpH+LJw7XrKhi+jPWFxEGqsxUDUmNLeSjGGptkbXx+LXNFTqTdvQHCeFWSybKMuBnEcou8qEfYTDIcrIg==}
+  git-cliff-linux-arm64@2.6.1:
+    resolution: {integrity: sha512-T2Y7K4kBdGyD5GIZGYRLgbl0uRYVyBhWfQYj8emnt1XSvF/XaLGhi6hNPJuNCB+394HuhMtb2vV3G3S4uTumxg==}
     cpu: [arm64]
     os: [linux]
 
-  git-cliff-linux-x64@2.5.0:
-    resolution: {integrity: sha512-jvyfCRy758iHRvbsM6VmGWqOm0OczQLDI/r6w/OdAoRIt5vQiZJbJFJaMLqzEJRtN8g4hTrEZ+5EYbFY1BMVDQ==}
+  git-cliff-linux-x64@2.6.1:
+    resolution: {integrity: sha512-4Y+kEM8JYT7HPgt++DEaqWW/SDxJ9iotork15sTP3fOiRMZi8p58ifjHEfPYVUup/hLpTmH2aiX72HNKa4gwRA==}
     cpu: [x64]
     os: [linux]
 
-  git-cliff-windows-arm64@2.5.0:
-    resolution: {integrity: sha512-t+5ikWPEJuVbDfVWU/Ckbno9qKA6FOQuM9gnRi7tjnXXDoEwdgwZVvCHB3p3dmcgzzmRA1RRAhS27CNJMTB42Q==}
+  git-cliff-windows-arm64@2.6.1:
+    resolution: {integrity: sha512-6xx3AWYeJ00Y/KZb78j9QX0sG+mMav9q/FCexuf89aTs5QjGJfXWtEB7DijvH/m4FDYqVjWcXyt9+ST9eBx0eg==}
     cpu: [arm64]
     os: [win32]
 
-  git-cliff-windows-x64@2.5.0:
-    resolution: {integrity: sha512-rKCowa6k79bdujEa9/s+PSk3M5ViNZISFp4NK+0Ac6yoCDN0ylgvhHRUhSoxLjJ73an40Rg+I83Q92HPKklVGw==}
+  git-cliff-windows-x64@2.6.1:
+    resolution: {integrity: sha512-hRsOv0kVU/cKt9rglWYPuv84ZI1MflhhzQrycz99xF7heGbob4RRgcuN0JXnYPf3q8ATnMgsVlMccaIRXuJFGg==}
     cpu: [x64]
     os: [win32]
 
-  git-cliff@2.5.0:
-    resolution: {integrity: sha512-HOWY+f5YyK3fYylYY7N8tdd+qPPK7cuInkyY1PVMRsU4c2JT8TM2rvxpVDa6p5uD5MlZ/4mZ7E8RLux99TapQQ==}
+  git-cliff@2.6.1:
+    resolution: {integrity: sha512-dxquXEx+dRWbggtxQzH2GpgCr6F+HjuY/jZA5QCc1AdvWfq010BxlRElrH7mgS2fHvvybY9gSw7qQEBk3tSM4Q==}
     engines: {node: '>=18.19 || >=20.6 || >=21'}
     hasBin: true
 
@@ -1501,6 +1501,10 @@ packages:
   npm-run-path@5.3.0:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
+  npm-run-path@6.0.0:
+    resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
+    engines: {node: '>=18'}
 
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
@@ -1874,6 +1878,10 @@ packages:
     resolution: {integrity: sha512-/0BWqR8rJNRysS5lqVmfc7eeOErcOP4tZpATVjJOojjHZ71gSYVAtFhEmadcIjwMIUehh5NFyKGsXCnXIajtbA==}
     engines: {node: '>=18.17'}
 
+  unicorn-magic@0.3.0:
+    resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
+    engines: {node: '>=18'}
+
   universal-user-agent@7.0.2:
     resolution: {integrity: sha512-0JCqzSKnStlRRQfCdowvqy3cy0Dvtlb8xecj/H8JFZuCze4rwjPZQOgvFvn0Ws/usCHQFGpyr+pB9adaGwXn4Q==}
 
@@ -2061,19 +2069,19 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@favware/cliff-jumper@4.1.0':
+  '@favware/cliff-jumper@5.0.0':
     dependencies:
       '@favware/colorette-spinner': 1.0.1
       '@octokit/auth-token': 5.1.1
       '@octokit/core': 6.1.2
-      '@octokit/plugin-retry': 7.1.1(@octokit/core@6.1.2)
+      '@octokit/plugin-retry': 7.1.2(@octokit/core@6.1.2)
       '@sapphire/result': 2.6.6
       '@sapphire/utilities': 3.17.0
       colorette: 2.0.20
       commander: 12.1.0
       conventional-recommended-bump: 10.0.0
-      execa: 9.3.1
-      git-cliff: 2.5.0
+      execa: 9.4.1
+      git-cliff: 2.6.1
       js-yaml: 4.1.0
       semver: 7.6.3
       smol-toml: 1.3.0
@@ -2188,7 +2196,7 @@ snapshots:
 
   '@octokit/openapi-types@22.2.0': {}
 
-  '@octokit/plugin-retry@7.1.1(@octokit/core@6.1.2)':
+  '@octokit/plugin-retry@7.1.2(@octokit/core@6.1.2)':
     dependencies:
       '@octokit/core': 6.1.2
       '@octokit/request-error': 6.1.1
@@ -3058,7 +3066,7 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  execa@9.3.1:
+  execa@9.4.1:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       cross-spawn: 7.0.3
@@ -3067,7 +3075,7 @@ snapshots:
       human-signals: 8.0.0
       is-plain-obj: 4.1.0
       is-stream: 4.0.1
-      npm-run-path: 5.3.0
+      npm-run-path: 6.0.0
       pretty-ms: 9.0.0
       signal-exit: 4.1.0
       strip-final-newline: 4.0.0
@@ -3139,34 +3147,34 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  git-cliff-darwin-arm64@2.5.0:
+  git-cliff-darwin-arm64@2.6.1:
     optional: true
 
-  git-cliff-darwin-x64@2.5.0:
+  git-cliff-darwin-x64@2.6.1:
     optional: true
 
-  git-cliff-linux-arm64@2.5.0:
+  git-cliff-linux-arm64@2.6.1:
     optional: true
 
-  git-cliff-linux-x64@2.5.0:
+  git-cliff-linux-x64@2.6.1:
     optional: true
 
-  git-cliff-windows-arm64@2.5.0:
+  git-cliff-windows-arm64@2.6.1:
     optional: true
 
-  git-cliff-windows-x64@2.5.0:
+  git-cliff-windows-x64@2.6.1:
     optional: true
 
-  git-cliff@2.5.0:
+  git-cliff@2.6.1:
     dependencies:
       execa: 8.0.1
     optionalDependencies:
-      git-cliff-darwin-arm64: 2.5.0
-      git-cliff-darwin-x64: 2.5.0
-      git-cliff-linux-arm64: 2.5.0
-      git-cliff-linux-x64: 2.5.0
-      git-cliff-windows-arm64: 2.5.0
-      git-cliff-windows-x64: 2.5.0
+      git-cliff-darwin-arm64: 2.6.1
+      git-cliff-darwin-x64: 2.6.1
+      git-cliff-linux-arm64: 2.6.1
+      git-cliff-linux-x64: 2.6.1
+      git-cliff-windows-arm64: 2.6.1
+      git-cliff-windows-x64: 2.6.1
 
   glob-parent@5.1.2:
     dependencies:
@@ -3413,6 +3421,11 @@ snapshots:
   npm-run-path@5.3.0:
     dependencies:
       path-key: 4.0.0
+
+  npm-run-path@6.0.0:
+    dependencies:
+      path-key: 4.0.0
+      unicorn-magic: 0.3.0
 
   object-assign@4.1.1: {}
 
@@ -3767,6 +3780,8 @@ snapshots:
   undici-types@5.26.5: {}
 
   undici@6.18.1: {}
+
+  unicorn-magic@0.3.0: {}
 
   universal-user-agent@7.0.2: {}
 
