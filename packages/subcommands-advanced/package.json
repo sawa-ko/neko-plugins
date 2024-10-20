@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-subcommands-advanced",
-	"version": "2.5.2-next.5530405",
+	"version": "2.5.3-next.5fe1a37",
 	"description": "Plugin for @sapphire/framework to be able to create subcommands based on command classes.",
 	"author": "@kaname-png",
 	"license": "MIT",
