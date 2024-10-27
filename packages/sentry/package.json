@@ -1,6 +1,6 @@
 {
 	"name": "@kaname-png/plugin-sentry",
-	"version": "1.4.3-next.ebb835c",
+	"version": "1.4.4-next.be7b5fc",
 	"description": "Plugin for @sapphire/framework to post error on sentry.",
 	"author": "@kaname-png",
 	"maintainers": [
