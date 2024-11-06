@@ -88,7 +88,7 @@
 	"devDependencies": {
 		"@favware/cliff-jumper": "^4.1.0",
 		"@favware/rollup-type-bundler": "^3.3.0",
-		"@sapphire/plugin-api": "^6.1.1",
+		"@sapphire/plugin-api": "^7.0.3",
 		"@sapphire/plugin-scheduled-tasks": "^10.0.1",
 		"@sapphire/plugin-subcommands": "^7.0.0",
 		"@sentry/node": "^8.35.0",

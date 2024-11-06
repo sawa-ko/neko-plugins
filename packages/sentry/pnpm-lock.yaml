@@ -19,8 +19,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       '@sapphire/plugin-api':
-        specifier: ^6.1.1
-        version: 6.1.1
+        specifier: ^7.0.3
+        version: 7.0.3
       '@sapphire/plugin-scheduled-tasks':
         specifier: ^10.0.1
         version: 10.0.1
@@ -892,8 +892,8 @@ packages:
     resolution: {integrity: sha512-v4prFEQNbUfD3j0/gjYd93xYY52N3wrtwTgJc7n68a/GuQXiXLnfypczG5CDVX1nQdvdCB9t4wSUHpfB82zAbQ==}
     engines: {node: '>=v16.0.0', npm: '>=7.0.0'}
 
-  '@sapphire/plugin-api@6.1.1':
-    resolution: {integrity: sha512-/Znz+AvNvnOwdKw+iehb2ZDDqQk0p9/Ls7WaXxeIsv3alPn/70/Q4i+WjoXFeG6T9KGCv110quJRPc4kS4QPWg==}
+  '@sapphire/plugin-api@7.0.3':
+    resolution: {integrity: sha512-1BgQ2ewR9f4Gq060K8hcy/kSvrUTw8Txnp4bviBA+G/CHdBrFCDkZA00JnxZAb8Q9OWfWjzjKaF7J7Nzz7z0rA==}
     engines: {node: '>=v18', npm: '>=7'}
 
   '@sapphire/plugin-scheduled-tasks@10.0.1':
@@ -980,11 +980,15 @@ packages:
   '@types/shimmer@1.2.0':
     resolution: {integrity: sha512-UE7oxhQLLd9gub6JKIAhDq06T0F6FnztwMNRvYgjeQSBeMc1ZG/tA47EwfduvkuQS8apbkM/lpLpWsaCeYsXVg==}
 
-  '@types/ws@8.5.10':
-    resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
+  '@types/ws@8.5.13':
+    resolution: {integrity: sha512-osM/gWBTPKgHV8XkTunnegTRIsvF6owmf5w+JtAfOw472dptdm0dlGv4xCt6GwQRcC2XVOvvRE/0bAoQcL2QkA==}
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  '@vladfrangu/async_event_emitter@2.4.6':
+    resolution: {integrity: sha512-RaI5qZo6D2CVS6sTHFKg1v5Ohq/+Bo2LZ5gzUEwZ/WkHhwtGTCB/sVLw8ijOkAUxasZ+WshN/Rzj4ywsABJ5ZA==}
+    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
 
   acorn-import-attributes@1.9.5:
     resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
@@ -1142,6 +1146,9 @@ packages:
     resolution: {integrity: sha512-RK/fUnc2btot0oEVtrj3p2doImDSs7iiz/bftFCDzels0Qs1mxLghp+DFHMaOC0qiCI6sWzlTDyBFSYuot6pRA==}
     engines: {node: '>=18'}
     hasBin: true
+
+  cookie-es@1.2.2:
+    resolution: {integrity: sha512-+W7VmiVINB+ywl1HGXJXmrqkOhpKrIiVZV6tQuV54ZyQC7MMuBt81Vc336GMLoHBq5hV/F9eXgt5Mnx0Rha5Fg==}
 
   cron-parser@4.9.0:
     resolution: {integrity: sha512-p0SaNjrHOnQeR8/VnfGbmg9te2kfyYSQ7Sc/j/6DtPL3JQvKxmjO9TSjNFpujqV3vEYYBvNNvXSxzyksBWAx1Q==}
@@ -1892,11 +1899,11 @@ packages:
     resolution: {integrity: sha512-8or1+BGEdk1Zkkw2ii16qSS7uVrQJPre5A9o/XkWPATkk23FZh/15BKFxPnlTy6vkljZxLqYCzzBMj30ZrSvjw==}
     engines: {node: '>=12.0.0'}
 
-  tldts-core@6.1.22:
-    resolution: {integrity: sha512-TMCyBC7HpvDpBRQCLsODmsclNXGhZLSj76gIlx7QcwvKElMdIzhGN5iYcuTI7yAWJm8zTpsVehWCeOGytDY9fg==}
+  tldts-core@6.1.58:
+    resolution: {integrity: sha512-dR936xmhBm7AeqHIhCWwK765gZ7dFyL+IqLSFAjJbFlUXGMLCb8i2PzlzaOuWBuplBTaBYseSb565nk/ZEM0Bg==}
 
-  tldts@6.1.22:
-    resolution: {integrity: sha512-WwWAPp+zJn8oJkpjqJcSuuj5foL9cI8SiTjH+gGS1bw5N163YywM0Cmd9OijwtKjdGG7OC6NEYZVl4EG8HfSMg==}
+  tldts@6.1.58:
+    resolution: {integrity: sha512-MQJrJhjHOYGYb8DobR6Y4AdDbd4TYkyQ+KBDVc5ODzs1cbrvPpfN1IemYi9jfipJ/vR1YWvrDli0hg1y19VRoA==}
     hasBin: true
 
   tr46@1.0.1:
@@ -1952,8 +1959,8 @@ packages:
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  undici@6.18.1:
-    resolution: {integrity: sha512-/0BWqR8rJNRysS5lqVmfc7eeOErcOP4tZpATVjJOojjHZ71gSYVAtFhEmadcIjwMIUehh5NFyKGsXCnXIajtbA==}
+  undici@6.20.1:
+    resolution: {integrity: sha512-AjQF1QsmqfJys+LXfGTNum+qw4S88CojRInG/6t31W/1fk6G59s92bnAvGz5Cmur+kQv2SURXEvvudLmbrE8QA==}
     engines: {node: '>=18.17'}
 
   universal-user-agent@7.0.2:
@@ -2748,12 +2755,13 @@ snapshots:
 
   '@sapphire/node-utilities@1.0.2': {}
 
-  '@sapphire/plugin-api@6.1.1':
+  '@sapphire/plugin-api@7.0.3':
     dependencies:
-      '@types/ws': 8.5.10
-      tldts: 6.1.22
-      tslib: 2.8.0
-      undici: 6.18.1
+      '@types/ws': 8.5.13
+      '@vladfrangu/async_event_emitter': 2.4.6
+      cookie-es: 1.2.2
+      tldts: 6.1.58
+      undici: 6.20.1
 
   '@sapphire/plugin-scheduled-tasks@10.0.1':
     dependencies:
@@ -2874,11 +2882,13 @@ snapshots:
 
   '@types/shimmer@1.2.0': {}
 
-  '@types/ws@8.5.10':
+  '@types/ws@8.5.13':
     dependencies:
       '@types/node': 20.12.12
 
   '@ungap/structured-clone@1.2.0': {}
+
+  '@vladfrangu/async_event_emitter@2.4.6': {}
 
   acorn-import-attributes@1.9.5(acorn@8.11.3):
     dependencies:
@@ -3031,6 +3041,8 @@ snapshots:
       conventional-commits-filter: 5.0.0
       conventional-commits-parser: 6.0.0
       meow: 13.2.0
+
+  cookie-es@1.2.2: {}
 
   cron-parser@4.9.0:
     dependencies:
@@ -3817,11 +3829,11 @@ snapshots:
       fdir: 6.4.0(picomatch@4.0.2)
       picomatch: 4.0.2
 
-  tldts-core@6.1.22: {}
+  tldts-core@6.1.58: {}
 
-  tldts@6.1.22:
+  tldts@6.1.58:
     dependencies:
-      tldts-core: 6.1.22
+      tldts-core: 6.1.58
 
   tr46@1.0.1:
     dependencies:
@@ -3876,7 +3888,7 @@ snapshots:
 
   undici-types@5.26.5: {}
 
-  undici@6.18.1: {}
+  undici@6.20.1: {}
 
   universal-user-agent@7.0.2: {}
 
