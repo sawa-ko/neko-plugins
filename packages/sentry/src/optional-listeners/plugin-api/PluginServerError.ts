@@ -1,11 +1,11 @@
 import { container } from '@sapphire/framework';
-import { ServerEvents } from '@sapphire/plugin-api';
+import { ServerEvent } from '@sapphire/plugin-api';
 import { captureException } from '@sentry/node';
 import { SentryListener } from '../../lib/structures/SentryListener';
 
-export class PluginSentryListener extends SentryListener<typeof ServerEvents.Error> {
+export class PluginSentryListener extends SentryListener<typeof ServerEvent.Error> {
 	public constructor(context: SentryListener.Context, options: SentryListener.Options) {
-		super(context, { ...options, name: 'PluginSentryServerError', emitter: 'server', event: ServerEvents.Error });
+		super(context, { ...options, name: 'PluginSentryServerError', emitter: 'server', event: ServerEvent.Error });
 	}
 
 	public run(error: unknown) {

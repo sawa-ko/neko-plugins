@@ -8,7 +8,7 @@ import { loadPluginScheduledTasksListeners } from './optional-listeners/plugin-s
 import { loadPluginSubcommandsListeners } from './optional-listeners/plugin-subcommands/_load';
 
 export class SentryPlugin extends Plugin {
-	public static [postInitialization](this: SapphireClient): void {
+	public static override [postInitialization](this: SapphireClient): void {
 		if (!this.options.sentry?.loadSentryErrorListeners) return;
 
 		loadListeners();
@@ -18,7 +18,7 @@ export class SentryPlugin extends Plugin {
 		loadPluginSubcommandsListeners();
 	}
 
-	public static [postLogin](this: SapphireClient): void {
+	public static override [postLogin](this: SapphireClient): void {
 		if (!this.options.sentry?.options?.enabled) return;
 		return initializeSentry(this.options.sentry);
 	}
