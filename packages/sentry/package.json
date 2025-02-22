@@ -91,7 +91,7 @@
 		"@sapphire/plugin-api": "^8.0.0",
 		"@sapphire/plugin-scheduled-tasks": "^10.0.1",
 		"@sapphire/plugin-subcommands": "^7.0.0",
-		"@sentry/node": "^8.35.0",
+		"@sentry/node": "^9.1.0",
 		"concurrently": "^9.0.1",
 		"eslint": "~8.57.1",
 		"tsup": "^8.3.5",
