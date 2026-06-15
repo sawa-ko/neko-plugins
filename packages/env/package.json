@@ -50,7 +50,7 @@
 	},
 	"dependencies": {
 		"dotenv-cra": "^3.0.3",
-		"tslib": "^2.8.0"
+		"tslib": "^2.8.1"
 	},
 	"repository": {
 		"type": "git",
@@ -86,8 +86,8 @@
 	"devDependencies": {
 		"@favware/cliff-jumper": "^4.1.0",
 		"@favware/rollup-type-bundler": "^3.3.0",
-		"concurrently": "^9.0.1",
-		"tsup": "^8.3.5",
-		"tsx": "^4.19.2"
+		"concurrently": "^9.2.1",
+		"tsup": "^8.5.1",
+		"tsx": "^4.22.4"
 	}
 }
