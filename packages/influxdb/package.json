@@ -52,7 +52,7 @@
 		"check-update": "cliff-jumper --dry-run"
 	},
 	"dependencies": {
-		"tslib": "^2.8.0"
+		"tslib": "^2.8.1"
 	},
 	"repository": {
 		"type": "git",
@@ -89,10 +89,10 @@
 		"@favware/cliff-jumper": "^4.1.0",
 		"@favware/rollup-type-bundler": "^3.3.0",
 		"@influxdata/influxdb-client": "^1.35.0",
-		"@sapphire/framework": "^5.2.1",
-		"concurrently": "^9.0.1",
+		"@sapphire/framework": "^5.5.0",
+		"concurrently": "^9.2.1",
 		"eslint": "~8.57.1",
-		"tsup": "^8.3.5",
-		"tsx": "^4.19.2"
+		"tsup": "^8.5.1",
+		"tsx": "^4.22.4"
 	}
 }
